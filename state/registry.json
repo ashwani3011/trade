@@ -1,0 +1,194 @@
+{
+  "updated": "2026-09-29T14:45:27",
+  "variants": {
+    "orb.base": {
+      "created": "2026-09-29",
+      "family": "orb",
+      "id": "orb.base",
+      "note": "15-min opening range breakout, stop at the other side of the range, 2R target",
+      "params": {
+        "buffer_pct": 0.0,
+        "or_bars": 3,
+        "stop_mode": "range",
+        "target_r": 2.0
+      },
+      "parent": null,
+      "retired_reason": "",
+      "role": "baseline",
+      "status": "active"
+    },
+    "orb.v1": {
+      "created": "2026-09-29",
+      "family": "orb",
+      "id": "orb.v1",
+      "note": "ORB + volume confirmation, VWAP alignment, ATR stop, skip oversized ranges",
+      "params": {
+        "atr_stop": 0.25,
+        "buffer_pct": 0.05,
+        "max_range_atr": 0.6,
+        "or_bars": 3,
+        "stop_mode": "atr",
+        "target_r": 2.0,
+        "vol_mult": 1.5,
+        "vwap_filter": true
+      },
+      "parent": null,
+      "retired_reason": "",
+      "role": "champion",
+      "status": "active"
+    },
+    "pdb.base": {
+      "created": "2026-09-29",
+      "family": "pdb",
+      "id": "pdb.base",
+      "note": "Buy above yesterday's high / sell below yesterday's low",
+      "params": {
+        "atr_stop": 0.3,
+        "buffer_pct": 0.0,
+        "target_r": 2.0
+      },
+      "parent": null,
+      "retired_reason": "",
+      "role": "baseline",
+      "status": "active"
+    },
+    "pdb.v1": {
+      "created": "2026-09-29",
+      "family": "pdb",
+      "id": "pdb.v1",
+      "note": "PDH/PDL break + daily trend filter, volume, skip gap-through days",
+      "params": {
+        "atr_stop": 0.3,
+        "buffer_pct": 0.05,
+        "skip_gap": true,
+        "target_r": 2.0,
+        "trend_filter": true,
+        "vol_mult": 1.5
+      },
+      "parent": null,
+      "retired_reason": "",
+      "role": "champion",
+      "status": "active"
+    },
+    "sr_reject.base": {
+      "created": "2026-09-29",
+      "family": "sr_reject",
+      "id": "sr_reject.base",
+      "note": "Pin bar rejection at previous day high/low",
+      "params": {
+        "atr_stop": 0.1,
+        "target_r": 2.0,
+        "wick_ratio": 0.5
+      },
+      "parent": null,
+      "retired_reason": "",
+      "role": "baseline",
+      "status": "active"
+    },
+    "sr_reject.v1": {
+      "created": "2026-09-29",
+      "family": "sr_reject",
+      "id": "sr_reject.v1",
+      "note": "Rejection + next-bar confirmation and volume",
+      "params": {
+        "atr_stop": 0.1,
+        "confirm_break": true,
+        "target_r": 2.0,
+        "vol_mult": 1.2,
+        "wick_ratio": 0.55
+      },
+      "parent": null,
+      "retired_reason": "",
+      "role": "champion",
+      "status": "active"
+    },
+    "tg_opt.base": {
+      "created": "2026-09-29",
+      "family": "tg_opt",
+      "id": "tg_opt.base",
+      "note": "Video rules: top 2 gainers @9:25, strong green 10-min candle, ~5% OTM call at 9:25, stop at option first-candle low (60% if big), exit by 12:00, put on top loser if the call goes red",
+      "params": {
+        "big_candle_pct": 30.0,
+        "entry_mode": "open",
+        "exit_time": "12:00",
+        "max_candle_pct": 2.0,
+        "min_body_ratio": 0.5,
+        "n_stocks": 2,
+        "otm_pct": 5.0,
+        "put_leg": "hedge",
+        "sizing": "one_lot",
+        "stop_frac": 0.6,
+        "target_r": 3.0
+      },
+      "parent": null,
+      "retired_reason": "",
+      "role": "baseline",
+      "status": "active"
+    },
+    "tg_opt.v1": {
+      "created": "2026-09-29",
+      "family": "tg_opt",
+      "id": "tg_opt.v1",
+      "note": "NIFTY-aligned, volume-confirmed, gap-capped; near-ATM strike, skip expiry week, enter on option breakout, breakeven trail, risk-capped sizing, puts on top losers as independent mirror trades",
+      "params": {
+        "big_candle_pct": 30.0,
+        "entry_mode": "breakout",
+        "exit_time": "12:00",
+        "last_entry": "10:30",
+        "market_filter": true,
+        "max_candle_pct": 2.0,
+        "max_gap_pct": 3.0,
+        "min_body_ratio": 0.6,
+        "min_expiry_days": 5,
+        "n_stocks": 3,
+        "otm_pct": 1.5,
+        "put_leg": "independent",
+        "risk_pct": 5.0,
+        "sizing": "risk",
+        "stop_frac": 0.6,
+        "target_r": 2.5,
+        "trail_be_r": 1.0,
+        "vol_mult": 1.5
+      },
+      "parent": null,
+      "retired_reason": "",
+      "role": "champion",
+      "status": "active"
+    },
+    "vwap_pb.base": {
+      "created": "2026-09-29",
+      "family": "vwap_pb",
+      "id": "vwap_pb.base",
+      "note": "Trend pullback to VWAP, EMA9/21 trend filter",
+      "params": {
+        "atr_stop": 0.2,
+        "ema_filter": true,
+        "target_r": 1.5,
+        "touch_pct": 0.1
+      },
+      "parent": null,
+      "retired_reason": "",
+      "role": "baseline",
+      "status": "active"
+    },
+    "vwap_pb.v1": {
+      "created": "2026-09-29",
+      "family": "vwap_pb",
+      "id": "vwap_pb.v1",
+      "note": "VWAP pullback + minimum trend strength, confirmation candle, volume",
+      "params": {
+        "atr_stop": 0.2,
+        "confirm_bar": true,
+        "ema_filter": true,
+        "min_trend_pct": 0.4,
+        "target_r": 2.0,
+        "touch_pct": 0.1,
+        "vol_mult": 1.0
+      },
+      "parent": null,
+      "retired_reason": "",
+      "role": "champion",
+      "status": "active"
+    }
+  }
+}

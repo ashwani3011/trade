@@ -1,0 +1,16 @@
+date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,costs,net,r_multiple,reason
+2026-09-24,sr_reject.base,SBIN,1,48,10:10,986.8,12:35,983.59,stop,-153.69,50.13,-203.82,-1.461,level rejection
+2026-09-24,sr_reject.base,SUNPHARMA,-1,28,09:50,1867.14,13:25,1855.17,target,335.15,55.3,279.85,1.403,level rejection
+2026-09-24,sr_reject.base,TCS,1,17,13:50,2080.12,14:30,2068.25,stop,-201.88,37.37,-239.25,-1.25,level rejection
+2026-09-25,sr_reject.base,SUNPHARMA,1,15,10:00,1849.05,10:30,1842.63,stop,-96.42,29.35,-125.77,-1.427,level rejection
+2026-09-25,sr_reject.base,KOTAKBANK,1,120,09:55,404.87,11:20,407.79,target,350.49,51.75,298.74,1.516,level rejection
+2026-09-25,sr_reject.base,NTPC,1,136,12:05,325.0,13:25,323.44,stop,-211.37,46.74,-258.1,-1.302,level rejection
+2026-09-25,sr_reject.base,TCS,1,11,09:35,2071.52,15:15,2079.88,eod,91.9,24.22,67.68,0.362,level rejection
+2026-09-25,sr_reject.base,LT,1,7,11:15,3855.06,15:15,3876.84,eod,152.46,28.71,123.75,1.303,level rejection
+2026-09-28,sr_reject.base,INFY,1,44,10:05,992.0,10:40,987.18,stop,-212.09,46.15,-258.24,-1.297,level rejection
+2026-09-28,sr_reject.base,SUNPHARMA,1,38,11:50,1843.45,14:05,1852.87,target,357.74,71.99,285.75,1.436,level rejection
+2026-09-28,sr_reject.base,BAJFINANCE,1,30,12:00,980.69,15:15,982.71,eod,60.33,31.24,29.09,0.289,level rejection
+2026-09-29,sr_reject.base,INFY,1,15,10:55,987.9,13:25,983.64,stop,-63.9,15.67,-79.57,-1.338,level rejection
+2026-09-29,sr_reject.base,TCS,1,18,09:55,2054.52,13:35,2043.24,stop,-202.94,39.09,-242.02,-1.261,level rejection
+2026-09-29,sr_reject.base,SBIN,1,50,09:55,957.29,15:05,965.49,target,410.0,51.02,358.98,1.827,level rejection
+2026-09-29,sr_reject.base,TATASTEEL,-1,261,13:55,188.27,15:15,188.21,eod,17.5,52.1,-34.6,-0.173,level rejection

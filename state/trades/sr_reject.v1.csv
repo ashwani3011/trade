@@ -1,0 +1,4 @@
+date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,costs,net,r_multiple,reason
+2026-09-29,sr_reject.v1,LT,1,9,12:40,3774.43,13:40,3752.29,stop,-199.25,35.9,-235.14,-1.243,level rejection (confirmed)
+2026-09-29,sr_reject.v1,SUNPHARMA,1,17,11:50,1845.05,15:15,1849.45,eod,74.66,33.31,41.35,0.213,level rejection (confirmed)
+2026-09-29,sr_reject.v1,SBIN,1,36,12:40,958.39,15:15,963.71,eod,191.64,36.71,154.93,0.91,level rejection (confirmed)
