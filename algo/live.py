@@ -119,11 +119,13 @@ class LiveTrader:
         report.write_live(self.s.reports_dir, self.day, now, results, journal=self._load_journal())
         return new
 
-    def run(self) -> None:
-        """Block until after the close, deciding on every completed candle; then record the day."""
+    def run(self, until: tuple[int, int] = STOP) -> None:
+        """Decide on every completed candle until `until` (default: after the close).
+        The day is recorded only when the run reaches the close, so a run can be split
+        into several processes (e.g. two GitHub jobs) that continue one journal."""
         while True:
             now = clock.now_ist()
-            if now.weekday() >= 5 or (now.hour, now.minute) >= STOP:
+            if now.weekday() >= 5 or (now.hour, now.minute) >= min(until, STOP):
                 break
             if (now.hour, now.minute) < START:
                 time.sleep(min(60.0, (now.replace(hour=START[0], minute=START[1], second=0) - now).total_seconds()))

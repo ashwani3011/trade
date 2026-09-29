@@ -1,16 +1,30 @@
 name: paper-trade
 
-# Manual-only: the Claude Code session routine is the active scheduler. To use Actions
-# instead, restore the schedule below and merge this file to the default branch.
-#  schedule:
-#    - cron: "10 4-10 * * 1-5"   # hourly 09:40-15:40 IST: auto (live, then final record)
-#    - cron: "50 4 * * 6"        # 10:20 IST Saturday: weekly self-improvement review
+# Runs the real-time paper trader on GitHub's servers every weekday, independent of any
+# Claude session. Needs repository secrets DHAN_CLIENT_ID, DHAN_PIN, DHAN_TOTP_SECRET
+# (optional: ANTHROPIC_API_KEY for Claude's weekly proposals).
+#
+# A GitHub job is capped at 6 hours, so the trading day is split into two runs that
+# continue the same decision journal (state/live/<date>.jsonl, restart-safe):
+#   08:45 IST  morning   check Dhan, then decide on every candle 09:15 .. 12:30
+#   12:15 IST  afternoon queued behind the morning run; 12:30 .. close, records the day
+#   15:55 IST  close     safety net: records the day if the afternoon run was missed
+#   Sat 10:22  improve   weekly champion/challenger search
+# Results are committed to the repo every 15 minutes while trading.
+#
+# DISABLED: scheduling runs inside Claude Code (routines). This file is kept as a manual
+# fallback only. To use GitHub instead, add back under `on:`:
+#   schedule:
+#     - cron: "15 3 * * 1-5"    # 08:45 IST morning
+#     - cron: "45 6 * * 1-5"    # 12:15 IST afternoon
+#     - cron: "25 10 * * 1-5"   # 15:55 IST close
+#     - cron: "52 4 * * 6"      # 10:22 IST Saturday improve
 on:
   workflow_dispatch:
     inputs:
       command:
-        description: "auto | improve | leaderboard"
-        default: auto
+        description: "morning | afternoon | close | improve | check"
+        default: check
 
 permissions:
   contents: write
@@ -22,13 +36,14 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 350
     env:
       DHAN_CLIENT_ID: ${{ secrets.DHAN_CLIENT_ID }}
-      DHAN_ACCESS_TOKEN: ${{ secrets.DHAN_ACCESS_TOKEN }}
       DHAN_PIN: ${{ secrets.DHAN_PIN }}
       DHAN_TOTP_SECRET: ${{ secrets.DHAN_TOTP_SECRET }}
+      DHAN_ACCESS_TOKEN: ${{ secrets.DHAN_ACCESS_TOKEN }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      PYTHONUNBUFFERED: "1"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -42,30 +57,69 @@ jobs:
           key: data-cache-${{ github.run_id }}
           restore-keys: data-cache-
 
-      - name: Pick command
-        id: cmd
+      - name: Pick mode
+        id: mode
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "cmd=${{ inputs.command }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "50 4 * * 6" ]; then
-            echo "cmd=improve" >> "$GITHUB_OUTPUT"
-          else
-            echo "cmd=auto" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Run
-        run: |
-          case "${{ steps.cmd.outputs.cmd }}" in
-            auto)     python -m algo.cli auto ;;
-            improve)  python -m algo.cli improve && python -m algo.cli leaderboard ;;
-            *)        python -m algo.cli leaderboard ;;
+          case "${{ github.event_name }}:${{ github.event.schedule }}" in
+            workflow_dispatch:*) m="${{ inputs.command }}" ;;
+            *"15 3 * * 1-5")     m=morning ;;
+            *"45 6 * * 1-5")     m=afternoon ;;
+            *"25 10 * * 1-5")    m=close ;;
+            *"52 4 * * 6")       m=improve ;;
+            *)                   m=check ;;
           esac
+          echo "mode=$m" >> "$GITHUB_OUTPUT"
+          echo "mode: $m"
 
-      - name: Commit results
+      - name: Git identity + push helper
         run: |
           git config user.name "paper-trade-bot"
           git config user.email "paper-trade-bot@users.noreply.github.com"
-          git add state reports
-          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
-          git commit -m "paper-trade: ${{ steps.cmd.outputs.cmd }} $(TZ=Asia/Kolkata date +%F)"
-          git push
+          cat > /tmp/push.sh <<'EOF'
+          #!/usr/bin/env bash
+          # commit bot output and push, rebasing over any concurrent commits
+          git add state reports >/dev/null 2>&1
+          git diff --cached --quiet && exit 0
+          git commit -q -m "paper-trade: $1 $(TZ=Asia/Kolkata date '+%F %H:%M')"
+          for i in 1 2 3 4; do
+            git pull -q --rebase origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep $((i * 5))
+          done
+          echo "push failed" >&2
+          EOF
+          chmod +x /tmp/push.sh
+
+      - name: Dhan check
+        if: steps.mode.outputs.mode == 'morning' || steps.mode.outputs.mode == 'check'
+        run: |
+          mkdir -p reports
+          { echo "# Dhan check $(TZ=Asia/Kolkata date '+%F %H:%M') IST"; echo '```';
+            python -m algo.cli check 2>&1 | grep -v -i -E "pin|secret|token=" ; echo '```'; } > reports/dhan_check.md
+          cat reports/dhan_check.md
+          /tmp/push.sh check
+
+      - name: Trade live
+        if: steps.mode.outputs.mode == 'morning' || steps.mode.outputs.mode == 'afternoon'
+        run: |
+          until_arg=""
+          [ "${{ steps.mode.outputs.mode }}" = "morning" ] && until_arg="--until 12:30"
+          python -m algo.cli trade-live $until_arg &
+          pid=$!
+          n=0
+          while kill -0 "$pid" 2>/dev/null; do
+            sleep 60; n=$((n + 1))
+            [ $((n % 15)) -eq 0 ] && /tmp/push.sh "live ${{ steps.mode.outputs.mode }}"
+          done
+          wait "$pid"
+
+      - name: Close (record any missed day)
+        if: steps.mode.outputs.mode == 'close'
+        run: python -m algo.cli catch-up --days 5 && python -m algo.cli leaderboard
+
+      - name: Improve
+        if: steps.mode.outputs.mode == 'improve'
+        run: python -m algo.cli improve && python -m algo.cli leaderboard
+
+      - name: Commit results
+        if: always()
+        run: /tmp/push.sh "${{ steps.mode.outputs.mode }}"

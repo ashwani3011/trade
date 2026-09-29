@@ -50,6 +50,11 @@ def check(s) -> None:
     sym = s.universe[0]
     bars = src.intraday(sym, d, today_ist(), s.interval)
     print(f"{sym}: {len(bars)} bars, last {bars['time'].iloc[-1] if len(bars) else '-'}")
+    # candle-time sanity: a full NSE day is 75 five-minute candles, 09:15 .. 15:25
+    for day, g in (bars.groupby(bars["time"].dt.date) if len(bars) else []):
+        first, last = g["time"].iloc[0].strftime("%H:%M"), g["time"].iloc[-1].strftime("%H:%M")
+        ok = first == "09:15" and last == "15:25" and len(g) == 75
+        print(f"  {day}: {len(g)} candles {first}-{last} {'OK' if ok else 'CHECK: expected 75 candles 09:15-15:25'}")
     idx = src.intraday(s.options.index_symbol, today_ist() - timedelta(days=3), today_ist(), s.interval)
     print(f"{s.options.index_symbol}: {len(idx)} bars")
     if s.data_source == "dhan":
@@ -77,7 +82,8 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--days", type=int, default=60)
     sub.add_parser("leaderboard")
     sub.add_parser("check")
-    sub.add_parser("trade-live", help="run the real-time paper trader in the foreground until the close")
+    p = sub.add_parser("trade-live", help="run the real-time paper trader in the foreground until the close")
+    p.add_argument("--until", default="15:36", help="stop at HH:MM IST (the day is recorded only by a run reaching the close)")
     sub.add_parser("supervise", help="start the real-time trader in the background if it isn't running")
     sub.add_parser("stop-live")
 
@@ -128,7 +134,8 @@ def main(argv: list[str] | None = None) -> None:
 
         _pid_file(s).parent.mkdir(parents=True, exist_ok=True)
         _pid_file(s).write_text(str(os.getpid()))
-        LiveTrader(s).run()
+        hh, mm = (int(x) for x in args.until.split(":"))
+        LiveTrader(s).run(until=(hh, mm))
     elif args.cmd == "supervise":
         from .live import ensure_running
 
