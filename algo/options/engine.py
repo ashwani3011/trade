@@ -5,7 +5,7 @@ Timeline for one day (5-minute bars; the '10-minute first candle' = 9:15 + 9:20 
          apply candle filters, pick option contracts, then enter on the 9:25 bar open
          (or on a break of the option's first-candle high, in 'breakout' mode)
   after  stop / target / breakeven trail checked bar by bar (stop wins ties,
-         gaps fill at the open), time exit at `exit_time`, hard square-off 15:15
+         gaps fill at the open), time exit at `exit_time`, hard square-off 15:10 (last Dhan candle)
 """
 from __future__ import annotations
 
@@ -25,7 +25,7 @@ from .strategy import TopGainerOptions
 
 FIRST_BARS = (9 * 60 + 15, 9 * 60 + 20)
 ENTRY_MINUTE = 9 * 60 + 25
-SQUAREOFF = 15 * 60 + 15
+SQUAREOFF = 15 * 60 + 10   # last 5-min candle Dhan provides
 
 
 @dataclass

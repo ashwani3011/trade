@@ -78,7 +78,7 @@ def test_gap_through_stop_fills_at_open():
 
 def test_squareoff():
     trades = run(OneShot({"target": 200.0}), make_bars([100] * 75, spread=0.0))
-    assert trades[0].exit_reason == "squareoff" and trades[0].exit_time == "15:15"
+    assert trades[0].exit_reason == "squareoff" and trades[0].exit_time == "15:10"
 
 
 def test_daily_loss_limit_blocks_new_trades():

@@ -43,7 +43,7 @@ class MarketData:
 
     # --------------------------------------------------------------- cache
     def _day_path(self, symbol: str, day: date) -> Path:
-        return self.cache_dir / f"{self.interval}m" / symbol / f"{day.isoformat()}.csv"
+        return self.cache_dir / f"{self.interval}m_v2" / symbol / f"{day.isoformat()}.csv"  # v2: 09:00 fetch window
 
     def _read_day(self, symbol: str, day: date) -> pd.DataFrame | None:
         path = self._day_path(symbol, day)
@@ -55,7 +55,7 @@ class MarketData:
 
     def _fill_cache(self, symbol: str, days: list[date]) -> None:
         """Fetch missing days. Completed days go to disk; today's partial bars stay in memory."""
-        missing = [d for d in days if d in self._live_days or not self._day_path(symbol, d).exists()]
+        missing = [d for d in days if d in self._live_days or (symbol, d) in self._memory or not self._day_path(symbol, d).exists()]
         if not missing:
             return
         try:
@@ -70,6 +70,11 @@ class MarketData:
             if d in self._live_days:
                 if g is not None:
                     self._memory[(symbol, d)] = completed_bars(g, self.interval).reset_index(drop=True)
+                continue
+            if g is not None and g["time"].iloc[0].strftime("%H:%M") != "09:15":
+                # incomplete day (e.g. first candle missing) - use it now, but refetch next time
+                log.warning("%s %s: first candle is %s, not 09:15 - not caching", symbol, d, g["time"].iloc[0].strftime("%H:%M"))
+                self._memory[(symbol, d)] = g.reset_index(drop=True)
                 continue
             path = self._day_path(symbol, d)
             path.parent.mkdir(parents=True, exist_ok=True)
@@ -105,7 +110,7 @@ class MarketData:
         for d in sorted(days):
             bars = {}
             for s in self.symbols:
-                df = self._memory.get((s, d)) if d in self._live_days else self._read_day(s, d)
+                df = self._memory.get((s, d)) if (d in self._live_days or (s, d) in self._memory) else self._read_day(s, d)
                 if df is not None and len(df) >= min_bars:
                     bars[s] = df.reset_index(drop=True)
             if not bars:

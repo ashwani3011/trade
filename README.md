@@ -26,7 +26,7 @@ For `tg_opt` this means the 9:25 decision is made at **09:25:20** using only the
 
 - **Strategies.** Four stock-intraday price-action families, plus `tg_opt`, the top-gainers option-buying strategy from the video (see [docs/STRATEGIES.md](docs/STRATEGIES.md)).
 - **Variants.** Each strategy family runs as `base` (as taught, never changed, a benchmark), a `champion`, and up to 2 `challengers`. Every variant has its own Rs 20,000 paper account.
-- **Realistic fills.** Entries fill at the next bar's open plus slippage. A gap through the stop fills at the open. If a bar hits both stop and target, the stop counts. Everything is squared off at 15:15. Costs include brokerage, STT, exchange fees, SEBI fees, stamp duty and GST.
+- **Realistic fills.** Entries fill at the next bar's open plus slippage. A gap through the stop fills at the open. If a bar hits both stop and target, the stop counts. Everything is squared off at the 15:10 candle, the last one Dhan provides. Costs include brokerage, STT, exchange fees, SEBI fees, stamp duty and GST.
 - **Risk rules.** 1% of equity at risk per trade, 5x leverage cap, at most 3 open positions and 6 trades a day, and a 3% daily loss limit.
 - **Claude's role.** Claude is a research assistant, not a trader. Each week it reads the results and proposes parameter changes. Its ideas pass through the same validation gate and live paper probation as random candidates. It never places trades. That keeps decisions reproducible and cheap: one API call per strategy per week.
 - **Real-money readiness.** The leaderboard flags a variant as `ready_for_real_money` only after it has 40+ paper days, 30+ trades, a profit factor of at least 1.3, a positive net return after costs, and a max drawdown of 10% or less.

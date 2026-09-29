@@ -29,7 +29,7 @@ class RiskConfig:
     max_trades_per_day: int = 6
     max_trades_per_symbol: int = 2
     daily_loss_limit_pct: float = 3.0   # stop opening trades after this realised loss
-    squareoff: str = "15:15"
+    squareoff: str = "15:10"   # last candle Dhan provides
 
 
 @dataclass

@@ -31,7 +31,7 @@ risk:
   max_trades_per_day: 6
   max_trades_per_symbol: 2
   daily_loss_limit_pct: 3.0
-  squareoff: "15:15"
+  squareoff: "15:10"         # Dhan intraday candles end with the 15:10 candle
 
 costs:                          # Dhan intraday equity - verify at dhan.co/pricing
   brokerage_pct: 0.0003

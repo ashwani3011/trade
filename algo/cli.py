@@ -50,11 +50,11 @@ def check(s) -> None:
     sym = s.universe[0]
     bars = src.intraday(sym, d, today_ist(), s.interval)
     print(f"{sym}: {len(bars)} bars, last {bars['time'].iloc[-1] if len(bars) else '-'}")
-    # candle-time sanity: a full NSE day is 75 five-minute candles, 09:15 .. 15:25
+    # candle-time sanity: Dhan serves 72 five-minute candles a day, 09:15 .. 15:10
     for day, g in (bars.groupby(bars["time"].dt.date) if len(bars) else []):
         first, last = g["time"].iloc[0].strftime("%H:%M"), g["time"].iloc[-1].strftime("%H:%M")
-        ok = first == "09:15" and last == "15:25" and len(g) == 75
-        print(f"  {day}: {len(g)} candles {first}-{last} {'OK' if ok else 'CHECK: expected 75 candles 09:15-15:25'}")
+        ok = first == "09:15" and last == "15:10" and len(g) == 72
+        print(f"  {day}: {len(g)} candles {first}-{last} {'OK' if ok else 'CHECK: expected 72 candles 09:15-15:10'}")
     idx = src.intraday(s.options.index_symbol, today_ist() - timedelta(days=3), today_ist(), s.interval)
     print(f"{s.options.index_symbol}: {len(idx)} bars")
     if s.data_source == "dhan":

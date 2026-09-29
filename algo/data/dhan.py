@@ -26,6 +26,9 @@ BASE_URL = "https://api.dhan.co/v2"
 SCRIP_MASTER_URL = "https://images.dhan.co/api-data/api-scrip-master.csv"
 MAX_INTRADAY_SPAN_DAYS = 85   # Dhan allows ~90 days per intraday request
 MAX_ROLLING_SPAN_DAYS = 28    # and ~30 days per expired-options request
+# Observed on the live API (Sep 2026): 5-min equity candles run 09:15..15:10 (72 a day) -
+# the 15:15-15:25 candles are never returned - and a fromDate of exactly 09:15:00 drops
+# that day's 09:15 candle, so requests start at 09:00.
 INDEX_IDS = {"NIFTY 50": "13", "NIFTY BANK": "25"}
 
 
@@ -121,7 +124,7 @@ class DhanDataSource:
             body = {
                 "securityId": str(security_id), "exchangeSegment": segment, "instrument": instrument,
                 "interval": str(interval), "oi": False,
-                "fromDate": f"{cur.isoformat()} 09:15:00", "toDate": f"{chunk_end.isoformat()} 15:30:00",
+                "fromDate": f"{cur.isoformat()} 09:00:00", "toDate": f"{chunk_end.isoformat()} 15:30:00",
             }
             frames.append(_candles_to_frame(self._post("/charts/intraday", body), intraday=True))
             cur = chunk_end + timedelta(days=1)
