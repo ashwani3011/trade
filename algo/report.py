@@ -84,12 +84,17 @@ def write_daily(reports_dir: Path, day: date, results: dict, board: pd.DataFrame
     return out
 
 
-def write_live(reports_dir: Path, day: date, as_of, results: dict) -> Path:
+def write_live(reports_dir: Path, day: date, as_of, results: dict, journal: list[dict] | None = None) -> Path:
     out = Path(reports_dir) / "live" / f"{day.isoformat()}.md"
     out.parent.mkdir(parents=True, exist_ok=True)
-    text = [f"# Live paper trading - {day.isoformat()} (as of {as_of:%H:%M} IST)\n",
-            "Replay of today's bars so far. Final numbers are recorded after 15:35 IST.\n",
-            *_results_sections(results)]
+    text = [f"# Live paper trading - {day.isoformat()} (as of {as_of:%H:%M:%S} IST)\n",
+            "Decisions use only candles completed at the time. Final numbers are recorded after 15:35 IST.\n"]
+    if journal:
+        rows = [{"decided_at": e.get("decided_at"), "type": e["type"], "variant": e["variant"],
+                 "symbol": e.get("symbol", ""), "bar": e.get("bar_time", ""), "price": e.get("price", ""),
+                 "qty": e.get("qty", ""), "detail": e.get("reason", "")} for e in journal if e["type"] != "NOTE"]
+        text += ["## Decision log (trades)\n", _md_table(pd.DataFrame(rows))]
+    text += _results_sections(results)
     out.write_text("\n".join(text))
     return out
 

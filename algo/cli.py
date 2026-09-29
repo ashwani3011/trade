@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import json
 import logging
+import os
 from datetime import date, datetime, timedelta
 
 from . import report
@@ -76,6 +77,9 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--days", type=int, default=60)
     sub.add_parser("leaderboard")
     sub.add_parser("check")
+    sub.add_parser("trade-live", help="run the real-time paper trader in the foreground until the close")
+    sub.add_parser("supervise", help="start the real-time trader in the background if it isn't running")
+    sub.add_parser("stop-live")
 
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -119,6 +123,29 @@ def main(argv: list[str] | None = None) -> None:
         print(board.to_string(index=False) if not board.empty else "no variants yet")
     elif args.cmd == "check":
         check(s)
+    elif args.cmd == "trade-live":
+        from .live import LiveTrader, _pid_file
+
+        _pid_file(s).parent.mkdir(parents=True, exist_ok=True)
+        _pid_file(s).write_text(str(os.getpid()))
+        LiveTrader(s).run()
+    elif args.cmd == "supervise":
+        from .live import ensure_running
+
+        phase = market_phase()
+        if phase in ("pre", "open"):
+            fwd = ["--settings", args.settings, "--strategies", args.strategies]
+            if args.source:
+                fwd += ["--source", args.source]
+            pid, started = ensure_running(s, fwd)
+            print(f"live trader {'started' if started else 'already running'} (pid {pid}), market phase: {phase}")
+        else:
+            print(f"market phase: {phase} - recording any completed days")
+            catch_up(s, 5)
+    elif args.cmd == "stop-live":
+        from .live import stop
+
+        print("stopped" if stop(s) else "not running")
 
 
 if __name__ == "__main__":

@@ -7,19 +7,22 @@ This project paper trades several intraday price-action strategies on real NSE d
 ## How it works
 
 ```
- every weekday, hourly 09:40-15:40 IST  (python -m algo.cli auto)
-   market open  -> replay today's candles so far, no look-ahead -> reports/live/<date>.md
-                   (closed trades, open positions marked to market, why trades were skipped)
-   after 15:35  -> replay the complete day, record every variant's ledger
-                   -> reports/daily/<date>.md + reports/LEADERBOARD.md
- every Saturday  (python -m algo.cli improve)
-   1. promote challengers that beat the champion on live paper days
-   2. retire variants with drawdown > 30%
-   3. candidates = random tweaks + Claude proposals -> rank on older 70% of the
-      last 60 days -> must also win on the newest 30% -> paper trade as challenger
+ 09:05  routine starts the real-time trader (python -m algo.cli supervise)
+ 09:15  market opens; the trader wakes 20 s after every 5-minute candle closes
+        (09:20:20, 09:25:20, ...), fetches only the candles that exist at that
+        moment, and every variant decides:
+          ORDER  decided on the candle close -> fills at the next candle's open
+          ENTRY / EXIT (stop, target, time exit, square-off) as they happen
+          NOTE   why a setup was skipped (e.g. "first candle too big")
+        each decision is written with its wall-clock time to
+          state/live/<date>.jsonl and reports/live/<date>.md
+ hourly routine re-checks the trader (restarts it if needed; restart-safe) and posts an update
+ 15:36  final candle is complete -> the day is recorded in every variant's ledger
+ 15:44  routine posts the day's summary + leaderboard
+ Sat    self-improvement: promote/retire, search new challengers (+ Claude proposals)
 ```
 
-The replay never looks ahead. An hourly live check and a check at 9:26 produce the same trades for the same candles, so "live" paper trading from the 9:15 open is exactly what the final end-of-day record contains.
+For `tg_opt` this means the 9:25 decision is made at **09:25:20** using only the 9:15 and 9:20 candles: rank the gainers, check the first 10-minute candle, pick the strike, and place the order. That's the same information you would have in real trading. The live decisions and the end-of-day record come from the same engine, and a test checks that they always agree.
 
 - **Strategies.** Four stock-intraday price-action families, plus `tg_opt`, the top-gainers option-buying strategy from the video (see [docs/STRATEGIES.md](docs/STRATEGIES.md)).
 - **Variants.** Each strategy family runs as `base` (as taught, never changed, a benchmark), a `champion`, and up to 2 `challengers`. Every variant has its own Rs 20,000 paper account.
@@ -69,13 +72,17 @@ The Dhan client follows the official DhanHQ-py SDK's endpoints, but it hasn't be
 
 ### Scheduling
 
-- **In the Claude Code session (current setup):** a routine fires every weekday at :40 past each hour from 09:40 to 15:40 IST and runs `auto`. The 15:40 run records the day. A second routine runs `improve` on Saturdays. Results are committed to the branch.
-- **GitHub Actions:** `.github/workflows/paper-trade.yml` is manual-only, so the two schedules don't write to the same branch at once. To switch to Actions, uncomment its `schedule` block and merge it to the default branch.
+- **In this Claude Code session (current setup):** routines at 09:05 (start), hourly 10:05–15:05 (health check and update) and 15:44 (day summary) on weekdays, plus Saturday 10:22 (`improve`). Results are committed to the branch.
+- **On your own always-on machine or VPS (most reliable):** run `python -m algo.cli trade-live` from cron at 09:05 on weekdays. It exits by itself after recording the day.
+- **GitHub Actions:** manual-only (`.github/workflows/paper-trade.yml`), so it can't collide with the session schedule.
 
 ## Commands
 
 | Command | What it does |
 |---|---|
+| `supervise` | Start the real-time trader in the background if it isn't running; after the close, record missed days |
+| `trade-live` | Run the real-time trader in the foreground until the close |
+| `stop-live` | Stop the background trader |
 | `auto` | Live snapshot during market hours, final record after 15:35 IST |
 | `live` | Replay today so far into `reports/live/<date>.md` |
 | `check` | Verify Dhan token, equity/index/option data access |

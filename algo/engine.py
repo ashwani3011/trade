@@ -99,6 +99,7 @@ def simulate_day(
     interval: int = 5,
     final: bool = True,
     open_out: list | None = None,
+    pending_out: list | None = None,
 ) -> list[Trade]:
     """Replay one day. With final=False (live, partial day) open positions are
     reported into `open_out` instead of being closed at the last bar."""
@@ -108,6 +109,7 @@ def simulate_day(
     squareoff = hhmm(risk.squareoff)
     states: dict[str, dict] = {s: {} for s in sds}
     pending: dict[str, Signal] = {}
+    pending_at: dict[str, int] = {}
     open_pos: dict[str, _Position] = {}
     per_symbol: dict[str, int] = {}
     trades: list[Trade] = []
@@ -185,6 +187,7 @@ def simulate_day(
             new = strategy.on_bar(sd, i, states[sym])
             if new is not None:
                 pending[sym] = new
+                pending_at[sym] = minute
 
     for sym in list(open_pos):  # data ended before square-off
         sd = sds[sym]
@@ -198,6 +201,11 @@ def simulate_day(
                 "target": round(pos.target, 2) if pos.target else None, "last": round(last, 2),
                 "unrealised": round((last - pos.entry) * pos.side * pos.qty, 2),
             })
+    if not final and pending_out is not None:
+        for sym, sig in pending.items():
+            pending_out.append({"variant": variant, "symbol": sym, "side": sig.side, "decided_bar": _fmt(pending_at[sym]),
+                                "order": "at market (next candle open)", "stop": round(sig.stop, 2),
+                                "target": round(sig.target, 2) if sig.target else None, "reason": sig.reason})
     return trades
 
 

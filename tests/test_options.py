@@ -164,3 +164,14 @@ def test_synthetic_end_to_end_trades_something():
         res = simulate_options_day(TopGainerOptions({"max_candle_pct": 0, "min_body_ratio": 0.3}), c, 20000, option_costs(), "v")
         trades += len(res.trades)
     assert trades > 0
+
+
+def test_order_is_decided_at_925_with_only_first_candle():
+    # live at 9:25:20: only the 9:15 and 9:20 bars exist for stock and option
+    opt = [(3.0, 3.1, 2.9, 3.05), (3.05, 3.3, 3.0, 3.25)]
+    stocks = {"X": (strong_green(100, 101.5), 100.0)}
+    c = ctx(stocks, FakeOptions({("X", "CE"): opt}), index_rows=[(100, 101, 99.9, 101), (101, 102, 100.9, 102)])
+    res = simulate_options_day(TopGainerOptions({"put_leg": "none"}), c, 20000, NO_COST, "v", final=False)
+    assert not res.trades and not res.open_positions
+    [o] = res.pending_orders
+    assert o["symbol"] == "X CE" and o["order"].startswith("at market")

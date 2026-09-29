@@ -80,6 +80,7 @@ class DayResult:
     trades: list[Trade] = field(default_factory=list)
     notes: list[str] = field(default_factory=list)
     open_positions: list[dict] = field(default_factory=list)
+    pending_orders: list[dict] = field(default_factory=list)   # decided, waiting for the next bar to fill
 
 
 def _fmt(m: int) -> str:
@@ -233,7 +234,12 @@ def simulate_options_day(
 
     grid = range(ENTRY_MINUTE, SQUAREOFF + 5, 5)
     hedge_signal_at: int | None = None
+    # live (partial day): stop at the latest completed candle - later candles don't exist yet
+    data_end = max(int(b["time"].dt.hour.iloc[-1] * 60 + b["time"].dt.minute.iloc[-1])
+                   for b in ctx.data.bars.values() if len(b))
     for minute in grid:
+        if not final and minute > data_end:
+            break
         # 1) entries
         still = []
         for s, oc, why in pending:
@@ -303,7 +309,11 @@ def simulate_options_day(
                 "target": round(pos.target, 2) if pos.target else None, "last": round(last, 2),
                 "unrealised": round((last - pos.entry) * pos.qty, 2),
             })
-    for s, _, _ in pending:
+    for s, oc, why in pending:
         if final:
             res.notes.append(f"{s.label}: entry condition never triggered")
+        else:
+            trigger = "at market (next candle open)" if p["entry_mode"] == "open" else f"buy above {oc.high:.2f}"
+            res.pending_orders.append({"variant": variant, "symbol": s.label, "side": 1, "decided_bar": "09:20",
+                                       "order": trigger, "reason": why})
     return res

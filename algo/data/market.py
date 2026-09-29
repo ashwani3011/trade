@@ -8,6 +8,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from .. import clock
 from ..clock import is_final
 from .base import IST, DataSource
 
@@ -21,6 +22,13 @@ class DayData:
     daily_hist: dict[str, pd.DataFrame]   # symbol -> daily bars strictly before `day`
 
 
+def completed_bars(bars: pd.DataFrame, interval: int) -> pd.DataFrame:
+    """Drop the still-forming candle: a bar is usable only once its interval has ended."""
+    if bars.empty:
+        return bars
+    return bars[bars["time"] + pd.Timedelta(minutes=interval) <= clock.now_ist()]
+
+
 class MarketData:
     def __init__(self, source: DataSource, symbols: list[str], cache_dir: str | Path, interval: int = 5):
         self.source = source
@@ -31,6 +39,7 @@ class MarketData:
         self._memory: dict[tuple[str, date], pd.DataFrame] = {}
         self._live_days: set[date] = set()
         self._errors: list[str] = []
+        self._daily_range: tuple[date, date] | None = None
 
     # --------------------------------------------------------------- cache
     def _day_path(self, symbol: str, day: date) -> Path:
@@ -60,7 +69,7 @@ class MarketData:
             g = by_day.get(d)
             if d in self._live_days:
                 if g is not None:
-                    self._memory[(symbol, d)] = g.reset_index(drop=True)
+                    self._memory[(symbol, d)] = completed_bars(g, self.interval).reset_index(drop=True)
                 continue
             path = self._day_path(symbol, d)
             path.parent.mkdir(parents=True, exist_ok=True)
@@ -68,6 +77,9 @@ class MarketData:
 
     # ---------------------------------------------------------------- public
     def load_daily(self, start: date, end: date) -> None:
+        if self._daily_range == (start, end) and all(s in self._daily for s in self.symbols):
+            return  # already loaded (live loop calls this every bar)
+        self._daily_range = (start, end)
         for s in self.symbols:
             try:
                 self._daily[s] = self.source.daily(s, start, end)

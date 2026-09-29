@@ -19,6 +19,7 @@ import pandas as pd
 
 from ..clock import is_final
 from ..data.base import INTRADAY_COLS, IST
+from ..data.market import completed_bars
 
 log = logging.getLogger(__name__)
 ENTRY_MINUTE = 9 * 60 + 25
@@ -123,6 +124,8 @@ class DhanOptionSource:
             row = listed[listed["strike"] == strike].iloc[0]
             bars = self._cached(f"{row['security_id']}_{day}", day,
                                 lambda: self.dhan.option_intraday(row["security_id"], day, day, self.interval))
+            if not is_final(day):
+                bars = completed_bars(bars, self.interval)
             if bars.empty:
                 return None
             return OptionSeries(_label(underlying, row["expiry"], strike, option_type), strike, row["expiry"],
@@ -183,6 +186,8 @@ class SyntheticOptionSource:
 
     def series(self, underlying, day, option_type, spot, otm_pct, min_expiry_days):
         und = self.eq.intraday(underlying, day, day, self.interval)
+        if not is_final(day):
+            und = completed_bars(und, self.interval)
         if und.empty:
             return None
         y, m, _ = target_expiry_month(day, min_expiry_days)
