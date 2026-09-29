@@ -15,6 +15,7 @@ def settings(tmp_path):
     s = load(ROOT / "config/settings.yaml", ROOT / "config/strategies.yaml")
     s.data_source = "synthetic"
     s.universe = s.universe[:5]
+    s.options.universe = s.options.universe[:8]
     s.state_dir, s.cache_dir, s.reports_dir = tmp_path / "state", tmp_path / "cache", tmp_path / "reports"
     s.improve.llm_enabled = False
     s.improve.lookback_days = 20
@@ -50,7 +51,7 @@ def test_improve_loop_runs(tmp_path):
     for d in trading_days(date(2025, 2, 3), date(2025, 3, 7)):
         run_day(s, d, source=src)
     summary = run_improve(s, today=date(2025, 3, 10), source=src)
-    assert summary["days"] >= 10
+    assert min(summary["days"].values()) >= 10
     store = Store(s.state_dir)
     reg = store.load_registry(s.strategies)
     for fam in s.strategies:

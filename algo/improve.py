@@ -25,13 +25,14 @@ import pandas as pd
 
 from . import llm
 from .backtest import run as backtest
-from .config import Settings, make_source
-from .data.market import DayData, MarketData
+from .config import Settings, make_option_source, make_source
 from .data.synthetic import trading_days
 from .metrics import score, summarize
 from .report import variant_stats
 from .state import Registry, Store, Variant
-from .strategies import REGISTRY, clamp_params, mutate
+from .families import FAMILIES as REGISTRY
+from .families import DataHub, kind
+from .strategies import clamp_params, mutate
 
 log = logging.getLogger(__name__)
 
@@ -95,7 +96,7 @@ def _evidence(store: Store, reg: Registry, family: str, s: Settings, champ_train
 
 
 def search_family(
-    family: str, reg: Registry, store: Store, s: Settings, train: list[DayData], test: list[DayData], rng: random.Random
+    family: str, reg: Registry, store: Store, s: Settings, train: list, test: list, rng: random.Random
 ) -> list[Variant]:
     cfg = s.improve
     champ = reg.champion(family)
@@ -103,8 +104,8 @@ def search_family(
         return []
     cls = REGISTRY[family]
 
-    def evaluate(params: dict, days: list[DayData]) -> dict:
-        return backtest(family, params, days, s.capital, s.risk, s.costs)[2]
+    def evaluate(params: dict, days: list) -> dict:
+        return backtest(family, params, days, s.capital, s)[2]
 
     train_min = max(3, int(cfg.min_trades * len(train) / max(1, len(train) + len(test))))
     test_min = max(2, cfg.min_trades - train_min)
@@ -160,27 +161,30 @@ def search_family(
     return new
 
 
-def run_improve(s: Settings, today: date | None = None, source=None) -> dict:
+def run_improve(s: Settings, today: date | None = None, source=None, option_source=None) -> dict:
     today = today or date.today()
     store = Store(s.state_dir)
     reg = store.load_registry(s.strategies)
     review_live(store, reg, s, today)
 
     cfg = s.improve
+    families = sorted({v.family for v in reg.active()})
     cal = trading_days(today - timedelta(days=int(cfg.lookback_days * 1.6) + 5), today - timedelta(days=1))
-    md = MarketData(source or make_source(s), s.universe, s.cache_dir, s.interval)
-    days = md.days(cal)[-cfg.lookback_days:]
-    summary: dict = {"days": len(days), "new_challengers": []}
-    if len(days) < 10:
-        log.warning("only %d days of history - skipping parameter search", len(days))
-    else:
-        split = int(len(days) * (1 - cfg.test_fraction))
-        train, test = days[:split], days[split:]
-        rng = random.Random(cfg.seed if cfg.seed is not None else today.toordinal())
-        for family in sorted({v.family for v in reg.active()}):
-            for v in search_family(family, reg, store, s, train, test, rng):
-                summary["new_challengers"].append(v.id)
-                log.info("new challenger %s: %s", v.id, v.note)
+    src = source or make_source(s)
+    hub = DataHub(s, src, option_source or make_option_source(s, src))
+    hub.load(cal, {kind(f) for f in families})
+    summary: dict = {"days": {}, "new_challengers": []}
+    rng = random.Random(cfg.seed if cfg.seed is not None else today.toordinal())
+    for family in families:
+        contexts = [c for c in (hub.context(family, d) for d in cal) if c is not None][-cfg.lookback_days:]
+        summary["days"][family] = len(contexts)
+        if len(contexts) < 10:
+            log.warning("%s: only %d days of history - skipping parameter search", family, len(contexts))
+            continue
+        split = int(len(contexts) * (1 - cfg.test_fraction))
+        for v in search_family(family, reg, store, s, contexts[:split], contexts[split:], rng):
+            summary["new_challengers"].append(v.id)
+            log.info("new challenger %s: %s", v.id, v.note)
     store.save_registry(reg)
     store.log({"event": "improve_run", **summary})
     return summary

@@ -37,6 +37,20 @@ class ImproveConfig:
     seed: int | None = None
 
 
+def option_costs() -> CostModel:
+    """Dhan F&O option-buying charges: flat Rs 20/order, STT 0.1% on sell premium,
+    NSE 0.03503% of premium. Slippage is wide because stock options are illiquid."""
+    return CostModel(brokerage_pct=1.0, brokerage_cap=20.0, stt_sell_pct=0.001, exchange_pct=0.0003503,
+                     sebi_pct=0.000001, stamp_buy_pct=0.00003, gst_pct=0.18, slippage_bps=100.0)
+
+
+@dataclass
+class OptionsConfig:
+    universe: list[str] = field(default_factory=list)   # stocks ranked for top gainers/losers
+    index_symbol: str = "NIFTY 50"
+    costs: CostModel = field(default_factory=option_costs)
+
+
 @dataclass
 class Settings:
     data_source: str = "synthetic"
@@ -47,6 +61,7 @@ class Settings:
     risk: RiskConfig = field(default_factory=RiskConfig)
     costs: CostModel = field(default_factory=CostModel)
     improve: ImproveConfig = field(default_factory=ImproveConfig)
+    options: OptionsConfig = field(default_factory=OptionsConfig)
     state_dir: Path = Path("state")
     cache_dir: Path = Path("data_cache")
     reports_dir: Path = Path("reports")
@@ -65,6 +80,7 @@ def load(settings_path: str | Path = "config/settings.yaml", strategies_path: st
         risk=_pick(RiskConfig, raw.pop("risk", None)),
         costs=_pick(CostModel, raw.pop("costs", None)),
         improve=_pick(ImproveConfig, raw.pop("improve", None)),
+        options=_options(raw.pop("options", None)),
         state_dir=Path(paths.get("state_dir", "state")),
         cache_dir=Path(paths.get("cache_dir", "data_cache")),
         reports_dir=Path(paths.get("reports_dir", "reports")),
@@ -73,6 +89,28 @@ def load(settings_path: str | Path = "config/settings.yaml", strategies_path: st
         raise ValueError(f"unknown settings keys: {sorted(raw)}")
     s.strategies = yaml.safe_load(Path(strategies_path).read_text()) or {}
     return s
+
+
+def _options(raw: dict | None) -> OptionsConfig:
+    raw = dict(raw or {})
+    costs = option_costs()
+    for k, v in (raw.pop("costs", None) or {}).items():
+        if not hasattr(costs, k):
+            raise ValueError(f"unknown options.costs key {k!r}")
+        setattr(costs, k, float(v))
+    cfg = _pick(OptionsConfig, raw)
+    cfg.costs = costs
+    return cfg
+
+
+def make_option_source(s: Settings, source):
+    if s.data_source == "dhan":
+        from .options.source import DhanOptionSource
+
+        return DhanOptionSource(source, s.cache_dir, s.interval)
+    from .options.source import SyntheticOptionSource
+
+    return SyntheticOptionSource(source, interval=s.interval)
 
 
 def make_source(s: Settings):

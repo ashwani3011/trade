@@ -67,3 +67,38 @@ sr_reject:
     target_r: 2.0
     vol_mult: 1.2
     confirm_break: true
+
+tg_opt:
+  base_note: "Video rules: top 2 gainers @9:25, strong green 10-min candle, ~5% OTM call at 9:25, stop at option first-candle low (60% if big), exit by 12:00, put on top loser if the call goes red"
+  base:
+    n_stocks: 2
+    min_body_ratio: 0.5
+    max_candle_pct: 2.0
+    otm_pct: 5.0
+    entry_mode: open
+    big_candle_pct: 30.0
+    stop_frac: 0.6
+    target_r: 3.0
+    exit_time: "12:00"
+    sizing: one_lot
+    put_leg: hedge
+  enhanced_note: "NIFTY-aligned, volume-confirmed, gap-capped; near-ATM strike, skip expiry week, enter on option breakout, breakeven trail, risk-capped sizing, puts on top losers as independent mirror trades"
+  enhanced:
+    n_stocks: 3
+    min_body_ratio: 0.6
+    max_candle_pct: 2.0
+    max_gap_pct: 3.0
+    vol_mult: 1.5
+    market_filter: true
+    otm_pct: 1.5
+    min_expiry_days: 5
+    entry_mode: breakout
+    last_entry: "10:30"
+    big_candle_pct: 30.0
+    stop_frac: 0.6
+    target_r: 2.5
+    trail_be_r: 1.0
+    exit_time: "12:00"
+    sizing: risk
+    risk_pct: 5.0
+    put_leg: independent

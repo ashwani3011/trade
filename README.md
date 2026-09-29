@@ -7,19 +7,21 @@ This project paper trades several intraday price-action strategies on real NSE d
 ## How it works
 
 ```
-               ┌────────────── every trading day, 16:05 IST ──────────────┐
- Dhan API ──►  │ 5-min bars ─► replay each bar (no look-ahead) ─► per-variant │ ─► reports/daily/*.md
- (read only)   │ for 15 NIFTY stocks    for every active variant      ledgers │    reports/LEADERBOARD.md
-               └──────────────────────────────────────────────────────────┘
-               ┌────────────── every Saturday ────────────────────────────┐
-               │ 1. promote challengers that beat the champion live         │
-               │ 2. retire variants with drawdown > 30%                     │
-               │ 3. generate candidates: random tweaks + Claude proposals   │ ─► state/improve_log.jsonl
-               │ 4. rank on older 70% of last 60 days, validate on newest   │
-               │    30%, and only then paper trade as a challenger          │
-               └──────────────────────────────────────────────────────────┘
+ every weekday, hourly 09:40-15:40 IST  (python -m algo.cli auto)
+   market open  -> replay today's candles so far, no look-ahead -> reports/live/<date>.md
+                   (closed trades, open positions marked to market, why trades were skipped)
+   after 15:35  -> replay the complete day, record every variant's ledger
+                   -> reports/daily/<date>.md + reports/LEADERBOARD.md
+ every Saturday  (python -m algo.cli improve)
+   1. promote challengers that beat the champion on live paper days
+   2. retire variants with drawdown > 30%
+   3. candidates = random tweaks + Claude proposals -> rank on older 70% of the
+      last 60 days -> must also win on the newest 30% -> paper trade as challenger
 ```
 
+The replay never looks ahead. An hourly live check and a check at 9:26 produce the same trades for the same candles, so "live" paper trading from the 9:15 open is exactly what the final end-of-day record contains.
+
+- **Strategies.** Four stock-intraday price-action families, plus `tg_opt`, the top-gainers option-buying strategy from the video (see [docs/STRATEGIES.md](docs/STRATEGIES.md)).
 - **Variants.** Each strategy family runs as `base` (as taught, never changed, a benchmark), a `champion`, and up to 2 `challengers`. Every variant has its own Rs 20,000 paper account.
 - **Realistic fills.** Entries fill at the next bar's open plus slippage. A gap through the stop fills at the open. If a bar hits both stop and target, the stop counts. Everything is squared off at 15:15. Costs include brokerage, STT, exchange fees, SEBI fees, stamp duty and GST.
 - **Risk rules.** 1% of equity at risk per trade, 5x leverage cap, at most 3 open positions and 6 trades a day, and a 3% daily loss limit.
@@ -39,32 +41,44 @@ python -m algo.cli --source synthetic catch-up --days 30
 python -m algo.cli --source synthetic leaderboard
 ```
 
-### With real Dhan data
+### Dhan credentials: the 24-hour token
+
+Dhan access tokens expire 24 hours after they're generated. The system handles this in `algo/data/dhan_auth.py`:
+
+| Option | Environment variables | Daily effort |
+|---|---|---|
+| **Recommended: auto-generate each morning** | `DHAN_CLIENT_ID`, `DHAN_PIN`, `DHAN_TOTP_SECRET` | none |
+| Paste a token every day | `DHAN_CLIENT_ID`, `DHAN_ACCESS_TOKEN` | update the variable daily |
+
+To set up TOTP, go to web.dhan.co → My Profile → DhanHQ Trading APIs → enable TOTP. Dhan shows a QR code and a text secret. Keep the text secret as `DHAN_TOTP_SECRET`, and scan the QR code with your authenticator app too. The system then generates the same 6-digit code itself and calls Dhan's `generateAccessToken` endpoint once a day. The token is cached in `data_cache/.dhan_token.json`, which is git-ignored and never committed.
+
+> PIN + TOTP secret together give full login access to your Dhan account. Store them only as environment secrets (Claude environment settings or GitHub secrets), never in the repo or in chat.
+
+Where to put them:
+- **This Claude Code session:** cloud environment menu → Edit → environment variables. Add `api.dhan.co`, `auth.dhan.co` and `images.dhan.co` to the allowed network domains in the same place.
+- **GitHub Actions (optional alternative):** repository Settings → Secrets → Actions.
+- **Your own machine:** `export ...` in the shell.
 
 ```bash
-export DHAN_CLIENT_ID=...        # from web.dhan.co -> My Profile -> DhanHQ Trading APIs
-export DHAN_ACCESS_TOKEN=...
-export ANTHROPIC_API_KEY=...     # optional: enables Claude's weekly proposals
-
-python -m algo.cli backtest --family orb --days 60     # check data access + a first look
-python -m algo.cli catch-up --days 5                   # paper trade recent days
-python -m algo.cli improve                             # run the weekly loop now
+python -m algo.cli check                                 # token + data access
+python -m algo.cli backtest --family tg_opt --days 30    # first real-data look
+python -m algo.cli auto                                  # what the scheduler runs
 ```
 
-The Dhan client (`algo/data/dhan.py`) follows the v2 historical-data docs, but it hasn't been run against the live API yet. Run the `backtest` command above first. If it fails, the error message includes Dhan's response.
+The Dhan client follows the official DhanHQ-py SDK's endpoints, but it hasn't been run against the live API from here. `check` is the first thing to run. Errors include Dhan's response text.
 
-### Fully automated (GitHub Actions)
+### Scheduling
 
-`.github/workflows/paper-trade.yml` runs `catch-up` at 16:05 IST on weekdays and `improve` on Saturdays. It commits `state/` and `reports/` back to the repo, so the history is versioned.
-
-1. Add repository secrets: `DHAN_CLIENT_ID`, `DHAN_ACCESS_TOKEN`, and optionally `ANTHROPIC_API_KEY`.
-2. Make sure the workflow is on the default branch. Scheduled workflows only run from the default branch.
-3. Dhan access tokens expire, so renew the `DHAN_ACCESS_TOKEN` secret when it does. If a run fails with a 401, the token has expired.
+- **In the Claude Code session (current setup):** a routine fires every weekday at :40 past each hour from 09:40 to 15:40 IST and runs `auto`. The 15:40 run records the day. A second routine runs `improve` on Saturdays. Results are committed to the branch.
+- **GitHub Actions:** `.github/workflows/paper-trade.yml` is manual-only, so the two schedules don't write to the same branch at once. To switch to Actions, uncomment its `schedule` block and merge it to the default branch.
 
 ## Commands
 
 | Command | What it does |
 |---|---|
+| `auto` | Live snapshot during market hours, final record after 15:35 IST |
+| `live` | Replay today so far into `reports/live/<date>.md` |
+| `check` | Verify Dhan token, equity/index/option data access |
 | `run-day [--date D]` | Paper trade all active variants for one day (idempotent) |
 | `catch-up --days N` | Run any missed days in the last N calendar days |
 | `improve` | Promotion and retirement review, then the parameter search |
@@ -76,14 +90,16 @@ The Dhan client (`algo/data/dhan.py`) follows the v2 historical-data docs, but i
 ```
 algo/
   data/          dhan.py (API client), synthetic.py (offline data), market.py (cache + day loader)
+  data/dhan_auth.py  24h token: cached / env / auto-generated via PIN + TOTP
   strategies/    orb, prev_day_breakout, vwap_pullback, level_rejection (+ base contract)
+  options/       tg_opt: strategy params, option data (listed + expired contracts), engine
   engine.py      bar-replay paper broker
   costs.py       Indian intraday cost model
   improve.py     champion/challenger loop
   llm.py         Claude proposals (structured JSON output)
 config/          settings.yaml (universe, risk, costs, loop), strategies.yaml (base/enhanced params)
 state/           registry.json, ledgers/, trades/, improve_log.jsonl   (written by the bot)
-reports/         daily/*.md, LEADERBOARD.md                             (written by the bot)
+reports/         daily/*.md, live/*.md, LEADERBOARD.md                            (written by the bot)
 ```
 
 ## Before real money

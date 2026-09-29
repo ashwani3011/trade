@@ -2,31 +2,21 @@ from __future__ import annotations
 
 import pandas as pd
 
-from .costs import CostModel
-from .data.market import DayData
-from .engine import RiskConfig, simulate_day, trades_frame
+from .engine import trades_frame
+from .families import simulate
 from .metrics import summarize
-from .strategies import build
 
 
-def run(
-    family: str,
-    params: dict,
-    days: list[DayData],
-    start_equity: float,
-    risk: RiskConfig,
-    costs: CostModel,
-    variant: str = "backtest",
-) -> tuple[pd.DataFrame, pd.Series, dict]:
-    """Compounding multi-day replay. Returns (trades, daily pnl, summary)."""
-    strat = build(family, params)
+def run(family: str, params: dict, contexts: list, start_equity: float, settings, variant: str = "backtest"
+        ) -> tuple[pd.DataFrame, pd.Series, dict]:
+    """Compounding multi-day replay over prepared day contexts. Returns (trades, daily pnl, summary)."""
     equity = start_equity
     all_trades, pnl = [], {}
-    for day in days:
-        trades = simulate_day(strat, day, equity, risk, costs, variant=variant)
+    for ctx in contexts:
+        trades = simulate(family, params, ctx, equity, settings, variant=variant).trades
         day_pnl = sum(t.net for t in trades)
         equity += day_pnl
-        pnl[day.day] = day_pnl
+        pnl[ctx.day] = day_pnl
         all_trades.extend(trades)
     tf = trades_frame(all_trades)
     daily = pd.Series(pnl, dtype=float)

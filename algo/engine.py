@@ -97,7 +97,11 @@ def simulate_day(
     costs: CostModel,
     variant: str = "",
     interval: int = 5,
+    final: bool = True,
+    open_out: list | None = None,
 ) -> list[Trade]:
+    """Replay one day. With final=False (live, partial day) open positions are
+    reported into `open_out` instead of being closed at the last bar."""
     sds = {s: build_symbol_day(s, b, day.daily_hist.get(s)) for s, b in day.bars.items()}
     idx = {s: {int(m): i for i, m in enumerate(sd.minute)} for s, sd in sds.items()}
     grid = sorted({m for d in idx.values() for m in d})
@@ -184,7 +188,16 @@ def simulate_day(
 
     for sym in list(open_pos):  # data ended before square-off
         sd = sds[sym]
-        close(sym, sd.close[-1], int(sd.minute[-1]) + interval, "eod")
+        if final:
+            close(sym, sd.close[-1], int(sd.minute[-1]) + interval, "eod")
+        elif open_out is not None:
+            pos, last = open_pos[sym], float(sd.close[-1])
+            open_out.append({
+                "variant": variant, "symbol": sym, "side": pos.side, "qty": pos.qty, "entry_time": pos.entry_time,
+                "entry": round(pos.entry, 2), "stop": round(pos.stop, 2),
+                "target": round(pos.target, 2) if pos.target else None, "last": round(last, 2),
+                "unrealised": round((last - pos.entry) * pos.side * pos.qty, 2),
+            })
     return trades
 
 

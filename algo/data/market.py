@@ -8,6 +8,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from ..clock import is_final
 from .base import IST, DataSource
 
 log = logging.getLogger(__name__)
@@ -27,6 +28,9 @@ class MarketData:
         self.interval = interval
         self.cache_dir = Path(cache_dir)
         self._daily: dict[str, pd.DataFrame] = {}
+        self._memory: dict[tuple[str, date], pd.DataFrame] = {}
+        self._live_days: set[date] = set()
+        self._errors: list[str] = []
 
     # --------------------------------------------------------------- cache
     def _day_path(self, symbol: str, day: date) -> Path:
@@ -41,20 +45,23 @@ class MarketData:
         return df
 
     def _fill_cache(self, symbol: str, days: list[date]) -> None:
-        missing = [d for d in days if not self._day_path(symbol, d).exists()]
+        """Fetch missing days. Completed days go to disk; today's partial bars stay in memory."""
+        missing = [d for d in days if d in self._live_days or not self._day_path(symbol, d).exists()]
         if not missing:
             return
         try:
             bars = self.source.intraday(symbol, min(missing), max(missing), self.interval)
         except Exception as exc:  # keep going with other symbols
             log.warning("intraday fetch failed for %s: %s", symbol, exc)
+            self._errors.append(f"{symbol}: {exc}")
             return
         by_day = {d: g for d, g in bars.groupby(bars["time"].dt.date)} if not bars.empty else {}
-        today = date.today()
         for d in missing:
             g = by_day.get(d)
-            if g is None and d >= today:
-                continue  # data may still arrive; don't cache an empty day
+            if d in self._live_days:
+                if g is not None:
+                    self._memory[(symbol, d)] = g.reset_index(drop=True)
+                continue
             path = self._day_path(symbol, d)
             path.parent.mkdir(parents=True, exist_ok=True)
             (g if g is not None else bars.iloc[0:0]).to_csv(path, index=False)
@@ -68,19 +75,26 @@ class MarketData:
                 log.warning("daily fetch failed for %s: %s", s, exc)
                 self._daily[s] = pd.DataFrame(columns=["date", "open", "high", "low", "close", "volume"])
 
-    def days(self, days: list[date], history_days: int = 90) -> list[DayData]:
+    def daily_frame(self, symbol: str) -> pd.DataFrame | None:
+        return self._daily.get(symbol)
+
+    def days(self, days: list[date], history_days: int = 90, min_bars: int = 10) -> list[DayData]:
         """Load everything needed to simulate each of `days`. Days with no bars are skipped."""
         if not days:
             return []
+        self._live_days = {d for d in days if not is_final(d)}
         self.load_daily(min(days) - timedelta(days=history_days * 3 // 2), max(days))
+        self._errors = []
         for s in self.symbols:
             self._fill_cache(s, days)
+        if self.symbols and len(self._errors) == len(self.symbols):
+            raise RuntimeError(f"all intraday fetches failed, e.g. {self._errors[0]}")
         out = []
         for d in sorted(days):
             bars = {}
             for s in self.symbols:
-                df = self._read_day(s, d)
-                if df is not None and len(df) >= 10:
+                df = self._memory.get((s, d)) if d in self._live_days else self._read_day(s, d)
+                if df is not None and len(df) >= min_bars:
                     bars[s] = df.reset_index(drop=True)
             if not bars:
                 continue

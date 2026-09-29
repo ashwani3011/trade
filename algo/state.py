@@ -15,7 +15,7 @@ from pathlib import Path
 import pandas as pd
 
 from .engine import Trade, trades_frame
-from .strategies import REGISTRY
+from .families import FAMILIES as REGISTRY
 
 LEDGER_COLS = ["date", "equity_start", "pnl", "equity_end", "trades"]
 

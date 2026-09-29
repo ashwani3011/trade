@@ -32,7 +32,7 @@ def trading_days(start: date, end: date) -> list[date]:
 class SyntheticDataSource:
     def __init__(self, base_price: float = 1000.0):
         self.base_price = base_price
-        self._close_cache: dict[tuple[str, date], float] = {}
+        self._bars_cache: dict[tuple[str, date, int], pd.DataFrame] = {}
 
     def _open_price(self, symbol: str, day: date) -> float:
         # Price path anchored to a symbol-specific drift so days chain smoothly.
@@ -44,6 +44,12 @@ class SyntheticDataSource:
         return float(start_price * np.exp(drift + noise))
 
     def _day_bars(self, symbol: str, day: date, interval: int) -> pd.DataFrame:
+        key = (symbol, day, interval)
+        if key not in self._bars_cache:
+            self._bars_cache[key] = self._make_day_bars(symbol, day, interval)
+        return self._bars_cache[key]
+
+    def _make_day_bars(self, symbol: str, day: date, interval: int) -> pd.DataFrame:
         rng = np.random.default_rng(_seed(symbol, day, interval))
         n = BARS_PER_DAY * 5 // interval
         trend = rng.choice([-1, 0, 0, 1]) * rng.uniform(0.00003, 0.00025)

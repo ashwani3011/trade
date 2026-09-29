@@ -1,10 +1,14 @@
 """Command line entry point.
 
-  python -m algo.cli run-day [--date YYYY-MM-DD]      paper trade all active variants for a day
-  python -m algo.cli catch-up --days N                 paper trade any missed days (oldest first)
-  python -m algo.cli improve                           weekly champion/challenger review + search
-  python -m algo.cli backtest --family orb [--variant orb.v1] --days 60
+  python -m algo.cli auto                 what the scheduler runs: live snapshot during market
+                                          hours, final record + report after 15:35 IST
+  python -m algo.cli live                 replay today so far -> reports/live/<date>.md
+  python -m algo.cli run-day [--date D]   record one completed day for all active variants
+  python -m algo.cli catch-up --days N    record any missed completed days
+  python -m algo.cli improve              weekly champion/challenger review + search
+  python -m algo.cli backtest --family F [--variant V] --days N
   python -m algo.cli leaderboard
+  python -m algo.cli check                verify Dhan credentials and data access
 """
 from __future__ import annotations
 
@@ -12,20 +16,44 @@ import argparse
 import json
 import logging
 from datetime import date, datetime, timedelta
-from zoneinfo import ZoneInfo
 
 from . import report
 from .backtest import run as backtest
-from .config import load, make_source
-from .data.market import MarketData
+from .clock import IST, is_final, market_phase, today_ist
+from .config import load, make_option_source, make_source
 from .data.synthetic import trading_days
+from .families import DataHub, kind
 from .improve import run_improve
-from .runner import run_day
+from .runner import run_day, run_live
 from .state import Store
 
+log = logging.getLogger("algo")
 
-def _today_ist() -> date:
-    return datetime.now(ZoneInfo("Asia/Kolkata")).date()
+
+def catch_up(s, days: int) -> None:
+    today = today_ist()
+    for d in trading_days(today - timedelta(days=days), today):
+        if is_final(d):
+            run_day(s, d)
+
+
+def check(s) -> None:
+    from .data.dhan_auth import get_access_token, token_expiry
+
+    src = make_source(s)
+    if s.data_source == "dhan":
+        token = get_access_token(src.client_id, s.cache_dir)
+        exp = token_expiry(token)
+        print(f"token OK, expires {datetime.fromtimestamp(exp, IST):%Y-%m-%d %H:%M} IST" if exp else "token OK")
+    d = today_ist() - timedelta(days=7)
+    sym = s.universe[0]
+    bars = src.intraday(sym, d, today_ist(), s.interval)
+    print(f"{sym}: {len(bars)} bars, last {bars['time'].iloc[-1] if len(bars) else '-'}")
+    idx = src.intraday(s.options.index_symbol, today_ist() - timedelta(days=3), today_ist(), s.interval)
+    print(f"{s.options.index_symbol}: {len(idx)} bars")
+    if s.data_source == "dhan":
+        c = src.option_contracts(sym)
+        print(f"{sym} listed options: {len(c)} contracts, expiries {sorted(set(c['expiry']))[:3]}")
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -35,7 +63,8 @@ def main(argv: list[str] | None = None) -> None:
     ap.add_argument("--source", choices=["dhan", "synthetic"], help="override data_source")
     ap.add_argument("-v", "--verbose", action="store_true")
     sub = ap.add_subparsers(dest="cmd", required=True)
-
+    sub.add_parser("auto")
+    sub.add_parser("live")
     p = sub.add_parser("run-day")
     p.add_argument("--date", type=date.fromisoformat)
     p = sub.add_parser("catch-up")
@@ -46,6 +75,7 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--variant", help="variant id from the registry (default: family champion)")
     p.add_argument("--days", type=int, default=60)
     sub.add_parser("leaderboard")
+    sub.add_parser("check")
 
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -53,30 +83,42 @@ def main(argv: list[str] | None = None) -> None:
     if args.source:
         s.data_source = args.source
 
-    if args.cmd == "run-day":
-        run_day(s, args.date or _today_ist())
+    if args.cmd == "auto":
+        phase = market_phase()
+        log.info("market phase: %s", phase)
+        if phase == "open":
+            run_live(s, today_ist())
+        else:  # after close, pre-open or weekend: record every completed day not yet recorded
+            catch_up(s, 5)
+    elif args.cmd == "live":
+        run_live(s, today_ist())
+    elif args.cmd == "run-day":
+        run_day(s, args.date or today_ist())
     elif args.cmd == "catch-up":
-        today = _today_ist()
-        for d in trading_days(today - timedelta(days=args.days), today):
-            run_day(s, d)
+        catch_up(s, args.days)
     elif args.cmd == "improve":
-        print(json.dumps(run_improve(s, _today_ist()), indent=2))
+        print(json.dumps(run_improve(s, today_ist()), indent=2))
     elif args.cmd == "backtest":
         store = Store(s.state_dir)
         reg = store.load_registry(s.strategies)
         v = reg.variants[args.variant] if args.variant else reg.champion(args.family)
         if v is None:
             raise SystemExit(f"no champion for {args.family}")
-        today = _today_ist()
-        md = MarketData(make_source(s), s.universe, s.cache_dir, s.interval)
-        days = md.days(trading_days(today - timedelta(days=int(args.days * 1.6) + 5), today - timedelta(days=1)))[-args.days:]
-        trades, _, summary = backtest(v.family, v.params, days, s.capital, s.risk, s.costs, variant=v.id)
+        today = today_ist()
+        cal = trading_days(today - timedelta(days=int(args.days * 1.6) + 5), today - timedelta(days=1))
+        src = make_source(s)
+        hub = DataHub(s, src, make_option_source(s, src))
+        hub.load(cal, {kind(v.family)})
+        ctxs = [c for c in (hub.context(v.family, d) for d in cal) if c is not None][-args.days:]
+        _, _, summary = backtest(v.family, v.params, ctxs, s.capital, s, variant=v.id)
         print(json.dumps({"variant": v.id, "params": v.params, **summary}, indent=2))
     elif args.cmd == "leaderboard":
         store = Store(s.state_dir)
         board = report.leaderboard(store, store.load_registry(s.strategies), s.capital)
-        report.write_leaderboard(s.reports_dir, board, _today_ist())
+        report.write_leaderboard(s.reports_dir, board, today_ist())
         print(board.to_string(index=False) if not board.empty else "no variants yet")
+    elif args.cmd == "check":
+        check(s)
 
 
 if __name__ == "__main__":

@@ -81,6 +81,37 @@ The four starting families are common price-action setups taught by Indian tradi
 
 ---
 
+## 5. Top gainers @ 9:25 option buying (`tg_opt`), from the transcript you shared
+
+**The video's rules, as implemented in `tg_opt.base`:**
+1. At 9:25, take the **top 2 gainers** (NIFTY 50, % change vs yesterday's close). The system calculates this from candles instead of reading the NSE website.
+2. Use a **10-minute** chart. The first candle (9:15–9:25) must be **green** and one of the "three bullish candles". This is modelled as a body of at least 50% of the candle's range. If the first candle is "too big", skip the stock; that's set at more than 2% of price.
+3. Buy an **OTM call about 5% above spot** when the first candle closes, at the 9:25 open.
+4. **Stop** at the low of the option's first 10-minute candle. If that candle is "very big" (range over 30% of its high), the stop goes at the 60% level instead.
+5. Target of 3R (the video's examples claim about 1:3), with a **time exit at 12:00** ("finished by 11:30–12").
+6. **Put leg ("hedge"):** if the call goes into loss, buy an OTM put on the **top loser**.
+7. **One lot** per trade, as in the video.
+
+### Review: what's missing, assumed or out of date
+
+| # | Issue in the video | Why it matters | `tg_opt.v1` (enhanced) |
+|---|---|---|---|
+| 1 | Two hand-picked days (22–23 April) | Hindsight. Losing days aren't shown | Every day is paper traded, including days with no trade |
+| 2 | Exits chosen after the fact ("exit around 7" when the high was 8; "0.80" when the high was 0.90) | The 1:3 results come from hindsight exits | Fixed target, a breakeven trail after +1R, and a time exit |
+| 3 | "Enter at the high of the candle" and "enter at next candle's open" are both said | Contradictory rules | `entry_mode`: base = open, enhanced = breakout above the option's first-candle high |
+| 4 | Stop "a little lower, comes with experience" | Discretionary | Formalised as a parameter the loop can tune |
+| 5 | Far-OTM stock options (5–10% OTM) | Low delta, wide spreads, fast time decay. Cheap premiums make the Rs 40 round-trip brokerage a huge share of the risk (a synthetic test trade lost 14R on costs alone) | Near-ATM strike (1.5% OTM), 1% slippage modelled per fill |
+| 6 | One lot regardless of risk. The WIPRO example risked Rs 3,800 | That's **19% of a Rs 20k account** on one trade | Risk-based sizing: skip any trade whose 1-lot risk exceeds 5% of equity. The report shows every skip |
+| 7 | Lot sizes are out of date. SEBI raised the minimum F&O contract value in Nov 2024, so lots are now much bigger | Many stock options now cost more than Rs 20k per lot | Affordability checked per trade and reported |
+| 8 | The "hedge" is a put on a *different* stock, bought after the call is already losing | That's not a hedge. It's a second directional bet made in reaction to a loss, and it doubles premium at risk | Puts on top losers become an **independent mirror setup** with the same filters, decided at 9:25 |
+| 9 | No market context | Top gainers on a red index day often fade | NIFTY's first 10-min candle must agree |
+| 10 | No volume or gap check | A gap-up with a weak first candle is often exhaustion | First-candle volume at least 1.5x normal, gap at most 3% |
+| 11 | Expiry not considered | Near expiry, OTM premiums decay quickly | Roll to next month if expiry is under 5 days away (stock expiry is now the last Tuesday of the month) |
+
+**Data used:** 5-minute option candles from Dhan. The exact listed contract is used when it still trades. For older days, the system uses Dhan's expired-options endpoint (strike relative to ATM) and follows one fixed strike through the day. Lot sizes for expired months use the current lot size, which is an approximation.
+
+---
+
 ## Adding a strategy from a video
 
 1. Write the rules down exactly: entry trigger, stop, target, time window and filters. Anything vague ("strong move") becomes a parameter with a range.

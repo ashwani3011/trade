@@ -5,7 +5,6 @@ from pathlib import Path
 
 import pandas as pd
 
-from .engine import Trade
 from .metrics import summarize
 from .state import Registry, Store
 
@@ -52,23 +51,46 @@ def _md_table(df: pd.DataFrame) -> str:
     return "\n".join(lines) + "\n"
 
 
-def write_daily(reports_dir: Path, day: date, results: dict[str, list[Trade]], board: pd.DataFrame) -> Path:
+TRADE_COLS = ["variant", "symbol", "side", "qty", "entry_time", "entry", "exit_time", "exit", "exit_reason", "net", "r_multiple", "reason"]
+
+
+def _results_sections(results: dict) -> list[str]:
+    summary = pd.DataFrame([
+        {"variant": k, "closed_trades": len(r.trades), "realised_pnl": round(sum(t.net for t in r.trades), 2),
+         "open_positions": len(r.open_positions),
+         "unrealised_pnl": round(sum(o["unrealised"] for o in r.open_positions), 2)}
+        for k, r in sorted(results.items())
+    ])
+    trades = pd.DataFrame([t.to_dict() for r in results.values() for t in r.trades])
+    if not trades.empty:
+        trades = trades[TRADE_COLS]
+    open_pos = pd.DataFrame([o for r in results.values() for o in r.open_positions])
+    out = ["## Summary\n", _md_table(summary), "\n## Closed trades\n", _md_table(trades)]
+    if not open_pos.empty:
+        out += ["\n## Open positions (marked to last bar)\n", _md_table(open_pos)]
+    notes = [f"- **{k}**: {n}" for k, r in sorted(results.items()) for n in r.notes]
+    if notes:
+        out += ["\n## Strategy notes (why trades were or were not taken)\n", "\n".join(notes) + "\n"]
+    return out
+
+
+def write_daily(reports_dir: Path, day: date, results: dict, board: pd.DataFrame) -> Path:
     out = Path(reports_dir) / "daily" / f"{day.isoformat()}.md"
     out.parent.mkdir(parents=True, exist_ok=True)
-    summary = pd.DataFrame(
-        [{"variant": k, "trades": len(v), "net_pnl": round(sum(t.net for t in v), 2)} for k, v in sorted(results.items())]
-    )
-    trades = pd.DataFrame([t.to_dict() for ts in results.values() for t in ts])
-    if not trades.empty:
-        trades = trades[["variant", "symbol", "side", "qty", "entry_time", "entry", "exit_time", "exit", "exit_reason", "net", "r_multiple"]]
-    text = [
-        f"# Paper trading - {day.isoformat()}\n",
-        "## Day summary\n", _md_table(summary),
-        "\n## Trades\n", _md_table(trades),
-        "\n## Leaderboard (since inception)\n", _md_table(board),
-    ]
+    text = [f"# Paper trading - {day.isoformat()} (final)\n", *_results_sections(results),
+            "\n## Leaderboard (since inception)\n", _md_table(board)]
     out.write_text("\n".join(text))
     write_leaderboard(reports_dir, board, day)
+    return out
+
+
+def write_live(reports_dir: Path, day: date, as_of, results: dict) -> Path:
+    out = Path(reports_dir) / "live" / f"{day.isoformat()}.md"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    text = [f"# Live paper trading - {day.isoformat()} (as of {as_of:%H:%M} IST)\n",
+            "Replay of today's bars so far. Final numbers are recorded after 15:35 IST.\n",
+            *_results_sections(results)]
+    out.write_text("\n".join(text))
     return out
 
 

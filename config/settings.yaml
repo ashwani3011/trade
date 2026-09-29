@@ -43,6 +43,19 @@ costs:                          # Dhan intraday equity - verify at dhan.co/prici
   gst_pct: 0.18
   slippage_bps: 3.0
 
+# Top-gainers option strategy (tg_opt): stocks ranked at 9:25. NIFTY 50 changes a
+# few times a year - symbols Dhan can't resolve are skipped with a warning.
+options:
+  index_symbol: NIFTY 50
+  universe: [ADANIENT, ADANIPORTS, APOLLOHOSP, ASIANPAINT, AXISBANK, BAJAJ-AUTO, BAJFINANCE,
+             BAJAJFINSV, BEL, BHARTIARTL, CIPLA, COALINDIA, DRREDDY, EICHERMOT, ETERNAL, GRASIM,
+             HCLTECH, HDFCBANK, HDFCLIFE, HINDALCO, HINDUNILVR, ICICIBANK, INDIGO, INFY, ITC,
+             JIOFIN, JSWSTEEL, KOTAKBANK, LT, M&M, MARUTI, MAXHEALTH, NESTLEIND, NTPC, ONGC,
+             POWERGRID, RELIANCE, SBILIFE, SBIN, SHRIRAMFIN, SUNPHARMA, TATACONSUM, TMPV,
+             TATASTEEL, TCS, TECHM, TITAN, TRENT, ULTRACEMCO, WIPRO]
+  costs:                        # Dhan F&O: Rs 20/order, STT 0.1% on sell premium
+    slippage_bps: 100           # 1% per fill - OTM stock options have wide spreads
+
 improve:
   lookback_days: 60
   test_fraction: 0.3

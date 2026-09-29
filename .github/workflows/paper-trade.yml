@@ -1,14 +1,16 @@
 name: paper-trade
 
+# Manual-only: the Claude Code session routine is the active scheduler. To use Actions
+# instead, restore the schedule below and merge this file to the default branch.
+#  schedule:
+#    - cron: "10 4-10 * * 1-5"   # hourly 09:40-15:40 IST: auto (live, then final record)
+#    - cron: "50 4 * * 6"        # 10:20 IST Saturday: weekly self-improvement review
 on:
-  schedule:
-    - cron: "35 10 * * 1-5"   # 16:05 IST Mon-Fri: paper trade today (and any missed days)
-    - cron: "30 4 * * 6"      # 10:00 IST Saturday: weekly self-improvement review
   workflow_dispatch:
     inputs:
       command:
-        description: "catch-up | improve | leaderboard"
-        default: catch-up
+        description: "auto | improve | leaderboard"
+        default: auto
 
 permissions:
   contents: write
@@ -24,6 +26,8 @@ jobs:
     env:
       DHAN_CLIENT_ID: ${{ secrets.DHAN_CLIENT_ID }}
       DHAN_ACCESS_TOKEN: ${{ secrets.DHAN_ACCESS_TOKEN }}
+      DHAN_PIN: ${{ secrets.DHAN_PIN }}
+      DHAN_TOTP_SECRET: ${{ secrets.DHAN_TOTP_SECRET }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
     steps:
       - uses: actions/checkout@v4
@@ -43,16 +47,16 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "cmd=${{ inputs.command }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "30 4 * * 6" ]; then
+          elif [ "${{ github.event.schedule }}" = "50 4 * * 6" ]; then
             echo "cmd=improve" >> "$GITHUB_OUTPUT"
           else
-            echo "cmd=catch-up" >> "$GITHUB_OUTPUT"
+            echo "cmd=auto" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Run
         run: |
           case "${{ steps.cmd.outputs.cmd }}" in
-            catch-up) python -m algo.cli catch-up --days 5 ;;
+            auto)     python -m algo.cli auto ;;
             improve)  python -m algo.cli improve && python -m algo.cli leaderboard ;;
             *)        python -m algo.cli leaderboard ;;
           esac
