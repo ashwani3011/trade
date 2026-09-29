@@ -1,0 +1,64 @@
+# "dhan" for real NSE data (needs DHAN_CLIENT_ID / DHAN_ACCESS_TOKEN env vars),
+# "synthetic" for offline testing.
+data_source: dhan
+interval: 5          # minutes per bar
+capital: 20000       # starting paper capital (INR) for EACH variant
+
+# Liquid NIFTY 50 names. Security ids are looked up from Dhan's scrip master;
+# pin any id here if the lookup fails.
+universe:
+  - RELIANCE
+  - HDFCBANK
+  - ICICIBANK
+  - INFY
+  - TCS
+  - SBIN
+  - AXISBANK
+  - KOTAKBANK
+  - LT
+  - ITC
+  - BHARTIARTL
+  - BAJFINANCE
+  - SUNPHARMA
+  - NTPC
+  - TATASTEEL
+security_ids: {}
+
+risk:
+  risk_per_trade_pct: 1.0      # Rs 200 at risk per trade on Rs 20k
+  max_leverage: 5.0            # MIS intraday leverage cap
+  max_positions: 3
+  max_trades_per_day: 6
+  max_trades_per_symbol: 2
+  daily_loss_limit_pct: 3.0
+  squareoff: "15:15"
+
+costs:                          # Dhan intraday equity - verify at dhan.co/pricing
+  brokerage_pct: 0.0003
+  brokerage_cap: 20.0
+  stt_sell_pct: 0.00025
+  exchange_pct: 0.0000297
+  sebi_pct: 0.000001
+  stamp_buy_pct: 0.00003
+  gst_pct: 0.18
+  slippage_bps: 3.0
+
+improve:
+  lookback_days: 60
+  test_fraction: 0.3
+  random_candidates: 16
+  shortlist: 4
+  min_trades: 15
+  max_challengers: 2
+  min_live_days: 10
+  max_live_days: 30
+  retire_drawdown_pct: 30.0
+  require_positive_test: true   # never add a challenger that lost money on held-out days
+  llm_enabled: true             # only used when ANTHROPIC_API_KEY is set
+  llm_model: claude-opus-5-5
+  llm_proposals: 3
+
+paths:
+  state_dir: state
+  cache_dir: data_cache
+  reports_dir: reports

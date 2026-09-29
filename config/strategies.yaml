@@ -1,0 +1,69 @@
+# Each family is paper traded as two variants from day one:
+#   <family>.base  - the rules as they are usually taught (fixed benchmark, never tuned)
+#   <family>.v1    - the enhanced version; becomes the champion that the
+#                    improvement loop tries to beat with challengers.
+# See docs/STRATEGIES.md for the review behind each enhancement.
+
+orb:
+  base_note: "15-min opening range breakout, stop at the other side of the range, 2R target"
+  base:
+    or_bars: 3
+    buffer_pct: 0.0
+    target_r: 2.0
+    stop_mode: range
+  enhanced_note: "ORB + volume confirmation, VWAP alignment, ATR stop, skip oversized ranges"
+  enhanced:
+    or_bars: 3
+    buffer_pct: 0.05
+    target_r: 2.0
+    stop_mode: atr
+    atr_stop: 0.25
+    vol_mult: 1.5
+    vwap_filter: true
+    max_range_atr: 0.6
+
+pdb:
+  base_note: "Buy above yesterday's high / sell below yesterday's low"
+  base:
+    buffer_pct: 0.0
+    target_r: 2.0
+    atr_stop: 0.3
+  enhanced_note: "PDH/PDL break + daily trend filter, volume, skip gap-through days"
+  enhanced:
+    buffer_pct: 0.05
+    target_r: 2.0
+    atr_stop: 0.3
+    vol_mult: 1.5
+    trend_filter: true
+    skip_gap: true
+
+vwap_pb:
+  base_note: "Trend pullback to VWAP, EMA9/21 trend filter"
+  base:
+    touch_pct: 0.1
+    ema_filter: true
+    atr_stop: 0.2
+    target_r: 1.5
+  enhanced_note: "VWAP pullback + minimum trend strength, confirmation candle, volume"
+  enhanced:
+    touch_pct: 0.1
+    min_trend_pct: 0.4
+    ema_filter: true
+    confirm_bar: true
+    atr_stop: 0.2
+    target_r: 2.0
+    vol_mult: 1.0
+
+sr_reject:
+  base_note: "Pin bar rejection at previous day high/low"
+  base:
+    wick_ratio: 0.5
+    atr_stop: 0.1
+    target_r: 2.0
+  enhanced_note: "Rejection + next-bar confirmation and volume"
+  enhanced:
+    wick_ratio: 0.55
+    atr_stop: 0.1
+    target_r: 2.0
+    vol_mult: 1.2
+    confirm_break: true

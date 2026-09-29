@@ -1,0 +1,67 @@
+name: paper-trade
+
+on:
+  schedule:
+    - cron: "35 10 * * 1-5"   # 16:05 IST Mon-Fri: paper trade today (and any missed days)
+    - cron: "30 4 * * 6"      # 10:00 IST Saturday: weekly self-improvement review
+  workflow_dispatch:
+    inputs:
+      command:
+        description: "catch-up | improve | leaderboard"
+        default: catch-up
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paper-trade
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      DHAN_CLIENT_ID: ${{ secrets.DHAN_CLIENT_ID }}
+      DHAN_ACCESS_TOKEN: ${{ secrets.DHAN_ACCESS_TOKEN }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - uses: actions/cache@v4
+        with:
+          path: data_cache
+          key: data-cache-${{ github.run_id }}
+          restore-keys: data-cache-
+
+      - name: Pick command
+        id: cmd
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "cmd=${{ inputs.command }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "30 4 * * 6" ]; then
+            echo "cmd=improve" >> "$GITHUB_OUTPUT"
+          else
+            echo "cmd=catch-up" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run
+        run: |
+          case "${{ steps.cmd.outputs.cmd }}" in
+            catch-up) python -m algo.cli catch-up --days 5 ;;
+            improve)  python -m algo.cli improve && python -m algo.cli leaderboard ;;
+            *)        python -m algo.cli leaderboard ;;
+          esac
+
+      - name: Commit results
+        run: |
+          git config user.name "paper-trade-bot"
+          git config user.email "paper-trade-bot@users.noreply.github.com"
+          git add state reports
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          git commit -m "paper-trade: ${{ steps.cmd.outputs.cmd }} $(TZ=Asia/Kolkata date +%F)"
+          git push
