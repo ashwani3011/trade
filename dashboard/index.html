@@ -1,0 +1,523 @@
+<title>Paper Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a trading-desk console. Status strip, then summary, then detail panels in a 12-col grid that stacks on phones. */
+:root {
+  --bg: #eef1f4; --panel: #ffffff; --ink: #15202b; --muted: #5b6875; --line: #d8dee5; --soft: #f5f7f9;
+  --accent: #1f5fbf; --accent-ink: #ffffff;
+  --gain: #0f7a4a; --loss: #c0392b; --warn: #a86400;
+  --gain-bg: #e3f3ea; --loss-bg: #fbe7e4; --warn-bg: #fdf0da;
+  --f-orb: #1f5fbf; --f-pdb: #8a3ffc; --f-sr_reject: #0f7a73; --f-tg_opt: #b8570d; --f-vwap_pb: #c0306b;
+  --display: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0f151b; --panel: #161e26; --ink: #e4eaf0; --muted: #93a1ae; --line: #2a3643; --soft: #1b252f;
+  --accent: #6ea2ff; --accent-ink: #0b1420;
+  --gain: #3fcf8e; --loss: #ff7a6b; --warn: #f2b35a;
+  --gain-bg: #12352a; --loss-bg: #3d1d1a; --warn-bg: #3a2c14;
+  --f-orb: #6ea2ff; --f-pdb: #b38bff; --f-sr_reject: #3cc7bd; --f-tg_opt: #f0a05a; --f-vwap_pb: #ff7eb0;
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0f151b; --panel: #161e26; --ink: #e4eaf0; --muted: #93a1ae; --line: #2a3643; --soft: #1b252f;
+  --accent: #6ea2ff; --accent-ink: #0b1420;
+  --gain: #3fcf8e; --loss: #ff7a6b; --warn: #f2b35a;
+  --gain-bg: #12352a; --loss-bg: #3d1d1a; --warn-bg: #3a2c14;
+  --f-orb: #6ea2ff; --f-pdb: #b38bff; --f-sr_reject: #3cc7bd; --f-tg_opt: #f0a05a; --f-vwap_pb: #ff7eb0;
+  color-scheme: dark; }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { background: var(--bg); color: var(--ink); font: 14px/1.45 var(--body); }
+.wrap { max-width: 1280px; margin: 0 auto; padding-inline: 16px; padding-block: 16px 40px; display: grid; gap: 16px; }
+h1, h2, h3 { font-family: var(--display); margin: 0; text-wrap: balance; font-weight: 600; letter-spacing: .01em; }
+h1 { font-size: 26px; }
+h2 { font-size: 16px; text-transform: uppercase; letter-spacing: .06em; }
+.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+.pos { color: var(--gain); } .neg { color: var(--loss); }
+
+header.top { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; justify-content: space-between; }
+.brand { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 500; background: var(--soft); border: 1px solid var(--line); white-space: nowrap; }
+.chip .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
+.chip.ok .dot { background: var(--gain); } .chip.bad .dot { background: var(--loss); } .chip.wait .dot { background: var(--warn); }
+.chip.paper { background: var(--warn-bg); color: var(--warn); border-color: transparent; letter-spacing: .06em; text-transform: uppercase; font-size: 11px; }
+
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.kpi { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; min-width: 0; }
+.kpi .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--muted); }
+.kpi .val { font: 500 22px/1.2 var(--mono); font-variant-numeric: tabular-nums; margin-top: 4px; }
+.kpi .sub { font-size: 12px; color: var(--muted); margin-top: 2px; overflow-wrap: anywhere; }
+
+.grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px; min-width: 0; display: grid; gap: 12px; align-content: start; }
+.panel > header { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+.span-8 { grid-column: span 8; } .span-4 { grid-column: span 4; } .span-12 { grid-column: span 12; } .span-6 { grid-column: span 6; }
+
+.scroll { overflow-x: auto; }
+.scroll.tall { max-height: 460px; overflow-y: auto; }
+.scroll.tall th { position: sticky; top: 0; background: var(--panel); z-index: 1; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th { text-align: left; font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); padding: 6px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 7px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td.r, th.r { text-align: right; }
+tbody tr:hover { background: var(--soft); }
+tr.sel { background: var(--soft); box-shadow: inset 3px 0 0 var(--accent); }
+tr.retired td { color: var(--muted); }
+.vname { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 500; }
+.swatch { width: 14px; height: 0; border-top: 3px solid; flex: none; }
+.swatch.dash { border-top-style: dashed; }
+.pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; letter-spacing: .03em; }
+.pill.champion { background: var(--soft); color: var(--accent); border: 1px solid var(--accent); }
+.pill.baseline { background: var(--soft); color: var(--muted); border: 1px solid var(--line); }
+.pill.challenger { background: var(--warn-bg); color: var(--warn); }
+.pill.retired { background: var(--loss-bg); color: var(--loss); }
+.pill.pending { background: var(--warn-bg); color: var(--warn); }
+.pill.done { background: var(--gain-bg); color: var(--gain); }
+.pill.failed, .pill.rejected { background: var(--loss-bg); color: var(--loss); }
+
+button, select, input, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; border-radius: 6px; border: 1px solid var(--line); background: var(--panel); padding: 5px 10px; font-size: 12px; font-weight: 500; }
+button:hover { border-color: var(--accent); color: var(--accent); }
+button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+button.primary:hover { filter: brightness(1.08); color: var(--accent-ink); }
+button.danger { color: var(--loss); }
+button.danger:hover { border-color: var(--loss); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+button:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible, .vname:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+select, input, textarea { background: var(--soft); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; width: 100%; min-width: 0; }
+label.f { display: grid; gap: 4px; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.row-actions { display: flex; gap: 6px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.seg button { border: 0; border-radius: 0; }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+
+svg text { fill: var(--muted); font: 11px var(--mono); }
+svg .grid-l { stroke: var(--line); stroke-width: 1; }
+svg .zero { stroke: var(--muted); stroke-dasharray: 2 3; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.legend span.off { opacity: .35; }
+
+.heat td.cell { text-align: right; font-family: var(--mono); font-size: 12px; min-width: 64px; }
+
+.gates { display: grid; gap: 10px; }
+.gate { display: grid; gap: 4px; }
+.gate .top { display: flex; justify-content: space-between; font-size: 12px; }
+.bar { height: 6px; border-radius: 3px; background: var(--soft); border: 1px solid var(--line); overflow: hidden; }
+.bar > i { display: block; height: 100%; background: var(--accent); }
+.bar.met > i { background: var(--gain); }
+.params { display: flex; flex-wrap: wrap; gap: 6px; }
+.params code { font: 12px var(--mono); background: var(--soft); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; }
+
+.qform { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.qform .full { grid-column: 1 / -1; }
+.confirm { border: 1px solid var(--loss); background: var(--loss-bg); border-radius: 6px; padding: 10px; display: grid; gap: 8px; font-size: 13px; }
+.notice { font-size: 12px; padding: 8px 10px; border-radius: 6px; background: var(--soft); border: 1px solid var(--line); }
+.notice.err { background: var(--loss-bg); border-color: transparent; color: var(--loss); }
+.notice.ok { background: var(--gain-bg); border-color: transparent; color: var(--gain); }
+.qlist { display: grid; gap: 8px; max-height: 420px; overflow-y: auto; }
+.qitem { border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; display: grid; gap: 3px; font-size: 13px; }
+.qitem .h { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.qitem .res { font-size: 12px; color: var(--muted); white-space: pre-wrap; overflow-wrap: anywhere; }
+.empty { color: var(--muted); font-size: 13px; padding: 8px 0; }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.filters select { width: auto; }
+
+@media (max-width: 960px) { .span-8, .span-4, .span-6 { grid-column: span 12; } .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .qform { grid-template-columns: minmax(0, 1fr); } h1 { font-size: 22px; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <h1>Paper Desk</h1>
+      <span class="chip paper">Paper trading only</span>
+    </div>
+    <div class="chips" id="status"><span class="chip">Loading snapshot…</span></div>
+  </header>
+
+  <section class="kpis" id="kpis" aria-label="Summary"></section>
+
+  <div class="grid">
+    <section class="panel span-8">
+      <header>
+        <h2>Equity curves</h2>
+        <div class="seg" role="group" aria-label="Chart mode">
+          <button id="m-eq" aria-pressed="true">Equity ₹</button>
+          <button id="m-ret" aria-pressed="false">Return %</button>
+        </div>
+      </header>
+      <div id="chart"></div>
+      <div class="legend" id="legend"></div>
+      <div class="muted" style="font-size:12px">Solid line: enhanced variant (v1 and challengers). Dashed line: textbook baseline. Colour is the strategy family.</div>
+    </section>
+
+    <section class="panel span-4" id="detail"></section>
+
+    <section class="panel span-12">
+      <header>
+        <h2>Leaderboard</h2>
+        <span class="muted" style="font-size:12px">Click a variant to inspect it. Actions are queued for the desk and run on paper only.</span>
+      </header>
+      <div class="scroll"><table id="board"></table></div>
+    </section>
+
+
+
+    <section class="panel span-8">
+      <header><h2>Daily net P&amp;L</h2><span class="muted" style="font-size:12px">₹ per variant per session, after costs</span></header>
+      <div class="scroll"><table class="heat" id="heat"></table></div>
+    </section>
+    <section class="panel span-4">
+      <header><h2>Desk actions</h2><button class="primary" id="process" title="Wake the desk session to run pending actions now">Process now</button></header>
+      <div id="q-note" class="notice">Actions you queue here are picked up on the desk's next run (hourly on weekdays 10:05 to 15:05, plus 09:05 and 15:44 IST). Press <b>Process now</b> to run them straight away.</div>
+      <form class="qform" id="qform">
+        <label class="f full">Action
+          <select id="q-type">
+            <option value="backtest">Backtest a variant</option>
+            <option value="retire">Retire a variant</option>
+            <option value="reactivate">Reactivate a variant</option>
+            <option value="improve">Run the improvement review now</option>
+            <option value="supervise">Start trader / record completed days</option>
+            <option value="stop_live">Stop the live paper trader</option>
+            <option value="check">Re-check Dhan credentials and data</option>
+            <option value="note">Ask the desk a question</option>
+          </select>
+        </label>
+        <label class="f" id="w-var">Variant <select id="q-var"></select></label>
+        <label class="f" id="w-days">Days <input id="q-days" type="number" min="5" max="250" value="60"></label>
+        <label class="f full" id="w-note">Note <textarea id="q-text" rows="2" placeholder="Reason, or your question for the desk"></textarea></label>
+        <div class="full confirm" id="q-confirm" hidden></div>
+        <div class="full"><button class="primary" type="submit" id="q-submit">Queue action</button></div>
+      </form>
+      <div id="q-msg" hidden></div>
+      <h3 style="font-size:13px;text-transform:uppercase;letter-spacing:.06em" class="muted">Queue</h3>
+      <div class="qlist" id="qlist"><div class="empty">Connecting to the action queue…</div></div>
+    </section>
+    <section class="panel span-12">
+      <header>
+        <h2>Closed trades</h2>
+        <div class="filters">
+          <select id="f-var" aria-label="Filter by variant"><option value="">All variants</option></select>
+          <select id="f-day" aria-label="Filter by date"><option value="">All dates</option></select>
+        </div>
+      </header>
+      <div class="scroll tall"><table id="trades"></table></div>
+    </section>
+
+    <section class="panel span-12" id="live-panel">
+      <header><h2>Today's live decisions</h2><span class="muted" id="live-sub" style="font-size:12px"></span></header>
+      <div class="scroll"><table id="live"></table></div>
+    </section>
+  </div>
+</div>
+
+<script>
+(() => {
+  const TRIGGER_ID = "trig_015yCmMAnvGw2C7s2QcWiH3E";
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const inr = (n, d = 0) => (n < 0 ? "−" : "") + "₹" + Math.abs(n).toLocaleString("en-IN", { minimumFractionDigits: d, maximumFractionDigits: d });
+  const signed = (n, d = 0) => (n > 0 ? "+" : n < 0 ? "−" : "") + "₹" + Math.abs(n).toLocaleString("en-IN", { minimumFractionDigits: d, maximumFractionDigits: d });
+  const cls = (n) => (n > 0 ? "pos" : n < 0 ? "neg" : "");
+  const famColor = (f) => `var(--f-${f})`;
+  const GATES = { days: 40, trades: 30, profit_factor: 1.3, max_dd_pct: 10 };
+
+  let D = null, selected = null, mode = "eq";
+  const hidden = new Set();
+  let db = null, user = null, canWrite = true, pendingConfirm = false;
+
+  // ---------------------------------------------------------------- data
+  fetch("data.json", { cache: "no-store" }).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then((d) => { D = d; const best = D.leaderboard.find((r) => r.status === "active"); selected = best ? best.variant : null; renderAll(); })
+    .catch((e) => { $("status").innerHTML = `<span class="chip bad"><span class="dot"></span>Snapshot failed to load (${esc(e.message)})</span>`; });
+
+  const vinfo = (id) => D.variants.find((v) => v.id === id) || {};
+  const lb = (id) => D.leaderboard.find((r) => r.variant === id) || {};
+  const isBase = (id) => vinfo(id).role === "baseline";
+
+  function renderAll() { renderStatus(); renderKpis(); renderChart(); renderDetail(); renderBoard(); renderHeat(); renderTradeFilters(); renderTrades(); renderLive(); fillVariantSelect(); }
+
+  function renderStatus() {
+    const phase = { pre: "Pre-open", open: "Market open", post: "After close", closed: "Market closed", weekend: "Weekend" }[D.market_phase] || D.market_phase;
+    const gen = new Date(D.generated_at);
+    const t = gen.toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", hour12: false });
+    $("status").innerHTML = [
+      `<span class="chip ${D.market_phase === "open" ? "ok" : "wait"}"><span class="dot"></span>${esc(phase)}</span>`,
+      `<span class="chip ${D.trader_running ? "ok" : (D.market_phase === "open" ? "bad" : "")}"><span class="dot"></span>Trader ${D.trader_running ? "running" : "idle"}</span>`,
+      `<span class="chip"><span class="dot"></span>Snapshot ${esc(t)} IST</span>`,
+    ].join("");
+  }
+
+  function renderKpis() {
+    const act = D.leaderboard.filter((r) => r.status === "active");
+    const best = act[0], worst = act[act.length - 1];
+    const net = act.reduce((a, r) => a + r.net_pnl, 0);
+    const trades = act.reduce((a, r) => a + r.trades, 0);
+    const days = Math.max(0, ...act.map((r) => r.days));
+    const ready = act.filter((r) => r.ready_for_real_money).length;
+    $("kpis").innerHTML = [
+      ["Desk net P&L", `<span class="${cls(net)}">${signed(net)}</span>`, `${act.length} active variants × ${inr(D.capital)} each`],
+      ["Leader", best ? `<span class="${cls(best.net_pnl)}">${esc(best.variant)}</span>` : "–", best ? `${signed(best.net_pnl, 2)} · PF ${best.profit_factor}` : ""],
+      ["Trades · sessions", `${trades} · ${days}`, worst ? `Weakest: ${esc(worst.variant)} ${signed(worst.net_pnl)}` : ""],
+      ["Ready for real money", `${ready} / ${act.length}`, `Needs ${GATES.days}+ days, ${GATES.trades}+ trades, PF ≥ ${GATES.profit_factor}, DD ≤ ${GATES.max_dd_pct}%`],
+    ].map(([l, v, s]) => `<div class="kpi"><div class="lbl">${l}</div><div class="val">${v}</div><div class="sub">${s}</div></div>`).join("");
+  }
+
+  // ---------------------------------------------------------------- chart
+  function series() {
+    return D.variants.map((v) => {
+      const rows = D.equity[v.id] || [];
+      const pts = [{ date: "start", y: mode === "eq" ? D.capital : 0 }].concat(rows.map((r) => ({ date: r.date, y: mode === "eq" ? r.equity_end : (r.equity_end / D.capital - 1) * 100 })));
+      return { id: v.id, family: v.family, base: v.role === "baseline", retired: v.status !== "active", pts };
+    });
+  }
+
+  function renderChart() {
+    const S = series();
+    const dates = ["start", ...[...new Set(Object.values(D.equity).flat().map((r) => r.date))].sort()];
+    const W = 760, H = 300, L = 64, R = 16, T = 12, B = 28;
+    const vis = S.filter((s) => !hidden.has(s.id));
+    const ys = vis.flatMap((s) => s.pts.map((p) => p.y));
+    const base = mode === "eq" ? D.capital : 0;
+    let lo = Math.min(base, ...ys), hi = Math.max(base, ...ys);
+    const pad = (hi - lo) * 0.08 || (mode === "eq" ? 100 : 0.5); lo -= pad; hi += pad;
+    const x = (d) => L + (dates.indexOf(d) / Math.max(1, dates.length - 1)) * (W - L - R);
+    const y = (v) => T + (1 - (v - lo) / (hi - lo)) * (H - T - B);
+    const step = niceStep((hi - lo) / 5);
+    let g = "";
+    for (let v = Math.ceil(lo / step) * step; v <= hi; v += step) {
+      g += `<line class="grid-l" x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${mode === "eq" ? (v / 1000).toFixed(step < 1000 ? 1 : 0) + "k" : v.toFixed(step < 1 ? 1 : 0) + "%"}</text>`;
+    }
+    g += `<line class="zero" x1="${L}" x2="${W - R}" y1="${y(base)}" y2="${y(base)}"/>`;
+    dates.forEach((d) => { g += `<text x="${x(d)}" y="${H - 8}" text-anchor="middle">${d === "start" ? "start" : d.slice(5)}</text>`; });
+    let lines = "";
+    const order = vis.slice().sort((a, b) => (a.id === selected) - (b.id === selected));
+    order.forEach((s) => {
+      const sel = s.id === selected;
+      const pth = s.pts.map((p, i) => `${i ? "L" : "M"}${x(p.date).toFixed(1)},${y(p.y).toFixed(1)}`).join("");
+      const last = s.pts[s.pts.length - 1];
+      lines += `<path d="${pth}" fill="none" stroke="${famColor(s.family)}" stroke-width="${sel ? 3 : 1.6}" ${s.base ? 'stroke-dasharray="5 4"' : ""} opacity="${selected && !sel ? 0.45 : 1}" style="cursor:pointer" data-v="${s.id}"><title>${s.id}</title></path>`;
+      lines += `<circle cx="${x(last.date)}" cy="${y(last.y)}" r="${sel ? 4.5 : 2.5}" fill="${famColor(s.family)}" data-v="${s.id}"/>`;
+      if (sel) lines += `<text x="${Math.min(x(last.date) - 6, W - R - 4)}" y="${y(last.y) - 9}" text-anchor="end" style="fill:var(--ink);font-weight:500">${s.id} ${mode === "eq" ? inr(last.y) : last.y.toFixed(2) + "%"}</text>`;
+    });
+    $("chart").innerHTML = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Equity curve per variant">${g}${lines}</svg>`;
+    $("chart").querySelectorAll("[data-v]").forEach((el) => el.addEventListener("click", () => select(el.dataset.v)));
+    $("legend").innerHTML = S.map((s) => `<span class="${hidden.has(s.id) ? "off" : ""}" data-t="${s.id}" role="button" tabindex="0" title="Show or hide"><i class="swatch ${s.base ? "dash" : ""}" style="border-color:${famColor(s.family)}"></i>${esc(s.id)}</span>`).join("");
+    $("legend").querySelectorAll("[data-t]").forEach((el) => {
+      const t = () => { hidden.has(el.dataset.t) ? hidden.delete(el.dataset.t) : hidden.add(el.dataset.t); renderChart(); };
+      el.addEventListener("click", t); el.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); t(); } });
+    });
+  }
+  function niceStep(raw) { const p = Math.pow(10, Math.floor(Math.log10(raw || 1))); const m = raw / p; return (m <= 1.5 ? 1 : m <= 3 ? 2 : m <= 7 ? 5 : 10) * p; }
+  $("m-eq").onclick = () => { mode = "eq"; $("m-eq").setAttribute("aria-pressed", "true"); $("m-ret").setAttribute("aria-pressed", "false"); renderChart(); };
+  $("m-ret").onclick = () => { mode = "ret"; $("m-ret").setAttribute("aria-pressed", "true"); $("m-eq").setAttribute("aria-pressed", "false"); renderChart(); };
+
+  function select(id) { selected = id; renderChart(); renderDetail(); renderBoard(); }
+
+  // ---------------------------------------------------------------- detail
+  function renderDetail() {
+    const v = vinfo(selected), r = lb(selected);
+    if (!v.id) { $("detail").innerHTML = `<h2>Variant</h2><div class="empty">Select a variant.</div>`; return; }
+    const gate = (label, val, target, fmt, invert) => {
+      const pct = invert ? (val <= target ? 100 : Math.max(0, 100 - (val - target) / target * 100)) : Math.min(100, (val / target) * 100);
+      const met = invert ? val <= target : val >= target;
+      return `<div class="gate"><div class="top"><span>${label}</span><span class="num">${fmt(val)} / ${fmt(target)}</span></div><div class="bar ${met ? "met" : ""}"><i style="width:${pct.toFixed(0)}%"></i></div></div>`;
+    };
+    const params = Object.entries(v.params || {}).map(([k, x]) => `<code>${esc(k)}=${esc(x)}</code>`).join("");
+    $("detail").innerHTML = `
+      <header><h2>${esc(v.id)}</h2><span class="pill ${v.status === "active" ? v.role : "retired"}">${v.status === "active" ? esc(v.role) : "retired"}</span></header>
+      <div>${esc(v.note)}</div>
+      ${v.retired_reason ? `<div class="notice err">Retired: ${esc(v.retired_reason)}</div>` : ""}
+      <div class="kpis" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+        <div class="kpi"><div class="lbl">Net P&L</div><div class="val ${cls(r.net_pnl)}">${signed(r.net_pnl || 0, 2)}</div><div class="sub">${(r.return_pct ?? 0).toFixed(2)}% on ${inr(D.capital)}</div></div>
+        <div class="kpi"><div class="lbl">Win rate</div><div class="val">${r.win_rate ?? 0}%</div><div class="sub">avg R ${r.avg_r ?? 0} · costs ${inr(r.costs || 0)}</div></div>
+      </div>
+      <h3 style="font-size:13px;text-transform:uppercase;letter-spacing:.06em" class="muted">Graduation gates</h3>
+      <div class="gates">
+        ${gate("Paper sessions", r.days || 0, GATES.days, (n) => n)}
+        ${gate("Closed trades", r.trades || 0, GATES.trades, (n) => n)}
+        ${gate("Profit factor", r.profit_factor || 0, GATES.profit_factor, (n) => Number(n).toFixed(2))}
+        ${gate("Max drawdown", r.max_dd_pct || 0, GATES.max_dd_pct, (n) => Number(n).toFixed(2) + "%", true)}
+      </div>
+      <div class="params">${params}</div>
+      <div class="row-actions">
+        <button data-a="backtest">Backtest 60 days</button>
+        ${v.status === "active" ? `<button class="danger" data-a="retire">Retire…</button>` : `<button data-a="reactivate">Reactivate</button>`}
+      </div>`;
+    $("detail").querySelectorAll("[data-a]").forEach((b) => b.addEventListener("click", () => prefill(b.dataset.a, v.id)));
+  }
+
+  // ---------------------------------------------------------------- leaderboard
+  function renderBoard() {
+    const cols = [["variant", "Variant"], ["role", "Role"], ["days", "Days", 1], ["trades", "Trades", 1], ["net_pnl", "Net P&L", 1], ["return_pct", "Return", 1], ["win_rate", "Win %", 1], ["profit_factor", "PF", 1], ["avg_r", "Avg R", 1], ["max_dd_pct", "Max DD", 1], ["sharpe", "Sharpe", 1], ["equity", "Equity", 1]];
+    const head = `<thead><tr>${cols.map(([, l, r]) => `<th class="${r ? "r" : ""}">${l}</th>`).join("")}<th>Actions</th></tr></thead>`;
+    const body = D.leaderboard.map((r) => {
+      const v = vinfo(r.variant);
+      const cell = (k) => {
+        const x = r[k];
+        if (k === "variant") return `<td><span class="vname" tabindex="0" data-s="${esc(x)}"><i class="swatch ${isBase(x) ? "dash" : ""}" style="border-color:${famColor(v.family)}"></i>${esc(x)}</span></td>`;
+        if (k === "role") return `<td><span class="pill ${r.status === "active" ? esc(x) : "retired"}">${r.status === "active" ? esc(x) : "retired"}</span></td>`;
+        if (k === "net_pnl") return `<td class="r num ${cls(x)}">${signed(x, 2)}</td>`;
+        if (k === "return_pct" || k === "max_dd_pct") return `<td class="r num ${k === "return_pct" ? cls(x) : ""}">${Number(x).toFixed(2)}%</td>`;
+        if (k === "equity") return `<td class="r num">${inr(x)}</td>`;
+        return `<td class="r num">${esc(x)}</td>`;
+      };
+      const acts = `<td><div class="row-actions"><button data-a="backtest" data-v="${esc(r.variant)}">Backtest</button>${r.status === "active" ? `<button class="danger" data-a="retire" data-v="${esc(r.variant)}">Retire…</button>` : `<button data-a="reactivate" data-v="${esc(r.variant)}">Reactivate</button>`}</div></td>`;
+      return `<tr class="${r.variant === selected ? "sel" : ""} ${r.status !== "active" ? "retired" : ""}">${cols.map(([k]) => cell(k)).join("")}${acts}</tr>`;
+    }).join("");
+    $("board").innerHTML = head + `<tbody>${body}</tbody>`;
+    $("board").querySelectorAll("[data-s]").forEach((el) => { el.onclick = () => select(el.dataset.s); el.onkeydown = (e) => { if (e.key === "Enter") select(el.dataset.s); }; });
+    $("board").querySelectorAll("button[data-a]").forEach((b) => (b.onclick = () => prefill(b.dataset.a, b.dataset.v)));
+  }
+
+  // ---------------------------------------------------------------- heatmap
+  function renderHeat() {
+    const dates = [...new Set(Object.values(D.equity).flat().map((r) => r.date))].sort();
+    const max = Math.max(1, ...Object.values(D.equity).flat().map((r) => Math.abs(r.pnl)));
+    const head = `<thead><tr><th>Variant</th>${dates.map((d) => `<th class="r">${d.slice(5)}</th>`).join("")}<th class="r">Total</th></tr></thead>`;
+    const body = D.leaderboard.map((r) => {
+      const rows = Object.fromEntries((D.equity[r.variant] || []).map((x) => [x.date, x]));
+      const cells = dates.map((d) => {
+        const x = rows[d];
+        if (!x) return `<td class="cell muted">–</td>`;
+        const a = (Math.abs(x.pnl) / max) * 0.85 + 0.08;
+        const col = x.pnl >= 0 ? "var(--gain)" : "var(--loss)";
+        const bg = x.pnl === 0 ? "transparent" : `color-mix(in srgb, ${col} ${Math.round(a * 45)}%, transparent)`;
+        return `<td class="cell" style="background:${bg}" title="${esc(r.variant)} ${d}: ${x.trades} trades">${x.pnl === 0 ? "0" : signed(x.pnl)}</td>`;
+      }).join("");
+      return `<tr><td><span class="vname" data-s="${esc(r.variant)}"><i class="swatch ${isBase(r.variant) ? "dash" : ""}" style="border-color:${famColor(vinfo(r.variant).family)}"></i>${esc(r.variant)}</span></td>${cells}<td class="r num ${cls(r.net_pnl)}">${signed(r.net_pnl)}</td></tr>`;
+    }).join("");
+    $("heat").innerHTML = head + `<tbody>${body}</tbody>`;
+    $("heat").querySelectorAll("[data-s]").forEach((el) => (el.onclick = () => select(el.dataset.s)));
+  }
+
+  // ---------------------------------------------------------------- trades
+  function renderTradeFilters() {
+    $("f-var").innerHTML = `<option value="">All variants</option>` + D.variants.map((v) => `<option>${esc(v.id)}</option>`).join("");
+    $("f-day").innerHTML = `<option value="">All dates</option>` + [...new Set(D.trades.map((t) => t.date))].sort().reverse().map((d) => `<option>${d}</option>`).join("");
+    $("f-var").onchange = $("f-day").onchange = renderTrades;
+  }
+  function renderTrades() {
+    const fv = $("f-var").value, fd = $("f-day").value;
+    const rows = D.trades.filter((t) => (!fv || t.variant === fv) && (!fd || t.date === fd)).slice().reverse();
+    const head = `<thead><tr><th>Date</th><th>Variant</th><th>Symbol</th><th>Side</th><th class="r">Qty</th><th>In</th><th class="r">Entry</th><th>Out</th><th class="r">Exit</th><th>Exit reason</th><th class="r">Net</th><th class="r">R</th><th>Signal</th></tr></thead>`;
+    const body = rows.map((t) => `<tr><td class="num">${t.date.slice(5)}</td><td>${esc(t.variant)}</td><td>${esc(t.symbol)}</td><td>${t.side > 0 ? "Long" : "Short"}</td><td class="r num">${t.qty}</td><td class="num">${esc(t.entry_time)}</td><td class="r num">${Number(t.entry).toFixed(2)}</td><td class="num">${esc(t.exit_time)}</td><td class="r num">${Number(t.exit).toFixed(2)}</td><td>${esc(t.exit_reason)}</td><td class="r num ${cls(t.net)}">${signed(t.net, 2)}</td><td class="r num ${cls(t.r_multiple)}">${Number(t.r_multiple).toFixed(2)}</td><td class="muted">${esc(t.reason)}</td></tr>`).join("");
+    $("trades").innerHTML = head + `<tbody>${body || `<tr><td colspan="13" class="empty">No trades match this filter.</td></tr>`}</tbody>`;
+  }
+
+  // ---------------------------------------------------------------- live
+  function renderLive() {
+    const ev = D.live_today || [];
+    $("live-sub").textContent = `${D.today} · ${ev.length} decisions`;
+    if (!ev.length) { $("live").innerHTML = `<tbody><tr><td class="empty">No live decisions recorded for ${esc(D.today)} yet. They appear here once the trader has run during market hours and the snapshot is refreshed.</td></tr></tbody>`; return; }
+    const head = `<thead><tr><th>Decided at</th><th>Bar</th><th>Type</th><th>Variant</th><th>Symbol</th><th class="r">Price</th><th class="r">Net</th><th>Reason</th></tr></thead>`;
+    const body = ev.slice().reverse().map((e) => `<tr><td class="num">${esc(String(e.decided_at || "").slice(11, 19))}</td><td class="num">${esc(e.bar_time || "")}</td><td><span class="pill ${e.type === "EXIT" ? (e.net >= 0 ? "done" : "failed") : e.type === "NOTE" ? "baseline" : "pending"}">${esc(e.type)}</span></td><td>${esc(e.variant)}</td><td>${esc(e.symbol || "")}</td><td class="r num">${e.price != null ? Number(e.price).toFixed(2) : ""}</td><td class="r num ${cls(e.net)}">${e.net != null ? signed(e.net, 2) : ""}</td><td class="muted">${esc(e.reason || "")}</td></tr>`).join("");
+    $("live").innerHTML = head + `<tbody>${body}</tbody>`;
+  }
+
+  // ---------------------------------------------------------------- actions
+  const NEEDS = { backtest: ["var", "days"], retire: ["var", "note"], reactivate: ["var"], improve: [], supervise: [], stop_live: ["note"], check: [], note: ["note"] };
+  const LABEL = { backtest: "Backtest", retire: "Retire", reactivate: "Reactivate", improve: "Improvement review", supervise: "Start trader / record days", stop_live: "Stop live trader", check: "Dhan check", note: "Question" };
+  function fillVariantSelect() { $("q-var").innerHTML = D.variants.map((v) => `<option value="${esc(v.id)}">${esc(v.id)}${v.status !== "active" ? " (retired)" : ""}</option>`).join(""); if (selected) $("q-var").value = selected; }
+  function syncForm() {
+    const t = $("q-type").value, n = NEEDS[t];
+    $("w-var").hidden = !n.includes("var"); $("w-days").hidden = !n.includes("days"); $("w-note").hidden = !n.includes("note");
+    $("q-confirm").hidden = true; pendingConfirm = false; $("q-submit").textContent = "Queue action";
+  }
+  $("q-type").onchange = syncForm; syncForm();
+  function prefill(type, id) {
+    $("q-type").value = type; syncForm(); if (id) $("q-var").value = id;
+    $("qform").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
+    (type === "retire" ? $("q-text") : $("q-submit")).focus();
+  }
+  function msg(text, kind) { const m = $("q-msg"); m.className = "notice " + (kind || ""); m.textContent = text; m.hidden = !text; }
+
+  $("qform").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (!db) { msg("The action queue isn't available in this view. Open the dashboard on claude.ai while signed in.", "err"); return; }
+    const type = $("q-type").value, n = NEEDS[type];
+    const doc = { type, status: "pending", created_at: new Date().toISOString() };
+    if (n.includes("var")) doc.variant = $("q-var").value;
+    if (n.includes("days")) doc.days = Math.max(5, Math.min(250, parseInt($("q-days").value, 10) || 60));
+    if (n.includes("note")) doc.note = $("q-text").value.trim().slice(0, 2000);
+    if (type === "note" && !doc.note) { msg("Write your question first.", "err"); return; }
+    if ((type === "retire" || type === "stop_live") && !pendingConfirm) {
+      pendingConfirm = true;
+      $("q-confirm").hidden = false;
+      $("q-confirm").textContent = type === "retire"
+        ? `Retire ${doc.variant}? It stops paper trading from the next session and leaves the leaderboard's active list. Its history is kept and you can reactivate it later.`
+        : "Stop the live paper trader? No new paper decisions will be made until it's started again. Today's session won't be recorded if it stops before the close.";
+      $("q-submit").textContent = type === "retire" ? `Confirm: retire ${doc.variant}` : "Confirm: stop trader";
+      return;
+    }
+    try {
+      if (user) { const id = await user.id(); if (id) doc.by = id; }
+      $("q-submit").disabled = true;
+      await db.collection("actions").add(doc);
+      msg(`${LABEL[type]} queued. It runs on the desk's next run, or press Process now.`, "ok");
+      $("q-text").value = ""; syncForm();
+    } catch (err) {
+      if (err && err.code === "invalid_argument") { canWrite = false; msg("You have view-only access, so you can't queue actions.", "err"); }
+      else if (err && err.code === "quota_exceeded") msg("The action queue is full. Ask the desk to clear old actions.", "err");
+      else msg(`Couldn't queue the action (${err && err.code || "error"}). Try again in a moment.`, "err");
+    } finally { $("q-submit").disabled = !canWrite; }
+  });
+
+  function renderQueue(snap) {
+    const items = snap.docs.map((d) => ({ id: d.id, ...d.data() })).sort((a, b) => String(b.created_at).localeCompare(String(a.created_at)));
+    if (!items.length) { $("qlist").innerHTML = `<div class="empty">No actions yet. Queue one above; the desk records its result here.</div>`; return; }
+    $("qlist").innerHTML = items.slice(0, 50).map((a) => {
+      const when = a.created_at ? new Date(a.created_at).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", hour12: false }) : "";
+      const what = [LABEL[a.type] || a.type, a.variant, a.days ? `${a.days} days` : ""].filter(Boolean).join(" · ");
+      return `<div class="qitem"><div class="h"><b>${esc(what)}</b><span class="pill ${esc(a.status)}">${esc(a.status)}</span></div>
+        <div class="muted" style="font-size:12px">${esc(when)} IST${a.note ? " · " + esc(a.note) : ""}</div>
+        ${a.result ? `<div class="res">${esc(a.result)}</div>` : ""}
+        ${a.status === "pending" && canWrite ? `<div><button data-cancel="${esc(a.id)}">Cancel</button></div>` : ""}</div>`;
+    }).join("");
+    $("qlist").querySelectorAll("[data-cancel]").forEach((b) => (b.onclick = async () => {
+      b.disabled = true;
+      try { await db.doc("actions/" + b.dataset.cancel).delete(); } catch (err) { b.disabled = false; msg(`Couldn't cancel (${err && err.code || "error"}).`, "err"); }
+    }));
+  }
+
+  (async () => {
+    const c = window.claude;
+    if (!c || !c.use) { $("qlist").innerHTML = `<div class="empty">The action queue works when the dashboard is opened on claude.ai.</div>`; $("q-submit").disabled = true; $("process").disabled = true; return; }
+    [db, user] = await Promise.all([c.use("db"), c.use("user")]);
+    if (!db) { $("qlist").innerHTML = `<div class="empty">Sign in on claude.ai to see and queue desk actions.</div>`; $("q-submit").disabled = true; }
+    else {
+      if (user && user.can) { try { const w = await user.can("data.write"); if (w === false) { canWrite = false; $("q-submit").disabled = true; msg("You have view-only access. You can see the queue but not add to it.", ""); } } catch (_) {} }
+      db.collection("actions").onSnapshot(renderQueue, (err) => { $("qlist").innerHTML = `<div class="empty">The queue stopped updating (${esc(err.code)}). Reload the page to reconnect.</div>`; });
+    }
+    const mcp = await c.use("mcp");
+    if (!mcp) { $("process").disabled = true; $("process").title = "Not available in this view"; }
+  })();
+
+  $("process").addEventListener("click", async () => {
+    const mcp = window.claude && (await window.claude.use("mcp"));
+    if (!mcp) { msg("Process now needs the Claude Code Remote connector, which isn't available in this view. Queued actions still run on the next scheduled check.", "err"); return; }
+    $("process").disabled = true; msg("Waking the desk…", "");
+    try {
+      await mcp.callTool("Claude Code Remote", "fire_trigger", { trigger_id: TRIGGER_ID, text: "Triggered from the Paper Desk dashboard." });
+      msg("The desk is processing pending actions. Results appear in the queue when it finishes (usually a few minutes).", "ok");
+    } catch (err) {
+      const code = err && err.code;
+      const text = {
+        needs_reauth: "Reconnect Claude Code Remote in claude.ai Settings → Connectors, then try again.",
+        server_not_connected: "Add Claude Code Remote in claude.ai Settings → Connectors to use Process now.",
+        not_in_manifest: "Process now isn't allowed for this page in your view. Queued actions still run on the next scheduled check.",
+        tool_error: `The desk routine refused to start: ${err.message || "unknown reason"}.`,
+        server_unavailable: "The desk scheduler didn't answer. It may still have started; check the queue before pressing again.",
+      }[code] || `Couldn't wake the desk (${code || "error"}). Queued actions still run on the next scheduled check.`;
+      msg(text, "err");
+    } finally { setTimeout(() => ($("process").disabled = false), 5000); }
+  });
+})();
+</script>

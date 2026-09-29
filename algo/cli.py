@@ -9,6 +9,8 @@
   python -m algo.cli backtest --family F [--variant V] --days N
   python -m algo.cli leaderboard
   python -m algo.cli check                verify Dhan credentials and data access
+  python -m algo.cli dashboard            write dashboard/data.json for the dashboard page
+  python -m algo.cli set-status --variant V --status active|retired [--reason R]
 """
 from __future__ import annotations
 
@@ -86,6 +88,11 @@ def main(argv: list[str] | None = None) -> None:
     p.add_argument("--until", default="15:36", help="stop at HH:MM IST (the day is recorded only by a run reaching the close)")
     sub.add_parser("supervise", help="start the real-time trader in the background if it isn't running")
     sub.add_parser("stop-live")
+    sub.add_parser("dashboard", help="write dashboard/data.json")
+    p = sub.add_parser("set-status", help="retire or reactivate a paper variant")
+    p.add_argument("--variant", required=True)
+    p.add_argument("--status", choices=["active", "retired"], required=True)
+    p.add_argument("--reason", default="")
 
     args = ap.parse_args(argv)
     logging.basicConfig(level=logging.DEBUG if args.verbose else logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -153,6 +160,21 @@ def main(argv: list[str] | None = None) -> None:
         from .live import stop
 
         print("stopped" if stop(s) else "not running")
+    elif args.cmd == "dashboard":
+        from . import dashboard
+
+        print(f"wrote {dashboard.write(s, s.strategies)}")
+    elif args.cmd == "set-status":
+        store = Store(s.state_dir)
+        reg = store.load_registry(s.strategies)
+        v = reg.variants.get(args.variant)
+        if v is None:
+            raise SystemExit(f"unknown variant {args.variant}")
+        v.status = args.status
+        v.retired_reason = (args.reason or "retired from dashboard") if args.status == "retired" else ""
+        store.save_registry(reg)
+        store.log({"event": "set_status", "variant": v.id, "status": v.status, "reason": v.retired_reason})
+        print(f"{v.id}: {v.status}")
 
 
 if __name__ == "__main__":
