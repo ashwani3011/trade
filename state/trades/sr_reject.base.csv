@@ -1,0 +1,5 @@
+date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,costs,net,r_multiple,reason
+2026-09-30,sr_reject.base,KOTAKBANK,-1,131,09:40,409.03,09:50,410.67,stop,-214.73,56.91,-271.64,-1.368,level rejection
+2026-09-30,sr_reject.base,SUNPHARMA,1,25,09:35,1841.25,09:50,1832.84,stop,-210.27,48.68,-258.95,-1.318,level rejection
+2026-09-30,sr_reject.base,BHARTIARTL,1,28,10:20,1764.53,10:30,1757.45,stop,-198.18,52.27,-250.45,-1.365,level rejection
+2026-09-30,sr_reject.base,SBIN,-1,52,09:50,967.41,10:40,971.48,stop,-211.54,53.44,-264.98,-1.349,level rejection

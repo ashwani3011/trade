@@ -1,0 +1,4 @@
+date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,costs,net,r_multiple,reason
+2026-09-30,orb.v1,TCS,1,12,10:00,2090.63,11:10,2074.32,stop,-195.7,26.48,-222.18,-1.18,ORB up
+2026-09-30,orb.v1,KOTAKBANK,1,94,09:55,411.97,12:20,415.82,target,361.2,41.3,319.9,1.615,ORB up
+2026-09-30,orb.v1,BHARTIARTL,-1,20,10:20,1763.47,13:00,1771.99,stop,-170.28,37.47,-207.76,-1.301,ORB down

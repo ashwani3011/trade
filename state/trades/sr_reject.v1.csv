@@ -1,0 +1,2 @@
+date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,costs,net,r_multiple,reason
+2026-09-30,sr_reject.v1,BHARTIARTL,1,30,10:25,1764.63,10:30,1757.45,stop,-215.34,56.0,-271.34,-1.36,level rejection (confirmed)

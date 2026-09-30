@@ -1,0 +1,4 @@
+date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,costs,net,r_multiple,reason
+2026-09-30,orb.base,ITC,-1,85,09:40,264.42,11:05,266.83,stop,-204.8,23.92,-228.72,-1.155,ORB down
+2026-09-30,orb.base,BHARTIARTL,-1,14,09:35,1765.87,15:10,1757.73,squareoff,114.0,26.17,87.83,0.46,ORB down
+2026-09-30,orb.base,ICICIBANK,1,10,09:45,1314.19,15:10,1321.7,squareoff,75.09,13.98,61.11,0.323,ORB up

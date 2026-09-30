@@ -1,0 +1,5 @@
+date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,costs,net,r_multiple,reason
+2026-09-30,vwap_pb.base,KOTAKBANK,1,66,09:45,409.92,10:00,414.13,target,277.64,28.87,248.77,1.253,VWAP pullback long
+2026-09-30,vwap_pb.base,AXISBANK,1,21,09:45,1214.86,12:00,1228.0,target,275.85,27.23,248.62,1.264,VWAP pullback long
+2026-09-30,vwap_pb.base,HDFCBANK,1,47,10:05,713.01,12:20,718.85,target,274.37,35.71,238.65,1.195,VWAP pullback long
+2026-09-30,vwap_pb.base,SBIN,1,33,09:45,966.89,15:05,960.64,stop,-206.29,33.7,-239.99,-1.22,VWAP pullback long

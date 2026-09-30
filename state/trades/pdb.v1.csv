@@ -1,0 +1,4 @@
+date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,costs,net,r_multiple,reason
+2026-09-30,pdb.v1,TATASTEEL,1,114,12:00,189.4,13:40,187.59,stop,-205.94,22.76,-228.71,-1.146,PDH break
+2026-09-30,pdb.v1,BAJFINANCE,-1,22,11:20,960.21,15:10,959.99,squareoff,4.93,22.4,-17.47,-0.088,PDL break
+2026-09-30,pdb.v1,SUNPHARMA,-1,14,09:55,1832.15,15:10,1824.85,squareoff,102.24,27.16,75.08,0.398,PDL break

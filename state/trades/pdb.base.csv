@@ -1,0 +1,5 @@
+date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,costs,net,r_multiple,reason
+2026-09-30,pdb.base,SUNPHARMA,-1,20,09:45,1835.75,10:40,1816.75,target,380.01,38.77,341.24,1.727,PDL break
+2026-09-30,pdb.base,KOTAKBANK,1,65,09:45,409.92,12:20,415.66,target,372.86,28.49,344.37,1.736,PDH break
+2026-09-30,pdb.base,AXISBANK,1,17,09:30,1216.16,15:10,1224.83,squareoff,147.35,22.02,125.33,0.629,PDH break
+2026-09-30,pdb.base,BAJFINANCE,-1,22,11:20,960.21,15:10,959.99,squareoff,4.93,22.4,-17.47,-0.088,PDL break
