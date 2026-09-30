@@ -88,3 +88,11 @@
 {"key": "pdb.v1|exit|TATASTEEL|13:40", "type": "EXIT", "variant": "pdb.v1", "symbol": "TATASTEEL", "bar_time": "13:40", "price": 187.59, "qty": 114, "reason": "stop", "net": -228.71, "decided_at": "13:45:20"}
 {"key": "vwap_pb.v1|exit|TCS|13:40", "type": "EXIT", "variant": "vwap_pb.v1", "symbol": "TCS", "bar_time": "13:40", "price": 2064.87, "qty": 9, "reason": "stop", "net": -214.66, "decided_at": "13:45:20"}
 {"key": "vwap_pb.v1|exit|LT|14:25", "type": "EXIT", "variant": "vwap_pb.v1", "symbol": "LT", "bar_time": "14:25", "price": 3751.69, "qty": 9, "reason": "stop", "net": -242.4, "decided_at": "14:30:20"}
+{"key": "vwap_pb.base|exit|SBIN|15:05", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "SBIN", "bar_time": "15:05", "price": 960.64, "qty": 33, "reason": "stop", "net": -239.99, "decided_at": "15:10:20"}
+{"key": "orb.base|exit|BHARTIARTL|15:10", "type": "EXIT", "variant": "orb.base", "symbol": "BHARTIARTL", "bar_time": "15:10", "price": 1757.73, "qty": 14, "reason": "squareoff", "net": 87.83, "decided_at": "15:15:20"}
+{"key": "orb.base|exit|ICICIBANK|15:10", "type": "EXIT", "variant": "orb.base", "symbol": "ICICIBANK", "bar_time": "15:10", "price": 1321.7, "qty": 10, "reason": "squareoff", "net": 61.11, "decided_at": "15:15:20"}
+{"key": "pdb.base|exit|AXISBANK|15:10", "type": "EXIT", "variant": "pdb.base", "symbol": "AXISBANK", "bar_time": "15:10", "price": 1224.83, "qty": 17, "reason": "squareoff", "net": 125.33, "decided_at": "15:15:20"}
+{"key": "pdb.base|exit|BAJFINANCE|15:10", "type": "EXIT", "variant": "pdb.base", "symbol": "BAJFINANCE", "bar_time": "15:10", "price": 959.99, "qty": 22, "reason": "squareoff", "net": -17.47, "decided_at": "15:15:20"}
+{"key": "pdb.v1|exit|BAJFINANCE|15:10", "type": "EXIT", "variant": "pdb.v1", "symbol": "BAJFINANCE", "bar_time": "15:10", "price": 959.99, "qty": 22, "reason": "squareoff", "net": -17.47, "decided_at": "15:15:20"}
+{"key": "pdb.v1|exit|SUNPHARMA|15:10", "type": "EXIT", "variant": "pdb.v1", "symbol": "SUNPHARMA", "bar_time": "15:10", "price": 1824.85, "qty": 14, "reason": "squareoff", "net": 75.08, "decided_at": "15:15:20"}
+{"key": "vwap_pb.v1|exit|HDFCBANK|15:10", "type": "EXIT", "variant": "vwap_pb.v1", "symbol": "HDFCBANK", "bar_time": "15:10", "price": 714.69, "qty": 38, "reason": "squareoff", "net": -39.4, "decided_at": "15:15:20"}
