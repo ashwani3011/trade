@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-30T13:06:36+05:30",
+ "generated_at": "2026-09-30T14:07:00+05:30",
  "today": "2026-09-30",
  "market_phase": "open",
  "trader_running": false,
@@ -1328,6 +1328,66 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback long",
    "decided_at": "12:50:20"
+  },
+  {
+   "key": "vwap_pb.v1|entry|LT|12:50",
+   "type": "ENTRY",
+   "variant": "vwap_pb.v1",
+   "symbol": "LT",
+   "bar_time": "12:50",
+   "price": 3774.63,
+   "qty": 9,
+   "side": 1,
+   "stop": 3752.81,
+   "target": 3814.88,
+   "decided_at": "12:55:20"
+  },
+  {
+   "key": "orb.v1|exit|BHARTIARTL|13:00",
+   "type": "EXIT",
+   "variant": "orb.v1",
+   "symbol": "BHARTIARTL",
+   "bar_time": "13:00",
+   "price": 1771.99,
+   "qty": 20,
+   "reason": "stop",
+   "net": -207.76,
+   "decided_at": "13:05:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|BHARTIARTL|13:35",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "BHARTIARTL",
+   "bar_time": "13:35",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "13:40:20"
+  },
+  {
+   "key": "pdb.v1|exit|TATASTEEL|13:40",
+   "type": "EXIT",
+   "variant": "pdb.v1",
+   "symbol": "TATASTEEL",
+   "bar_time": "13:40",
+   "price": 187.59,
+   "qty": 114,
+   "reason": "stop",
+   "net": -228.71,
+   "decided_at": "13:45:20"
+  },
+  {
+   "key": "vwap_pb.v1|exit|TCS|13:40",
+   "type": "EXIT",
+   "variant": "vwap_pb.v1",
+   "symbol": "TCS",
+   "bar_time": "13:40",
+   "price": 2064.87,
+   "qty": 9,
+   "reason": "stop",
+   "net": -214.66,
+   "decided_at": "13:45:20"
   }
  ],
  "families": [
