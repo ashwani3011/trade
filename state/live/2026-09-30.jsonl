@@ -77,3 +77,7 @@
 {"key": "pdb.v1|entry|TATASTEEL|12:00", "type": "ENTRY", "variant": "pdb.v1", "symbol": "TATASTEEL", "bar_time": "12:00", "price": 189.4, "qty": 114, "side": 1, "stop": 187.65, "target": 192.82, "decided_at": "12:05:20"}
 {"key": "tg_opt.base|exit|TCS 27OCT 2200CE|12:00", "type": "EXIT", "variant": "tg_opt.base", "symbol": "TCS 27OCT 2200CE", "bar_time": "12:00", "price": 25.25, "qty": 225, "reason": "time", "net": -1479.83, "decided_at": "12:05:20"}
 {"key": "vwap_pb.base|exit|AXISBANK|12:00", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "AXISBANK", "bar_time": "12:00", "price": 1228.0, "qty": 21, "reason": "target", "net": 248.62, "decided_at": "12:05:20"}
+{"key": "orb.v1|exit|KOTAKBANK|12:20", "type": "EXIT", "variant": "orb.v1", "symbol": "KOTAKBANK", "bar_time": "12:20", "price": 415.82, "qty": 94, "reason": "target", "net": 319.9, "decided_at": "12:25:20"}
+{"key": "pdb.base|exit|KOTAKBANK|12:20", "type": "EXIT", "variant": "pdb.base", "symbol": "KOTAKBANK", "bar_time": "12:20", "price": 415.66, "qty": 65, "reason": "target", "net": 344.37, "decided_at": "12:25:20"}
+{"key": "vwap_pb.base|exit|HDFCBANK|12:20", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "HDFCBANK", "bar_time": "12:20", "price": 718.85, "qty": 47, "reason": "target", "net": 238.65, "decided_at": "12:25:20"}
+{"key": "vwap_pb.v1|exit|KOTAKBANK|12:20", "type": "EXIT", "variant": "vwap_pb.v1", "symbol": "KOTAKBANK", "bar_time": "12:20", "price": 415.57, "qty": 66, "reason": "target", "net": 343.97, "decided_at": "12:25:20"}
