@@ -3,3 +3,16 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-09-30,vwap_pb.v1,TCS,1,9,09:55,2086.53,13:40,2064.87,stop,-194.87,19.79,-214.66,-1.134,VWAP pullback long
 2026-09-30,vwap_pb.v1,LT,1,9,12:50,3774.63,14:25,3751.69,stop,-206.51,35.89,-242.4,-1.234,VWAP pullback long
 2026-09-30,vwap_pb.v1,HDFCBANK,1,38,10:10,714.96,15:10,714.69,squareoff,-10.6,28.8,-39.4,-0.198,VWAP pullback long
+2026-09-25,vwap_pb.v1,RELIANCE,1,32,11:55,1222.07,12:55,1215.66,stop,-204.86,41.34,-246.2,-1.274,VWAP pullback long
+2026-09-25,vwap_pb.v1,NTPC,-1,106,09:55,324.85,14:05,326.82,stop,-208.27,36.6,-244.87,-1.237,VWAP pullback short
+2026-09-25,vwap_pb.v1,SUNPHARMA,-1,23,13:15,1847.15,14:55,1856.3,stop,-210.51,45.14,-255.65,-1.293,VWAP pullback short
+2026-09-25,vwap_pb.v1,AXISBANK,1,15,10:00,1203.26,15:10,1220.33,squareoff,256.09,19.3,236.79,1.267,VWAP pullback long
+2026-09-28,vwap_pb.v1,KOTAKBANK,-1,78,10:10,396.73,11:45,399.32,stop,-201.7,32.9,-234.61,-1.22,VWAP pullback short
+2026-09-28,vwap_pb.v1,NTPC,-1,130,11:50,322.85,14:15,320.32,target,328.75,44.37,284.38,1.736,VWAP pullback short
+2026-09-28,vwap_pb.v1,BAJFINANCE,-1,30,10:20,979.41,15:10,982.09,squareoff,-80.65,31.19,-111.85,-0.59,VWAP pullback short
+2026-09-28,vwap_pb.v1,SBIN,-1,26,09:45,966.41,15:10,961.89,squareoff,117.56,26.6,90.96,0.486,VWAP pullback short
+2026-09-29,vwap_pb.v1,KOTAKBANK,-1,64,10:00,395.83,10:35,398.97,stop,-200.72,26.95,-227.67,-1.179,VWAP pullback short
+2026-09-29,vwap_pb.v1,RELIANCE,-1,25,09:50,1185.24,11:25,1193.24,stop,-199.9,31.51,-231.41,-1.212,VWAP pullback short
+2026-09-29,vwap_pb.v1,BAJFINANCE,-1,23,12:35,966.41,15:10,969.99,squareoff,-82.36,23.61,-105.97,-0.557,VWAP pullback short
+2026-09-29,vwap_pb.v1,ICICIBANK,1,18,11:15,1302.19,15:10,1296.91,squareoff,-95.04,24.8,-119.83,-0.645,VWAP pullback long
+2026-09-29,vwap_pb.v1,SUNPHARMA,-1,14,09:50,1841.45,15:10,1852.56,squareoff,-155.51,27.4,-182.92,-0.979,VWAP pullback short

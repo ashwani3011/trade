@@ -1,3 +1,4 @@
 date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,costs,net,r_multiple,reason
 2026-09-30,tg_opt.base,TECHM 27OCT 1640CE,1,600,09:25,19.7,11:10,15.84,stop,-2313.0,65.9,-2378.9,-1.073,top gainer +2.18%
 2026-09-30,tg_opt.base,TCS 27OCT 2200CE,1,225,09:25,31.56,12:00,25.25,time,-1421.44,58.39,-1479.83,-0.87,top gainer +2.55%
+2026-09-28,tg_opt.base,SBILIFE 29SEP 1800CE,1,375,09:25,1.82,09:30,0.64,stop,-440.44,47.84,-488.28,-1.695,top gainer +0.37%

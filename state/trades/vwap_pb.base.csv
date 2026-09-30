@@ -3,3 +3,17 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-09-30,vwap_pb.base,AXISBANK,1,21,09:45,1214.86,12:00,1228.0,target,275.85,27.23,248.62,1.264,VWAP pullback long
 2026-09-30,vwap_pb.base,HDFCBANK,1,47,10:05,713.01,12:20,718.85,target,274.37,35.71,238.65,1.195,VWAP pullback long
 2026-09-30,vwap_pb.base,SBIN,1,33,09:45,966.89,15:05,960.64,stop,-206.29,33.7,-239.99,-1.22,VWAP pullback long
+2026-09-25,vwap_pb.base,BHARTIARTL,1,27,09:45,1797.94,12:45,1790.08,stop,-212.24,51.34,-263.58,-1.333,VWAP pullback long
+2026-09-25,vwap_pb.base,RELIANCE,1,18,09:45,1221.27,12:55,1215.47,stop,-104.32,23.24,-127.56,-1.305,VWAP pullback long
+2026-09-25,vwap_pb.base,ICICIBANK,-1,29,12:45,1327.9,14:25,1318.51,target,272.24,40.72,231.52,1.153,VWAP pullback short
+2026-09-25,vwap_pb.base,BAJFINANCE,1,33,13:15,987.4,15:10,994.8,squareoff,244.38,34.71,209.67,1.027,VWAP pullback long
+2026-09-25,vwap_pb.base,LT,-1,8,09:45,3862.74,15:10,3870.96,squareoff,-65.76,32.8,-98.56,-0.537,VWAP pullback short
+2026-09-28,vwap_pb.base,BHARTIARTL,-1,28,09:45,1767.87,11:10,1775.51,stop,-213.99,52.58,-266.57,-1.339,VWAP pullback short
+2026-09-28,vwap_pb.base,LT,-1,5,09:45,3831.85,11:10,3808.65,target,116.02,20.27,95.75,1.042,VWAP pullback short
+2026-09-28,vwap_pb.base,INFY,-1,33,11:30,993.0,12:05,999.35,stop,-209.54,34.84,-244.38,-1.224,VWAP pullback short
+2026-09-28,vwap_pb.base,ICICIBANK,-1,30,11:35,1305.11,15:10,1302.19,squareoff,87.53,41.48,46.05,0.239,VWAP pullback short
+2026-09-28,vwap_pb.base,ITC,-1,112,09:45,266.52,15:10,265.93,squareoff,66.11,31.63,34.48,0.169,VWAP pullback short
+2026-09-29,vwap_pb.base,SUNPHARMA,-1,25,09:45,1847.45,11:35,1838.79,target,216.34,48.89,167.45,0.852,VWAP pullback short
+2026-09-29,vwap_pb.base,ITC,-1,150,09:45,264.32,11:50,265.74,stop,-212.85,42.13,-254.99,-1.269,VWAP pullback short
+2026-09-29,vwap_pb.base,AXISBANK,-1,21,12:45,1194.14,15:05,1204.04,stop,-207.9,26.68,-234.58,-1.171,VWAP pullback short
+2026-09-29,vwap_pb.base,BHARTIARTL,1,8,09:50,1774.03,15:10,1783.86,squareoff,78.66,15.1,63.56,0.819,VWAP pullback long
