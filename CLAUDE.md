@@ -57,4 +57,5 @@ container: a Claude cloud container is shut down when idle, which kills any back
 ## Development
 - `pytest` (fully offline, synthetic data) and `pyflakes algo tests` must pass before pushing.
 - Branch: `claude/adoring-planck-88ci7e` (the repo's default branch).
-- GitHub Actions workflow is manual-only by the owner's choice. Scheduling stays in Claude.
+- The GitHub Actions workflow runs the trader on a schedule (enabled by the owner on 2026-09-30);
+  Claude routines only report.
