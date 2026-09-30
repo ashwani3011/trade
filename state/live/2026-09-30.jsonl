@@ -61,3 +61,6 @@
 {"key": "orb.v1|order|TATASTEEL|10:40", "type": "ORDER", "variant": "orb.v1", "symbol": "TATASTEEL", "bar_time": "10:40", "side": -1, "price": "at market (next candle open)", "reason": "ORB down", "decided_at": "10:45:20"}
 {"key": "pdb.base|exit|SUNPHARMA|10:40", "type": "EXIT", "variant": "pdb.base", "symbol": "SUNPHARMA", "bar_time": "10:40", "price": 1816.75, "qty": 20, "reason": "target", "net": 341.24, "decided_at": "10:45:20"}
 {"key": "sr_reject.base|exit|SBIN|10:40", "type": "EXIT", "variant": "sr_reject.base", "symbol": "SBIN", "bar_time": "10:40", "price": 971.48, "qty": 52, "reason": "stop", "net": -264.98, "decided_at": "10:45:20"}
+{"key": "vwap_pb.base|order|INFY|10:50", "type": "ORDER", "variant": "vwap_pb.base", "symbol": "INFY", "bar_time": "10:50", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "10:55:20"}
+{"key": "vwap_pb.base|order|TATASTEEL|11:00", "type": "ORDER", "variant": "vwap_pb.base", "symbol": "TATASTEEL", "bar_time": "11:00", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "11:05:20"}
+{"key": "vwap_pb.v1|order|ITC|11:00", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "ITC", "bar_time": "11:00", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "11:05:20"}
