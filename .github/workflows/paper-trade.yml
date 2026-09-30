@@ -12,14 +12,14 @@ name: paper-trade
 #   Sat 10:22  improve   weekly champion/challenger search
 # Results are committed to the repo every 15 minutes while trading.
 #
-# DISABLED: scheduling runs inside Claude Code (routines). This file is kept as a manual
-# fallback only. To use GitHub instead, add back under `on:`:
-#   schedule:
-#     - cron: "15 3 * * 1-5"    # 08:45 IST morning
-#     - cron: "45 6 * * 1-5"    # 12:15 IST afternoon
-#     - cron: "25 10 * * 1-5"   # 15:55 IST close
-#     - cron: "52 4 * * 6"      # 10:22 IST Saturday improve
+# The trader is scheduled here on GitHub (a Claude cloud container is shut down when idle,
+# which kills a long-running process). Claude routines only report and refresh the dashboard.
 on:
+  schedule:
+    - cron: "15 3 * * 1-5"    # 08:45 IST morning
+    - cron: "45 6 * * 1-5"    # 12:15 IST afternoon
+    - cron: "25 10 * * 1-5"   # 15:55 IST close
+    - cron: "52 4 * * 6"      # 10:22 IST Saturday improve
   workflow_dispatch:
     inputs:
       command:
@@ -78,7 +78,8 @@ jobs:
           cat > /tmp/push.sh <<'EOF'
           #!/usr/bin/env bash
           # commit bot output and push, rebasing over any concurrent commits
-          git add state reports >/dev/null 2>&1
+          python -m algo.cli dashboard >/dev/null 2>&1 || true
+          git add state reports dashboard/data.json >/dev/null 2>&1
           git diff --cached --quiet && exit 0
           git commit -q -m "paper-trade: $1 $(TZ=Asia/Kolkata date '+%F %H:%M')"
           for i in 1 2 3 4; do

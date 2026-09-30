@@ -21,17 +21,23 @@ explicitly. A variant is flagged `ready_for_real_money` in the leaderboard only 
 - Each family runs as `.base` (fixed benchmark) plus a champion and up to 2 challengers. Every
   variant has its own Rs 20k paper account.
 
-## Daily operation (this session is the desk)
-Routines fire into the desk session: weekdays 09:05 IST (start the trader), hourly 10:05–15:05
-(health check and update), 15:44 (day summary), and Saturday 10:22 (`improve`).
-- `python -m algo.cli supervise` is idempotent. Before or during market hours it starts the
-  real-time trader in the background if it isn't running. After the close it records any
-  completed days.
+## Daily operation
+The trader runs on **GitHub Actions** (`.github/workflows/paper-trade.yml`), not in the Claude
+container: a Claude cloud container is shut down when idle, which kills any background process.
+- GitHub schedule (IST): 08:45 morning run (Dhan check, trades 09:15–12:30), 12:15 afternoon run
+  (12:30 to close, records the day), 15:55 close safety net, Saturday 10:22 `improve`. Runs share
+  one restart-safe journal and commit `state/`, `reports/` and `dashboard/data.json` every 15 min.
+- Claude routines fire into the desk session: weekdays 09:05 IST, hourly 10:05–15:05, 15:44, and
+  Saturday 10:22. They only report: `git pull`, check the latest paper-trade run (GitHub MCP
+  `actions_list`), summarise `reports/live/<date>.md`, process dashboard actions, republish the
+  dashboard. **Never start a trader in the container** (no `supervise`/`trade-live` there) while
+  GitHub runs it; two traders would write the same journal. If a GitHub run failed, report exactly
+  what failed.
 - The trader wakes 20 s after each 5-min candle closes and decides on completed candles only. It
   journals ORDER/ENTRY/EXIT/NOTE decisions with timestamps and is restart-safe. It records the day
   at 15:36.
-- After each run, commit `state/` and `reports/` and push (`git pull --rebase` first; retry with
-  backoff, since GitHub's credential service sometimes returns 503).
+- When committing from the container, `git pull --rebase` first; retry with backoff, since
+  GitHub's credential service sometimes returns 503.
 - Updates to the owner should be short and factual: decisions with times, open positions,
   P&L per variant, and exactly what failed if anything did.
 
