@@ -87,3 +87,4 @@
 {"key": "vwap_pb.v1|order|BHARTIARTL|13:35", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "BHARTIARTL", "bar_time": "13:35", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "13:40:20"}
 {"key": "pdb.v1|exit|TATASTEEL|13:40", "type": "EXIT", "variant": "pdb.v1", "symbol": "TATASTEEL", "bar_time": "13:40", "price": 187.59, "qty": 114, "reason": "stop", "net": -228.71, "decided_at": "13:45:20"}
 {"key": "vwap_pb.v1|exit|TCS|13:40", "type": "EXIT", "variant": "vwap_pb.v1", "symbol": "TCS", "bar_time": "13:40", "price": 2064.87, "qty": 9, "reason": "stop", "net": -214.66, "decided_at": "13:45:20"}
+{"key": "vwap_pb.v1|exit|LT|14:25", "type": "EXIT", "variant": "vwap_pb.v1", "symbol": "LT", "bar_time": "14:25", "price": 3751.69, "qty": 9, "reason": "stop", "net": -242.4, "decided_at": "14:30:20"}
