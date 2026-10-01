@@ -112,3 +112,4 @@
 {"key": "pdb.base|exit|NTPC|13:40", "type": "EXIT", "variant": "pdb.base", "symbol": "NTPC", "bar_time": "13:40", "price": 315.23, "qty": 119, "reason": "target", "net": 367.29, "decided_at": "13:45:20"}
 {"key": "pdb.base|exit|RELIANCE|13:40", "type": "EXIT", "variant": "pdb.base", "symbol": "RELIANCE", "bar_time": "13:40", "price": 1166.54, "qty": 27, "reason": "target", "net": 339.08, "decided_at": "13:45:20"}
 {"key": "pdb.v1|exit|NTPC|13:50", "type": "EXIT", "variant": "pdb.v1", "symbol": "NTPC", "bar_time": "13:50", "price": 314.33, "qty": 92, "reason": "target", "net": 330.02, "decided_at": "13:55:20"}
+{"key": "pdb.base|exit|BHARTIARTL|15:10", "type": "EXIT", "variant": "pdb.base", "symbol": "BHARTIARTL", "bar_time": "15:10", "price": 1742.52, "qty": 14, "reason": "squareoff", "net": 60.21, "decided_at": "15:15:20"}
