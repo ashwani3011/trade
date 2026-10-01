@@ -77,3 +77,5 @@
 {"key": "orb.base|order|KOTAKBANK|10:30", "type": "ORDER", "variant": "orb.base", "symbol": "KOTAKBANK", "bar_time": "10:30", "side": 1, "price": "at market (next candle open)", "reason": "ORB up", "decided_at": "10:35:20"}
 {"key": "vwap_pb.base|order|TATASTEEL|10:30", "type": "ORDER", "variant": "vwap_pb.base", "symbol": "TATASTEEL", "bar_time": "10:30", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "10:35:20"}
 {"key": "vwap_pb.v1|order|TATASTEEL|10:40", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "TATASTEEL", "bar_time": "10:40", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "10:45:20"}
+{"key": "vwap_pb.base|order|KOTAKBANK|10:55", "type": "ORDER", "variant": "vwap_pb.base", "symbol": "KOTAKBANK", "bar_time": "10:55", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "11:00:20"}
+{"key": "orb.v1|order|RELIANCE|11:05", "type": "ORDER", "variant": "orb.v1", "symbol": "RELIANCE", "bar_time": "11:05", "side": -1, "price": "at market (next candle open)", "reason": "ORB down", "decided_at": "11:10:20"}

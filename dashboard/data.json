@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-01T10:58:19+05:30",
+ "generated_at": "2026-10-01T11:13:21+05:30",
  "today": "2026-10-01",
  "market_phase": "open",
  "trader_running": true,
@@ -3419,6 +3419,28 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback short",
    "decided_at": "10:45:20"
+  },
+  {
+   "key": "vwap_pb.base|order|KOTAKBANK|10:55",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "KOTAKBANK",
+   "bar_time": "10:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "11:00:20"
+  },
+  {
+   "key": "orb.v1|order|RELIANCE|11:05",
+   "type": "ORDER",
+   "variant": "orb.v1",
+   "symbol": "RELIANCE",
+   "bar_time": "11:05",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "11:10:20"
   }
  ],
  "families": [
