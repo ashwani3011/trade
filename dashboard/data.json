@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-01T12:46:00+05:30",
+ "generated_at": "2026-10-01T13:01:03+05:30",
  "today": "2026-10-01",
  "market_phase": "open",
  "trader_running": true,
@@ -3684,6 +3684,102 @@
    "reason": "stop",
    "net": -130.1,
    "decided_at": "12:45:20"
+  },
+  {
+   "key": "orb.base|exit|SBIN|12:45",
+   "type": "EXIT",
+   "variant": "orb.base",
+   "symbol": "SBIN",
+   "bar_time": "12:45",
+   "price": 952.81,
+   "qty": 18,
+   "reason": "stop",
+   "net": -221.22,
+   "decided_at": "12:50:20"
+  },
+  {
+   "key": "orb.base|exit|TATASTEEL|12:45",
+   "type": "EXIT",
+   "variant": "orb.base",
+   "symbol": "TATASTEEL",
+   "bar_time": "12:45",
+   "price": 178.24,
+   "qty": 70,
+   "reason": "target",
+   "net": 370.46,
+   "decided_at": "12:50:20"
+  },
+  {
+   "key": "pdb.base|entry|BHARTIARTL|12:45",
+   "type": "ENTRY",
+   "variant": "pdb.base",
+   "symbol": "BHARTIARTL",
+   "bar_time": "12:45",
+   "price": 1748.68,
+   "qty": 14,
+   "side": -1,
+   "stop": 1762.65,
+   "target": 1722.29,
+   "decided_at": "12:50:20"
+  },
+  {
+   "key": "vwap_pb.base|exit|NTPC|12:45",
+   "type": "EXIT",
+   "variant": "vwap_pb.base",
+   "symbol": "NTPC",
+   "bar_time": "12:45",
+   "price": 317.29,
+   "qty": 150,
+   "reason": "target",
+   "net": 191.41,
+   "decided_at": "12:50:20"
+  },
+  {
+   "key": "vwap_pb.v1|exit|ICICIBANK|12:45",
+   "type": "EXIT",
+   "variant": "vwap_pb.v1",
+   "symbol": "ICICIBANK",
+   "bar_time": "12:45",
+   "price": 1317.43,
+   "qty": 28,
+   "reason": "stop",
+   "net": -234.27,
+   "decided_at": "12:50:20"
+  },
+  {
+   "key": "vwap_pb.v1|exit|ITC|12:45",
+   "type": "EXIT",
+   "variant": "vwap_pb.v1",
+   "symbol": "ITC",
+   "bar_time": "12:45",
+   "price": 256.91,
+   "qty": 108,
+   "reason": "target",
+   "net": 312.35,
+   "decided_at": "12:50:20"
+  },
+  {
+   "key": "pdb.base|order|TCS|12:50",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "TCS",
+   "bar_time": "12:50",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "PDL break",
+   "decided_at": "12:55:20"
+  },
+  {
+   "key": "vwap_pb.base|exit|BAJFINANCE|12:55",
+   "type": "EXIT",
+   "variant": "vwap_pb.base",
+   "symbol": "BAJFINANCE",
+   "bar_time": "12:55",
+   "price": 940.48,
+   "qty": 29,
+   "reason": "target",
+   "net": 250.43,
+   "decided_at": "13:00:20"
   }
  ],
  "families": [
