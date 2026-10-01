@@ -6,18 +6,19 @@ name: paper-trade
 #
 # A GitHub job is capped at 6 hours, so the trading day is split into two runs that
 # continue the same decision journal (state/live/<date>.jsonl, restart-safe):
-#   08:45 IST  morning   check Dhan, then decide on every candle 09:15 .. 12:30
-#   12:15 IST  afternoon queued behind the morning run; 12:30 .. close, records the day
+#   08:40 IST  morning   check Dhan, then decide on every candle 09:15 .. 12:30
+#   12:10 IST  afternoon queued behind the morning run; 12:30 .. close, records the day
 #   15:55 IST  close     safety net: records the day if the afternoon run was missed
 #   Sat 10:22  improve   weekly champion/challenger search
 # Results are committed to the repo every 15 minutes while trading.
 #
-# The trader is scheduled here on GitHub (a Claude cloud container is shut down when idle,
-# which kills a long-running process). Claude routines only report and refresh the dashboard.
+# The morning and afternoon runs are started by Claude routines (workflow_dispatch starts
+# within seconds; GitHub's cron ran hours late on 2026-09-30). There is no morning cron:
+# a late one would cancel the queued afternoon run and then exit, since it stops at 12:30.
+# The 12:15 afternoon cron stays as a backup.
 on:
   schedule:
-    - cron: "15 3 * * 1-5"    # 08:45 IST morning
-    - cron: "45 6 * * 1-5"    # 12:15 IST afternoon
+    - cron: "45 6 * * 1-5"    # 12:15 IST afternoon (backup)
     - cron: "25 10 * * 1-5"   # 15:55 IST close
     - cron: "52 4 * * 6"      # 10:22 IST Saturday improve
   workflow_dispatch:

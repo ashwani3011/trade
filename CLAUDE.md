@@ -24,9 +24,12 @@ explicitly. A variant is flagged `ready_for_real_money` in the leaderboard only 
 ## Daily operation
 The trader runs on **GitHub Actions** (`.github/workflows/paper-trade.yml`), not in the Claude
 container: a Claude cloud container is shut down when idle, which kills any background process.
-- GitHub schedule (IST): 08:45 morning run (Dhan check, trades 09:15–12:30), 12:15 afternoon run
-  (12:30 to close, records the day), 15:55 close safety net, Saturday 10:22 `improve`. Runs share
-  one restart-safe journal and commit `state/`, `reports/` and `dashboard/data.json` every 15 min.
+- Claude routines start the trading runs via `workflow_dispatch` (GitHub's own cron ran hours late
+  on 2026-09-30): 08:40 IST morning run (Dhan check, trades 09:15–12:30) and 12:10 afternoon run
+  (queued behind it; 12:30 to close, records the day). GitHub cron keeps a 12:15 afternoon backup,
+  the 15:55 close safety net and Saturday 10:22 `improve`; there is deliberately no morning cron.
+  Runs share one restart-safe journal and commit `state/`, `reports/` and `dashboard/data.json`
+  every 15 min.
 - Claude routines fire into the desk session: weekdays 09:05 IST, hourly 10:05–15:05, 15:44, and
   Saturday 10:22. They only report: `git pull`, check the latest paper-trade run (GitHub MCP
   `actions_list`), summarise `reports/live/<date>.md`, process dashboard actions, republish the
