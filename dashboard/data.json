@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-01T11:13:21+05:30",
+ "generated_at": "2026-10-01T11:28:22+05:30",
  "today": "2026-10-01",
  "market_phase": "open",
  "trader_running": true,
@@ -3441,6 +3441,28 @@
    "price": "at market (next candle open)",
    "reason": "ORB down",
    "decided_at": "11:10:20"
+  },
+  {
+   "key": "vwap_pb.base|order|TCS|11:10",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "TCS",
+   "bar_time": "11:10",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "11:15:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|INFY|11:15",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "INFY",
+   "bar_time": "11:15",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "11:20:20"
   }
  ],
  "families": [
