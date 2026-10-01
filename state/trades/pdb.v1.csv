@@ -9,3 +9,4 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-09-29,pdb.v1,KOTAKBANK,-1,65,09:45,394.88,10:25,398.04,stop,-205.38,27.31,-232.68,-1.177,PDL break
 2026-09-29,pdb.v1,SBIN,-1,28,09:40,954.11,11:30,961.32,stop,-201.75,28.41,-230.16,-1.188,PDL break
 2026-09-29,pdb.v1,INFY,-1,23,09:55,985.7,15:10,987.5,squareoff,-41.22,24.06,-65.27,-0.33,PDL break
+2026-10-01,pdb.v1,NTPC,-1,92,12:15,318.25,13:50,314.33,target,360.92,30.9,330.02,1.704,PDL break

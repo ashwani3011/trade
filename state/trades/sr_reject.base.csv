@@ -15,3 +15,8 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-09-29,sr_reject.base,TCS,1,17,09:55,2054.52,13:35,2043.24,stop,-191.66,36.92,-228.58,-1.261,level rejection
 2026-09-29,sr_reject.base,SBIN,1,48,09:55,957.29,15:05,965.49,target,393.6,48.98,344.62,1.827,level rejection
 2026-09-29,sr_reject.base,TATASTEEL,-1,248,13:55,188.27,15:10,188.06,squareoff,53.84,49.49,4.35,0.023,level rejection
+2026-10-01,sr_reject.base,NTPC,1,229,09:50,319.05,09:50,318.12,stop,-212.42,72.89,-285.31,-1.497,level rejection
+2026-10-01,sr_reject.base,SUNPHARMA,1,23,09:50,1816.44,10:05,1827.76,target,260.28,44.47,215.81,1.449,level rejection
+2026-10-01,sr_reject.base,LT,1,11,10:15,3731.22,10:20,3719.91,stop,-124.45,43.44,-167.89,-1.497,level rejection
+2026-10-01,sr_reject.base,RELIANCE,1,45,09:50,1182.95,10:20,1178.37,stop,-206.32,56.32,-262.64,-1.379,level rejection
+2026-10-01,sr_reject.base,BHARTIARTL,1,40,12:40,1755.03,12:40,1749.79,stop,-209.43,71.88,-281.31,-1.493,level rejection

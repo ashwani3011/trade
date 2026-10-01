@@ -11,3 +11,6 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-09-29,orb.base,ITC,-1,102,09:35,263.82,11:50,265.88,stop,-210.01,28.62,-238.63,-1.182,ORB down
 2026-09-29,orb.base,BAJFINANCE,-1,16,09:35,967.21,15:10,969.99,squareoff,-44.5,16.43,-60.93,-0.305,ORB down
 2026-09-29,orb.base,INFY,-1,14,09:35,990.7,15:10,987.5,squareoff,44.89,14.69,30.2,0.153,ORB down
+2026-10-01,orb.base,SBIN,1,18,09:40,964.09,12:45,952.81,stop,-202.95,18.27,-221.22,-1.118,ORB up
+2026-10-01,orb.base,TATASTEEL,-1,70,09:35,183.72,12:45,178.24,target,383.94,13.48,370.46,1.873,ORB down
+2026-10-01,orb.base,BHARTIARTL,1,11,09:40,1752.83,13:25,1734.58,stop,-200.71,20.32,-221.03,-1.134,ORB up
