@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-01T10:28:15+05:30",
+ "generated_at": "2026-10-01T10:43:17+05:30",
  "today": "2026-10-01",
  "market_phase": "open",
  "trader_running": true,
@@ -3373,6 +3373,41 @@
    "stop": 956.42,
    "target": 966.62,
    "decided_at": "10:25:20"
+  },
+  {
+   "key": "sr_reject.v1|entry|NTPC|10:25",
+   "type": "ENTRY",
+   "variant": "sr_reject.v1",
+   "symbol": "NTPC",
+   "bar_time": "10:25",
+   "price": 319.2,
+   "qty": 149,
+   "side": 1,
+   "stop": 317.96,
+   "target": 321.37,
+   "decided_at": "10:30:20"
+  },
+  {
+   "key": "orb.base|order|KOTAKBANK|10:30",
+   "type": "ORDER",
+   "variant": "orb.base",
+   "symbol": "KOTAKBANK",
+   "bar_time": "10:30",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "10:35:20"
+  },
+  {
+   "key": "vwap_pb.base|order|TATASTEEL|10:30",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "TATASTEEL",
+   "bar_time": "10:30",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "10:35:20"
   }
  ],
  "families": [
