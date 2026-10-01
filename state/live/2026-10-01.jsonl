@@ -108,3 +108,4 @@
 {"key": "vwap_pb.v1|exit|ITC|12:45", "type": "EXIT", "variant": "vwap_pb.v1", "symbol": "ITC", "bar_time": "12:45", "price": 256.91, "qty": 108, "reason": "target", "net": 312.35, "decided_at": "12:50:20"}
 {"key": "pdb.base|order|TCS|12:50", "type": "ORDER", "variant": "pdb.base", "symbol": "TCS", "bar_time": "12:50", "side": -1, "price": "at market (next candle open)", "reason": "PDL break", "decided_at": "12:55:20"}
 {"key": "vwap_pb.base|exit|BAJFINANCE|12:55", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "BAJFINANCE", "bar_time": "12:55", "price": 940.48, "qty": 29, "reason": "target", "net": 250.43, "decided_at": "13:00:20"}
+{"key": "orb.base|exit|BHARTIARTL|13:25", "type": "EXIT", "variant": "orb.base", "symbol": "BHARTIARTL", "bar_time": "13:25", "price": 1734.58, "qty": 11, "reason": "stop", "net": -221.03, "decided_at": "13:30:20"}
