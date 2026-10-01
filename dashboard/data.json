@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-01T13:31:07+05:30",
+ "generated_at": "2026-10-01T13:46:09+05:30",
  "today": "2026-10-01",
  "market_phase": "open",
  "trader_running": true,
@@ -3792,6 +3792,30 @@
    "reason": "stop",
    "net": -221.03,
    "decided_at": "13:30:20"
+  },
+  {
+   "key": "pdb.base|exit|NTPC|13:40",
+   "type": "EXIT",
+   "variant": "pdb.base",
+   "symbol": "NTPC",
+   "bar_time": "13:40",
+   "price": 315.23,
+   "qty": 119,
+   "reason": "target",
+   "net": 367.29,
+   "decided_at": "13:45:20"
+  },
+  {
+   "key": "pdb.base|exit|RELIANCE|13:40",
+   "type": "EXIT",
+   "variant": "pdb.base",
+   "symbol": "RELIANCE",
+   "bar_time": "13:40",
+   "price": 1166.54,
+   "qty": 27,
+   "reason": "target",
+   "net": 339.08,
+   "decided_at": "13:45:20"
   }
  ],
  "families": [

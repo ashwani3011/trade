@@ -109,3 +109,5 @@
 {"key": "pdb.base|order|TCS|12:50", "type": "ORDER", "variant": "pdb.base", "symbol": "TCS", "bar_time": "12:50", "side": -1, "price": "at market (next candle open)", "reason": "PDL break", "decided_at": "12:55:20"}
 {"key": "vwap_pb.base|exit|BAJFINANCE|12:55", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "BAJFINANCE", "bar_time": "12:55", "price": 940.48, "qty": 29, "reason": "target", "net": 250.43, "decided_at": "13:00:20"}
 {"key": "orb.base|exit|BHARTIARTL|13:25", "type": "EXIT", "variant": "orb.base", "symbol": "BHARTIARTL", "bar_time": "13:25", "price": 1734.58, "qty": 11, "reason": "stop", "net": -221.03, "decided_at": "13:30:20"}
+{"key": "pdb.base|exit|NTPC|13:40", "type": "EXIT", "variant": "pdb.base", "symbol": "NTPC", "bar_time": "13:40", "price": 315.23, "qty": 119, "reason": "target", "net": 367.29, "decided_at": "13:45:20"}
+{"key": "pdb.base|exit|RELIANCE|13:40", "type": "EXIT", "variant": "pdb.base", "symbol": "RELIANCE", "bar_time": "13:40", "price": 1166.54, "qty": 27, "reason": "target", "net": 339.08, "decided_at": "13:45:20"}
