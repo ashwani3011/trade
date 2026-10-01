@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-01T13:46:09+05:30",
+ "generated_at": "2026-10-01T14:01:12+05:30",
  "today": "2026-10-01",
  "market_phase": "open",
  "trader_running": true,
@@ -3816,6 +3816,18 @@
    "reason": "target",
    "net": 339.08,
    "decided_at": "13:45:20"
+  },
+  {
+   "key": "pdb.v1|exit|NTPC|13:50",
+   "type": "EXIT",
+   "variant": "pdb.v1",
+   "symbol": "NTPC",
+   "bar_time": "13:50",
+   "price": 314.33,
+   "qty": 92,
+   "reason": "target",
+   "net": 330.02,
+   "decided_at": "13:55:20"
   }
  ],
  "families": [
