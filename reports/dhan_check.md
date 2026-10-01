@@ -1,4 +1,4 @@
-# Dhan check 2026-10-01 08:49 IST
+# Dhan check 2026-10-01 08:58 IST
 ```
 token OK, expires 2026-10-01 10:23 IST
 RELIANCE: 360 bars, last 2026-09-30 15:10:00+05:30
