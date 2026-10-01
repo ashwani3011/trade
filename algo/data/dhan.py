@@ -18,7 +18,7 @@ import pandas as pd
 import requests
 
 from .base import DAILY_COLS, INTRADAY_COLS, IST, empty_daily, empty_intraday
-from .dhan_auth import get_access_token
+from .dhan_auth import MIN_REMAINING_S, get_access_token, token_expiry
 
 log = logging.getLogger(__name__)
 
@@ -55,7 +55,10 @@ class DhanDataSource:
 
     @property
     def access_token(self) -> str:
-        if self._token is None:
+        # Re-resolve when the token nears expiry: a trading run outlives a cached token
+        # generated the previous morning (it expires 24h after it was made).
+        exp = token_expiry(self._token) if self._token else None
+        if self._token is None or (exp is not None and exp - time.time() <= MIN_REMAINING_S):
             self._token = get_access_token(self.client_id, self.cache_dir)
         return self._token
 

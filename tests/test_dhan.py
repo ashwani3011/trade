@@ -55,3 +55,21 @@ def test_parse_candles_and_rolling():
     assert list(r["strike"]) == [500, 500]
     recs = [dict(zip(payload, vals)) | {"strike": 510} for vals in zip(*payload.values())]
     assert list(_rolling_to_frame(recs)["strike"]) == [510, 510]
+
+
+def test_access_token_renews_near_expiry(monkeypatch, tmp_path):
+    from algo.data import dhan
+
+    tokens = iter([_jwt(time.time() + 600), _jwt(time.time() + 86400)])
+    calls = []
+
+    def fake_get(client_id, cache_dir):
+        calls.append(1)
+        return next(tokens)
+
+    monkeypatch.setattr(dhan, "get_access_token", fake_get)
+    src = dhan.DhanDataSource(client_id="x", cache_dir=tmp_path)
+    first = src.access_token          # expires in 10 min: renewed on the next use
+    second = src.access_token
+    third = src.access_token          # valid for a day: reused
+    assert first != second and second == third and len(calls) == 2
