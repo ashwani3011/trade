@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-01T09:28:09+05:30",
+ "generated_at": "2026-10-01T09:43:10+05:30",
  "today": "2026-10-01",
  "market_phase": "open",
  "trader_running": true,
@@ -2656,6 +2656,100 @@
    "variant": "tg_opt.v1",
    "reason": "APOLLOHOSP: first candle too big (2.7%) - skipped",
    "decided_at": "09:25:20"
+  },
+  {
+   "key": "orb.base|order|TATASTEEL|09:30",
+   "type": "ORDER",
+   "variant": "orb.base",
+   "symbol": "TATASTEEL",
+   "bar_time": "09:30",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "09:35:20"
+  },
+  {
+   "key": "pdb.base|order|NTPC|09:30",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "NTPC",
+   "bar_time": "09:30",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "PDL break",
+   "decided_at": "09:35:20"
+  },
+  {
+   "key": "pdb.base|order|TATASTEEL|09:30",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "TATASTEEL",
+   "bar_time": "09:30",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "PDL break",
+   "decided_at": "09:35:20"
+  },
+  {
+   "key": "orb.base|entry|TATASTEEL|09:35",
+   "type": "ENTRY",
+   "variant": "orb.base",
+   "symbol": "TATASTEEL",
+   "bar_time": "09:35",
+   "price": 183.72,
+   "qty": 70,
+   "side": -1,
+   "stop": 186.55,
+   "target": 178.24,
+   "decided_at": "09:40:20"
+  },
+  {
+   "key": "orb.base|order|BHARTIARTL|09:35",
+   "type": "ORDER",
+   "variant": "orb.base",
+   "symbol": "BHARTIARTL",
+   "bar_time": "09:35",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "09:40:20"
+  },
+  {
+   "key": "orb.base|order|SBIN|09:35",
+   "type": "ORDER",
+   "variant": "orb.base",
+   "symbol": "SBIN",
+   "bar_time": "09:35",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "09:40:20"
+  },
+  {
+   "key": "pdb.base|entry|NTPC|09:35",
+   "type": "ENTRY",
+   "variant": "pdb.base",
+   "symbol": "NTPC",
+   "bar_time": "09:35",
+   "price": 318.65,
+   "qty": 119,
+   "side": -1,
+   "stop": 320.36,
+   "target": 315.23,
+   "decided_at": "09:40:20"
+  },
+  {
+   "key": "pdb.base|entry|TATASTEEL|09:35",
+   "type": "ENTRY",
+   "variant": "pdb.base",
+   "symbol": "TATASTEEL",
+   "bar_time": "09:35",
+   "price": 183.72,
+   "qty": 107,
+   "side": -1,
+   "stop": 185.62,
+   "target": 180.1,
+   "decided_at": "09:40:20"
   }
  ],
  "families": [
