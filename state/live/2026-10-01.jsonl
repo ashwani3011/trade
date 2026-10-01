@@ -81,3 +81,7 @@
 {"key": "orb.v1|order|RELIANCE|11:05", "type": "ORDER", "variant": "orb.v1", "symbol": "RELIANCE", "bar_time": "11:05", "side": -1, "price": "at market (next candle open)", "reason": "ORB down", "decided_at": "11:10:20"}
 {"key": "vwap_pb.base|order|TCS|11:10", "type": "ORDER", "variant": "vwap_pb.base", "symbol": "TCS", "bar_time": "11:10", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "11:15:20"}
 {"key": "vwap_pb.v1|order|INFY|11:15", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "INFY", "bar_time": "11:15", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "11:20:20"}
+{"key": "orb.v1|exit|TCS|11:25", "type": "EXIT", "variant": "orb.v1", "symbol": "TCS", "bar_time": "11:25", "price": 2074.51, "qty": 6, "reason": "stop", "net": -115.97, "decided_at": "11:30:20"}
+{"key": "pdb.base|order|SUNPHARMA|11:25", "type": "ORDER", "variant": "pdb.base", "symbol": "SUNPHARMA", "bar_time": "11:25", "side": -1, "price": "at market (next candle open)", "reason": "PDL break", "decided_at": "11:30:20"}
+{"key": "sr_reject.v1|exit|SUNPHARMA|11:30", "type": "EXIT", "variant": "sr_reject.v1", "symbol": "SUNPHARMA", "bar_time": "11:30", "price": 1810.33, "qty": 28, "reason": "stop", "net": -264.38, "decided_at": "11:35:20"}
+{"key": "vwap_pb.v1|order|SBIN|11:35", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "SBIN", "bar_time": "11:35", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "11:40:20"}
