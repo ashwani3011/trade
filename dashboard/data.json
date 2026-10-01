@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-01T12:13:27+05:30",
+ "generated_at": "2026-10-01T12:28:29+05:30",
  "today": "2026-10-01",
  "market_phase": "open",
  "trader_running": true,
@@ -3509,6 +3509,87 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback long",
    "decided_at": "11:40:20"
+  },
+  {
+   "key": "orb.v1|exit|ITC|12:10",
+   "type": "EXIT",
+   "variant": "orb.v1",
+   "symbol": "ITC",
+   "bar_time": "12:10",
+   "price": 257.82,
+   "qty": 145,
+   "reason": "target",
+   "net": 286.21,
+   "decided_at": "12:15:20"
+  },
+  {
+   "key": "pdb.v1|order|NTPC|12:10",
+   "type": "ORDER",
+   "variant": "pdb.v1",
+   "symbol": "NTPC",
+   "bar_time": "12:10",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "PDL break",
+   "decided_at": "12:15:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|NTPC|12:10",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "NTPC",
+   "bar_time": "12:10",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "12:15:20"
+  },
+  {
+   "key": "pdb.v1|entry|NTPC|12:15",
+   "type": "ENTRY",
+   "variant": "pdb.v1",
+   "symbol": "NTPC",
+   "bar_time": "12:15",
+   "price": 318.25,
+   "qty": 92,
+   "side": -1,
+   "stop": 320.36,
+   "target": 314.33,
+   "decided_at": "12:20:20"
+  },
+  {
+   "key": "sr_reject.v1|exit|NTPC|12:15",
+   "type": "EXIT",
+   "variant": "sr_reject.v1",
+   "symbol": "NTPC",
+   "bar_time": "12:15",
+   "price": 317.87,
+   "qty": 149,
+   "reason": "stop",
+   "net": -248.11,
+   "decided_at": "12:20:20"
+  },
+  {
+   "key": "pdb.base|order|SBIN|12:20",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "SBIN",
+   "bar_time": "12:20",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "PDL break",
+   "decided_at": "12:25:20"
+  },
+  {
+   "key": "vwap_pb.base|order|HDFCBANK|12:20",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "HDFCBANK",
+   "bar_time": "12:20",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "12:25:20"
   }
  ],
  "families": [
