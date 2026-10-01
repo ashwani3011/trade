@@ -47,6 +47,12 @@ jobs:
       PYTHONUNBUFFERED: "1"
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      # A queued run checks out the commit it was queued at; catch up with the journal the
+      # previous run pushed since then, or the two runs' commits conflict.
+      - name: Sync to latest
+        run: git pull -q --ff-only origin "${GITHUB_REF_NAME}"
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
