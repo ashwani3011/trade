@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-05T10:27:26+05:30",
+ "generated_at": "2026-10-05T10:42:28+05:30",
  "today": "2026-10-05",
  "market_phase": "open",
  "trader_running": true,
@@ -3740,6 +3740,114 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback long",
    "decided_at": "10:25:20"
+  },
+  {
+   "key": "orb.v1|exit|AXISBANK|10:25",
+   "type": "EXIT",
+   "variant": "orb.v1",
+   "symbol": "AXISBANK",
+   "bar_time": "10:25",
+   "price": 1227.05,
+   "qty": 8,
+   "reason": "stop",
+   "net": -68.21,
+   "decided_at": "10:30:20"
+  },
+  {
+   "key": "vwap_pb.base|exit|KOTAKBANK|10:25",
+   "type": "EXIT",
+   "variant": "vwap_pb.base",
+   "symbol": "KOTAKBANK",
+   "bar_time": "10:25",
+   "price": 418.47,
+   "qty": 59,
+   "reason": "stop",
+   "net": -230.24,
+   "decided_at": "10:30:20"
+  },
+  {
+   "key": "vwap_pb.base|entry|BAJFINANCE|10:25",
+   "type": "ENTRY",
+   "variant": "vwap_pb.base",
+   "symbol": "BAJFINANCE",
+   "bar_time": "10:25",
+   "price": 985.9,
+   "qty": 32,
+   "side": 1,
+   "stop": 979.68,
+   "target": 994.36,
+   "decided_at": "10:30:20"
+  },
+  {
+   "key": "vwap_pb.v1|exit|KOTAKBANK|10:25",
+   "type": "EXIT",
+   "variant": "vwap_pb.v1",
+   "symbol": "KOTAKBANK",
+   "bar_time": "10:25",
+   "price": 418.47,
+   "qty": 55,
+   "reason": "stop",
+   "net": -214.63,
+   "decided_at": "10:30:20"
+  },
+  {
+   "key": "pdb.base|order|LT|10:30",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "LT",
+   "bar_time": "10:30",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "PDH break",
+   "decided_at": "10:35:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|BAJFINANCE|10:30",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "BAJFINANCE",
+   "bar_time": "10:30",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:35:20"
+  },
+  {
+   "key": "pdb.base|entry|LT|10:35",
+   "type": "ENTRY",
+   "variant": "pdb.base",
+   "symbol": "LT",
+   "bar_time": "10:35",
+   "price": 3740.12,
+   "qty": 8,
+   "side": 1,
+   "stop": 3715.62,
+   "target": 3785.75,
+   "decided_at": "10:40:20"
+  },
+  {
+   "key": "vwap_pb.base|order|BHARTIARTL|10:35",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "BHARTIARTL",
+   "bar_time": "10:35",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:40:20"
+  },
+  {
+   "key": "vwap_pb.v1|entry|BAJFINANCE|10:35",
+   "type": "ENTRY",
+   "variant": "vwap_pb.v1",
+   "symbol": "BAJFINANCE",
+   "bar_time": "10:35",
+   "price": 987.0,
+   "qty": 23,
+   "side": 1,
+   "stop": 979.13,
+   "target": 1001.85,
+   "decided_at": "10:40:20"
   }
  ],
  "families": [
