@@ -99,3 +99,4 @@
 {"key": "vwap_pb.v1|exit|BAJFINANCE|11:35", "type": "EXIT", "variant": "vwap_pb.v1", "symbol": "BAJFINANCE", "bar_time": "11:35", "price": 978.83, "qty": 23, "reason": "stop", "net": -211.73, "decided_at": "11:40:20"}
 {"key": "sr_reject.v1|entry|LT|11:40", "type": "ENTRY", "variant": "sr_reject.v1", "symbol": "LT", "bar_time": "11:40", "price": 3728.28, "qty": 10, "side": -1, "stop": 3746.32, "target": 3697.05, "decided_at": "11:45:20"}
 {"key": "sr_reject.base|exit|HDFCBANK|11:55", "type": "EXIT", "variant": "sr_reject.base", "symbol": "HDFCBANK", "bar_time": "11:55", "price": 704.27, "qty": 31, "reason": "stop", "net": -122.21, "decided_at": "12:00:20"}
+{"key": "sr_reject.base|exit|BHARTIARTL|12:35", "type": "EXIT", "variant": "sr_reject.base", "symbol": "BHARTIARTL", "bar_time": "12:35", "price": 1769.85, "qty": 20, "reason": "stop", "net": -228.92, "decided_at": "12:40:20"}
