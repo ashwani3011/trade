@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-05T10:42:28+05:30",
+ "generated_at": "2026-10-05T10:57:30+05:30",
  "today": "2026-10-05",
  "market_phase": "open",
  "trader_running": true,
@@ -3848,6 +3848,65 @@
    "stop": 979.13,
    "target": 1001.85,
    "decided_at": "10:40:20"
+  },
+  {
+   "key": "vwap_pb.base|entry|BHARTIARTL|10:40",
+   "type": "ENTRY",
+   "variant": "vwap_pb.base",
+   "symbol": "BHARTIARTL",
+   "bar_time": "10:40",
+   "price": 1758.53,
+   "qty": 19,
+   "side": 1,
+   "stop": 1750.37,
+   "target": 1769.94,
+   "decided_at": "10:45:20"
+  },
+  {
+   "key": "orb.base|order|KOTAKBANK|10:45",
+   "type": "ORDER",
+   "variant": "orb.base",
+   "symbol": "KOTAKBANK",
+   "bar_time": "10:45",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "10:50:20"
+  },
+  {
+   "key": "orb.base|order|INFY|10:50",
+   "type": "ORDER",
+   "variant": "orb.base",
+   "symbol": "INFY",
+   "bar_time": "10:50",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "10:55:20"
+  },
+  {
+   "key": "vwap_pb.base|exit|AXISBANK|10:50",
+   "type": "EXIT",
+   "variant": "vwap_pb.base",
+   "symbol": "AXISBANK",
+   "bar_time": "10:50",
+   "price": 1223.57,
+   "qty": 27,
+   "reason": "stop",
+   "net": -240.2,
+   "decided_at": "10:55:20"
+  },
+  {
+   "key": "vwap_pb.v1|exit|AXISBANK|10:50",
+   "type": "EXIT",
+   "variant": "vwap_pb.v1",
+   "symbol": "AXISBANK",
+   "bar_time": "10:50",
+   "price": 1224.71,
+   "qty": 19,
+   "reason": "stop",
+   "net": -206.48,
+   "decided_at": "10:55:20"
   }
  ],
  "families": [
