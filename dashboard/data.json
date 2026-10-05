@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-05T11:12:32+05:30",
+ "generated_at": "2026-10-05T11:27:34+05:30",
  "today": "2026-10-05",
  "market_phase": "open",
  "trader_running": true,
@@ -3964,6 +3964,122 @@
    "stop": 1174.81,
    "target": 1206.27,
    "decided_at": "11:05:20"
+  },
+  {
+   "key": "pdb.base|order|KOTAKBANK|11:10",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "KOTAKBANK",
+   "bar_time": "11:10",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "PDL break",
+   "decided_at": "11:15:20"
+  },
+  {
+   "key": "orb.v1|order|BHARTIARTL|11:15",
+   "type": "ORDER",
+   "variant": "orb.v1",
+   "symbol": "BHARTIARTL",
+   "bar_time": "11:15",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "11:20:20"
+  },
+  {
+   "key": "sr_reject.base|order|HDFCBANK|11:15",
+   "type": "ORDER",
+   "variant": "sr_reject.base",
+   "symbol": "HDFCBANK",
+   "bar_time": "11:15",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "level rejection",
+   "decided_at": "11:20:20"
+  },
+  {
+   "key": "sr_reject.base|order|KOTAKBANK|11:15",
+   "type": "ORDER",
+   "variant": "sr_reject.base",
+   "symbol": "KOTAKBANK",
+   "bar_time": "11:15",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "level rejection",
+   "decided_at": "11:20:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|NTPC|11:15",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "NTPC",
+   "bar_time": "11:15",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "11:20:20"
+  },
+  {
+   "key": "orb.v1|entry|BHARTIARTL|11:20",
+   "type": "ENTRY",
+   "variant": "orb.v1",
+   "symbol": "BHARTIARTL",
+   "bar_time": "11:20",
+   "price": 1764.83,
+   "qty": 21,
+   "side": 1,
+   "stop": 1756.46,
+   "target": 1779.08,
+   "decided_at": "11:25:20"
+  },
+  {
+   "key": "orb.v1|order|KOTAKBANK|11:20",
+   "type": "ORDER",
+   "variant": "orb.v1",
+   "symbol": "KOTAKBANK",
+   "bar_time": "11:20",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "11:25:20"
+  },
+  {
+   "key": "pdb.base|order|HDFCBANK|11:20",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "HDFCBANK",
+   "bar_time": "11:20",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "PDL break",
+   "decided_at": "11:25:20"
+  },
+  {
+   "key": "sr_reject.base|entry|HDFCBANK|11:20",
+   "type": "ENTRY",
+   "variant": "sr_reject.base",
+   "symbol": "HDFCBANK",
+   "bar_time": "11:20",
+   "price": 707.46,
+   "qty": 31,
+   "side": 1,
+   "stop": 704.48,
+   "target": 713.54,
+   "decided_at": "11:25:20"
+  },
+  {
+   "key": "vwap_pb.v1|entry|NTPC|11:20",
+   "type": "ENTRY",
+   "variant": "vwap_pb.v1",
+   "symbol": "NTPC",
+   "bar_time": "11:20",
+   "price": 321.2,
+   "qty": 100,
+   "side": 1,
+   "stop": 319.38,
+   "target": 324.7,
+   "decided_at": "11:25:20"
   }
  ],
  "families": [
