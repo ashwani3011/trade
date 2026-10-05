@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-05T10:57:30+05:30",
+ "generated_at": "2026-10-05T11:12:32+05:30",
  "today": "2026-10-05",
  "market_phase": "open",
  "trader_running": true,
@@ -3907,6 +3907,63 @@
    "reason": "stop",
    "net": -206.48,
    "decided_at": "10:55:20"
+  },
+  {
+   "key": "pdb.base|order|BHARTIARTL|10:55",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "BHARTIARTL",
+   "bar_time": "10:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "PDH break",
+   "decided_at": "11:00:20"
+  },
+  {
+   "key": "pdb.base|order|RELIANCE|10:55",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "RELIANCE",
+   "bar_time": "10:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "PDH break",
+   "decided_at": "11:00:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|RELIANCE|10:55",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "RELIANCE",
+   "bar_time": "10:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "11:00:20"
+  },
+  {
+   "key": "pdb.base|order|NTPC|11:00",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "NTPC",
+   "bar_time": "11:00",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "PDH break",
+   "decided_at": "11:05:20"
+  },
+  {
+   "key": "vwap_pb.v1|entry|RELIANCE|11:00",
+   "type": "ENTRY",
+   "variant": "vwap_pb.v1",
+   "symbol": "RELIANCE",
+   "bar_time": "11:00",
+   "price": 1185.66,
+   "qty": 16,
+   "side": 1,
+   "stop": 1174.81,
+   "target": 1206.27,
+   "decided_at": "11:05:20"
   }
  ],
  "families": [
