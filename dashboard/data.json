@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-05T14:01:26+05:30",
+ "generated_at": "2026-10-05T14:16:28+05:30",
  "today": "2026-10-05",
  "market_phase": "open",
  "trader_running": true,
@@ -4211,6 +4211,30 @@
    "stop": 711.81,
    "target": 692.13,
    "decided_at": "13:00:20"
+  },
+  {
+   "key": "pdb.base|exit|LT|14:05",
+   "type": "EXIT",
+   "variant": "pdb.base",
+   "symbol": "LT",
+   "bar_time": "14:05",
+   "price": 3714.51,
+   "qty": 8,
+   "reason": "stop",
+   "net": -236.49,
+   "decided_at": "14:10:20"
+  },
+  {
+   "key": "vwap_pb.base|exit|BHARTIARTL|14:10",
+   "type": "EXIT",
+   "variant": "vwap_pb.base",
+   "symbol": "BHARTIARTL",
+   "bar_time": "14:10",
+   "price": 1769.94,
+   "qty": 19,
+   "reason": "target",
+   "net": 181.26,
+   "decided_at": "14:15:20"
   }
  ],
  "families": [
