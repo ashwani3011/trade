@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-05T11:27:34+05:30",
+ "generated_at": "2026-10-05T11:42:36+05:30",
  "today": "2026-10-05",
  "market_phase": "open",
  "trader_running": true,
@@ -4080,6 +4080,76 @@
    "stop": 319.38,
    "target": 324.7,
    "decided_at": "11:25:20"
+  },
+  {
+   "key": "orb.v1|entry|KOTAKBANK|11:25",
+   "type": "ENTRY",
+   "variant": "orb.v1",
+   "symbol": "KOTAKBANK",
+   "bar_time": "11:25",
+   "price": 416.92,
+   "qty": 71,
+   "side": -1,
+   "stop": 419.43,
+   "target": 412.29,
+   "decided_at": "11:30:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|ICICIBANK|11:25",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "ICICIBANK",
+   "bar_time": "11:25",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "11:30:20"
+  },
+  {
+   "key": "pdb.base|order|ITC|11:30",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "ITC",
+   "bar_time": "11:30",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "PDH break",
+   "decided_at": "11:35:20"
+  },
+  {
+   "key": "sr_reject.v1|order|LT|11:35",
+   "type": "ORDER",
+   "variant": "sr_reject.v1",
+   "symbol": "LT",
+   "bar_time": "11:35",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "level rejection (confirmed)",
+   "decided_at": "11:40:20"
+  },
+  {
+   "key": "vwap_pb.base|exit|BAJFINANCE|11:35",
+   "type": "EXIT",
+   "variant": "vwap_pb.base",
+   "symbol": "BAJFINANCE",
+   "bar_time": "11:35",
+   "price": 979.38,
+   "qty": 32,
+   "reason": "stop",
+   "net": -241.78,
+   "decided_at": "11:40:20"
+  },
+  {
+   "key": "vwap_pb.v1|exit|BAJFINANCE|11:35",
+   "type": "EXIT",
+   "variant": "vwap_pb.v1",
+   "symbol": "BAJFINANCE",
+   "bar_time": "11:35",
+   "price": 978.83,
+   "qty": 23,
+   "reason": "stop",
+   "net": -211.73,
+   "decided_at": "11:40:20"
   }
  ],
  "families": [
