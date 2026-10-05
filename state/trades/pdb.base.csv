@@ -20,3 +20,7 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-01,pdb.base,NTPC,-1,119,09:35,318.65,13:40,315.23,target,407.33,40.04,367.29,1.81,PDL break
 2026-10-01,pdb.base,RELIANCE,-1,27,09:55,1180.35,13:40,1166.54,target,372.72,33.64,339.08,1.724,PDL break
 2026-10-01,pdb.base,BHARTIARTL,-1,14,12:45,1748.68,15:10,1742.52,squareoff,86.14,25.93,60.21,0.308,PDL break
+2026-10-05,pdb.base,INFY,1,21,09:40,1036.76,10:20,1026.63,stop,-212.83,22.95,-235.78,-1.143,PDH break
+2026-10-05,pdb.base,LT,1,8,10:35,3740.12,14:05,3714.51,stop,-204.89,31.6,-236.49,-1.207,PDH break
+2026-10-05,pdb.base,SUNPHARMA,-1,19,09:35,1791.16,15:10,1778.03,squareoff,249.46,35.98,213.47,1.035,PDL break
+2026-10-05,pdb.base,TCS,1,9,09:30,2098.03,15:10,2109.47,squareoff,102.94,20.09,82.85,0.395,PDH break

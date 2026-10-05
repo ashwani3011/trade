@@ -14,3 +14,6 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-01,orb.base,SBIN,1,18,09:40,964.09,12:45,952.81,stop,-202.95,18.27,-221.22,-1.118,ORB up
 2026-10-01,orb.base,TATASTEEL,-1,70,09:35,183.72,12:45,178.24,target,383.94,13.48,370.46,1.873,ORB down
 2026-10-01,orb.base,BHARTIARTL,1,11,09:40,1752.83,13:25,1734.58,stop,-200.71,20.32,-221.03,-1.134,ORB up
+2026-10-05,orb.base,BAJFINANCE,1,8,09:35,987.05,15:10,970.46,squareoff,-132.7,8.29,-140.99,-0.719,ORB up
+2026-10-05,orb.base,ICICIBANK,1,13,09:35,1318.1,15:10,1329.3,squareoff,145.68,18.26,127.41,0.681,ORB up
+2026-10-05,orb.base,RELIANCE,1,20,09:35,1180.75,15:10,1187.44,squareoff,133.79,25.13,108.66,0.569,ORB up
