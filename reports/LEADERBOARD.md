@@ -1,4 +1,4 @@
-# Leaderboard (as of 2026-10-05)
+# Leaderboard (as of 2026-10-06)
 
 Paper trading only. `ready_for_real_money` requires 40+ paper days, 30+ trades, profit factor >= 1.3, positive net return after costs and max drawdown <= 10.0%.
 
