@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-05T11:42:36+05:30",
+ "generated_at": "2026-10-05T11:57:38+05:30",
  "today": "2026-10-05",
  "market_phase": "open",
  "trader_running": true,
@@ -4150,6 +4150,19 @@
    "reason": "stop",
    "net": -211.73,
    "decided_at": "11:40:20"
+  },
+  {
+   "key": "sr_reject.v1|entry|LT|11:40",
+   "type": "ENTRY",
+   "variant": "sr_reject.v1",
+   "symbol": "LT",
+   "bar_time": "11:40",
+   "price": 3728.28,
+   "qty": 10,
+   "side": -1,
+   "stop": 3746.32,
+   "target": 3697.05,
+   "decided_at": "11:45:20"
   }
  ],
  "families": [
