@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-05T11:57:38+05:30",
+ "generated_at": "2026-10-05T12:12:40+05:30",
  "today": "2026-10-05",
  "market_phase": "open",
  "trader_running": true,
@@ -4163,6 +4163,18 @@
    "stop": 3746.32,
    "target": 3697.05,
    "decided_at": "11:45:20"
+  },
+  {
+   "key": "sr_reject.base|exit|HDFCBANK|11:55",
+   "type": "EXIT",
+   "variant": "sr_reject.base",
+   "symbol": "HDFCBANK",
+   "bar_time": "11:55",
+   "price": 704.27,
+   "qty": 31,
+   "reason": "stop",
+   "net": -122.21,
+   "decided_at": "12:00:20"
   }
  ],
  "families": [
