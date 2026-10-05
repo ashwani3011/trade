@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-05T10:12:24+05:30",
+ "generated_at": "2026-10-05T10:27:26+05:30",
  "today": "2026-10-05",
  "market_phase": "open",
  "trader_running": true,
@@ -3694,6 +3694,52 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback short",
    "decided_at": "10:10:20"
+  },
+  {
+   "key": "vwap_pb.base|order|ICICIBANK|10:15",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "ICICIBANK",
+   "bar_time": "10:15",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:20:20"
+  },
+  {
+   "key": "pdb.base|exit|INFY|10:20",
+   "type": "EXIT",
+   "variant": "pdb.base",
+   "symbol": "INFY",
+   "bar_time": "10:20",
+   "price": 1026.63,
+   "qty": 21,
+   "reason": "stop",
+   "net": -235.78,
+   "decided_at": "10:25:20"
+  },
+  {
+   "key": "vwap_pb.base|exit|SUNPHARMA|10:20",
+   "type": "EXIT",
+   "variant": "vwap_pb.base",
+   "symbol": "SUNPHARMA",
+   "bar_time": "10:20",
+   "price": 1785.58,
+   "qty": 21,
+   "reason": "stop",
+   "net": -242.59,
+   "decided_at": "10:25:20"
+  },
+  {
+   "key": "vwap_pb.base|order|BAJFINANCE|10:20",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "BAJFINANCE",
+   "bar_time": "10:20",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:25:20"
   }
  ],
  "families": [
