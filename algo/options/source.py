@@ -38,7 +38,7 @@ class OptionSeries:
 
 class OptionSource(Protocol):
     def series(self, underlying: str, day: date, option_type: str, spot: float,
-               otm_pct: float, min_expiry_days: int) -> OptionSeries | None: ...
+               otm_pct: float, min_expiry_days: int, otm_index: int | None = None) -> OptionSeries | None: ...
 
 
 # ------------------------------------------------------------------ helpers
@@ -62,8 +62,14 @@ def target_expiry_month(day: date, min_expiry_days: int) -> tuple[int, int, int]
     return y, m, code
 
 
-def pick_strike(strikes: np.ndarray, spot: float, option_type: str, otm_pct: float) -> float | None:
+def pick_strike(strikes: np.ndarray, spot: float, option_type: str, otm_pct: float,
+                otm_index: int | None = None) -> float | None:
+    """First strike at least otm_pct% out of the money or, with otm_index, the strike at that
+    0-based position in the list of strikes beyond spot (0 = nearest OTM strike)."""
     strikes = np.sort(np.unique(strikes))
+    if otm_index is not None:
+        cand = strikes[strikes > spot] if option_type == "CE" else strikes[strikes < spot][::-1]
+        return float(cand[otm_index]) if len(cand) > otm_index else None
     if option_type == "CE":
         cand = strikes[strikes >= spot * (1 + otm_pct / 100)]
         return float(cand[0]) if len(cand) else None
@@ -108,7 +114,7 @@ class DhanOptionSource:
             df.to_csv(path, index=False)
         return df
 
-    def series(self, underlying, day, option_type, spot, otm_pct, min_expiry_days):
+    def series(self, underlying, day, option_type, spot, otm_pct, min_expiry_days, otm_index=None):
         contracts = self._contracts_for(underlying)
         if contracts.empty:
             log.info("%s has no listed stock options", underlying)
@@ -118,7 +124,7 @@ class DhanOptionSource:
                            & contracts["expiry"].map(lambda e: (e.year, e.month) == (y, m) and e >= day)]
         lot = int(contracts["lot_size"].iloc[-1])
         if not listed.empty:
-            strike = pick_strike(listed["strike"].to_numpy(), spot, option_type, otm_pct)
+            strike = pick_strike(listed["strike"].to_numpy(), spot, option_type, otm_pct, otm_index)
             if strike is None:
                 return None
             row = listed[listed["strike"] == strike].iloc[0]
@@ -130,12 +136,12 @@ class DhanOptionSource:
                 return None
             return OptionSeries(_label(underlying, row["expiry"], strike, option_type), strike, row["expiry"],
                                 option_type, int(row["lot_size"]), bars.reset_index(drop=True), "listed")
-        return self._rolling(underlying, day, option_type, spot, otm_pct, code, y, m, lot, contracts)
+        return self._rolling(underlying, day, option_type, spot, otm_pct, code, y, m, lot, contracts, otm_index)
 
-    def _rolling(self, und, day, option_type, spot, otm_pct, code, y, m, lot, contracts):
+    def _rolling(self, und, day, option_type, spot, otm_pct, code, y, m, lot, contracts, otm_index=None):
         step = strike_step(contracts["strike"].to_numpy(), spot)
         atm = round(spot / step) * step
-        target = pick_strike(np.arange(atm - 12 * step, atm + 12.5 * step, step), spot, option_type, otm_pct)
+        target = pick_strike(np.arange(atm - 12 * step, atm + 12.5 * step, step), spot, option_type, otm_pct, otm_index)
         if target is None:
             return None
         k = int(np.clip(round((target - atm) / step), -10, 10))
@@ -184,7 +190,7 @@ class SyntheticOptionSource:
         self.vol = vol
         self.interval = interval
 
-    def series(self, underlying, day, option_type, spot, otm_pct, min_expiry_days):
+    def series(self, underlying, day, option_type, spot, otm_pct, min_expiry_days, otm_index=None):
         und = self.eq.intraday(underlying, day, day, self.interval)
         if not is_final(day):
             und = completed_bars(und, self.interval)
@@ -193,7 +199,8 @@ class SyntheticOptionSource:
         y, m, _ = target_expiry_month(day, min_expiry_days)
         expiry = monthly_expiry(y, m)
         step = max(1.0, float(10 ** math.floor(math.log10(spot)) / 20))
-        strike = pick_strike(np.arange(round(spot / step) * step - 20 * step, spot * 1.3, step), spot, option_type, otm_pct)
+        strike = pick_strike(np.arange(round(spot / step) * step - 20 * step, spot * 1.3, step), spot, option_type, otm_pct,
+                             otm_index)
         if strike is None:
             return None
         minutes_left = 375 - np.arange(len(und)) * self.interval

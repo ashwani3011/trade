@@ -1,17 +1,22 @@
 """All strategy families, their data needs, and one `simulate` entry point."""
 from __future__ import annotations
 
+import logging
 from dataclasses import dataclass, field
 from datetime import date
 
 from .data.market import DayData, MarketData
 from .engine import Trade, simulate_day
 from .options.engine import DayResult, OptionsDay, simulate_options_day
-from .options.strategy import TopGainerOptions
+from .options.fno_engine import simulate_fno_day
+from .options.strategy import FnoTopGainerCall, TopGainerOptions
 from .strategies import REGISTRY as EQUITY_FAMILIES
 from .strategies.base import Strategy
 
-FAMILIES: dict[str, type[Strategy]] = {**EQUITY_FAMILIES, TopGainerOptions.family: TopGainerOptions}
+log = logging.getLogger(__name__)
+
+FAMILIES: dict[str, type[Strategy]] = {**EQUITY_FAMILIES, TopGainerOptions.family: TopGainerOptions,
+                                       FnoTopGainerCall.family: FnoTopGainerCall}
 
 
 def kind(family: str) -> str:
@@ -32,6 +37,7 @@ class DataHub:
     option_source: object = None
     _equity: dict[date, DayData] = field(default_factory=dict)
     _options: dict[date, OptionsDay] = field(default_factory=dict)
+    _fno: dict[date, OptionsDay] = field(default_factory=dict)
     _md: dict[str, MarketData] = field(default_factory=dict)
 
     def _market(self, name: str, symbols: list[str]) -> MarketData:
@@ -54,16 +60,40 @@ class DataHub:
             for d in md.days(days, min_bars=min(min_bars, 2)):
                 self._options[d.day] = OptionsDay(d.day, d, o.index_symbol, self.option_source)
                 loaded.add(d.day)
+        if "fno" in kinds:
+            o = s.options
+            try:   # ~200 extra stocks: a failure here must not stop the other families
+                md = self._market("fno", self.fno_universe())
+                for d in md.days(days, min_bars=min(min_bars, 2)):
+                    self._fno[d.day] = OptionsDay(d.day, d, o.index_symbol, self.option_source)
+                    loaded.add(d.day)
+            except Exception as exc:
+                log.warning("F&O universe data failed - tg_fno skipped: %s", exc)
         return sorted(loaded)
 
+    def fno_universe(self) -> list[str]:
+        """Stocks with listed options: settings options.fno_universe, else Dhan's instrument master."""
+        o = self.settings.options
+        if o.fno_universe:
+            return list(o.fno_universe)
+        lookup = getattr(self.source, "fno_underlyings", None)
+        if lookup is not None:
+            try:
+                return lookup()
+            except Exception as exc:
+                log.warning("F&O universe lookup failed (%s) - using the NIFTY 50 options universe", exc)
+        return list(o.universe)
+
     def context(self, family: str, day: date):
-        return (self._options if kind(family) == "options" else self._equity).get(day)
+        return {"options": self._options, "fno": self._fno}.get(kind(family), self._equity).get(day)
 
 
 def simulate(family: str, params: dict, ctx, equity: float, settings, variant: str = "", final: bool = True) -> DayResult:
     strat = build(family, params)
     if kind(family) == "options":
         return simulate_options_day(strat, ctx, equity, settings.options.costs, variant=variant, final=final)
+    if kind(family) == "fno":
+        return simulate_fno_day(strat, ctx, equity, settings.options.costs, variant=variant, final=final)
     res = DayResult()
     res.trades = simulate_day(strat, ctx, equity, settings.risk, settings.costs, variant=variant,
                               interval=settings.interval, final=final, open_out=res.open_positions,

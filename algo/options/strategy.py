@@ -61,3 +61,34 @@ class TopGainerOptions(Strategy):
         "exit_time": ("choice", ["11:00", "11:30", "12:00", "13:00", "14:30"]),
         "put_leg": ("choice", ["none", "hedge", "independent"]),
     }
+
+
+class FnoTopGainerCall(Strategy):
+    """'F&O top gainer' call buying, as specified by the owner on 2026-10-06.
+
+    From 09:25 rank the F&O stocks by % change vs previous close on every completed candle
+    (dynamic, not frozen at 09:25) and evaluate the top 2 in rank order. A gainer qualifies
+    when its 09:15-09:25 opening candle is bullish with body >= 60% of range and range
+    <= 2.5 x daily ATR, the stock has touched the opening-candle high since 09:25, and an
+    OTM call is listed. Buy that call (strike index 2 among strikes above spot, as in the
+    source code); the stop is on the underlying: opening-candle low, or high - 60% of the
+    range when the range is > 3% of the open. One trade a day, squared off at the close.
+    """
+    family = "tg_fno"
+    kind = "fno"
+    description = (
+        "From 9:25 take the top 2 F&O gainers (re-ranked every candle) with a strong bullish opening candle "
+        "that has touched the opening high, buy an OTM call, stop on the underlying at the opening-candle low."
+    )
+    defaults = {
+        "n_stocks": 2,
+        "min_body_ratio": 0.6,     # opening-candle body / range
+        "max_range_atr": 2.5,      # opening range <= x * daily ATR
+        "atr_days": 14,
+        "otm_index": 2,            # 0-based index into strikes above spot (2 = third OTM strike)
+        "big_candle_pct": 3.0,     # opening range > x% of its open -> stop at high - stop_frac * range
+        "stop_frac": 0.6,
+        "max_trades": 1,
+        "first_scan": "09:25",
+    }
+    space: dict = {}               # fixed rules: not tuned by the weekly improvement loop

@@ -75,7 +75,7 @@ class Store:
         return reg
 
     def _seed(self, reg: Registry, cfg: dict) -> None:
-        """Each new family gets a fixed 'base' benchmark and an 'enhanced' champion."""
+        """Each new family gets a fixed 'base' benchmark and, if it has one, an 'enhanced' champion."""
         today = date.today().isoformat()
         for family, spec in cfg.items():
             if family not in REGISTRY:
@@ -84,6 +84,8 @@ class Store:
                 f"{family}.base", family, dict(spec.get("base", {})), "baseline", created=today,
                 note=spec.get("base_note", "Rules as commonly taught"),
             )
+            if "enhanced" not in spec:
+                continue
             reg.variants[f"{family}.v1"] = Variant(
                 f"{family}.v1", family, dict(spec.get("enhanced", {})), "champion", created=today,
                 note=spec.get("enhanced_note", "Enhanced version"),

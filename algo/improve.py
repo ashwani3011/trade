@@ -168,7 +168,7 @@ def run_improve(s: Settings, today: date | None = None, source=None, option_sour
     review_live(store, reg, s, today)
 
     cfg = s.improve
-    families = sorted({v.family for v in reg.active()})
+    families = sorted({v.family for v in reg.active() if reg.champion(v.family)})  # base-only families aren't tuned
     cal = trading_days(today - timedelta(days=int(cfg.lookback_days * 1.6) + 5), today - timedelta(days=1))
     src = source or make_source(s)
     hub = DataHub(s, src, option_source or make_option_source(s, src))

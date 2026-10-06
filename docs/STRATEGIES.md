@@ -112,6 +112,28 @@ The four starting families are common price-action setups taught by Indian tradi
 
 ---
 
+## 6. F&O top gainer call buying (`tg_fno`), the owner's spec of 6 Oct 2026
+
+Tracked as one fixed variant, `tg_fno.base`, with its own Rs 20k account. It has no enhanced version and the weekly improvement loop does not tune it.
+
+- **Universe and ranking:** every NSE stock with listed options (about 213, read from Dhan's instrument master). From 09:25, on every completed 5-min candle, stocks are ranked by % change vs previous close. The top 2 are evaluated in rank order, so the ranking is dynamic and not frozen at 09:25.
+- **Opening candle:** 09:15-09:25, built from the 09:15 and 09:20 five-minute candles. This gives the same OHLC as ten one-minute candles.
+- **Qualifies when:**
+  - the opening candle is bullish;
+  - its body is at least 60% of its range;
+  - its range is at most 2.5 x the daily ATR(14);
+  - the stock has traded at or above the opening-candle high since 09:25;
+  - an OTM call is listed.
+- **Option:** the call at 0-based index 2 among strikes above spot, i.e. the third OTM strike. This matches the source code the spec came from (`otmOffsetStrikes = 2`). Change `otm_index` to 1 in `config/strategies.yaml` for the literal "2 strikes OTM".
+- **Stop:** on the underlying stock, not the premium. It is the opening-candle low, or opening high - 60% of the opening range when the range is more than 3% of the open.
+- **Fills:** decisions are taken on completed candles and filled at the next candle's open, both entry and stop exit.
+- **Limits:** one trade a day, one lot. A lot that costs more than the account is skipped with a note.
+- **Close:** square-off at the close of the 15:10 candle, which is the 15:15 price. Dhan returns no later candles.
+- **Assumptions to confirm:**
+  - The ATR is daily ATR(14).
+  - The live NSE gainers page is replaced by ranking the full F&O list from Dhan candles, because NSE blocks most cloud servers. It is also replayable and restart-safe.
+- **`r_multiple`:** for this family it is net P&L divided by the premium paid.
+
 ## Adding a strategy from a video
 
 1. Write the rules down exactly: entry trigger, stop, target, time window and filters. Anything vague ("strong move") becomes a parameter with a range.

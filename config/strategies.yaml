@@ -102,3 +102,15 @@ tg_opt:
     sizing: risk
     risk_pct: 5.0
     put_leg: independent
+
+tg_fno:
+  base_note: "Owner's spec (6 Oct 2026): from 9:25 top 2 F&O gainers re-ranked every candle, bullish opening candle (body >= 60%, range <= 2.5x daily ATR), touched opening high, buy 3rd OTM call, stop on the stock at opening low (high - 60% of range if range > 3%), 1 trade a day, square-off at close"
+  base:
+    n_stocks: 2
+    min_body_ratio: 0.6
+    max_range_atr: 2.5
+    atr_days: 14
+    otm_index: 2
+    big_candle_pct: 3.0
+    stop_frac: 0.6
+    max_trades: 1

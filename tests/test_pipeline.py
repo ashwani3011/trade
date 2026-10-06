@@ -31,7 +31,8 @@ def test_daily_run_is_idempotent_and_reports(tmp_path):
     src = SyntheticDataSource()
     day = date(2025, 3, 4)
     first = run_day(s, day, source=src)
-    assert first and set(first) == {f"{f}.{v}" for f in s.strategies for v in ("base", "v1")}
+    expected = {f"{f}.base" for f in s.strategies} | {f"{f}.v1" for f, spec in s.strategies.items() if "enhanced" in spec}
+    assert first and set(first) == expected
     again = run_day(s, day, source=src)
     assert again == {}  # already recorded
     assert (s.reports_dir / "daily" / "2025-03-04.md").exists()
@@ -54,8 +55,8 @@ def test_improve_loop_runs(tmp_path):
     assert min(summary["days"].values()) >= 10
     store = Store(s.state_dir)
     reg = store.load_registry(s.strategies)
-    for fam in s.strategies:
-        assert reg.champion(fam) is not None
+    for fam, spec in s.strategies.items():
+        assert (reg.champion(fam) is not None) == ("enhanced" in spec)
         assert len(reg.challengers(fam)) <= s.improve.max_challengers
     assert (s.state_dir / "improve_log.jsonl").exists()
 
