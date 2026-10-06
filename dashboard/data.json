@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-06T13:45:57+05:30",
+ "generated_at": "2026-10-06T14:00:59+05:30",
  "today": "2026-10-06",
  "market_phase": "open",
  "trader_running": true,
@@ -4825,6 +4825,18 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback short",
    "decided_at": "13:35:20"
+  },
+  {
+   "key": "sr_reject.base|exit|BAJFINANCE|13:40",
+   "type": "EXIT",
+   "variant": "sr_reject.base",
+   "symbol": "BAJFINANCE",
+   "bar_time": "13:40",
+   "price": 958.86,
+   "qty": 2,
+   "reason": "stop",
+   "net": -11.99,
+   "decided_at": "13:45:20"
   }
  ],
  "families": [

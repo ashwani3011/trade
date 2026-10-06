@@ -106,3 +106,4 @@
 {"key": "pdb.base|order|NTPC|12:45", "type": "ORDER", "variant": "pdb.base", "symbol": "NTPC", "bar_time": "12:45", "side": 1, "price": "at market (next candle open)", "reason": "PDH break", "decided_at": "12:50:20"}
 {"key": "vwap_pb.v1|order|SBIN|12:45", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "SBIN", "bar_time": "12:45", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "12:50:20"}
 {"key": "vwap_pb.v1|order|BAJFINANCE|13:30", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "BAJFINANCE", "bar_time": "13:30", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "13:35:20"}
+{"key": "sr_reject.base|exit|BAJFINANCE|13:40", "type": "EXIT", "variant": "sr_reject.base", "symbol": "BAJFINANCE", "bar_time": "13:40", "price": 958.86, "qty": 2, "reason": "stop", "net": -11.99, "decided_at": "13:45:20"}
