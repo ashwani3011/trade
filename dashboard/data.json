@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-06T10:07:01+05:30",
+ "generated_at": "2026-10-06T10:22:03+05:30",
  "today": "2026-10-06",
  "market_phase": "open",
  "trader_running": true,
@@ -4323,6 +4323,40 @@
    "stop": 1233.3,
    "target": 1255.79,
    "decided_at": "10:05:20"
+  },
+  {
+   "key": "orb.v1|exit|AXISBANK|10:10",
+   "type": "EXIT",
+   "variant": "orb.v1",
+   "symbol": "AXISBANK",
+   "bar_time": "10:10",
+   "price": 1234.98,
+   "qty": 24,
+   "reason": "stop",
+   "net": -211.3,
+   "decided_at": "10:15:20"
+  },
+  {
+   "key": "sr_reject.base|order|AXISBANK|10:15",
+   "type": "ORDER",
+   "variant": "sr_reject.base",
+   "symbol": "AXISBANK",
+   "bar_time": "10:15",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "level rejection",
+   "decided_at": "10:20:20"
+  },
+  {
+   "key": "sr_reject.base|order|INFY|10:15",
+   "type": "ORDER",
+   "variant": "sr_reject.base",
+   "symbol": "INFY",
+   "bar_time": "10:15",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "level rejection",
+   "decided_at": "10:20:20"
   }
  ],
  "families": [
