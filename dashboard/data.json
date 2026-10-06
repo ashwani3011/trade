@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-06T11:52:15+05:30",
+ "generated_at": "2026-10-06T12:07:17+05:30",
  "today": "2026-10-06",
  "market_phase": "open",
  "trader_running": true,
@@ -4677,6 +4677,41 @@
    "stop": 961.28,
    "target": 946.96,
    "decided_at": "11:45:20"
+  },
+  {
+   "key": "pdb.base|order|ICICIBANK|11:55",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "ICICIBANK",
+   "bar_time": "11:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "PDH break",
+   "decided_at": "12:00:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|ICICIBANK|11:55",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "ICICIBANK",
+   "bar_time": "11:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "12:00:20"
+  },
+  {
+   "key": "vwap_pb.v1|entry|ICICIBANK|12:00",
+   "type": "ENTRY",
+   "variant": "vwap_pb.v1",
+   "symbol": "ICICIBANK",
+   "bar_time": "12:00",
+   "price": 1335.8,
+   "qty": 21,
+   "side": 1,
+   "stop": 1327.66,
+   "target": 1351.18,
+   "decided_at": "12:05:20"
   }
  ],
  "families": [
