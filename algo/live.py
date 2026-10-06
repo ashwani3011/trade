@@ -99,9 +99,13 @@ class LiveTrader:
         results: dict[str, DayResult] = {}
         for v in active:
             ctx = self.hub.context(v.family, self.day)
-            if ctx is not None:
+            if ctx is None:
+                continue
+            try:
                 results[v.id] = simulate(v.family, v.params, ctx, self.store.equity(v.id, self.s.capital),
                                          self.s, variant=v.id, final=False)
+            except Exception:   # one broken variant must not stop the others
+                log.exception("%s: decision round failed", v.id)
         new = []
         for vid, res in results.items():
             for e in _events(vid, res):
