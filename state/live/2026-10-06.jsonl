@@ -103,3 +103,5 @@
 {"key": "pdb.base|order|BAJFINANCE|12:35", "type": "ORDER", "variant": "pdb.base", "symbol": "BAJFINANCE", "bar_time": "12:35", "side": -1, "price": "at market (next candle open)", "reason": "PDL break", "decided_at": "12:40:20"}
 {"key": "vwap_pb.base|exit|AXISBANK|12:35", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "AXISBANK", "bar_time": "12:35", "price": 1249.33, "qty": 28, "reason": "target", "net": 227.87, "decided_at": "12:40:20"}
 {"key": "vwap_pb.v1|order|LT|12:35", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "LT", "bar_time": "12:35", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "12:40:20"}
+{"key": "pdb.base|order|NTPC|12:45", "type": "ORDER", "variant": "pdb.base", "symbol": "NTPC", "bar_time": "12:45", "side": 1, "price": "at market (next candle open)", "reason": "PDH break", "decided_at": "12:50:20"}
+{"key": "vwap_pb.v1|order|SBIN|12:45", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "SBIN", "bar_time": "12:45", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "12:50:20"}
