@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-06T09:21:55+05:30",
+ "generated_at": "2026-10-06T09:36:57+05:30",
  "today": "2026-10-06",
  "market_phase": "open",
  "trader_running": true,
@@ -3658,6 +3658,202 @@
    "variant": "tg_opt.v1",
    "reason": "no ranking possible (missing 9:15/9:20 bars or previous close)",
    "decided_at": "09:20:20"
+  },
+  {
+   "key": "tg_opt.base|order|TRENT 27OCT 3000CE|09:20",
+   "type": "ORDER",
+   "variant": "tg_opt.base",
+   "symbol": "TRENT 27OCT 3000CE",
+   "bar_time": "09:20",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "top gainer +10.00%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.base|note|top gainers @9:25: TRENT +10.00%, KOTAKBANK +3.68%",
+   "type": "NOTE",
+   "variant": "tg_opt.base",
+   "reason": "top gainers @9:25: TRENT +10.00%, KOTAKBANK +3.68%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.base|note|top losers  @9:25: APOLLOHOSP -1.88%, MAXHEALTH -1.66%",
+   "type": "NOTE",
+   "variant": "tg_opt.base",
+   "reason": "top losers  @9:25: APOLLOHOSP -1.88%, MAXHEALTH -1.66%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.base|note|KOTAKBANK: first candle too big (2.4%) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.base",
+   "reason": "KOTAKBANK: first candle too big (2.4%) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|top gainers @9:25: TRENT +10.00%, KOTAKBANK +3.68%, HINDUNILVR +1.56%",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "top gainers @9:25: TRENT +10.00%, KOTAKBANK +3.68%, HINDUNILVR +1.56%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|top losers  @9:25: APOLLOHOSP -1.88%, MAXHEALTH -1.66%, CIPLA -0.74%",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "top losers  @9:25: APOLLOHOSP -1.88%, MAXHEALTH -1.66%, CIPLA -0.74%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|TRENT: gap 8.5% too large - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "TRENT: gap 8.5% too large - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|KOTAKBANK: first candle too big (2.4%) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "KOTAKBANK: first candle too big (2.4%) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|HINDUNILVR: weak candle (body 57% of range) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "HINDUNILVR: weak candle (body 57% of range) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|APOLLOHOSP: first candle too big (2.6%) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "APOLLOHOSP: first candle too big (2.6%) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|MAXHEALTH: first candle too big (3.3%) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "MAXHEALTH: first candle too big (3.3%) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|CIPLA: first-candle volume 0.7x normal - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "CIPLA: first-candle volume 0.7x normal - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "pdb.base|order|AXISBANK|09:25",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "AXISBANK",
+   "bar_time": "09:25",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "PDH break",
+   "decided_at": "09:30:20"
+  },
+  {
+   "key": "tg_fno.base|order|TRENT 27OCT 2950CE|09:25",
+   "type": "ORDER",
+   "variant": "tg_fno.base",
+   "symbol": "TRENT 27OCT 2950CE",
+   "bar_time": "09:25",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "top F&O gainer +10.00% @09:30, above opening high 2838.00",
+   "decided_at": "09:30:20"
+  },
+  {
+   "key": "tg_fno.base|note|top gainers @09:30: TRENT +10.00%, KOTAKBANK +3.47%",
+   "type": "NOTE",
+   "variant": "tg_fno.base",
+   "reason": "top gainers @09:30: TRENT +10.00%, KOTAKBANK +3.47%",
+   "decided_at": "09:30:20"
+  },
+  {
+   "key": "tg_opt.base|entry|TRENT 27OCT 3000CE|09:25",
+   "type": "ENTRY",
+   "variant": "tg_opt.base",
+   "symbol": "TRENT 27OCT 3000CE",
+   "bar_time": "09:25",
+   "price": 56.91,
+   "qty": 225,
+   "side": 1,
+   "stop": 40.6,
+   "target": 105.85,
+   "decided_at": "09:30:20"
+  },
+  {
+   "key": "orb.base|order|AXISBANK|09:30",
+   "type": "ORDER",
+   "variant": "orb.base",
+   "symbol": "AXISBANK",
+   "bar_time": "09:30",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "09:35:20"
+  },
+  {
+   "key": "orb.v1|order|AXISBANK|09:30",
+   "type": "ORDER",
+   "variant": "orb.v1",
+   "symbol": "AXISBANK",
+   "bar_time": "09:30",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "09:35:20"
+  },
+  {
+   "key": "pdb.base|entry|AXISBANK|09:30",
+   "type": "ENTRY",
+   "variant": "pdb.base",
+   "symbol": "AXISBANK",
+   "bar_time": "09:30",
+   "price": 1239.87,
+   "qty": 20,
+   "side": 1,
+   "stop": 1229.3,
+   "target": 1258.7,
+   "decided_at": "09:35:20"
+  },
+  {
+   "key": "pdb.base|order|RELIANCE|09:30",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "RELIANCE",
+   "bar_time": "09:30",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "PDH break",
+   "decided_at": "09:35:20"
+  },
+  {
+   "key": "tg_fno.base|entry|TRENT 27OCT 2950CE|09:30",
+   "type": "ENTRY",
+   "variant": "tg_fno.base",
+   "symbol": "TRENT 27OCT 2950CE",
+   "bar_time": "09:30",
+   "price": 73.68,
+   "qty": 225,
+   "side": 1,
+   "stop": 2782.3,
+   "target": null,
+   "decided_at": "09:35:20"
+  },
+  {
+   "key": "tg_opt.base|note|APOLLOHOSP 27OCT 7400PE: 1 lot = 125 x 49.39 = Rs 6,174, risk Rs 1,115 - not affordable within rules on Rs 15,653 - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.base",
+   "reason": "APOLLOHOSP 27OCT 7400PE: 1 lot = 125 x 49.39 = Rs 6,174, risk Rs 1,115 - not affordable within rules on Rs 15,653 - skipped",
+   "decided_at": "09:35:20"
   }
  ],
  "families": [
