@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-06T09:06:53+05:30",
+ "generated_at": "2026-10-06T09:21:55+05:30",
  "today": "2026-10-06",
- "market_phase": "pre",
- "trader_running": false,
+ "market_phase": "open",
+ "trader_running": true,
  "capital": 20000.0,
  "leaderboard": [
   {
@@ -23,10 +23,10 @@
    "ready_for_real_money": false
   },
   {
-   "variant": "tg_opt.v1",
-   "role": "champion",
+   "variant": "tg_fno.base",
+   "role": "baseline",
    "status": "active",
-   "days": 6,
+   "days": 0,
    "trades": 0,
    "net_pnl": 0.0,
    "return_pct": 0.0,
@@ -40,10 +40,10 @@
    "ready_for_real_money": false
   },
   {
-   "variant": "tg_fno.base",
-   "role": "baseline",
+   "variant": "tg_opt.v1",
+   "role": "champion",
    "status": "active",
-   "days": 0,
+   "days": 6,
    "trades": 0,
    "net_pnl": 0.0,
    "return_pct": 0.0,
@@ -296,6 +296,26 @@
    "retired_reason": ""
   },
   {
+   "id": "tg_fno.base",
+   "family": "tg_fno",
+   "role": "baseline",
+   "status": "active",
+   "note": "Owner's spec (6 Oct 2026): from 9:25 top 2 F&O gainers re-ranked every candle, bullish opening candle (body >= 60%, range <= 2.5x daily ATR), touched opening high, buy 3rd OTM call, stop on the stock at opening low (high - 60% of range if range > 3%), 1 trade a day, square-off at close",
+   "params": {
+    "atr_days": 14,
+    "big_candle_pct": 3.0,
+    "max_range_atr": 2.5,
+    "max_trades": 1,
+    "min_body_ratio": 0.6,
+    "n_stocks": 2,
+    "otm_index": 2,
+    "stop_frac": 0.6
+   },
+   "created": "2026-10-06",
+   "parent": null,
+   "retired_reason": ""
+  },
+  {
    "id": "tg_opt.base",
    "family": "tg_opt",
    "role": "baseline",
@@ -380,26 +400,6 @@
     "vol_mult": 1.0
    },
    "created": "2026-09-29",
-   "parent": null,
-   "retired_reason": ""
-  },
-  {
-   "id": "tg_fno.base",
-   "family": "tg_fno",
-   "role": "baseline",
-   "status": "active",
-   "note": "Owner's spec (6 Oct 2026): from 9:25 top 2 F&O gainers re-ranked every candle, bullish opening candle (body >= 60%, range <= 2.5x daily ATR), touched opening high, buy 3rd OTM call, stop on the stock at opening low (high - 60% of range if range > 3%), 1 trade a day, square-off at close",
-   "params": {
-    "n_stocks": 2,
-    "min_body_ratio": 0.6,
-    "max_range_atr": 2.5,
-    "atr_days": 14,
-    "otm_index": 2,
-    "big_candle_pct": 3.0,
-    "stop_frac": 0.6,
-    "max_trades": 1
-   },
-   "created": "2026-10-06",
    "parent": null,
    "retired_reason": ""
   }
@@ -669,6 +669,7 @@
     "trades": 1
    }
   ],
+  "tg_fno.base": [],
   "tg_opt.base": [
    {
     "date": "2026-09-30",
@@ -844,8 +845,7 @@
     "equity_end": 17726.78,
     "trades": 5
    }
-  ],
-  "tg_fno.base": []
+  ]
  },
  "trades": [
   {
@@ -3637,7 +3637,29 @@
    "reason": "PDL break"
   }
  ],
- "live_today": [],
+ "live_today": [
+  {
+   "key": "tg_fno.base|note|no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "type": "NOTE",
+   "variant": "tg_fno.base",
+   "reason": "no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "decided_at": "09:20:20"
+  },
+  {
+   "key": "tg_opt.base|note|no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "type": "NOTE",
+   "variant": "tg_opt.base",
+   "reason": "no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "decided_at": "09:20:20"
+  },
+  {
+   "key": "tg_opt.v1|note|no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "decided_at": "09:20:20"
+  }
+ ],
  "families": [
   "orb",
   "pdb",
