@@ -74,3 +74,7 @@
 {"key": "vwap_pb.v1|order|KOTAKBANK|10:30", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "KOTAKBANK", "bar_time": "10:30", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "10:35:20"}
 {"key": "orb.base|order|LT|10:35", "type": "ORDER", "variant": "orb.base", "symbol": "LT", "bar_time": "10:35", "side": 1, "price": "at market (next candle open)", "reason": "ORB up", "decided_at": "10:40:20"}
 {"key": "vwap_pb.v1|entry|KOTAKBANK|10:35", "type": "ENTRY", "variant": "vwap_pb.v1", "symbol": "KOTAKBANK", "bar_time": "10:35", "price": 431.88, "qty": 50, "side": 1, "stop": 428.4, "target": 438.61, "decided_at": "10:40:20"}
+{"key": "orb.v1|order|ITC|10:50", "type": "ORDER", "variant": "orb.v1", "symbol": "ITC", "bar_time": "10:50", "side": -1, "price": "at market (next candle open)", "reason": "ORB down", "decided_at": "10:55:20"}
+{"key": "orb.v1|entry|ITC|10:55", "type": "ENTRY", "variant": "orb.v1", "symbol": "ITC", "bar_time": "10:55", "price": 264.92, "qty": 116, "side": -1, "stop": 266.4, "target": 262.2, "decided_at": "11:00:20"}
+{"key": "pdb.base|exit|RELIANCE|10:55", "type": "EXIT", "variant": "pdb.base", "symbol": "RELIANCE", "bar_time": "10:55", "price": 1210.45, "qty": 25, "reason": "target", "net": 352.9, "decided_at": "11:00:20"}
+{"key": "orb.v1|exit|RELIANCE|11:00", "type": "EXIT", "variant": "orb.v1", "symbol": "RELIANCE", "bar_time": "11:00", "price": 1212.89, "qty": 30, "reason": "target", "net": 253.5, "decided_at": "11:05:20"}
