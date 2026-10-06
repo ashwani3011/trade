@@ -82,3 +82,8 @@
 {"key": "orb.v1|exit|ITC|11:10", "type": "EXIT", "variant": "orb.v1", "symbol": "ITC", "bar_time": "11:10", "price": 266.48, "qty": 116, "reason": "stop", "net": -213.56, "decided_at": "11:15:20"}
 {"key": "vwap_pb.base|exit|BAJFINANCE|11:10", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "BAJFINANCE", "bar_time": "11:10", "price": 964.11, "qty": 28, "reason": "stop", "net": -227.04, "decided_at": "11:15:20"}
 {"key": "orb.v1|order|BHARTIARTL|11:15", "type": "ORDER", "variant": "orb.v1", "symbol": "BHARTIARTL", "bar_time": "11:15", "side": 1, "price": "at market (next candle open)", "reason": "ORB up", "decided_at": "11:20:20"}
+{"key": "orb.v1|entry|BHARTIARTL|11:20", "type": "ENTRY", "variant": "orb.v1", "symbol": "BHARTIARTL", "bar_time": "11:20", "price": 1797.44, "qty": 20, "side": 1, "stop": 1789.05, "target": 1812.6, "decided_at": "11:25:20"}
+{"key": "orb.v1|order|INFY|11:20", "type": "ORDER", "variant": "orb.v1", "symbol": "INFY", "bar_time": "11:20", "side": -1, "price": "at market (next candle open)", "reason": "ORB down", "decided_at": "11:25:20"}
+{"key": "pdb.v1|order|INFY|11:20", "type": "ORDER", "variant": "pdb.v1", "symbol": "INFY", "bar_time": "11:20", "side": -1, "price": "at market (next candle open)", "reason": "PDL break", "decided_at": "11:25:20"}
+{"key": "orb.v1|entry|INFY|11:25", "type": "ENTRY", "variant": "orb.v1", "symbol": "INFY", "bar_time": "11:25", "price": 1009.35, "qty": 24, "side": -1, "stop": 1016.46, "target": 994.97, "decided_at": "11:30:20"}
+{"key": "pdb.v1|entry|INFY|11:25", "type": "ENTRY", "variant": "pdb.v1", "symbol": "INFY", "bar_time": "11:25", "price": 1009.35, "qty": 21, "side": -1, "stop": 1018.6, "target": 990.71, "decided_at": "11:30:20"}
