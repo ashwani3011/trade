@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-06T13:30:55+05:30",
+ "generated_at": "2026-10-06T13:45:57+05:30",
  "today": "2026-10-06",
  "market_phase": "open",
  "trader_running": true,
@@ -4814,6 +4814,17 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback short",
    "decided_at": "12:50:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|BAJFINANCE|13:30",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "BAJFINANCE",
+   "bar_time": "13:30",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "13:35:20"
   }
  ],
  "families": [
