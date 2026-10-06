@@ -1,2 +1,4 @@
 date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,costs,net,r_multiple,reason
 2026-10-06,tg_fno.base,TRENT 27OCT 2950CE,1,225,09:30,73.68,15:10,60.09,squareoff,-3056.96,73.7,-3130.66,-0.189,"top F&O gainer +10.00% @09:30, above opening high 2838.00"
+2026-10-01,tg_fno.base,ENRIN 27OCT 3450CE,1,175,09:30,59.89,15:10,93.21,squareoff,5830.21,74.93,5755.28,0.549,"top F&O gainer +4.50% @09:30, above opening high 3338.60"
+2026-10-05,tg_fno.base,BAJFINANCE 27OCT 1010CE,1,750,09:35,18.74,15:10,12.13,squareoff,-4956.0,66.31,-5022.31,-0.357,"top F&O gainer +4.03% @09:35, above opening high 982.80"

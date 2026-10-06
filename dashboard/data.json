@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-06T19:09:13+05:30",
+ "generated_at": "2026-10-06T22:26:53+05:30",
  "today": "2026-10-06",
  "market_phase": "post",
  "trader_running": false,
@@ -125,6 +125,23 @@
    "ready_for_real_money": false
   },
   {
+   "variant": "tg_fno.base",
+   "role": "baseline",
+   "status": "active",
+   "days": 3,
+   "trades": 3,
+   "net_pnl": -2397.69,
+   "return_pct": -11.99,
+   "win_rate": 33.3,
+   "profit_factor": 0.71,
+   "avg_r": 0.001,
+   "max_dd_pct": 22.2,
+   "sharpe": -0.64,
+   "costs": 214.94,
+   "equity": 17602.31,
+   "ready_for_real_money": false
+  },
+  {
    "variant": "orb.v1",
    "role": "champion",
    "status": "active",
@@ -156,23 +173,6 @@
    "sharpe": -14.44,
    "costs": 1213.29,
    "equity": 17253.53,
-   "ready_for_real_money": false
-  },
-  {
-   "variant": "tg_fno.base",
-   "role": "baseline",
-   "status": "active",
-   "days": 1,
-   "trades": 1,
-   "net_pnl": -3130.66,
-   "return_pct": -15.65,
-   "win_rate": 0.0,
-   "profit_factor": 0.0,
-   "avg_r": -0.189,
-   "max_dd_pct": 15.65,
-   "sharpe": 0.0,
-   "costs": 73.7,
-   "equity": 16869.34,
    "ready_for_real_money": false
   },
   {
@@ -717,6 +717,20 @@
     "equity_start": 20000.0,
     "pnl": -3130.66,
     "equity_end": 16869.34,
+    "trades": 1
+   },
+   {
+    "date": "2026-10-01",
+    "equity_start": 16869.34,
+    "pnl": 5755.28,
+    "equity_end": 22624.62,
+    "trades": 1
+   },
+   {
+    "date": "2026-10-05",
+    "equity_start": 22624.62,
+    "pnl": -5022.31,
+    "equity_end": 17602.31,
     "trades": 1
    }
   ],
@@ -2815,6 +2829,23 @@
   },
   {
    "date": "2026-10-01",
+   "variant": "tg_fno.base",
+   "symbol": "ENRIN 27OCT 3450CE",
+   "side": 1,
+   "qty": 175,
+   "entry_time": "09:30",
+   "entry": 59.89,
+   "exit_time": "15:10",
+   "exit": 93.21,
+   "exit_reason": "squareoff",
+   "gross": 5830.21,
+   "costs": 74.93,
+   "net": 5755.28,
+   "r_multiple": 0.549,
+   "reason": "top F&O gainer +4.50% @09:30, above opening high 3338.60"
+  },
+  {
+   "date": "2026-10-01",
    "variant": "orb.base",
    "symbol": "TATASTEEL",
    "side": -1,
@@ -3356,6 +3387,23 @@
    "net": 213.47,
    "r_multiple": 1.035,
    "reason": "PDL break"
+  },
+  {
+   "date": "2026-10-05",
+   "variant": "tg_fno.base",
+   "symbol": "BAJFINANCE 27OCT 1010CE",
+   "side": 1,
+   "qty": 750,
+   "entry_time": "09:35",
+   "entry": 18.74,
+   "exit_time": "15:10",
+   "exit": 12.13,
+   "exit_reason": "squareoff",
+   "gross": -4956.0,
+   "costs": 66.31,
+   "net": -5022.31,
+   "r_multiple": -0.357,
+   "reason": "top F&O gainer +4.03% @09:35, above opening high 982.80"
   },
   {
    "date": "2026-10-05",
