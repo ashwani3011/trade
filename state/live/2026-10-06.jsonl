@@ -96,3 +96,6 @@
 {"key": "pdb.base|order|ICICIBANK|11:55", "type": "ORDER", "variant": "pdb.base", "symbol": "ICICIBANK", "bar_time": "11:55", "side": 1, "price": "at market (next candle open)", "reason": "PDH break", "decided_at": "12:00:20"}
 {"key": "vwap_pb.v1|order|ICICIBANK|11:55", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "ICICIBANK", "bar_time": "11:55", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "12:00:20"}
 {"key": "vwap_pb.v1|entry|ICICIBANK|12:00", "type": "ENTRY", "variant": "vwap_pb.v1", "symbol": "ICICIBANK", "bar_time": "12:00", "price": 1335.8, "qty": 21, "side": 1, "stop": 1327.66, "target": 1351.18, "decided_at": "12:05:20"}
+{"key": "sr_reject.base|exit|ICICIBANK|12:15", "type": "EXIT", "variant": "sr_reject.base", "symbol": "ICICIBANK", "bar_time": "12:15", "price": 1337.62, "qty": 39, "reason": "stop", "net": -247.23, "decided_at": "12:20:20"}
+{"key": "sr_reject.base|exit|LT|12:15", "type": "EXIT", "variant": "sr_reject.base", "symbol": "LT", "bar_time": "12:15", "price": 3760.23, "qty": 9, "reason": "stop", "net": -164.96, "decided_at": "12:20:20"}
+{"key": "vwap_pb.base|order|NTPC|12:15", "type": "ORDER", "variant": "vwap_pb.base", "symbol": "NTPC", "bar_time": "12:15", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "12:20:20"}

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-06T12:07:17+05:30",
+ "generated_at": "2026-10-06T12:22:19+05:30",
  "today": "2026-10-06",
  "market_phase": "open",
  "trader_running": true,
@@ -4712,6 +4712,41 @@
    "stop": 1327.66,
    "target": 1351.18,
    "decided_at": "12:05:20"
+  },
+  {
+   "key": "sr_reject.base|exit|ICICIBANK|12:15",
+   "type": "EXIT",
+   "variant": "sr_reject.base",
+   "symbol": "ICICIBANK",
+   "bar_time": "12:15",
+   "price": 1337.62,
+   "qty": 39,
+   "reason": "stop",
+   "net": -247.23,
+   "decided_at": "12:20:20"
+  },
+  {
+   "key": "sr_reject.base|exit|LT|12:15",
+   "type": "EXIT",
+   "variant": "sr_reject.base",
+   "symbol": "LT",
+   "bar_time": "12:15",
+   "price": 3760.23,
+   "qty": 9,
+   "reason": "stop",
+   "net": -164.96,
+   "decided_at": "12:20:20"
+  },
+  {
+   "key": "vwap_pb.base|order|NTPC|12:15",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "NTPC",
+   "bar_time": "12:15",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "12:20:20"
   }
  ],
  "families": [
