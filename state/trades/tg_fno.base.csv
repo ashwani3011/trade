@@ -1,0 +1,2 @@
+date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,costs,net,r_multiple,reason
+2026-10-06,tg_fno.base,TRENT 27OCT 2950CE,1,225,09:30,73.68,15:10,60.09,squareoff,-3056.96,73.7,-3130.66,-0.189,"top F&O gainer +10.00% @09:30, above opening high 2838.00"

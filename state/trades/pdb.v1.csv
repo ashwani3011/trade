@@ -11,3 +11,4 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-09-29,pdb.v1,INFY,-1,23,09:55,985.7,15:10,987.5,squareoff,-41.22,24.06,-65.27,-0.33,PDL break
 2026-10-01,pdb.v1,NTPC,-1,92,12:15,318.25,13:50,314.33,target,360.92,30.9,330.02,1.704,PDL break
 2026-10-05,pdb.v1,HDFCBANK,-1,29,12:55,705.04,15:10,706.06,squareoff,-29.68,21.69,-51.37,-0.262,PDL break
+2026-10-06,pdb.v1,INFY,-1,21,11:25,1009.35,15:10,1009.35,squareoff,-0.12,22.48,-22.6,-0.116,PDL break

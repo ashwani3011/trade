@@ -24,3 +24,7 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-05,pdb.base,LT,1,8,10:35,3740.12,14:05,3714.51,stop,-204.89,31.6,-236.49,-1.207,PDH break
 2026-10-05,pdb.base,SUNPHARMA,-1,19,09:35,1791.16,15:10,1778.03,squareoff,249.46,35.98,213.47,1.035,PDL break
 2026-10-05,pdb.base,TCS,1,9,09:30,2098.03,15:10,2109.47,squareoff,102.94,20.09,82.85,0.395,PDH break
+2026-10-06,pdb.base,RELIANCE,1,25,09:35,1195.06,10:55,1210.45,target,384.83,31.93,352.9,1.714,PDH break
+2026-10-06,pdb.base,BHARTIARTL,1,17,10:00,1782.63,14:15,1804.14,target,365.59,32.37,333.22,1.613,PDH break
+2026-10-06,pdb.base,AXISBANK,1,20,09:30,1239.87,15:10,1245.03,squareoff,103.09,26.36,76.73,0.363,PDH break
+2026-10-06,pdb.base,SBIN,-1,36,11:40,955.26,15:10,955.89,squareoff,-22.44,36.48,-58.92,-0.282,PDL break

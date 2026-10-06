@@ -24,3 +24,6 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-05,vwap_pb.v1,BAJFINANCE,1,23,10:35,987.0,11:35,978.83,stop,-187.77,23.95,-211.73,-1.17,VWAP pullback long
 2026-10-05,vwap_pb.v1,NTPC,1,100,11:20,321.2,15:10,321.3,squareoff,10.73,34.07,-23.34,-0.128,VWAP pullback long
 2026-10-05,vwap_pb.v1,RELIANCE,1,16,11:00,1185.66,15:10,1187.44,squareoff,28.61,20.14,8.47,0.049,VWAP pullback long
+2026-10-06,vwap_pb.v1,AXISBANK,1,22,10:00,1241.17,15:10,1245.03,squareoff,84.79,29.01,55.78,0.322,VWAP pullback long
+2026-10-06,vwap_pb.v1,ICICIBANK,1,21,12:00,1335.8,15:10,1342.0,squareoff,130.13,29.83,100.3,0.587,VWAP pullback long
+2026-10-06,vwap_pb.v1,KOTAKBANK,1,50,10:35,431.88,15:10,430.87,squareoff,-50.44,22.87,-73.31,-0.421,VWAP pullback long

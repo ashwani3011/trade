@@ -24,3 +24,7 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-05,sr_reject.base,HDFCBANK,1,31,11:20,707.46,11:55,704.27,stop,-99.02,23.19,-122.21,-1.322,level rejection
 2026-10-05,sr_reject.base,BHARTIARTL,-1,20,10:00,1760.27,12:35,1769.85,stop,-191.51,37.41,-228.92,-1.266,level rejection
 2026-10-05,sr_reject.base,LT,-1,9,09:50,3734.08,15:10,3727.72,squareoff,57.25,35.61,21.64,0.19,level rejection
+2026-10-06,sr_reject.base,AXISBANK,-1,2,10:20,1236.93,10:30,1241.77,stop,-9.69,2.63,-12.31,-1.377,level rejection
+2026-10-06,sr_reject.base,ICICIBANK,-1,39,10:00,1332.7,12:15,1337.62,stop,-192.03,55.2,-247.23,-1.402,level rejection
+2026-10-06,sr_reject.base,LT,-1,9,10:00,3745.88,12:15,3760.23,stop,-129.15,35.81,-164.96,-1.386,level rejection
+2026-10-06,sr_reject.base,BAJFINANCE,1,2,11:40,963.84,13:40,958.86,stop,-9.95,2.04,-11.99,-1.279,level rejection
