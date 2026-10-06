@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-29T14:45:27",
+  "updated": "2026-10-06T03:36:53",
   "variants": {
     "orb.base": {
       "created": "2026-09-29",
@@ -100,6 +100,26 @@
       "parent": null,
       "retired_reason": "",
       "role": "champion",
+      "status": "active"
+    },
+    "tg_fno.base": {
+      "created": "2026-10-06",
+      "family": "tg_fno",
+      "id": "tg_fno.base",
+      "note": "Owner's spec (6 Oct 2026): from 9:25 top 2 F&O gainers re-ranked every candle, bullish opening candle (body >= 60%, range <= 2.5x daily ATR), touched opening high, buy 3rd OTM call, stop on the stock at opening low (high - 60% of range if range > 3%), 1 trade a day, square-off at close",
+      "params": {
+        "atr_days": 14,
+        "big_candle_pct": 3.0,
+        "max_range_atr": 2.5,
+        "max_trades": 1,
+        "min_body_ratio": 0.6,
+        "n_stocks": 2,
+        "otm_index": 2,
+        "stop_frac": 0.6
+      },
+      "parent": null,
+      "retired_reason": "",
+      "role": "baseline",
       "status": "active"
     },
     "tg_opt.base": {

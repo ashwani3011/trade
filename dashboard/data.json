@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-06T09:06:20+05:30",
+ "generated_at": "2026-10-06T09:06:53+05:30",
  "today": "2026-10-06",
  "market_phase": "pre",
- "trader_running": true,
+ "trader_running": false,
  "capital": 20000.0,
  "leaderboard": [
   {
@@ -27,6 +27,23 @@
    "role": "champion",
    "status": "active",
    "days": 6,
+   "trades": 0,
+   "net_pnl": 0.0,
+   "return_pct": 0.0,
+   "win_rate": 0.0,
+   "profit_factor": 0.0,
+   "avg_r": 0.0,
+   "max_dd_pct": 0.0,
+   "sharpe": 0.0,
+   "costs": 0.0,
+   "equity": 20000.0,
+   "ready_for_real_money": false
+  },
+  {
+   "variant": "tg_fno.base",
+   "role": "baseline",
+   "status": "active",
+   "days": 0,
    "trades": 0,
    "net_pnl": 0.0,
    "return_pct": 0.0,
@@ -363,6 +380,26 @@
     "vol_mult": 1.0
    },
    "created": "2026-09-29",
+   "parent": null,
+   "retired_reason": ""
+  },
+  {
+   "id": "tg_fno.base",
+   "family": "tg_fno",
+   "role": "baseline",
+   "status": "active",
+   "note": "Owner's spec (6 Oct 2026): from 9:25 top 2 F&O gainers re-ranked every candle, bullish opening candle (body >= 60%, range <= 2.5x daily ATR), touched opening high, buy 3rd OTM call, stop on the stock at opening low (high - 60% of range if range > 3%), 1 trade a day, square-off at close",
+   "params": {
+    "n_stocks": 2,
+    "min_body_ratio": 0.6,
+    "max_range_atr": 2.5,
+    "atr_days": 14,
+    "otm_index": 2,
+    "big_candle_pct": 3.0,
+    "stop_frac": 0.6,
+    "max_trades": 1
+   },
+   "created": "2026-10-06",
    "parent": null,
    "retired_reason": ""
   }
@@ -807,7 +844,8 @@
     "equity_end": 17726.78,
     "trades": 5
    }
-  ]
+  ],
+  "tg_fno.base": []
  },
  "trades": [
   {
@@ -3604,6 +3642,7 @@
   "orb",
   "pdb",
   "sr_reject",
+  "tg_fno",
   "tg_opt",
   "vwap_pb"
  ]
