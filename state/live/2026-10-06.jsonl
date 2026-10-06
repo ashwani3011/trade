@@ -107,3 +107,4 @@
 {"key": "vwap_pb.v1|order|SBIN|12:45", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "SBIN", "bar_time": "12:45", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "12:50:20"}
 {"key": "vwap_pb.v1|order|BAJFINANCE|13:30", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "BAJFINANCE", "bar_time": "13:30", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "13:35:20"}
 {"key": "sr_reject.base|exit|BAJFINANCE|13:40", "type": "EXIT", "variant": "sr_reject.base", "symbol": "BAJFINANCE", "bar_time": "13:40", "price": 958.86, "qty": 2, "reason": "stop", "net": -11.99, "decided_at": "13:45:20"}
+{"key": "vwap_pb.base|exit|LT|14:05", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "LT", "bar_time": "14:05", "price": 3768.86, "qty": 9, "reason": "target", "net": 177.76, "decided_at": "14:10:20"}

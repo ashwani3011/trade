@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-06T14:00:59+05:30",
+ "generated_at": "2026-10-06T14:16:01+05:30",
  "today": "2026-10-06",
  "market_phase": "open",
  "trader_running": true,
@@ -4837,6 +4837,18 @@
    "reason": "stop",
    "net": -11.99,
    "decided_at": "13:45:20"
+  },
+  {
+   "key": "vwap_pb.base|exit|LT|14:05",
+   "type": "EXIT",
+   "variant": "vwap_pb.base",
+   "symbol": "LT",
+   "bar_time": "14:05",
+   "price": 3768.86,
+   "qty": 9,
+   "reason": "target",
+   "net": 177.76,
+   "decided_at": "14:10:20"
   }
  ],
  "families": [
