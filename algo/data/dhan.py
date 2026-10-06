@@ -98,6 +98,12 @@ class DhanDataSource:
             "lot_size": opt["SEM_LOT_UNITS"].astype(float).astype(int).to_numpy(),
         })
 
+    def fno_underlyings(self) -> list[str]:
+        """NSE stocks with listed stock options (the F&O stock list)."""
+        df = self.master()
+        opt = df[(df["SEM_EXM_EXCH_ID"] == "NSE") & (df["SEM_INSTRUMENT_NAME"] == "OPTSTK")]
+        return sorted(set(opt["SEM_TRADING_SYMBOL"].astype(str).str.rsplit("-", n=3).str[0]))
+
     # ------------------------------------------------------------------ http
     def _post(self, path: str, body: dict) -> dict:
         headers = {

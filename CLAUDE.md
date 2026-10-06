@@ -18,6 +18,10 @@ explicitly. A variant is flagged `ready_for_real_money` in the leaderboard only 
   first 10-min candle, buy an OTM call, stop at the option's first-candle low, exit by 12:00, and buy
   a put on the top loser as a "hedge". `tg_opt.base` follows the video exactly; `tg_opt.v1` is the
   reviewed, enhanced version (see docs/STRATEGIES.md section 5).
+- `tg_fno`: the owner's F&O top-gainer spec (6 Oct 2026). From 9:25 it takes the top 2 of all F&O stocks,
+  re-ranked every candle. Entry needs a strong bullish opening candle and a touch of the opening high; it
+  buys the 3rd OTM call with the stop on the stock. One trade a day. It runs as `tg_fno.base` only and is
+  not tuned (docs/STRATEGIES.md section 6).
 - Each family runs as `.base` (fixed benchmark) plus a champion and up to 2 challengers. Every
   variant has its own Rs 20k paper account.
 

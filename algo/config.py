@@ -47,6 +47,7 @@ def option_costs() -> CostModel:
 @dataclass
 class OptionsConfig:
     universe: list[str] = field(default_factory=list)   # stocks ranked for top gainers/losers
+    fno_universe: list[str] = field(default_factory=list)   # tg_fno; empty = all F&O stocks (Dhan master)
     index_symbol: str = "NIFTY 50"
     costs: CostModel = field(default_factory=option_costs)
 

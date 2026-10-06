@@ -46,7 +46,11 @@ def run_day(s: Settings, day: date, source=None, option_source=None) -> dict[str
             log.warning("%s: no data for %s", v.id, day)
             continue
         equity = store.equity(v.id, s.capital)
-        res = simulate(v.family, v.params, ctx, equity, s, variant=v.id)
+        try:
+            res = simulate(v.family, v.params, ctx, equity, s, variant=v.id)
+        except Exception:   # one broken variant must not stop the others being recorded
+            log.exception("%s: simulation failed for %s - not recorded", v.id, day)
+            continue
         store.record_day(v.id, day, equity, res.trades)
         results[v.id] = res
         log.info("%-18s trades=%d pnl=%.2f", v.id, len(res.trades), sum(t.net for t in res.trades))
