@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 # One-time setup of the paper trader on an Oracle Cloud (or any Ubuntu) VM.
 # Run as the default 'ubuntu' user:
-#   curl -fsSL https://raw.githubusercontent.com/ashwani3011/trade/claude/adoring-planck-88ci7e/deploy/oracle/setup.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/ashwani3011/trade/claude/adoring-planck-88ci7e/deploy/oracle/setup.sh -o setup.sh && bash setup.sh
 # Paper trading only: this installs the same trader GitHub Actions runs. It places no orders.
 set -euo pipefail
+main() {  # wrapped so piping into bash still reads the whole script before running it
 REPO=ashwani3011/trade
 BRANCH=claude/adoring-planck-88ci7e
 DIR="$HOME/trade"
 ENV_FILE="$HOME/.paper-trade.env"
 
-sudo apt-get update -qq
-sudo apt-get install -y -qq git python3 python3-venv python3-pip tzdata
+sudo apt-get update -qq </dev/null
+sudo DEBIAN_FRONTEND=noninteractive NEEDRESTART_MODE=a apt-get install -y -qq git python3 python3-venv python3-pip tzdata </dev/null
 sudo timedatectl set-timezone Asia/Kolkata
 
 # small machines (e.g. the 1 GB AMD micro): add 2 GB swap so pandas never runs out of memory
@@ -56,3 +57,5 @@ cat "$HOME/.ssh/trade_deploy.pub"
 echo "2. Fill in your Dhan credentials:  nano $ENV_FILE"
 echo "3. Test (read-only, safe any time):  cd $DIR && set -a && . $ENV_FILE && set +a && .venv/bin/python -m algo.cli check"
 echo "4. Do NOT enable the timers yet - tell Claude, who will switch GitHub off first (two traders must never run together)."
+}
+main "$@"

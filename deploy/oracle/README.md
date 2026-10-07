@@ -11,7 +11,7 @@ GitHub (two traders must never write the same journal).
 2. Give it a static IP: Networking -> IP management -> Reserved public IPs -> Reserve, then
    attach it to the VM's VNIC (Compute -> Instance -> Attached VNICs -> IPv4 addresses).
 3. SSH in (`ssh ubuntu@<ip>`) and run:
-   `curl -fsSL https://raw.githubusercontent.com/ashwani3011/trade/claude/adoring-planck-88ci7e/deploy/oracle/setup.sh | bash`
+   `curl -fsSL https://raw.githubusercontent.com/ashwani3011/trade/claude/adoring-planck-88ci7e/deploy/oracle/setup.sh -o setup.sh && bash setup.sh`
 4. Follow the printed steps: add the deploy key (write access), fill `~/.paper-trade.env`,
    run the read-only `check`.
 5. Switch-over (done together with Claude): disable the GitHub schedule/routines, then
