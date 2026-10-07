@@ -23,12 +23,19 @@ fi
 # deploy key so the server can push results (state/, reports/) back to GitHub
 mkdir -p "$HOME/.ssh" && chmod 700 "$HOME/.ssh"
 [ -f "$HOME/.ssh/trade_deploy" ] || ssh-keygen -q -t ed25519 -N "" -C "paper-trade@oracle" -f "$HOME/.ssh/trade_deploy"
-grep -q "Host github.com" "$HOME/.ssh/config" 2>/dev/null || cat >> "$HOME/.ssh/config" <<CFG
+# GitHub over port 443 (works even where port 22 is blocked); accept GitHub's host key on first use
+touch "$HOME/.ssh/config" && chmod 600 "$HOME/.ssh/config"
+sed -i '/^Host github.com$/,/^$/d' "$HOME/.ssh/config"
+cat >> "$HOME/.ssh/config" <<CFG
 Host github.com
+  HostName ssh.github.com
+  Port 443
+  User git
   IdentityFile ~/.ssh/trade_deploy
   IdentitiesOnly yes
+  StrictHostKeyChecking accept-new
+
 CFG
-ssh-keyscan -q github.com >> "$HOME/.ssh/known_hosts" 2>/dev/null
 
 [ -d "$DIR/.git" ] || git clone -q -b "$BRANCH" "https://github.com/$REPO.git" "$DIR"
 cd "$DIR"
