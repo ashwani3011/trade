@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-07T13:16:04+05:30",
+ "generated_at": "2026-10-07T14:31:04+05:30",
  "today": "2026-10-07",
  "market_phase": "open",
  "trader_running": true,
@@ -5775,6 +5775,79 @@
    "reason": "stop",
    "net": -219.34,
    "decided_at": "13:10:20"
+  },
+  {
+   "key": "pdb.v1|exit|LT|13:10",
+   "type": "EXIT",
+   "variant": "pdb.v1",
+   "symbol": "LT",
+   "bar_time": "13:10",
+   "price": 3684.8,
+   "qty": 8,
+   "reason": "target",
+   "net": 305.15,
+   "decided_at": "14:16:05"
+  },
+  {
+   "key": "pdb.v1|exit|AXISBANK|13:50",
+   "type": "EXIT",
+   "variant": "pdb.v1",
+   "symbol": "AXISBANK",
+   "bar_time": "13:50",
+   "price": 1243.52,
+   "qty": 15,
+   "reason": "stop",
+   "net": -211.16,
+   "decided_at": "14:16:05"
+  },
+  {
+   "key": "sr_reject.v1|exit|ITC|13:10",
+   "type": "EXIT",
+   "variant": "sr_reject.v1",
+   "symbol": "ITC",
+   "bar_time": "13:10",
+   "price": 263.22,
+   "qty": 133,
+   "reason": "stop",
+   "net": -238.44,
+   "decided_at": "14:16:05"
+  },
+  {
+   "key": "vwap_pb.base|exit|SUNPHARMA|14:10",
+   "type": "EXIT",
+   "variant": "vwap_pb.base",
+   "symbol": "SUNPHARMA",
+   "bar_time": "14:10",
+   "price": 1774.31,
+   "qty": 19,
+   "reason": "target",
+   "net": 208.33,
+   "decided_at": "14:16:05"
+  },
+  {
+   "key": "vwap_pb.v1|exit|AXISBANK|13:50",
+   "type": "EXIT",
+   "variant": "vwap_pb.v1",
+   "symbol": "AXISBANK",
+   "bar_time": "13:50",
+   "price": 1241.66,
+   "qty": 20,
+   "reason": "stop",
+   "net": -206.62,
+   "decided_at": "14:16:05"
+  },
+  {
+   "key": "vwap_pb.v1|entry|SUNPHARMA|13:15",
+   "type": "ENTRY",
+   "variant": "vwap_pb.v1",
+   "symbol": "SUNPHARMA",
+   "bar_time": "13:15",
+   "price": 1784.46,
+   "qty": 19,
+   "side": -1,
+   "stop": 1793.67,
+   "target": 1767.66,
+   "decided_at": "14:16:05"
   }
  ],
  "families": [
