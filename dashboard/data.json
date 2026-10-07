@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-07T11:27:18+05:30",
+ "generated_at": "2026-10-07T11:42:20+05:30",
  "today": "2026-10-07",
  "market_phase": "open",
  "trader_running": true,
@@ -5625,6 +5625,28 @@
    "stop": 1209.0,
    "target": 1224.9,
    "decided_at": "11:15:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|HDFCBANK|11:30",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "HDFCBANK",
+   "bar_time": "11:30",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "11:35:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|TATASTEEL|11:30",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "TATASTEEL",
+   "bar_time": "11:30",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "11:35:20"
   }
  ],
  "families": [
