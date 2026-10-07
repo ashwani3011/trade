@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-07T15:16:10+05:30",
+ "generated_at": "2026-10-07T15:31:12+05:30",
  "today": "2026-10-07",
  "market_phase": "open",
  "trader_running": true,
@@ -5872,6 +5872,78 @@
    "reason": "target",
    "net": 377.12,
    "decided_at": "14:35:20"
+  },
+  {
+   "key": "orb.base|exit|INFY|15:10",
+   "type": "EXIT",
+   "variant": "orb.base",
+   "symbol": "INFY",
+   "bar_time": "15:10",
+   "price": 992.25,
+   "qty": 27,
+   "reason": "squareoff",
+   "net": 222.58,
+   "decided_at": "15:15:20"
+  },
+  {
+   "key": "pdb.base|exit|KOTAKBANK|15:10",
+   "type": "EXIT",
+   "variant": "pdb.base",
+   "symbol": "KOTAKBANK",
+   "bar_time": "15:10",
+   "price": 440.47,
+   "qty": 54,
+   "reason": "squareoff",
+   "net": 200.97,
+   "decided_at": "15:15:20"
+  },
+  {
+   "key": "pdb.base|exit|TATASTEEL|15:10",
+   "type": "EXIT",
+   "variant": "pdb.base",
+   "symbol": "TATASTEEL",
+   "bar_time": "15:10",
+   "price": 175.4,
+   "qty": 151,
+   "reason": "squareoff",
+   "net": 206.46,
+   "decided_at": "15:15:20"
+  },
+  {
+   "key": "pdb.v1|exit|KOTAKBANK|15:10",
+   "type": "EXIT",
+   "variant": "pdb.v1",
+   "symbol": "KOTAKBANK",
+   "bar_time": "15:10",
+   "price": 440.47,
+   "qty": 49,
+   "reason": "squareoff",
+   "net": 182.36,
+   "decided_at": "15:15:20"
+  },
+  {
+   "key": "tg_fno.base|exit|PFC 27OCT 345CE|15:10",
+   "type": "EXIT",
+   "variant": "tg_fno.base",
+   "symbol": "PFC 27OCT 345CE",
+   "bar_time": "15:10",
+   "price": 2.13,
+   "qty": 1300,
+   "reason": "squareoff",
+   "net": -2341.36,
+   "decided_at": "15:15:20"
+  },
+  {
+   "key": "vwap_pb.v1|exit|SUNPHARMA|15:10",
+   "type": "EXIT",
+   "variant": "vwap_pb.v1",
+   "symbol": "SUNPHARMA",
+   "bar_time": "15:10",
+   "price": 1777.03,
+   "qty": 19,
+   "reason": "squareoff",
+   "net": 105.3,
+   "decided_at": "15:15:20"
   }
  ],
  "families": [
