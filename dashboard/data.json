@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-07T11:42:20+05:30",
+ "generated_at": "2026-10-07T11:57:22+05:30",
  "today": "2026-10-07",
  "market_phase": "open",
  "trader_running": true,
@@ -5647,6 +5647,29 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback short",
    "decided_at": "11:35:20"
+  },
+  {
+   "key": "pdb.base|order|LT|11:40",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "LT",
+   "bar_time": "11:40",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "PDL break",
+   "decided_at": "11:45:20"
+  },
+  {
+   "key": "vwap_pb.v1|exit|BHARTIARTL|11:45",
+   "type": "EXIT",
+   "variant": "vwap_pb.v1",
+   "symbol": "BHARTIARTL",
+   "bar_time": "11:45",
+   "price": 1829.54,
+   "qty": 13,
+   "reason": "stop",
+   "net": -208.19,
+   "decided_at": "11:50:20"
   }
  ],
  "families": [

@@ -125,3 +125,5 @@
 {"key": "orb.v1|entry|RELIANCE|11:10", "type": "ENTRY", "variant": "orb.v1", "symbol": "RELIANCE", "bar_time": "11:10", "price": 1214.66, "qty": 30, "side": 1, "stop": 1209.0, "target": 1224.9, "decided_at": "11:15:20"}
 {"key": "vwap_pb.v1|order|HDFCBANK|11:30", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "HDFCBANK", "bar_time": "11:30", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "11:35:20"}
 {"key": "vwap_pb.v1|order|TATASTEEL|11:30", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "TATASTEEL", "bar_time": "11:30", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "11:35:20"}
+{"key": "pdb.base|order|LT|11:40", "type": "ORDER", "variant": "pdb.base", "symbol": "LT", "bar_time": "11:40", "side": -1, "price": "at market (next candle open)", "reason": "PDL break", "decided_at": "11:45:20"}
+{"key": "vwap_pb.v1|exit|BHARTIARTL|11:45", "type": "EXIT", "variant": "vwap_pb.v1", "symbol": "BHARTIARTL", "bar_time": "11:45", "price": 1829.54, "qty": 13, "reason": "stop", "net": -208.19, "decided_at": "11:50:20"}
