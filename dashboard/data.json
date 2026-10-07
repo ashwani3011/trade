@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-07T11:12:17+05:30",
+ "generated_at": "2026-10-07T11:27:18+05:30",
  "today": "2026-10-07",
  "market_phase": "open",
  "trader_running": true,
@@ -5612,6 +5612,19 @@
    "price": "at market (next candle open)",
    "reason": "ORB up",
    "decided_at": "11:10:20"
+  },
+  {
+   "key": "orb.v1|entry|RELIANCE|11:10",
+   "type": "ENTRY",
+   "variant": "orb.v1",
+   "symbol": "RELIANCE",
+   "bar_time": "11:10",
+   "price": 1214.66,
+   "qty": 30,
+   "side": 1,
+   "stop": 1209.0,
+   "target": 1224.9,
+   "decided_at": "11:15:20"
   }
  ],
  "families": [
