@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-07T12:46:00+05:30",
+ "generated_at": "2026-10-07T13:01:02+05:30",
  "today": "2026-10-07",
  "market_phase": "open",
  "trader_running": true,
@@ -5717,6 +5717,17 @@
    "reason": "stop",
    "net": -221.27,
    "decided_at": "12:31:01"
+  },
+  {
+   "key": "pdb.v1|order|NTPC|12:40",
+   "type": "ORDER",
+   "variant": "pdb.v1",
+   "symbol": "NTPC",
+   "bar_time": "12:40",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "PDL break",
+   "decided_at": "12:45:20"
   }
  ],
  "families": [
