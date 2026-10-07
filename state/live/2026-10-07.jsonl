@@ -130,3 +130,4 @@
 {"key": "pdb.base|order|RELIANCE|12:00", "type": "ORDER", "variant": "pdb.base", "symbol": "RELIANCE", "bar_time": "12:00", "side": 1, "price": "at market (next candle open)", "reason": "PDH break", "decided_at": "12:05:20"}
 {"key": "pdb.v1|order|LT|12:05", "type": "ORDER", "variant": "pdb.v1", "symbol": "LT", "bar_time": "12:05", "side": -1, "price": "at market (next candle open)", "reason": "PDL break", "decided_at": "12:10:20"}
 {"key": "pdb.v1|entry|LT|12:10", "type": "ENTRY", "variant": "pdb.v1", "symbol": "LT", "bar_time": "12:10", "price": 3726.88, "qty": 8, "side": -1, "stop": 3749.6, "target": 3684.8, "decided_at": "12:15:20"}
+{"key": "sr_reject.base|exit|INFY|12:25", "type": "EXIT", "variant": "sr_reject.base", "symbol": "INFY", "bar_time": "12:25", "price": 999.19, "qty": 38, "reason": "stop", "net": -221.27, "decided_at": "12:31:01"}

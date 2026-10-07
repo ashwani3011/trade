@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-07T12:30:28+05:30",
+ "generated_at": "2026-10-07T12:46:00+05:30",
  "today": "2026-10-07",
  "market_phase": "open",
- "trader_running": false,
+ "trader_running": true,
  "capital": 20000.0,
  "leaderboard": [
   {
@@ -5705,6 +5705,18 @@
    "stop": 3749.6,
    "target": 3684.8,
    "decided_at": "12:15:20"
+  },
+  {
+   "key": "sr_reject.base|exit|INFY|12:25",
+   "type": "EXIT",
+   "variant": "sr_reject.base",
+   "symbol": "INFY",
+   "bar_time": "12:25",
+   "price": 999.19,
+   "qty": 38,
+   "reason": "stop",
+   "net": -221.27,
+   "decided_at": "12:31:01"
   }
  ],
  "families": [
