@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-07T10:42:13+05:30",
+ "generated_at": "2026-10-07T10:57:14+05:30",
  "today": "2026-10-07",
  "market_phase": "open",
  "trader_running": true,
@@ -5553,6 +5553,54 @@
    "stop": 264.61,
    "target": 268.77,
    "decided_at": "10:40:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|AXISBANK|10:40",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "AXISBANK",
+   "bar_time": "10:40",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:45:20"
+  },
+  {
+   "key": "sr_reject.base|exit|SBIN|10:45",
+   "type": "EXIT",
+   "variant": "sr_reject.base",
+   "symbol": "SBIN",
+   "bar_time": "10:45",
+   "price": 956.28,
+   "qty": 49,
+   "reason": "target",
+   "net": 265.27,
+   "decided_at": "10:50:20"
+  },
+  {
+   "key": "vwap_pb.v1|entry|AXISBANK|10:45",
+   "type": "ENTRY",
+   "variant": "vwap_pb.v1",
+   "symbol": "AXISBANK",
+   "bar_time": "10:45",
+   "price": 1250.68,
+   "qty": 20,
+   "side": 1,
+   "stop": 1242.04,
+   "target": 1267.13,
+   "decided_at": "10:50:20"
+  },
+  {
+   "key": "orb.v1|exit|ITC|10:50",
+   "type": "EXIT",
+   "variant": "orb.v1",
+   "symbol": "ITC",
+   "bar_time": "10:50",
+   "price": 264.53,
+   "qty": 113,
+   "reason": "stop",
+   "net": -212.1,
+   "decided_at": "10:55:20"
   }
  ],
  "families": [
