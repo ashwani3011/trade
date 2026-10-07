@@ -142,3 +142,5 @@
 {"key": "vwap_pb.base|exit|SUNPHARMA|14:10", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "SUNPHARMA", "bar_time": "14:10", "price": 1774.31, "qty": 19, "reason": "target", "net": 208.33, "decided_at": "14:16:05"}
 {"key": "vwap_pb.v1|exit|AXISBANK|13:50", "type": "EXIT", "variant": "vwap_pb.v1", "symbol": "AXISBANK", "bar_time": "13:50", "price": 1241.66, "qty": 20, "reason": "stop", "net": -206.62, "decided_at": "14:16:05"}
 {"key": "vwap_pb.v1|entry|SUNPHARMA|13:15", "type": "ENTRY", "variant": "vwap_pb.v1", "symbol": "SUNPHARMA", "bar_time": "13:15", "price": 1784.46, "qty": 19, "side": -1, "stop": 1793.67, "target": 1767.66, "decided_at": "14:16:05"}
+{"key": "orb.v1|exit|ICICIBANK|14:25", "type": "EXIT", "variant": "orb.v1", "symbol": "ICICIBANK", "bar_time": "14:25", "price": 1354.66, "qty": 21, "reason": "target", "net": 183.15, "decided_at": "14:30:20"}
+{"key": "pdb.base|exit|ICICIBANK|14:30", "type": "EXIT", "variant": "pdb.base", "symbol": "ICICIBANK", "bar_time": "14:30", "price": 1358.51, "qty": 30, "reason": "target", "net": 377.12, "decided_at": "14:35:20"}

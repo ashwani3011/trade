@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-07T14:31:04+05:30",
+ "generated_at": "2026-10-07T14:46:06+05:30",
  "today": "2026-10-07",
  "market_phase": "open",
  "trader_running": true,
@@ -5848,6 +5848,30 @@
    "stop": 1793.67,
    "target": 1767.66,
    "decided_at": "14:16:05"
+  },
+  {
+   "key": "orb.v1|exit|ICICIBANK|14:25",
+   "type": "EXIT",
+   "variant": "orb.v1",
+   "symbol": "ICICIBANK",
+   "bar_time": "14:25",
+   "price": 1354.66,
+   "qty": 21,
+   "reason": "target",
+   "net": 183.15,
+   "decided_at": "14:30:20"
+  },
+  {
+   "key": "pdb.base|exit|ICICIBANK|14:30",
+   "type": "EXIT",
+   "variant": "pdb.base",
+   "symbol": "ICICIBANK",
+   "bar_time": "14:30",
+   "price": 1358.51,
+   "qty": 30,
+   "reason": "target",
+   "net": 377.12,
+   "decided_at": "14:35:20"
   }
  ],
  "families": [
