@@ -129,3 +129,4 @@
 {"key": "vwap_pb.v1|exit|BHARTIARTL|11:45", "type": "EXIT", "variant": "vwap_pb.v1", "symbol": "BHARTIARTL", "bar_time": "11:45", "price": 1829.54, "qty": 13, "reason": "stop", "net": -208.19, "decided_at": "11:50:20"}
 {"key": "pdb.base|order|RELIANCE|12:00", "type": "ORDER", "variant": "pdb.base", "symbol": "RELIANCE", "bar_time": "12:00", "side": 1, "price": "at market (next candle open)", "reason": "PDH break", "decided_at": "12:05:20"}
 {"key": "pdb.v1|order|LT|12:05", "type": "ORDER", "variant": "pdb.v1", "symbol": "LT", "bar_time": "12:05", "side": -1, "price": "at market (next candle open)", "reason": "PDL break", "decided_at": "12:10:20"}
+{"key": "pdb.v1|entry|LT|12:10", "type": "ENTRY", "variant": "pdb.v1", "symbol": "LT", "bar_time": "12:10", "price": 3726.88, "qty": 8, "side": -1, "stop": 3749.6, "target": 3684.8, "decided_at": "12:15:20"}
