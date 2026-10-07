@@ -1,0 +1,8 @@
+[Unit]
+Description=Commit and push paper-trading results to GitHub
+
+[Service]
+Type=oneshot
+User=ubuntu
+WorkingDirectory=__HOME__/trade
+ExecStart=__HOME__/trade/deploy/oracle/push.sh live

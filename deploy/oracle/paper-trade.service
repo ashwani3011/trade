@@ -1,0 +1,16 @@
+[Unit]
+Description=Paper trader (real-time, paper only) - one process for the whole trading day
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=__HOME__/trade
+EnvironmentFile=__HOME__/.paper-trade.env
+ExecStartPre=/usr/bin/git pull -q --rebase origin claude/adoring-planck-88ci7e
+ExecStartPre=__HOME__/trade/.venv/bin/python -m algo.cli check
+ExecStart=__HOME__/trade/.venv/bin/python -m algo.cli trade-live
+ExecStopPost=__HOME__/trade/deploy/oracle/push.sh final
+Restart=on-failure
+RestartSec=60

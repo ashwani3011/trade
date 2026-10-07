@@ -1,0 +1,8 @@
+[Unit]
+Description=Push paper-trading results every 15 minutes during market hours (IST)
+
+[Timer]
+OnCalendar=Mon..Fri 09..16:00/15
+
+[Install]
+WantedBy=timers.target
