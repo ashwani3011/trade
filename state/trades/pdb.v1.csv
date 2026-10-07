@@ -12,3 +12,6 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-01,pdb.v1,NTPC,-1,92,12:15,318.25,13:50,314.33,target,360.92,30.9,330.02,1.704,PDL break
 2026-10-05,pdb.v1,HDFCBANK,-1,29,12:55,705.04,15:10,706.06,squareoff,-29.68,21.69,-51.37,-0.262,PDL break
 2026-10-06,pdb.v1,INFY,-1,21,11:25,1009.35,15:10,1009.35,squareoff,-0.12,22.48,-22.6,-0.116,PDL break
+2026-10-07,pdb.v1,LT,-1,8,12:10,3726.88,13:10,3684.8,target,336.63,31.48,305.15,1.679,PDL break
+2026-10-07,pdb.v1,AXISBANK,1,15,10:30,1256.28,13:50,1243.52,stop,-191.3,19.86,-211.16,-1.137,PDH break
+2026-10-07,pdb.v1,KOTAKBANK,1,49,10:10,436.28,15:10,440.47,squareoff,205.16,22.8,182.36,0.925,PDH break

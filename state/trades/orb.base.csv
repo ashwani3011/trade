@@ -20,3 +20,7 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-06,orb.base,AXISBANK,1,19,09:35,1242.47,15:10,1245.03,squareoff,48.52,25.07,23.46,0.118,ORB up
 2026-10-06,orb.base,INFY,-1,26,09:40,1012.85,15:10,1009.35,squareoff,90.83,27.89,62.94,0.316,ORB down
 2026-10-06,orb.base,ITC,-1,71,09:40,266.62,15:10,265.03,squareoff,112.93,20.03,92.9,0.471,ORB down
+2026-10-07,orb.base,AXISBANK,-1,21,09:35,1232.73,10:05,1242.67,stop,-208.8,27.54,-236.34,-1.176,ORB down
+2026-10-07,orb.base,ICICIBANK,-1,18,09:35,1332.4,10:05,1343.4,stop,-198.05,25.52,-223.57,-1.172,ORB down
+2026-10-07,orb.base,BAJFINANCE,1,11,09:35,973.79,10:15,955.56,stop,-200.52,11.23,-211.75,-1.073,ORB up
+2026-10-07,orb.base,INFY,-1,27,10:10,1001.55,15:10,992.25,squareoff,251.15,28.57,222.58,1.106,ORB down

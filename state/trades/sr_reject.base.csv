@@ -28,3 +28,9 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-06,sr_reject.base,ICICIBANK,-1,39,10:00,1332.7,12:15,1337.62,stop,-192.03,55.2,-247.23,-1.402,level rejection
 2026-10-06,sr_reject.base,LT,-1,9,10:00,3745.88,12:15,3760.23,stop,-129.15,35.81,-164.96,-1.386,level rejection
 2026-10-06,sr_reject.base,BAJFINANCE,1,2,11:40,963.84,13:40,958.86,stop,-9.95,2.04,-11.99,-1.279,level rejection
+2026-10-07,sr_reject.base,NTPC,1,150,09:45,320.6,10:00,319.36,stop,-185.49,50.88,-236.37,-1.381,level rejection
+2026-10-07,sr_reject.base,TCS,1,18,10:05,2085.33,10:10,2075.4,stop,-178.62,39.69,-218.31,-1.304,level rejection
+2026-10-07,sr_reject.base,ITC,1,40,10:10,264.28,10:25,266.16,target,75.2,11.26,63.94,1.625,level rejection
+2026-10-07,sr_reject.base,ICICIBANK,-1,27,10:20,1342.9,10:30,1348.46,stop,-150.09,38.51,-188.6,-1.355,level rejection
+2026-10-07,sr_reject.base,SBIN,-1,49,10:30,962.71,10:45,956.28,target,315.16,49.89,265.27,1.969,level rejection
+2026-10-07,sr_reject.base,INFY,1,38,09:45,1003.95,12:25,999.19,stop,-180.93,40.34,-221.27,-1.305,level rejection

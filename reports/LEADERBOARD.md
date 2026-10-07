@@ -1,17 +1,17 @@
-# Leaderboard (as of 2026-10-06)
+# Leaderboard (as of 2026-10-07)
 
 Paper trading only. `ready_for_real_money` requires 40+ paper days, 30+ trades, profit factor >= 1.3, positive net return after costs and max drawdown <= 10.0%.
 
 | variant | role | status | days | trades | net_pnl | return_pct | win_rate | profit_factor | avg_r | max_dd_pct | sharpe | costs | equity | ready_for_real_money |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| pdb.base | baseline | active | 7 | 29 | 2033.56 | 10.17 | 58.6 | 1.97 | 0.344 | 3.79 | 7.0 | 898.69 | 22033.56 | False |
-| orb.base | baseline | active | 7 | 21 | 139.66 | 0.7 | 61.9 | 1.1 | 0.042 | 1.69 | 1.91 | 413.46 | 20139.66 | False |
-| tg_opt.v1 | champion | active | 7 | 0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 20000.0 | False |
-| pdb.v1 | champion | active | 7 | 13 | -263.32 | -1.32 | 30.8 | 0.79 | -0.1 | 2.64 | -2.11 | 351.21 | 19736.68 | False |
-| vwap_pb.base | baseline | active | 7 | 31 | -698.84 | -3.49 | 48.4 | 0.79 | -0.113 | 6.48 | -3.82 | 1050.78 | 19301.16 | False |
-| sr_reject.v1 | champion | active | 7 | 7 | -797.26 | -3.99 | 28.6 | 0.24 | -0.569 | 3.99 | -8.87 | 303.6 | 19202.74 | False |
-| vwap_pb.v1 | champion | active | 7 | 28 | -2190.45 | -10.95 | 28.6 | 0.4 | -0.406 | 11.37 | -13.49 | 822.67 | 17809.55 | False |
-| tg_fno.base | baseline | active | 3 | 3 | -2397.69 | -11.99 | 33.3 | 0.71 | 0.001 | 22.2 | -0.64 | 214.94 | 17602.31 | False |
-| orb.v1 | champion | active | 7 | 28 | -2526.9 | -12.63 | 25.0 | 0.36 | -0.577 | 12.63 | -15.86 | 925.82 | 17473.1 | False |
-| sr_reject.base | baseline | active | 7 | 29 | -2746.47 | -13.73 | 27.6 | 0.31 | -0.691 | 13.73 | -14.44 | 1213.29 | 17253.53 | False |
-| tg_opt.base | baseline | active | 7 | 4 | -8174.58 | -40.87 | 0.0 | 0.0 | -1.17 | 40.87 | -10.02 | 237.82 | 11825.42 | False |
+| pdb.base | baseline | active | 8 | 34 | 2308.16 | 11.54 | 58.8 | 1.89 | 0.331 | 3.79 | 7.43 | 1053.51 | 22308.16 | False |
+| pdb.v1 | champion | active | 8 | 16 | 13.03 | 0.07 | 37.5 | 1.01 | 0.01 | 2.64 | 0.19 | 425.35 | 20013.03 | False |
+| tg_opt.v1 | champion | active | 8 | 0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 20000.0 | False |
+| orb.base | baseline | active | 8 | 25 | -309.42 | -1.55 | 56.0 | 0.85 | -0.057 | 2.55 | -2.62 | 506.32 | 19690.58 | False |
+| sr_reject.v1 | champion | active | 8 | 8 | -1035.7 | -5.18 | 25.0 | 0.2 | -0.654 | 5.18 | -10.64 | 340.81 | 18964.3 | False |
+| vwap_pb.base | baseline | active | 8 | 37 | -1556.62 | -7.78 | 43.2 | 0.64 | -0.23 | 10.01 | -6.65 | 1235.83 | 18443.38 | False |
+| orb.v1 | champion | active | 8 | 34 | -2386.67 | -11.93 | 29.4 | 0.48 | -0.442 | 12.63 | -12.37 | 1118.71 | 17613.33 | False |
+| vwap_pb.v1 | champion | active | 8 | 32 | -2689.22 | -13.45 | 28.1 | 0.36 | -0.445 | 13.45 | -15.46 | 923.26 | 17310.78 | False |
+| sr_reject.base | baseline | active | 8 | 35 | -3281.81 | -16.41 | 28.6 | 0.32 | -0.622 | 16.41 | -16.32 | 1443.86 | 16718.19 | False |
+| tg_fno.base | baseline | active | 4 | 4 | -4739.05 | -23.7 | 25.0 | 0.55 | -0.115 | 32.55 | -2.6 | 268.3 | 15260.95 | False |
+| tg_opt.base | baseline | active | 8 | 6 | -9903.92 | -49.52 | 0.0 | 0.0 | -1.158 | 49.52 | -11.95 | 345.76 | 10096.08 | False |

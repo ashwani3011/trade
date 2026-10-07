@@ -30,3 +30,9 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-06,vwap_pb.base,AXISBANK,1,28,09:45,1239.87,12:35,1249.33,target,264.85,36.98,227.87,1.204,VWAP pullback long
 2026-10-06,vwap_pb.base,LT,1,9,09:45,3745.12,14:05,3768.86,target,213.64,35.88,177.76,1.116,VWAP pullback long
 2026-10-06,vwap_pb.base,SBIN,-1,28,11:40,955.26,15:10,955.89,squareoff,-17.45,28.37,-45.83,-0.272,VWAP pullback short
+2026-10-07,vwap_pb.base,AXISBANK,-1,25,09:45,1234.13,10:05,1242.11,stop,-199.46,32.8,-232.27,-1.221,VWAP pullback short
+2026-10-07,vwap_pb.base,BHARTIARTL,1,20,09:45,1824.25,10:15,1814.12,stop,-202.58,38.56,-241.14,-1.258,VWAP pullback long
+2026-10-07,vwap_pb.base,ITC,-1,117,10:10,264.12,10:20,265.49,stop,-160.32,32.84,-193.16,-1.279,VWAP pullback short
+2026-10-07,vwap_pb.base,HDFCBANK,-1,41,09:45,705.59,10:25,709.61,stop,-164.98,30.75,-195.72,-1.253,VWAP pullback short
+2026-10-07,vwap_pb.base,SBIN,1,14,10:20,964.09,12:55,950.54,stop,-189.63,14.19,-203.82,-1.098,VWAP pullback long
+2026-10-07,vwap_pb.base,SUNPHARMA,-1,19,10:20,1787.16,14:10,1774.31,target,244.24,35.91,208.33,1.1,VWAP pullback short

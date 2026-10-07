@@ -3,3 +3,5 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-09-30,tg_opt.base,TCS 27OCT 2200CE,1,225,09:25,31.56,12:00,25.25,time,-1421.44,58.39,-1479.83,-0.87,top gainer +2.55%
 2026-09-28,tg_opt.base,SBILIFE 29SEP 1800CE,1,375,09:25,1.82,09:30,0.64,stop,-440.44,47.84,-488.28,-1.695,top gainer +0.37%
 2026-10-06,tg_opt.base,TRENT 27OCT 3000CE,1,225,09:25,56.91,09:35,40.19,stop,-3761.89,65.69,-3827.57,-1.043,top gainer +10.00%
+2026-10-07,tg_opt.base,COALINDIA 27OCT 440CE,1,1350,09:25,2.12,09:40,1.78,stop,-457.65,51.88,-509.53,-1.176,top gainer +0.80%
+2026-10-07,tg_opt.base,DRREDDY 27OCT 1290CE,1,625,09:25,9.04,09:50,7.18,stop,-1163.75,56.06,-1219.81,-1.091,top gainer +1.08%

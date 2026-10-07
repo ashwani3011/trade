@@ -6,3 +6,4 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-01,sr_reject.v1,SUNPHARMA,1,28,10:00,1817.85,11:30,1810.33,stop,-210.54,53.84,-264.38,-1.354,level rejection (confirmed)
 2026-10-01,sr_reject.v1,NTPC,1,149,10:25,319.2,12:15,317.87,stop,-197.8,50.31,-248.11,-1.351,level rejection (confirmed)
 2026-10-05,sr_reject.v1,LT,-1,10,11:40,3728.28,15:10,3727.72,squareoff,5.63,39.53,-33.9,-0.188,level rejection (confirmed)
+2026-10-07,sr_reject.v1,ITC,1,133,10:15,264.73,13:10,263.22,stop,-201.23,37.21,-238.44,-1.25,level rejection (confirmed)

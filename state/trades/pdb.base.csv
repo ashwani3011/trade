@@ -28,3 +28,8 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-06,pdb.base,BHARTIARTL,1,17,10:00,1782.63,14:15,1804.14,target,365.59,32.37,333.22,1.613,PDH break
 2026-10-06,pdb.base,AXISBANK,1,20,09:30,1239.87,15:10,1245.03,squareoff,103.09,26.36,76.73,0.363,PDH break
 2026-10-06,pdb.base,SBIN,-1,36,11:40,955.26,15:10,955.89,squareoff,-22.44,36.48,-58.92,-0.282,PDL break
+2026-10-07,pdb.base,AXISBANK,-1,25,09:40,1231.33,10:05,1240.38,stop,-226.13,32.74,-258.87,-1.194,PDL break
+2026-10-07,pdb.base,BAJFINANCE,1,25,09:35,973.79,10:05,964.78,stop,-225.41,25.67,-251.08,-1.151,PDH break
+2026-10-07,pdb.base,ICICIBANK,1,30,10:10,1344.5,14:30,1358.51,target,420.16,43.04,377.12,1.756,PDH break
+2026-10-07,pdb.base,KOTAKBANK,1,54,10:10,436.28,15:10,440.47,squareoff,226.1,25.13,200.97,0.925,PDH break
+2026-10-07,pdb.base,TATASTEEL,-1,151,09:35,176.96,15:10,175.4,squareoff,234.7,28.24,206.46,0.94,PDL break
