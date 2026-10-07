@@ -121,3 +121,4 @@
 {"key": "sr_reject.base|exit|SBIN|10:45", "type": "EXIT", "variant": "sr_reject.base", "symbol": "SBIN", "bar_time": "10:45", "price": 956.28, "qty": 49, "reason": "target", "net": 265.27, "decided_at": "10:50:20"}
 {"key": "vwap_pb.v1|entry|AXISBANK|10:45", "type": "ENTRY", "variant": "vwap_pb.v1", "symbol": "AXISBANK", "bar_time": "10:45", "price": 1250.68, "qty": 20, "side": 1, "stop": 1242.04, "target": 1267.13, "decided_at": "10:50:20"}
 {"key": "orb.v1|exit|ITC|10:50", "type": "EXIT", "variant": "orb.v1", "symbol": "ITC", "bar_time": "10:50", "price": 264.53, "qty": 113, "reason": "stop", "net": -212.1, "decided_at": "10:55:20"}
+{"key": "orb.v1|order|RELIANCE|11:05", "type": "ORDER", "variant": "orb.v1", "symbol": "RELIANCE", "bar_time": "11:05", "side": 1, "price": "at market (next candle open)", "reason": "ORB up", "decided_at": "11:10:20"}
