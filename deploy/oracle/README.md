@@ -5,7 +5,9 @@ fixed IP. **Paper only** - nothing here places orders. Not enabled until we swit
 GitHub (two traders must never write the same journal).
 
 1. Create the VM (Oracle console): Ubuntu 24.04, shape VM.Standard.A1.Flex, 1 OCPU / 6 GB,
-   home region Mumbai or Hyderabad, upload your SSH public key.
+   home region Mumbai or Hyderabad, upload your SSH public key. If Ampere is "Out of host
+   capacity", use the Always Free VM.Standard.E2.1.Micro (1 GB; setup.sh adds swap) or upgrade
+   to Pay As You Go and retry Ampere.
 2. Give it a static IP: Networking -> IP management -> Reserved public IPs -> Reserve, then
    attach it to the VM's VNIC (Compute -> Instance -> Attached VNICs -> IPv4 addresses).
 3. SSH in (`ssh ubuntu@<ip>`) and run:

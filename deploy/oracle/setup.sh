@@ -13,6 +13,12 @@ sudo apt-get update -qq
 sudo apt-get install -y -qq git python3 python3-venv python3-pip tzdata
 sudo timedatectl set-timezone Asia/Kolkata
 
+# small machines (e.g. the 1 GB AMD micro): add 2 GB swap so pandas never runs out of memory
+if [ "$(awk '/MemTotal/ {print $2}' /proc/meminfo)" -lt 2000000 ] && ! swapon --show | grep -q /swapfile; then
+  sudo fallocate -l 2G /swapfile && sudo chmod 600 /swapfile && sudo mkswap -q /swapfile && sudo swapon /swapfile
+  echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab >/dev/null
+fi
+
 # deploy key so the server can push results (state/, reports/) back to GitHub
 mkdir -p "$HOME/.ssh" && chmod 700 "$HOME/.ssh"
 [ -f "$HOME/.ssh/trade_deploy" ] || ssh-keygen -q -t ed25519 -N "" -C "paper-trade@oracle" -f "$HOME/.ssh/trade_deploy"
