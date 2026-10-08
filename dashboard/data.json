@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-08T09:57:05+05:30",
+ "generated_at": "2026-10-08T10:12:06+05:30",
  "today": "2026-10-08",
  "market_phase": "open",
  "trader_running": true,
@@ -5607,6 +5607,96 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback short",
    "decided_at": "09:55:20"
+  },
+  {
+   "key": "sr_reject.base|entry|INFY|09:55",
+   "type": "ENTRY",
+   "variant": "sr_reject.base",
+   "symbol": "INFY",
+   "bar_time": "09:55",
+   "price": 1007.05,
+   "qty": 32,
+   "side": -1,
+   "stop": 1012.2,
+   "target": 996.74,
+   "decided_at": "10:00:20"
+  },
+  {
+   "key": "vwap_pb.base|order|BHARTIARTL|09:55",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "BHARTIARTL",
+   "bar_time": "09:55",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "10:00:20"
+  },
+  {
+   "key": "vwap_pb.base|order|ITC|09:55",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "ITC",
+   "bar_time": "09:55",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "10:00:20"
+  },
+  {
+   "key": "vwap_pb.base|order|INFY|10:00",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "INFY",
+   "bar_time": "10:00",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:05:20"
+  },
+  {
+   "key": "vwap_pb.base|order|TATASTEEL|10:00",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "TATASTEEL",
+   "bar_time": "10:00",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "10:05:20"
+  },
+  {
+   "key": "orb.base|order|KOTAKBANK|10:05",
+   "type": "ORDER",
+   "variant": "orb.base",
+   "symbol": "KOTAKBANK",
+   "bar_time": "10:05",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "10:10:20"
+  },
+  {
+   "key": "orb.base|order|SUNPHARMA|10:05",
+   "type": "ORDER",
+   "variant": "orb.base",
+   "symbol": "SUNPHARMA",
+   "bar_time": "10:05",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "10:10:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|TATASTEEL|10:05",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "TATASTEEL",
+   "bar_time": "10:05",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "10:10:20"
   }
  ],
  "families": [
