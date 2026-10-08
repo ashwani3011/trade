@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-08T11:12:18+05:30",
+ "generated_at": "2026-10-08T11:27:20+05:30",
  "today": "2026-10-08",
  "market_phase": "open",
  "trader_running": true,
@@ -5860,6 +5860,109 @@
    "stop": 1362.87,
    "target": 1346.76,
    "decided_at": "11:10:20"
+  },
+  {
+   "key": "orb.v1|order|AXISBANK|11:15",
+   "type": "ORDER",
+   "variant": "orb.v1",
+   "symbol": "AXISBANK",
+   "bar_time": "11:15",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "11:20:20"
+  },
+  {
+   "key": "orb.v1|exit|RELIANCE|11:20",
+   "type": "EXIT",
+   "variant": "orb.v1",
+   "symbol": "RELIANCE",
+   "bar_time": "11:20",
+   "price": 1185.39,
+   "qty": 18,
+   "reason": "target",
+   "net": 160.06,
+   "decided_at": "11:25:20"
+  },
+  {
+   "key": "orb.v1|entry|AXISBANK|11:20",
+   "type": "ENTRY",
+   "variant": "orb.v1",
+   "symbol": "AXISBANK",
+   "bar_time": "11:20",
+   "price": 1252.88,
+   "qty": 24,
+   "side": 1,
+   "stop": 1245.74,
+   "target": 1265.71,
+   "decided_at": "11:25:20"
+  },
+  {
+   "key": "orb.v1|order|HDFCBANK|11:20",
+   "type": "ORDER",
+   "variant": "orb.v1",
+   "symbol": "HDFCBANK",
+   "bar_time": "11:20",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "11:25:20"
+  },
+  {
+   "key": "orb.v1|order|SUNPHARMA|11:20",
+   "type": "ORDER",
+   "variant": "orb.v1",
+   "symbol": "SUNPHARMA",
+   "bar_time": "11:20",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "11:25:20"
+  },
+  {
+   "key": "pdb.base|order|SUNPHARMA|11:20",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "SUNPHARMA",
+   "bar_time": "11:20",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "PDL break",
+   "decided_at": "11:25:20"
+  },
+  {
+   "key": "pdb.v1|order|SUNPHARMA|11:20",
+   "type": "ORDER",
+   "variant": "pdb.v1",
+   "symbol": "SUNPHARMA",
+   "bar_time": "11:20",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "PDL break",
+   "decided_at": "11:25:20"
+  },
+  {
+   "key": "vwap_pb.base|exit|HDFCBANK|11:20",
+   "type": "EXIT",
+   "variant": "vwap_pb.base",
+   "symbol": "HDFCBANK",
+   "bar_time": "11:20",
+   "price": 693.14,
+   "qty": 43,
+   "reason": "target",
+   "net": 247.54,
+   "decided_at": "11:25:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|BHARTIARTL|11:20",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "BHARTIARTL",
+   "bar_time": "11:20",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "11:25:20"
   }
  ],
  "families": [
