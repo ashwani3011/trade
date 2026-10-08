@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-08T14:16:08+05:30",
+ "generated_at": "2026-10-08T14:31:10+05:30",
  "today": "2026-10-08",
  "market_phase": "open",
  "trader_running": true,
@@ -6423,6 +6423,30 @@
    "reason": "target",
    "net": 222.74,
    "decided_at": "14:05:20"
+  },
+  {
+   "key": "pdb.base|exit|TCS|14:20",
+   "type": "EXIT",
+   "variant": "pdb.base",
+   "symbol": "TCS",
+   "bar_time": "14:20",
+   "price": 2080.38,
+   "qty": 11,
+   "reason": "stop",
+   "net": -327.52,
+   "decided_at": "14:25:20"
+  },
+  {
+   "key": "sr_reject.base|exit|TCS|14:20",
+   "type": "EXIT",
+   "variant": "sr_reject.base",
+   "symbol": "TCS",
+   "bar_time": "14:20",
+   "price": 2089.29,
+   "qty": 4,
+   "reason": "target",
+   "net": 51.01,
+   "decided_at": "14:25:20"
   }
  ],
  "families": [
