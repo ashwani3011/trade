@@ -115,3 +115,4 @@
 {"key": "pdb.v1|entry|SBIN|12:05", "type": "ENTRY", "variant": "pdb.v1", "symbol": "SBIN", "bar_time": "12:05", "price": 944.72, "qty": 36, "side": -1, "stop": 950.22, "target": 934.57, "decided_at": "12:10:20"}
 {"key": "pdb.base|order|BHARTIARTL|12:20", "type": "ORDER", "variant": "pdb.base", "symbol": "BHARTIARTL", "bar_time": "12:20", "side": -1, "price": "at market (next candle open)", "reason": "PDL break", "decided_at": "12:25:20"}
 {"key": "sr_reject.base|order|TCS|12:20", "type": "ORDER", "variant": "sr_reject.base", "symbol": "TCS", "bar_time": "12:20", "side": -1, "price": "at market (next candle open)", "reason": "level rejection", "decided_at": "12:25:20"}
+{"key": "sr_reject.base|entry|TCS|12:25", "type": "ENTRY", "variant": "sr_reject.base", "symbol": "TCS", "bar_time": "12:25", "price": 2104.27, "qty": 4, "side": -1, "stop": 2111.95, "target": 2089.29, "decided_at": "12:30:56"}

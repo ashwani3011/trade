@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-08T12:30:28+05:30",
+ "generated_at": "2026-10-08T12:45:56+05:30",
  "today": "2026-10-08",
  "market_phase": "open",
- "trader_running": false,
+ "trader_running": true,
  "capital": 20000.0,
  "leaderboard": [
   {
@@ -6245,6 +6245,19 @@
    "price": "at market (next candle open)",
    "reason": "level rejection",
    "decided_at": "12:25:20"
+  },
+  {
+   "key": "sr_reject.base|entry|TCS|12:25",
+   "type": "ENTRY",
+   "variant": "sr_reject.base",
+   "symbol": "TCS",
+   "bar_time": "12:25",
+   "price": 2104.27,
+   "qty": 4,
+   "side": -1,
+   "stop": 2111.95,
+   "target": 2089.29,
+   "decided_at": "12:30:56"
   }
  ],
  "families": [
