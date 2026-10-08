@@ -79,3 +79,4 @@
 {"key": "orb.v1|order|ICICIBANK|10:30", "type": "ORDER", "variant": "orb.v1", "symbol": "ICICIBANK", "bar_time": "10:30", "side": 1, "price": "at market (next candle open)", "reason": "ORB up", "decided_at": "10:35:20"}
 {"key": "sr_reject.base|entry|ICICIBANK|10:30", "type": "ENTRY", "variant": "sr_reject.base", "symbol": "ICICIBANK", "bar_time": "10:30", "price": 1357.59, "qty": 31, "side": -1, "stop": 1362.97, "target": 1347.16, "decided_at": "10:35:20"}
 {"key": "vwap_pb.base|order|ICICIBANK|10:30", "type": "ORDER", "variant": "vwap_pb.base", "symbol": "ICICIBANK", "bar_time": "10:30", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "10:35:20"}
+{"key": "orb.v1|exit|NTPC|10:45", "type": "EXIT", "variant": "orb.v1", "symbol": "NTPC", "bar_time": "10:45", "price": 314.35, "qty": 106, "reason": "stop", "net": -219.93, "decided_at": "10:50:20"}
