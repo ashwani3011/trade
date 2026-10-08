@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-08T13:31:02+05:30",
+ "generated_at": "2026-10-08T13:46:04+05:30",
  "today": "2026-10-08",
  "market_phase": "open",
  "trader_running": true,
@@ -6304,6 +6304,66 @@
    "reason": "target",
    "net": 316.38,
    "decided_at": "13:25:20"
+  },
+  {
+   "key": "orb.v1|exit|BHARTIARTL|13:25",
+   "type": "EXIT",
+   "variant": "orb.v1",
+   "symbol": "BHARTIARTL",
+   "bar_time": "13:25",
+   "price": 1800.39,
+   "qty": 18,
+   "reason": "target",
+   "net": 256.43,
+   "decided_at": "13:30:20"
+  },
+  {
+   "key": "pdb.v1|order|BAJFINANCE|13:25",
+   "type": "ORDER",
+   "variant": "pdb.v1",
+   "symbol": "BAJFINANCE",
+   "bar_time": "13:25",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "PDL break",
+   "decided_at": "13:30:20"
+  },
+  {
+   "key": "sr_reject.base|exit|ICICIBANK|13:25",
+   "type": "EXIT",
+   "variant": "sr_reject.base",
+   "symbol": "ICICIBANK",
+   "bar_time": "13:25",
+   "price": 1347.16,
+   "qty": 31,
+   "reason": "target",
+   "net": 278.96,
+   "decided_at": "13:30:20"
+  },
+  {
+   "key": "sr_reject.v1|exit|ICICIBANK|13:25",
+   "type": "EXIT",
+   "variant": "sr_reject.v1",
+   "symbol": "ICICIBANK",
+   "bar_time": "13:25",
+   "price": 1346.76,
+   "qty": 32,
+   "reason": "target",
+   "net": 284.78,
+   "decided_at": "13:30:20"
+  },
+  {
+   "key": "pdb.v1|entry|BAJFINANCE|13:30",
+   "type": "ENTRY",
+   "variant": "pdb.v1",
+   "symbol": "BAJFINANCE",
+   "bar_time": "13:30",
+   "price": 951.71,
+   "qty": 21,
+   "side": -1,
+   "stop": 960.89,
+   "target": 933.17,
+   "decided_at": "13:35:20"
   }
  ],
  "families": [
