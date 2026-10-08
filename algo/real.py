@@ -364,7 +364,7 @@ class RealDesk:
     # ---------- the round
     def sync(self, day: date, now: datetime, res, bars: Callable[[str], pd.DataFrame | None]) -> None:
         cfg = RealConfig.load(self.config_path)
-        if cfg.host and self.hostname != cfg.host:
+        if cfg.host and self.hostname.split(".")[0] != cfg.host:
             if not self._off_logged:
                 log.info("real desk: host %s is not %s - not running here", self.hostname, cfg.host)
                 self._off_logged = True
