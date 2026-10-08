@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-08T13:46:04+05:30",
+ "generated_at": "2026-10-08T14:01:06+05:30",
  "today": "2026-10-08",
  "market_phase": "open",
  "trader_running": true,
@@ -6364,6 +6364,41 @@
    "stop": 960.89,
    "target": 933.17,
    "decided_at": "13:35:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|BAJFINANCE|13:40",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "BAJFINANCE",
+   "bar_time": "13:40",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "13:45:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|KOTAKBANK|13:40",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "KOTAKBANK",
+   "bar_time": "13:40",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "13:45:20"
+  },
+  {
+   "key": "vwap_pb.v1|entry|BAJFINANCE|13:45",
+   "type": "ENTRY",
+   "variant": "vwap_pb.v1",
+   "symbol": "BAJFINANCE",
+   "bar_time": "13:45",
+   "price": 952.26,
+   "qty": 19,
+   "side": -1,
+   "stop": 961.27,
+   "target": 935.12,
+   "decided_at": "13:50:20"
   }
  ],
  "families": [
