@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-08T14:46:12+05:30",
+ "generated_at": "2026-10-08T15:01:14+05:30",
  "today": "2026-10-08",
  "market_phase": "open",
  "trader_running": true,
@@ -6447,6 +6447,18 @@
    "reason": "target",
    "net": 51.01,
    "decided_at": "14:25:20"
+  },
+  {
+   "key": "vwap_pb.base|exit|NTPC|14:50",
+   "type": "EXIT",
+   "variant": "vwap_pb.base",
+   "symbol": "NTPC",
+   "bar_time": "14:50",
+   "price": 309.36,
+   "qty": 71,
+   "reason": "target",
+   "net": 207.16,
+   "decided_at": "14:55:20"
   }
  ],
  "families": [

@@ -132,3 +132,4 @@
 {"key": "vwap_pb.base|exit|KOTAKBANK|14:00", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "KOTAKBANK", "bar_time": "14:00", "price": 434.43, "qty": 65, "reason": "target", "net": 222.74, "decided_at": "14:05:20"}
 {"key": "pdb.base|exit|TCS|14:20", "type": "EXIT", "variant": "pdb.base", "symbol": "TCS", "bar_time": "14:20", "price": 2080.38, "qty": 11, "reason": "stop", "net": -327.52, "decided_at": "14:25:20"}
 {"key": "sr_reject.base|exit|TCS|14:20", "type": "EXIT", "variant": "sr_reject.base", "symbol": "TCS", "bar_time": "14:20", "price": 2089.29, "qty": 4, "reason": "target", "net": 51.01, "decided_at": "14:25:20"}
+{"key": "vwap_pb.base|exit|NTPC|14:50", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "NTPC", "bar_time": "14:50", "price": 309.36, "qty": 71, "reason": "target", "net": 207.16, "decided_at": "14:55:20"}
