@@ -113,3 +113,5 @@
 {"key": "tg_opt.base|exit|ITC 27OCT 245PE|12:00", "type": "EXIT", "variant": "tg_opt.base", "symbol": "ITC 27OCT 245PE", "bar_time": "12:00", "price": 1.53, "qty": 1725, "reason": "time", "net": 853.04, "decided_at": "12:05:20"}
 {"key": "vwap_pb.v1|order|AXISBANK|12:00", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "AXISBANK", "bar_time": "12:00", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "12:05:20"}
 {"key": "pdb.v1|entry|SBIN|12:05", "type": "ENTRY", "variant": "pdb.v1", "symbol": "SBIN", "bar_time": "12:05", "price": 944.72, "qty": 36, "side": -1, "stop": 950.22, "target": 934.57, "decided_at": "12:10:20"}
+{"key": "pdb.base|order|BHARTIARTL|12:20", "type": "ORDER", "variant": "pdb.base", "symbol": "BHARTIARTL", "bar_time": "12:20", "side": -1, "price": "at market (next candle open)", "reason": "PDL break", "decided_at": "12:25:20"}
+{"key": "sr_reject.base|order|TCS|12:20", "type": "ORDER", "variant": "sr_reject.base", "symbol": "TCS", "bar_time": "12:20", "side": -1, "price": "at market (next candle open)", "reason": "level rejection", "decided_at": "12:25:20"}

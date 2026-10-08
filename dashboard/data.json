@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-08T12:12:24+05:30",
+ "generated_at": "2026-10-08T12:27:26+05:30",
  "today": "2026-10-08",
  "market_phase": "open",
  "trader_running": true,
@@ -6223,6 +6223,28 @@
    "stop": 950.22,
    "target": 934.57,
    "decided_at": "12:10:20"
+  },
+  {
+   "key": "pdb.base|order|BHARTIARTL|12:20",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "BHARTIARTL",
+   "bar_time": "12:20",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "PDL break",
+   "decided_at": "12:25:20"
+  },
+  {
+   "key": "sr_reject.base|order|TCS|12:20",
+   "type": "ORDER",
+   "variant": "sr_reject.base",
+   "symbol": "TCS",
+   "bar_time": "12:20",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "level rejection",
+   "decided_at": "12:25:20"
   }
  ],
  "families": [
