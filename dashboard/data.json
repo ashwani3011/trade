@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-08T13:00:58+05:30",
+ "generated_at": "2026-10-08T13:16:00+05:30",
  "today": "2026-10-08",
  "market_phase": "open",
  "trader_running": true,
@@ -6258,6 +6258,29 @@
    "stop": 2111.95,
    "target": 2089.29,
    "decided_at": "12:30:56"
+  },
+  {
+   "key": "sr_reject.base|order|BAJFINANCE|12:55",
+   "type": "ORDER",
+   "variant": "sr_reject.base",
+   "symbol": "BAJFINANCE",
+   "bar_time": "12:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "level rejection",
+   "decided_at": "13:00:20"
+  },
+  {
+   "key": "sr_reject.base|exit|INFY|13:05",
+   "type": "EXIT",
+   "variant": "sr_reject.base",
+   "symbol": "INFY",
+   "bar_time": "13:05",
+   "price": 996.74,
+   "qty": 32,
+   "reason": "target",
+   "net": 295.77,
+   "decided_at": "13:10:20"
   }
  ],
  "families": [
