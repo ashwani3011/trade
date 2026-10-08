@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-08T14:01:06+05:30",
+ "generated_at": "2026-10-08T14:16:08+05:30",
  "today": "2026-10-08",
  "market_phase": "open",
  "trader_running": true,
@@ -6399,6 +6399,30 @@
    "stop": 961.27,
    "target": 935.12,
    "decided_at": "13:50:20"
+  },
+  {
+   "key": "vwap_pb.base|exit|BAJFINANCE|14:00",
+   "type": "EXIT",
+   "variant": "vwap_pb.base",
+   "symbol": "BAJFINANCE",
+   "bar_time": "14:00",
+   "price": 949.77,
+   "qty": 24,
+   "reason": "stop",
+   "net": -215.53,
+   "decided_at": "14:05:20"
+  },
+  {
+   "key": "vwap_pb.base|exit|KOTAKBANK|14:00",
+   "type": "EXIT",
+   "variant": "vwap_pb.base",
+   "symbol": "KOTAKBANK",
+   "bar_time": "14:00",
+   "price": 434.43,
+   "qty": 65,
+   "reason": "target",
+   "net": 222.74,
+   "decided_at": "14:05:20"
   }
  ],
  "families": [
