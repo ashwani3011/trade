@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-08T11:42:21+05:30",
+ "generated_at": "2026-10-08T11:57:23+05:30",
  "today": "2026-10-08",
  "market_phase": "open",
  "trader_running": true,
@@ -6153,6 +6153,18 @@
    "stop": 2088.64,
    "target": 2143.43,
    "decided_at": "11:40:20"
+  },
+  {
+   "key": "orb.v1|exit|KOTAKBANK|11:45",
+   "type": "EXIT",
+   "variant": "orb.v1",
+   "symbol": "KOTAKBANK",
+   "bar_time": "11:45",
+   "price": 437.6,
+   "qty": 67,
+   "reason": "stop",
+   "net": -213.98,
+   "decided_at": "11:50:20"
   }
  ],
  "families": [
