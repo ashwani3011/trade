@@ -34,3 +34,7 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-07,sr_reject.base,ICICIBANK,-1,27,10:20,1342.9,10:30,1348.46,stop,-150.09,38.51,-188.6,-1.355,level rejection
 2026-10-07,sr_reject.base,SBIN,-1,49,10:30,962.71,10:45,956.28,target,315.16,49.89,265.27,1.969,level rejection
 2026-10-07,sr_reject.base,INFY,1,38,09:45,1003.95,12:25,999.19,stop,-180.93,40.34,-221.27,-1.305,level rejection
+2026-10-08,sr_reject.base,RELIANCE,1,29,09:30,1204.16,09:40,1198.04,stop,-177.58,36.92,-214.5,-1.283,level rejection
+2026-10-08,sr_reject.base,INFY,-1,32,09:55,1007.05,13:05,996.74,target,329.8,34.04,295.77,1.792,level rejection
+2026-10-08,sr_reject.base,ICICIBANK,-1,31,10:30,1357.59,13:25,1347.16,target,323.45,44.49,278.96,1.673,level rejection
+2026-10-08,sr_reject.base,TCS,-1,4,12:25,2104.27,14:20,2089.29,target,59.91,8.9,51.01,1.659,level rejection

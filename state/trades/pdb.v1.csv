@@ -15,3 +15,7 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-07,pdb.v1,LT,-1,8,12:10,3726.88,13:10,3684.8,target,336.63,31.48,305.15,1.679,PDL break
 2026-10-07,pdb.v1,AXISBANK,1,15,10:30,1256.28,13:50,1243.52,stop,-191.3,19.86,-211.16,-1.137,PDH break
 2026-10-07,pdb.v1,KOTAKBANK,1,49,10:10,436.28,15:10,440.47,squareoff,205.16,22.8,182.36,0.925,PDH break
+2026-10-08,pdb.v1,RELIANCE,-1,24,09:35,1201.74,10:20,1188.48,target,318.16,30.45,287.7,1.486,PDL break
+2026-10-08,pdb.v1,BAJFINANCE,-1,21,13:30,951.71,15:10,953.39,squareoff,-35.1,21.21,-56.31,-0.292,PDL break
+2026-10-08,pdb.v1,SBIN,-1,36,12:05,944.72,15:10,939.53,squareoff,186.65,35.99,150.66,0.761,PDL break
+2026-10-08,pdb.v1,SUNPHARMA,-1,13,11:25,1767.17,15:10,1751.33,squareoff,205.98,24.28,181.7,0.951,PDL break
