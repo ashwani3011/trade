@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-08T11:57:23+05:30",
+ "generated_at": "2026-10-08T12:12:24+05:30",
  "today": "2026-10-08",
  "market_phase": "open",
  "trader_running": true,
@@ -6165,6 +6165,64 @@
    "reason": "stop",
    "net": -213.98,
    "decided_at": "11:50:20"
+  },
+  {
+   "key": "pdb.base|order|SBIN|12:00",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "SBIN",
+   "bar_time": "12:00",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "PDL break",
+   "decided_at": "12:05:20"
+  },
+  {
+   "key": "pdb.v1|order|SBIN|12:00",
+   "type": "ORDER",
+   "variant": "pdb.v1",
+   "symbol": "SBIN",
+   "bar_time": "12:00",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "PDL break",
+   "decided_at": "12:05:20"
+  },
+  {
+   "key": "tg_opt.base|exit|ITC 27OCT 245PE|12:00",
+   "type": "EXIT",
+   "variant": "tg_opt.base",
+   "symbol": "ITC 27OCT 245PE",
+   "bar_time": "12:00",
+   "price": 1.53,
+   "qty": 1725,
+   "reason": "time",
+   "net": 853.04,
+   "decided_at": "12:05:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|AXISBANK|12:00",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "AXISBANK",
+   "bar_time": "12:00",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "12:05:20"
+  },
+  {
+   "key": "pdb.v1|entry|SBIN|12:05",
+   "type": "ENTRY",
+   "variant": "pdb.v1",
+   "symbol": "SBIN",
+   "bar_time": "12:05",
+   "price": 944.72,
+   "qty": 36,
+   "side": -1,
+   "stop": 950.22,
+   "target": 934.57,
+   "decided_at": "12:10:20"
   }
  ],
  "families": [
