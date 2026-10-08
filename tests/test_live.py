@@ -72,3 +72,25 @@ def test_live_decisions_match_final_record(tmp_path, monkeypatch):
     final_entries = {(r.variant, r.symbol, r.entry_time) for r in final.itertuples()}
     assert final_entries == live_entries
     assert (s.reports_dir / "live" / "2025-03-04.md").read_text().count("Decision log") == 1
+
+
+def test_real_desk_shadows_pdb_base_through_a_day(tmp_path, monkeypatch):
+    s = settings(tmp_path)
+    src = SyntheticDataSource()
+    trader = LiveTrader(s, src, SyntheticOptionSource(src))
+    cfg = tmp_path / "real.yaml"
+    cfg.write_text("mode: shadow\nhost: here\nvariant: pdb.base\n")
+    trader.real.config_path, trader.real.kill_file, trader.real.hostname = cfg, tmp_path / "KILL", "here"
+    t = DAY.replace(hour=9, minute=20, second=20)
+    while t.hour < 15 or t.minute <= 35:
+        monkeypatch.setattr(clock, "now_ist", lambda t=t: t)
+        trader.tick()
+        t += timedelta(minutes=5)
+    real = trader.real.positions
+    paper = [e for e in trader._load_journal() if e["variant"] == "pdb.base" and e["type"] == "ENTRY"]
+    taken = [p for p in real if p["status"] in ("open", "closed")]
+    assert taken, "synthetic day should produce pdb.base entries"
+    assert {(p["symbol"], p["expect_entry"]) for p in taken} <= {(e["symbol"], e["bar_time"]) for e in paper}
+    assert all(p["status"] == "closed" for p in taken)            # everything flat by the close
+    assert not [e for e in trader.real.events if e["type"] in ("ERROR", "ALERT")]
+    assert (s.reports_dir / "real" / "2025-03-04.md").exists()

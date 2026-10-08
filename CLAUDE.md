@@ -2,13 +2,25 @@
 
 Self-improving **paper** trading system for NSE intraday, using real market data from Dhan.
 The owner is putting in about Rs 20,000 and wants fully automated, rule-based (no emotion) decisions.
-**Paper trading only**: never add order-placement code or place real orders unless the owner asks
+**Paper trading by default**: never add order-placement code or place real orders unless the owner asks
 explicitly. A variant is flagged `ready_for_real_money` in the leaderboard only after 40+ paper days.
+**One exception, asked for explicitly by the owner on 2026-10-08:** `pdb.base` also trades real money
+on Dhan through `algo/real.py`, controlled by `config/real.yaml` (Rs 20k, Rs 200 risk/trade, max 5
+entries a day, Rs 600 daily loss limit, stop-loss placed at Dhan on every entry). Shadow (nothing sent)
+on 2026-10-09, live from 2026-10-12. It runs only on the Oracle VM (`host: paper-trader`).
+- `config/real.yaml` is re-read every candle; a committed change reaches the VM within 15 min (the
+  push timer pulls). `mode: off|shadow|live`, `kill: true` exits everything. On the VM,
+  `touch ~/trade/KILL` is the instant kill switch. Never widen the scope (other variants, more
+  capital, higher risk) without the owner's explicit instruction.
+- Output: `state/real/<date>.json|.jsonl` and `reports/real/<date>.md` (no secrets or balances).
+  Real target exits are market orders at the first candle check after paper's target, so they
+  usually fill a little worse than paper.
 
 ## Where things are
 - `README.md`: how it works, commands, Dhan token setup. `docs/STRATEGIES.md`: strategy reviews.
 - `algo/`: engine (`engine.py`, `options/engine.py`), strategies, Dhan client (`data/dhan.py`),
-  token handling (`data/dhan_auth.py`), real-time loop (`live.py`), self-improvement (`improve.py`).
+  token handling (`data/dhan_auth.py`), real-time loop (`live.py`), self-improvement (`improve.py`),
+  real-money desk for pdb.base (`real.py`).
 - `config/settings.yaml` (universe, risk, costs), `config/strategies.yaml` (base/enhanced params).
 - Output: `state/` (registry, ledgers, trades, `live/<date>.jsonl` decision journal), `reports/`.
 

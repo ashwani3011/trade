@@ -28,6 +28,7 @@ from pathlib import Path
 from . import clock, report
 from .config import Settings, make_option_source, make_source
 from .families import DataHub, DayResult, kind, simulate
+from .real import DhanBroker, RealConfig, RealDesk
 from .state import Store
 
 log = logging.getLogger(__name__)
@@ -75,6 +76,8 @@ class LiveTrader:
         self.store = Store(s.state_dir)
         self.day: date | None = None
         self.seen: set[str] = set()
+        self.real = RealDesk(s.state_dir, s.reports_dir, s.costs, s.interval,
+                             live_broker_factory=(lambda: DhanBroker(src)) if s.data_source == "dhan" else None)
 
     @property
     def journal_path(self) -> Path:
@@ -95,6 +98,7 @@ class LiveTrader:
         active = reg.active()
         if not self.hub.load([self.day], {kind(v.family) for v in active}, min_bars=1):
             log.info("no completed candles yet")
+            self._real_round(now, None)
             return []
         results: dict[str, DayResult] = {}
         for v in active:
@@ -121,7 +125,18 @@ class LiveTrader:
                     log.info("%s %-6s %-18s %s %s", e["decided_at"], e["type"], e["variant"],
                              e.get("symbol", ""), e.get("reason", "") or e.get("price", ""))
         report.write_live(self.s.reports_dir, self.day, now, results, journal=self._load_journal())
+        self._real_round(now, results)
         return new
+
+    def _real_round(self, now: datetime, results: dict[str, DayResult] | None) -> None:
+        """Real orders for one variant (config/real.yaml). Runs even when this candle's data
+        failed (results None), so stops, kills and the square-off are still handled."""
+        try:
+            eq = self.hub._equity.get(now.date()) if results is not None else None
+            res = results.get(RealConfig.load(self.real.config_path).variant) if results else None
+            self.real.sync(now.date(), now, res, lambda sym: eq.bars.get(sym) if eq else None)
+        except Exception:
+            log.exception("real desk round failed")
 
     def run(self, until: tuple[int, int] = STOP) -> None:
         """Decide on every completed candle until `until` (default: after the close).
@@ -138,6 +153,7 @@ class LiveTrader:
                 self.tick()
             except Exception:
                 log.exception("tick failed - will retry on the next candle")
+                self._real_round(clock.now_ist(), None)
             wait = (next_poll(clock.now_ist(), self.s.interval) - clock.now_ist()).total_seconds()
             time.sleep(max(1.0, wait))
         from .runner import run_day
