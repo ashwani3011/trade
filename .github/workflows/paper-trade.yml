@@ -1,25 +1,19 @@
 name: paper-trade
 
-# Runs the real-time paper trader on GitHub's servers every weekday, independent of any
-# Claude session. Needs repository secrets DHAN_CLIENT_ID, DHAN_PIN, DHAN_TOTP_SECRET
-# (optional: ANTHROPIC_API_KEY for Claude's weekly proposals).
+# Since 2026-10-09 the weekday trader runs on the Oracle Cloud VM (deploy/oracle/), not here.
+# This workflow stays as the manual fallback (workflow_dispatch: morning | afternoon | close)
+# and runs the Saturday improve. Needs repository secrets DHAN_CLIENT_ID, DHAN_PIN,
+# DHAN_TOTP_SECRET (optional: ANTHROPIC_API_KEY for Claude's weekly proposals).
 #
-# A GitHub job is capped at 6 hours, so the trading day is split into two runs that
-# continue the same decision journal (state/live/<date>.jsonl, restart-safe):
-#   08:40 IST  morning   check Dhan, then decide on every candle 09:15 .. 12:30
-#   12:10 IST  afternoon queued behind the morning run; 12:30 .. close, records the day
-#   15:55 IST  close     safety net: records the day if the afternoon run was missed
-#   Sat 10:22  improve   weekly champion/challenger search
-# Results are committed to the repo every 15 minutes while trading.
-#
-# The morning and afternoon runs are started by Claude routines (workflow_dispatch starts
-# within seconds; GitHub's cron ran hours late on 2026-09-30). There is no morning cron:
-# a late one would cancel the queued afternoon run and then exit, since it stops at 12:30.
-# The 12:15 afternoon cron stays as a backup.
+# Fallback use: a GitHub job is capped at 6 hours, so a trading day is split into two runs
+# that continue the same decision journal (state/live/<date>.jsonl, restart-safe):
+#   morning   check Dhan, then decide on every candle 09:15 .. 12:30
+#   afternoon queued behind the morning run; 12:30 .. close, records the day
+#   close     records the day if the afternoon run was missed
+# Never dispatch these while the Oracle trader is running: two traders would write one journal.
+# The weekday crons were removed: they ran hours late and the late close replayed old days.
 on:
   schedule:
-    - cron: "45 6 * * 1-5"    # 12:15 IST afternoon (backup)
-    - cron: "25 10 * * 1-5"   # 15:55 IST close
     - cron: "52 4 * * 6"      # 10:22 IST Saturday improve
   workflow_dispatch:
     inputs:

@@ -26,20 +26,24 @@ explicitly. A variant is flagged `ready_for_real_money` in the leaderboard only 
   variant has its own Rs 20k paper account.
 
 ## Daily operation
-The trader runs on **GitHub Actions** (`.github/workflows/paper-trade.yml`), not in the Claude
-container: a Claude cloud container is shut down when idle, which kills any background process.
-- Claude routines start the trading runs via `workflow_dispatch` (GitHub's own cron ran hours late
-  on 2026-09-30): 08:40 IST morning run (Dhan check, trades 09:15–12:30) and 12:10 afternoon run
-  (queued behind it; 12:30 to close, records the day). GitHub cron keeps a 12:15 afternoon backup,
-  the 15:55 close safety net and Saturday 10:22 `improve`; there is deliberately no morning cron.
-  Runs share one restart-safe journal and commit `state/`, `reports/` and `dashboard/data.json`
-  every 15 min.
+Since 2026-10-09 the trader runs on an **Oracle Cloud VM** (`deploy/oracle/`, Mumbai, static IP
+80.225.250.206, user `ubuntu`, repo `~/trade`, secrets in `~/.paper-trade.env`), not in the Claude
+container (a container is shut down when idle, which kills background processes).
+- systemd: `paper-trade.timer` starts `paper-trade.service` Mon–Fri 08:45 IST (`git pull`, `check`,
+  then one all-day `trade-live` that records the day at 15:36 and pushes on exit);
+  `paper-push.timer` commits and pushes `state/`, `reports/`, `dashboard/data.json` every 15 min
+  09:00–16:45. Commits are titled `paper-trade (oracle): ...`, pushed with a write deploy key.
+- Claude cannot reach the VM; the owner runs any VM command. Claude checks it through the commits.
+- GitHub Actions (`.github/workflows/paper-trade.yml`) is now only the manual fallback
+  (`workflow_dispatch` morning/afternoon/close) plus the Saturday 10:22 `improve` cron. The weekday
+  crons were removed (they ran hours late; the late close replayed old days).
 - Claude routines fire into the desk session: weekdays 09:05 IST, hourly 10:05–15:05, 15:44, and
-  Saturday 10:22. They only report: `git pull`, check the latest paper-trade run (GitHub MCP
-  `actions_list`), summarise `reports/live/<date>.md`, process dashboard actions, republish the
-  dashboard. **Never start a trader in the container** (no `supervise`/`trade-live` there) while
-  GitHub runs it; two traders would write the same journal. If a GitHub run failed, report exactly
-  what failed.
+  Saturday 10:22. They report from the Oracle commits (`git log`), summarise
+  `reports/live/<date>.md`, process dashboard actions and republish the dashboard.
+- Fallback: if there is no `paper-trade (oracle)` commit for today by the 10:05 check (or none for
+  45+ min during market hours), the VM trader is down. Only then dispatch the GitHub `morning`
+  (before 12:30) or `afternoon` run, and tell the owner. **Never run two traders at once**, and never
+  start a trader in the container.
 - The trader wakes 20 s after each 5-min candle closes and decides on completed candles only. It
   journals ORDER/ENTRY/EXIT/NOTE decisions with timestamps and is restart-safe. It records the day
   at 15:36.

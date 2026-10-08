@@ -72,20 +72,22 @@ The Dhan client follows the official DhanHQ-py SDK's endpoints, but it hasn't be
 
 ### Scheduling
 
-**GitHub Actions is the scheduler** (`.github/workflows/paper-trade.yml`). It runs on GitHub's servers and doesn't depend on any Claude session staying up.
+**An Oracle Cloud VM runs the trader** (`deploy/oracle/`, set up 2026-10-08). systemd starts one all-day process at 08:45 IST on weekdays: `check` (token, candle times) → `reports/dhan_check.md`, then live decisions 09:15–close, then it records the day at 15:36. Another timer pushes results every 15 minutes. See `deploy/oracle/README.md`.
 
-| IST (weekdays) | Run | What it does |
+**GitHub Actions** (`.github/workflows/paper-trade.yml`) is the manual fallback and the weekly job:
+
+| When | Run | What it does |
 |---|---|---|
-| 08:45 | morning | `check` (token, candle times) → `reports/dhan_check.md`, then live decisions 09:15–12:30 |
-| 12:15 | afternoon | queued behind the morning run; live decisions 12:30–close, then records the day |
-| 15:55 | close | safety net: records the day if the afternoon run was missed |
-| Sat 10:22 | improve | weekly champion/challenger search |
+| manual | morning | `check`, then live decisions 09:15–12:30 |
+| manual | afternoon | queued behind the morning run; live decisions 12:30–close, then records the day |
+| manual | close | records the day if the afternoon run was missed |
+| Sat 10:22 IST | improve | weekly champion/challenger search |
+
+Never dispatch a fallback run while the VM trader is running.
 
 Results are committed to the repo every 15 minutes while trading. GitHub caps a job at 6 hours, so the day is split into two runs that continue one decision journal. Both runs are restart-safe.
 
 Setup: repository **Settings → Secrets and variables → Actions → New repository secret** for `DHAN_CLIENT_ID`, `DHAN_PIN` and `DHAN_TOTP_SECRET` (optional: `ANTHROPIC_API_KEY`). To test right away: **Actions → paper-trade → Run workflow → command `check`**.
-
-GitHub's scheduled runs can start 5–30 minutes late at busy times. That's why the morning run starts at 08:45 and then waits for the open.
 
 Alternatives: on an always-on machine, run `python -m algo.cli trade-live` from cron at 09:05 on weekdays. In a Claude Code session with the keys, `python -m algo.cli supervise` starts the trader in the background.
 
