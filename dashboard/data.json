@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-08T10:12:06+05:30",
+ "generated_at": "2026-10-08T10:27:08+05:30",
  "today": "2026-10-08",
  "market_phase": "open",
  "trader_running": true,
@@ -5697,6 +5697,87 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback short",
    "decided_at": "10:10:20"
+  },
+  {
+   "key": "vwap_pb.base|order|LT|10:10",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "LT",
+   "bar_time": "10:10",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "10:15:20"
+  },
+  {
+   "key": "vwap_pb.v1|entry|TATASTEEL|10:10",
+   "type": "ENTRY",
+   "variant": "vwap_pb.v1",
+   "symbol": "TATASTEEL",
+   "bar_time": "10:10",
+   "price": 173.6,
+   "qty": 110,
+   "side": -1,
+   "stop": 175.16,
+   "target": 170.78,
+   "decided_at": "10:15:20"
+  },
+  {
+   "key": "orb.base|order|HDFCBANK|10:15",
+   "type": "ORDER",
+   "variant": "orb.base",
+   "symbol": "HDFCBANK",
+   "bar_time": "10:15",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "10:20:20"
+  },
+  {
+   "key": "orb.base|order|TATASTEEL|10:15",
+   "type": "ORDER",
+   "variant": "orb.base",
+   "symbol": "TATASTEEL",
+   "bar_time": "10:15",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "10:20:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|ITC|10:15",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "ITC",
+   "bar_time": "10:15",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "10:20:20"
+  },
+  {
+   "key": "pdb.base|exit|RELIANCE|10:20",
+   "type": "EXIT",
+   "variant": "pdb.base",
+   "symbol": "RELIANCE",
+   "bar_time": "10:20",
+   "price": 1188.48,
+   "qty": 27,
+   "reason": "target",
+   "net": 323.67,
+   "decided_at": "10:25:20"
+  },
+  {
+   "key": "pdb.v1|exit|RELIANCE|10:20",
+   "type": "EXIT",
+   "variant": "pdb.v1",
+   "symbol": "RELIANCE",
+   "bar_time": "10:20",
+   "price": 1188.48,
+   "qty": 24,
+   "reason": "target",
+   "net": 287.7,
+   "decided_at": "10:25:20"
   }
  ],
  "families": [
