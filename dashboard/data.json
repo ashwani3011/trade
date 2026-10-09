@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-09T09:15:04+05:30",
+ "generated_at": "2026-10-09T09:30:04+05:30",
  "today": "2026-10-09",
  "market_phase": "open",
  "trader_running": true,
@@ -5600,7 +5600,125 @@
    "reason": "VWAP pullback short"
   }
  ],
- "live_today": [],
+ "live_today": [
+  {
+   "key": "tg_fno.base|note|no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "type": "NOTE",
+   "variant": "tg_fno.base",
+   "reason": "no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "decided_at": "09:20:20"
+  },
+  {
+   "key": "tg_opt.base|note|no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "type": "NOTE",
+   "variant": "tg_opt.base",
+   "reason": "no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "decided_at": "09:20:20"
+  },
+  {
+   "key": "tg_opt.v1|note|no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "decided_at": "09:20:20"
+  },
+  {
+   "key": "tg_opt.base|order|INFY 27OCT 1080CE|09:20",
+   "type": "ORDER",
+   "variant": "tg_opt.base",
+   "symbol": "INFY 27OCT 1080CE",
+   "bar_time": "09:20",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "top gainer +2.71%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.base|note|top gainers @9:25: TCS +4.40%, INFY +2.71%",
+   "type": "NOTE",
+   "variant": "tg_opt.base",
+   "reason": "top gainers @9:25: TCS +4.40%, INFY +2.71%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.base|note|top losers  @9:25: BEL -1.17%, RELIANCE -1.11%",
+   "type": "NOTE",
+   "variant": "tg_opt.base",
+   "reason": "top losers  @9:25: BEL -1.17%, RELIANCE -1.11%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.base|note|TCS: first candle too big (4.1%) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.base",
+   "reason": "TCS: first candle too big (4.1%) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|order|BEL 27OCT 355PE|09:20",
+   "type": "ORDER",
+   "variant": "tg_opt.v1",
+   "symbol": "BEL 27OCT 355PE",
+   "bar_time": "09:20",
+   "side": 1,
+   "price": "buy above 5.10",
+   "reason": "top loser -1.17%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|order|RELIANCE 27OCT 1140PE|09:20",
+   "type": "ORDER",
+   "variant": "tg_opt.v1",
+   "symbol": "RELIANCE 27OCT 1140PE",
+   "bar_time": "09:20",
+   "side": 1,
+   "price": "buy above 13.10",
+   "reason": "top loser -1.11%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|top gainers @9:25: TCS +4.40%, INFY +2.71%, HCLTECH +2.61%",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "top gainers @9:25: TCS +4.40%, INFY +2.71%, HCLTECH +2.61%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|top losers  @9:25: BEL -1.17%, RELIANCE -1.11%, COALINDIA -0.82%",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "top losers  @9:25: BEL -1.17%, RELIANCE -1.11%, COALINDIA -0.82%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|TCS: first candle too big (4.1%) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "TCS: first candle too big (4.1%) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|INFY: NIFTY first candle against the trade - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "INFY: NIFTY first candle against the trade - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|HCLTECH: first candle too big (3.2%) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "HCLTECH: first candle too big (3.2%) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|COALINDIA: first-candle volume 1.3x normal - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "COALINDIA: first-candle volume 1.3x normal - skipped",
+   "decided_at": "09:25:20"
+  }
+ ],
  "families": [
   "orb",
   "pdb",
