@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-09T11:30:04+05:30",
+ "generated_at": "2026-10-09T11:45:04+05:30",
  "today": "2026-10-09",
  "market_phase": "open",
  "trader_running": true,
@@ -6602,6 +6602,42 @@
    "price": "at market (next candle open)",
    "reason": "level rejection",
    "decided_at": "11:25:20"
+  },
+  {
+   "key": "sr_reject.base|entry|HDFCBANK|11:25",
+   "type": "ENTRY",
+   "variant": "sr_reject.base",
+   "symbol": "HDFCBANK",
+   "bar_time": "11:25",
+   "price": 705.04,
+   "qty": 58,
+   "side": -1,
+   "stop": 707.96,
+   "target": 699.67,
+   "decided_at": "11:30:20"
+  },
+  {
+   "key": "vwap_pb.base|order|NTPC|11:30",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "NTPC",
+   "bar_time": "11:30",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "11:35:20"
+  },
+  {
+   "key": "orb.v1|exit|NTPC|11:35",
+   "type": "EXIT",
+   "variant": "orb.v1",
+   "symbol": "NTPC",
+   "bar_time": "11:35",
+   "price": 312.53,
+   "qty": 107,
+   "reason": "stop",
+   "net": -213.58,
+   "decided_at": "11:40:20"
   }
  ],
  "families": [
