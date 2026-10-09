@@ -1,1 +1,40 @@
-[]
+[
+ {
+  "key": "BAJFINANCE|09:25",
+  "symbol": "BAJFINANCE",
+  "side": 1,
+  "stop": 954.25,
+  "target": 980.51,
+  "decided_bar": "09:25",
+  "mode": "shadow",
+  "status": "open",
+  "expect_entry": "09:30",
+  "qty": 22,
+  "est_price": 963.0,
+  "entry_id": "S1791518491047161952",
+  "entry_price": 963.0,
+  "entry_time": "09:30:20",
+  "sl_id": "S1791518491094472924",
+  "sl_kind": "SL-M",
+  "sl_trigger": 954.25
+ },
+ {
+  "key": "AXISBANK|09:35",
+  "symbol": "AXISBANK",
+  "side": 1,
+  "stop": 1249.02,
+  "target": 1280.76,
+  "decided_bar": "09:35",
+  "mode": "shadow",
+  "status": "open",
+  "expect_entry": "09:40",
+  "qty": 18,
+  "est_price": 1259.6,
+  "entry_id": "S1791519090935369993",
+  "entry_price": 1259.6,
+  "entry_time": "09:40:20",
+  "sl_id": "S1791519090982914846",
+  "sl_kind": "SL-M",
+  "sl_trigger": 1249.0
+ }
+]
