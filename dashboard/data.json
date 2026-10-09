@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-09T11:15:04+05:30",
+ "generated_at": "2026-10-09T11:30:04+05:30",
  "today": "2026-10-09",
  "market_phase": "open",
  "trader_running": true,
@@ -6518,6 +6518,90 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback short",
    "decided_at": "11:10:20"
+  },
+  {
+   "key": "orb.v1|exit|AXISBANK|11:10",
+   "type": "EXIT",
+   "variant": "orb.v1",
+   "symbol": "AXISBANK",
+   "bar_time": "11:10",
+   "price": 1255.57,
+   "qty": 24,
+   "reason": "stop",
+   "net": -214.61,
+   "decided_at": "11:15:20"
+  },
+  {
+   "key": "vwap_pb.base|entry|ICICIBANK|11:10",
+   "type": "ENTRY",
+   "variant": "vwap_pb.base",
+   "symbol": "ICICIBANK",
+   "bar_time": "11:10",
+   "price": 1347.1,
+   "qty": 30,
+   "side": -1,
+   "stop": 1353.32,
+   "target": 1337.77,
+   "decided_at": "11:15:20"
+  },
+  {
+   "key": "orb.v1|order|NTPC|11:15",
+   "type": "ORDER",
+   "variant": "orb.v1",
+   "symbol": "NTPC",
+   "bar_time": "11:15",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "11:20:20"
+  },
+  {
+   "key": "sr_reject.base|exit|BAJFINANCE|11:15",
+   "type": "EXIT",
+   "variant": "sr_reject.base",
+   "symbol": "BAJFINANCE",
+   "bar_time": "11:15",
+   "price": 968.02,
+   "qty": 27,
+   "reason": "stop",
+   "net": -206.16,
+   "decided_at": "11:20:20"
+  },
+  {
+   "key": "sr_reject.base|exit|SBIN|11:15",
+   "type": "EXIT",
+   "variant": "sr_reject.base",
+   "symbol": "SBIN",
+   "bar_time": "11:15",
+   "price": 956.38,
+   "qty": 59,
+   "reason": "stop",
+   "net": -246.6,
+   "decided_at": "11:20:20"
+  },
+  {
+   "key": "orb.v1|entry|NTPC|11:20",
+   "type": "ENTRY",
+   "variant": "orb.v1",
+   "symbol": "NTPC",
+   "bar_time": "11:20",
+   "price": 314.19,
+   "qty": 107,
+   "side": 1,
+   "stop": 312.62,
+   "target": 317.05,
+   "decided_at": "11:25:20"
+  },
+  {
+   "key": "sr_reject.base|order|HDFCBANK|11:20",
+   "type": "ORDER",
+   "variant": "sr_reject.base",
+   "symbol": "HDFCBANK",
+   "bar_time": "11:20",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "level rejection",
+   "decided_at": "11:25:20"
   }
  ],
  "families": [
