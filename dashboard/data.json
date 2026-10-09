@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-09T10:15:04+05:30",
+ "generated_at": "2026-10-09T10:30:04+05:30",
  "today": "2026-10-09",
  "market_phase": "open",
  "trader_running": true,
@@ -6355,6 +6355,87 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback long",
    "decided_at": "10:10:20"
+  },
+  {
+   "key": "orb.base|order|ITC|10:10",
+   "type": "ORDER",
+   "variant": "orb.base",
+   "symbol": "ITC",
+   "bar_time": "10:10",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "10:15:20"
+  },
+  {
+   "key": "pdb.v1|entry|RELIANCE|10:10",
+   "type": "ENTRY",
+   "variant": "pdb.v1",
+   "symbol": "RELIANCE",
+   "bar_time": "10:10",
+   "price": 1172.05,
+   "qty": 26,
+   "side": -1,
+   "stop": 1179.74,
+   "target": 1157.72,
+   "decided_at": "10:15:20"
+  },
+  {
+   "key": "sr_reject.base|entry|SBIN|10:10",
+   "type": "ENTRY",
+   "variant": "sr_reject.base",
+   "symbol": "SBIN",
+   "bar_time": "10:10",
+   "price": 953.21,
+   "qty": 59,
+   "side": -1,
+   "stop": 956.09,
+   "target": 948.31,
+   "decided_at": "10:15:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|INFY|10:10",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "INFY",
+   "bar_time": "10:10",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:15:20"
+  },
+  {
+   "key": "orb.base|order|BAJFINANCE|10:20",
+   "type": "ORDER",
+   "variant": "orb.base",
+   "symbol": "BAJFINANCE",
+   "bar_time": "10:20",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "10:25:20"
+  },
+  {
+   "key": "orb.v1|order|SUNPHARMA|10:20",
+   "type": "ORDER",
+   "variant": "orb.v1",
+   "symbol": "SUNPHARMA",
+   "bar_time": "10:20",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "10:25:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|SUNPHARMA|10:20",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "SUNPHARMA",
+   "bar_time": "10:20",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:25:20"
   }
  ],
  "families": [
