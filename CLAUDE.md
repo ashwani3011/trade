@@ -7,7 +7,9 @@ explicitly. A variant is flagged `ready_for_real_money` in the leaderboard only 
 **One exception, asked for explicitly by the owner on 2026-10-08:** `pdb.base` also trades real money
 on Dhan through `algo/real.py`, controlled by `config/real.yaml` (Rs 20k, Rs 200 risk/trade, max 5
 entries a day, Rs 600 daily loss limit, stop-loss placed at Dhan on every entry). Shadow (nothing sent)
-on 2026-10-09, live from 2026-10-12. It runs only on the Oracle VM (`host: paper-trader`).
+on 2026-10-09. Live was armed for 2026-10-12, then put back to shadow on 2026-10-09 after a 180-day
+backtest showed pdb.base negative after costs; live again only on the owner's explicit word.
+It runs only on the Oracle VM (`host: paper-trader`).
 - `config/real.yaml` is re-read every candle; a committed change reaches the VM within 15 min (the
   push timer pulls). `mode: off|shadow|live`, `kill: true` exits everything. On the VM,
   `touch ~/trade/KILL` is the instant kill switch. Never widen the scope (other variants, more
