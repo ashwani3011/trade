@@ -14,7 +14,7 @@ capital: 20000
 risk_per_trade: 200         # Rs lost if the stop is hit (quantity = 200 / stop distance)
 max_entries_per_day: 5
 max_positions: 3            # same as the paper strategy
-daily_loss_limit: 600       # realised loss plus open risk may never exceed this
+daily_loss_limit: 600       # no entry that could push realised loss past this; day P&L at -600 exits all
 max_leverage: 5.0           # MIS: total position value <= capital x 5
 last_entry: "14:30"         # no new entries after this (pdb itself stops at 13:30)
 squareoff: "15:10"          # exit everything at the first check after this
