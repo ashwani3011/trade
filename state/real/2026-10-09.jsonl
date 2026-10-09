@@ -7,3 +7,4 @@
 {"at": "10:30:20", "type": "STOP", "msg": "SBIN SL-M at 949.25 (tick 0.05)", "symbol": "SBIN"}
 {"at": "11:05:20", "type": "SKIP", "msg": "RELIANCE 11:00: max 3 open positions", "symbol": "RELIANCE"}
 {"at": "12:35:20", "type": "SKIP", "msg": "ITC 12:30: max 3 open positions", "symbol": "ITC"}
+{"at": "13:00:20", "type": "SKIP", "msg": "HDFCBANK 12:55: max 3 open positions", "symbol": "HDFCBANK"}

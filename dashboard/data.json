@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-09T13:00:05+05:30",
+ "generated_at": "2026-10-09T13:15:04+05:30",
  "today": "2026-10-09",
  "market_phase": "open",
  "trader_running": true,
@@ -6683,6 +6683,17 @@
    "reason": "target",
    "net": 328.39,
    "decided_at": "12:35:20"
+  },
+  {
+   "key": "pdb.base|order|HDFCBANK|12:55",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "HDFCBANK",
+   "bar_time": "12:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "PDH break",
+   "decided_at": "13:00:20"
   }
  ],
  "families": [

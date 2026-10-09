@@ -79,5 +79,17 @@
   "status": "skipped",
   "expect_entry": "12:35",
   "skip_reason": "max 3 open positions"
+ },
+ {
+  "key": "HDFCBANK|12:55",
+  "symbol": "HDFCBANK",
+  "side": 1,
+  "stop": 701.11,
+  "target": 715.78,
+  "decided_bar": "12:55",
+  "mode": "shadow",
+  "status": "skipped",
+  "expect_entry": "13:00",
+  "skip_reason": "max 3 open positions"
  }
 ]
