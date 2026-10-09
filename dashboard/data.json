@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-09T13:30:04+05:30",
+ "generated_at": "2026-10-09T13:45:04+05:30",
  "today": "2026-10-09",
  "market_phase": "open",
  "trader_running": true,
@@ -6706,6 +6706,51 @@
    "reason": "stop",
    "net": -241.81,
    "decided_at": "13:20:20"
+  },
+  {
+   "key": "sr_reject.base|exit|RELIANCE|13:35",
+   "type": "EXIT",
+   "variant": "sr_reject.base",
+   "symbol": "RELIANCE",
+   "bar_time": "13:35",
+   "price": 1169.4,
+   "qty": 2,
+   "reason": "stop",
+   "net": -12.18,
+   "decided_at": "13:40:20"
+  },
+  {
+   "key": "vwap_pb.base|order|RELIANCE|13:35",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "RELIANCE",
+   "bar_time": "13:35",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "13:40:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|RELIANCE|13:35",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "RELIANCE",
+   "bar_time": "13:35",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "13:40:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|TCS|13:35",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "TCS",
+   "bar_time": "13:35",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "13:40:20"
   }
  ],
  "families": [
