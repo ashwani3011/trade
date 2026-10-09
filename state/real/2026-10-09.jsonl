@@ -5,3 +5,4 @@
 {"at": "09:40:20", "type": "STOP", "msg": "AXISBANK SL-M at 1249.0 (tick 0.1)", "symbol": "AXISBANK"}
 {"at": "10:30:20", "type": "ENTRY", "msg": "BUY SBIN 42 @ 954.0 (est 954.00), stop 949.27, target 963.47 [shadow]", "symbol": "SBIN"}
 {"at": "10:30:20", "type": "STOP", "msg": "SBIN SL-M at 949.25 (tick 0.05)", "symbol": "SBIN"}
+{"at": "11:05:20", "type": "SKIP", "msg": "RELIANCE 11:00: max 3 open positions", "symbol": "RELIANCE"}

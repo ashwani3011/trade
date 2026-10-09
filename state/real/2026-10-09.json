@@ -55,5 +55,17 @@
   "sl_id": "S1791522090941461259",
   "sl_kind": "SL-M",
   "sl_trigger": 949.25
+ },
+ {
+  "key": "RELIANCE|11:00",
+  "symbol": "RELIANCE",
+  "side": -1,
+  "stop": 1179.74,
+  "target": 1159.22,
+  "decided_bar": "11:00",
+  "mode": "shadow",
+  "status": "skipped",
+  "expect_entry": "11:05",
+  "skip_reason": "max 3 open positions"
  }
 ]

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-09T11:00:04+05:30",
+ "generated_at": "2026-10-09T11:15:04+05:30",
  "today": "2026-10-09",
  "market_phase": "open",
  "trader_running": true,
@@ -6472,6 +6472,52 @@
    "reason": "target",
    "net": 224.87,
    "decided_at": "10:40:20"
+  },
+  {
+   "key": "sr_reject.base|order|RELIANCE|10:55",
+   "type": "ORDER",
+   "variant": "sr_reject.base",
+   "symbol": "RELIANCE",
+   "bar_time": "10:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "level rejection",
+   "decided_at": "11:00:20"
+  },
+  {
+   "key": "pdb.base|order|RELIANCE|11:00",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "RELIANCE",
+   "bar_time": "11:00",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "PDL break",
+   "decided_at": "11:05:20"
+  },
+  {
+   "key": "sr_reject.base|entry|RELIANCE|11:00",
+   "type": "ENTRY",
+   "variant": "sr_reject.base",
+   "symbol": "RELIANCE",
+   "bar_time": "11:00",
+   "price": 1174.25,
+   "qty": 2,
+   "side": 1,
+   "stop": 1169.75,
+   "target": 1181.29,
+   "decided_at": "11:05:20"
+  },
+  {
+   "key": "vwap_pb.base|order|ICICIBANK|11:05",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "ICICIBANK",
+   "bar_time": "11:05",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "11:10:20"
   }
  ],
  "families": [
