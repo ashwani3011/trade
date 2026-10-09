@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-09T12:30:04+05:30",
+ "generated_at": "2026-10-09T12:45:02+05:30",
  "today": "2026-10-09",
  "market_phase": "open",
  "trader_running": true,
@@ -6660,6 +6660,29 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback long",
    "decided_at": "11:45:20"
+  },
+  {
+   "key": "pdb.base|order|ITC|12:30",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "ITC",
+   "bar_time": "12:30",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "PDH break",
+   "decided_at": "12:35:20"
+  },
+  {
+   "key": "vwap_pb.v1|exit|ITC|12:30",
+   "type": "EXIT",
+   "variant": "vwap_pb.v1",
+   "symbol": "ITC",
+   "bar_time": "12:30",
+   "price": 263.45,
+   "qty": 89,
+   "reason": "target",
+   "net": 328.39,
+   "decided_at": "12:35:20"
   }
  ],
  "families": [
