@@ -108,3 +108,4 @@
 {"key": "vwap_pb.v1|entry|RELIANCE|13:40", "type": "ENTRY", "variant": "vwap_pb.v1", "symbol": "RELIANCE", "bar_time": "13:40", "price": 1169.15, "qty": 21, "side": -1, "stop": 1177.39, "target": 1153.41, "decided_at": "13:45:20"}
 {"key": "vwap_pb.v1|order|AXISBANK|13:45", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "AXISBANK", "bar_time": "13:45", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "13:50:20"}
 {"key": "vwap_pb.v1|order|BAJFINANCE|13:45", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "BAJFINANCE", "bar_time": "13:45", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "13:50:20"}
+{"key": "orb.base|exit|LT|14:55", "type": "EXIT", "variant": "orb.base", "symbol": "LT", "bar_time": "14:55", "price": 3708.2, "qty": 7, "reason": "target", "net": 345.76, "decided_at": "15:00:20"}

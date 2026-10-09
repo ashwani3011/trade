@@ -8,3 +8,6 @@
 {"at": "11:05:20", "type": "SKIP", "msg": "RELIANCE 11:00: max 3 open positions", "symbol": "RELIANCE"}
 {"at": "12:35:20", "type": "SKIP", "msg": "ITC 12:30: max 3 open positions", "symbol": "ITC"}
 {"at": "13:00:20", "type": "SKIP", "msg": "HDFCBANK 12:55: max 3 open positions", "symbol": "HDFCBANK"}
+{"at": "15:10:20", "type": "EXIT", "msg": "BAJFINANCE squareoff @ 959.0 net -110.41", "symbol": "BAJFINANCE", "mode": "shadow"}
+{"at": "15:10:20", "type": "EXIT", "msg": "AXISBANK squareoff @ 1260.0 net -16.85", "symbol": "AXISBANK", "mode": "shadow"}
+{"at": "15:10:20", "type": "EXIT", "msg": "SBIN squareoff @ 957.1 net 87.63", "symbol": "SBIN", "mode": "shadow"}

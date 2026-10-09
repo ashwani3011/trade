@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-09T15:00:04+05:30",
+ "generated_at": "2026-10-09T15:15:04+05:30",
  "today": "2026-10-09",
  "market_phase": "open",
  "trader_running": true,
@@ -6811,6 +6811,18 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback long",
    "decided_at": "13:50:20"
+  },
+  {
+   "key": "orb.base|exit|LT|14:55",
+   "type": "EXIT",
+   "variant": "orb.base",
+   "symbol": "LT",
+   "bar_time": "14:55",
+   "price": 3708.2,
+   "qty": 7,
+   "reason": "target",
+   "net": 345.76,
+   "decided_at": "15:00:20"
   }
  ],
  "families": [
