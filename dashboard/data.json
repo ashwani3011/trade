@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-09T13:45:04+05:30",
+ "generated_at": "2026-10-09T14:00:04+05:30",
  "today": "2026-10-09",
  "market_phase": "open",
  "trader_running": true,
@@ -6751,6 +6751,66 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback long",
    "decided_at": "13:40:20"
+  },
+  {
+   "key": "sr_reject.base|exit|HDFCBANK|13:40",
+   "type": "EXIT",
+   "variant": "sr_reject.base",
+   "symbol": "HDFCBANK",
+   "bar_time": "13:40",
+   "price": 708.18,
+   "qty": 58,
+   "reason": "stop",
+   "net": -225.44,
+   "decided_at": "13:45:20"
+  },
+  {
+   "key": "vwap_pb.base|entry|RELIANCE|13:40",
+   "type": "ENTRY",
+   "variant": "vwap_pb.base",
+   "symbol": "RELIANCE",
+   "bar_time": "13:40",
+   "price": 1169.15,
+   "qty": 22,
+   "side": -1,
+   "stop": 1177.39,
+   "target": 1157.41,
+   "decided_at": "13:45:20"
+  },
+  {
+   "key": "vwap_pb.v1|entry|RELIANCE|13:40",
+   "type": "ENTRY",
+   "variant": "vwap_pb.v1",
+   "symbol": "RELIANCE",
+   "bar_time": "13:40",
+   "price": 1169.15,
+   "qty": 21,
+   "side": -1,
+   "stop": 1177.39,
+   "target": 1153.41,
+   "decided_at": "13:45:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|AXISBANK|13:45",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "AXISBANK",
+   "bar_time": "13:45",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "13:50:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|BAJFINANCE|13:45",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "BAJFINANCE",
+   "bar_time": "13:45",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "13:50:20"
   }
  ],
  "families": [
