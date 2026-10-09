@@ -18,11 +18,12 @@ import argparse
 import json
 import logging
 import os
+import sys
 from datetime import date, datetime, timedelta
 
 from . import report
 from .backtest import run as backtest
-from .clock import IST, is_final, market_phase, today_ist
+from .clock import IST, is_final, market_phase, now_ist, today_ist
 from .config import load, make_option_source, make_source
 from .data.synthetic import trading_days
 from .families import DataHub, kind
@@ -135,7 +136,23 @@ def main(argv: list[str] | None = None) -> None:
         report.write_leaderboard(s.reports_dir, board, today_ist())
         print(board.to_string(index=False) if not board.empty else "no variants yet")
     elif args.cmd == "check":
-        check(s)
+        import contextlib
+        import io
+
+        buf = io.StringIO()
+
+        class _Tee(io.TextIOBase):
+            def write(self, x):
+                sys.__stdout__.write(x)
+                return buf.write(x)
+
+        try:
+            with contextlib.redirect_stdout(_Tee()):
+                check(s)
+        finally:   # the morning check result, for the desk reports (no secrets are printed by check)
+            out = s.reports_dir / "dhan_check.md"
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_text(f"# Dhan check {now_ist():%Y-%m-%d %H:%M} IST\n```\n{buf.getvalue()}```\n")
     elif args.cmd == "trade-live":
         from .live import LiveTrader, _pid_file
 
