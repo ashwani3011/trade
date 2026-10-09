@@ -6,7 +6,7 @@
 #        shadow  orders are built and journaled but never sent (fills simulated from candles)
 #        live    real orders are sent to Dhan
 # kill: true     cancel the stops, exit every real position at market, no entries today
-mode: live
+mode: shadow
 kill: false
 variant: pdb.base
 host: paper-trader          # runs only on the Oracle VM (never on GitHub or in a Claude container)
