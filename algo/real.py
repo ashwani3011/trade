@@ -408,14 +408,23 @@ class RealDesk:
             for p in [x for x in self.open_positions() if x["mode"] == "live"]:
                 try:
                     if b.net_qty(p["symbol"]) * p["side"] > 0:
+                        p.pop("flat_seen", None)
                         continue
-                    if p.get("sl_id"):     # a leftover stop could open a new position later
-                        b.cancel(p["sl_id"])
                 except Exception as exc:
                     self._event(now, "ERROR", f"{p['symbol']} position check failed: {exc}")
                     continue
+                # trust "flat" only when Dhan reports it twice in a row; until then the stop stays
+                p["flat_seen"] = p.get("flat_seen", 0) + 1
+                if p["flat_seen"] < 2:
+                    self._event(now, "ALERT", f"{p['symbol']}: Dhan shows no position (1st time) - stop kept, re-checking")
+                    continue
+                try:
+                    if p.get("sl_id"):     # a leftover stop could open a new position later
+                        b.cancel(p["sl_id"])
+                except Exception as exc:
+                    self._event(now, "ERROR", f"{p['symbol']} stop cancel failed: {exc}")
                 self._close(p, now, None, "already flat at Dhan")
-                self._event(now, "ALERT", f"{p['symbol']} was flat at Dhan - closed without a price, stop cancelled")
+                self._event(now, "ALERT", f"{p['symbol']} was flat at Dhan twice - closed without a price, stop cancelled")
 
         # 3) exits: kill, daily loss, square-off, paper closed / skipped, earlier failed exits
         sq = now.time() >= datetime.strptime(cfg.squareoff, "%H:%M").time()
@@ -466,6 +475,16 @@ class RealDesk:
                 st = b.status(p["sl_id"])
                 if st["status"] == "TRADED":
                     return self._close(p, now, st["price"], "stop (at Dhan)")
+            net = b.net_qty(p["symbol"])
+            if net * p["side"] <= 0:
+                if p["mode"] == "live" and p.get("flat_seen", 0) < 2:   # not yet confirmed: keep the stop
+                    p["exit_pending"] = why
+                    return self._event(now, "ALERT", f"{p['symbol']}: nothing to exit at Dhan yet - stop kept, retry next candle")
+                if p.get("sl_id"):
+                    b.cancel(p["sl_id"])
+                self._event(now, "ALERT", f"{p['symbol']}: nothing to exit at the broker")
+                return self._close(p, now, None, f"{why} (already flat)")
+            if p.get("sl_id"):
                 if st["status"] not in DONE:
                     b.cancel(p["sl_id"])
                     st = self._wait_fill(b, p["sl_id"])
@@ -475,10 +494,6 @@ class RealDesk:
                         p["exit_pending"] = why
                         return self._event(now, "ALERT", f"{p['symbol']} stop cancel unconfirmed - retry next candle")
                 p["sl_id"] = None
-            net = b.net_qty(p["symbol"])
-            if net * p["side"] <= 0:
-                self._event(now, "ALERT", f"{p['symbol']}: nothing to exit at the broker")
-                return self._close(p, now, None, f"{why} (already flat)")
             qty = min(p["qty"], abs(net))
             p["exit_attempts"] = p.get("exit_attempts", 0) + 1
             oid = b.place(p["symbol"], -p["side"], qty, "MARKET", self._tag(p, f"x{p['exit_attempts']}"))

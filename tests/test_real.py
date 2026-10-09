@@ -238,9 +238,26 @@ def test_live_exit_never_reverses_a_flat_position(desk):
     fake.net["AAA"] = 0                    # e.g. the owner closed it in the Dhan app
     n = len(fake.orders)
     d.sync(DAY, at(9, 50), res(trades=[trade()]), lambda s: BARS)
+    # first "flat" report: not trusted yet - the stop stays, nothing is sent
+    assert len(fake.orders) == n and d.positions[0]["status"] == "open"
+    assert fake.orders["2"]["status"] == "PENDING"
+    d.sync(DAY, at(9, 55), res(trades=[trade()]), lambda s: BARS)
     assert len(fake.orders) == n           # no market order sent
     assert d.positions[0]["status"] == "closed"
     assert fake.orders["2"]["status"] == "CANCELLED"      # and the leftover stop is gone
+
+
+def test_positions_glitch_never_drops_the_stop(desk):
+    fake = FakeDhan()
+    d = desk("live", factory=lambda: fake)
+    d.sync(DAY, at(9, 40), res(pending=[order()]), lambda s: BARS)
+    real_net = fake.net["AAA"]
+    fake.net["AAA"] = 0                    # one bad positions reply
+    d.sync(DAY, at(9, 45), res(open_=[{"symbol": "AAA", "entry_time": "09:40"}]), lambda s: BARS)
+    fake.net["AAA"] = real_net             # next reply is fine again
+    d.sync(DAY, at(9, 50), res(open_=[{"symbol": "AAA", "entry_time": "09:40"}]), lambda s: BARS)
+    p = d.positions[0]
+    assert p["status"] == "open" and fake.orders[p["sl_id"]]["status"] == "PENDING" and "flat_seen" not in p
 
 
 def test_short_stop_limit_buys_above_trigger(desk):
