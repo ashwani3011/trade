@@ -76,3 +76,6 @@
 {"key": "orb.base|order|BAJFINANCE|10:20", "type": "ORDER", "variant": "orb.base", "symbol": "BAJFINANCE", "bar_time": "10:20", "side": 1, "price": "at market (next candle open)", "reason": "ORB up", "decided_at": "10:25:20"}
 {"key": "orb.v1|order|SUNPHARMA|10:20", "type": "ORDER", "variant": "orb.v1", "symbol": "SUNPHARMA", "bar_time": "10:20", "side": 1, "price": "at market (next candle open)", "reason": "ORB up", "decided_at": "10:25:20"}
 {"key": "vwap_pb.v1|order|SUNPHARMA|10:20", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "SUNPHARMA", "bar_time": "10:20", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "10:25:20"}
+{"key": "pdb.base|order|SBIN|10:25", "type": "ORDER", "variant": "pdb.base", "symbol": "SBIN", "bar_time": "10:25", "side": 1, "price": "at market (next candle open)", "reason": "PDH break", "decided_at": "10:30:20"}
+{"key": "pdb.base|entry|SBIN|10:30", "type": "ENTRY", "variant": "pdb.base", "symbol": "SBIN", "bar_time": "10:30", "price": 954.29, "qty": 44, "side": 1, "stop": 949.27, "target": 963.47, "decided_at": "10:35:20"}
+{"key": "vwap_pb.base|exit|ITC|10:35", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "ITC", "bar_time": "10:35", "price": 261.01, "qty": 121, "reason": "target", "net": 224.87, "decided_at": "10:40:20"}
