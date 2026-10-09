@@ -35,3 +35,7 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-08,vwap_pb.v1,BAJFINANCE,-1,19,13:45,952.26,15:10,953.39,squareoff,-21.31,19.2,-40.51,-0.237,VWAP pullback short
 2026-10-08,vwap_pb.v1,NTPC,-1,67,09:45,312.61,15:10,308.94,squareoff,245.46,22.11,223.35,1.296,VWAP pullback short
 2026-10-08,vwap_pb.v1,TATASTEEL,-1,110,10:10,173.6,15:10,171.07,squareoff,277.93,20.13,257.79,1.498,VWAP pullback short
+2026-10-09,vwap_pb.v1,ITC,1,89,10:00,259.48,12:30,263.45,target,353.1,24.72,328.39,1.822,VWAP pullback long
+2026-10-09,vwap_pb.v1,BHARTIARTL,1,8,09:45,1818.45,15:10,1807.76,squareoff,-85.5,15.37,-100.88,-0.605,VWAP pullback long
+2026-10-09,vwap_pb.v1,KOTAKBANK,1,60,09:45,442.33,15:10,442.12,squareoff,-12.92,28.14,-41.06,-0.228,VWAP pullback long
+2026-10-09,vwap_pb.v1,RELIANCE,-1,21,13:40,1169.15,15:10,1170.95,squareoff,-37.84,26.05,-63.89,-0.369,VWAP pullback short

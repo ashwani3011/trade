@@ -27,3 +27,6 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-08,orb.base,BHARTIARTL,-1,7,09:40,1820.65,15:10,1792.34,squareoff,198.21,13.43,184.78,0.972,ORB down
 2026-10-08,orb.base,ITC,-1,28,09:35,257.82,15:10,253.43,squareoff,123.11,7.6,115.5,0.604,ORB down
 2026-10-08,orb.base,LT,-1,5,09:35,3665.2,15:10,3618.39,squareoff,234.07,19.34,214.74,1.167,ORB down
+2026-10-09,orb.base,LT,1,7,09:35,3654.9,14:55,3708.2,target,373.13,27.37,345.76,1.783,ORB up
+2026-10-09,orb.base,AXISBANK,1,11,09:35,1256.98,15:10,1259.92,squareoff,32.39,14.68,17.71,0.095,ORB up
+2026-10-09,orb.base,SBIN,1,13,09:35,953.09,15:10,956.66,squareoff,46.5,13.17,33.33,0.171,ORB up

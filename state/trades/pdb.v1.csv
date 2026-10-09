@@ -19,3 +19,4 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-08,pdb.v1,BAJFINANCE,-1,21,13:30,951.71,15:10,953.39,squareoff,-35.1,21.21,-56.31,-0.292,PDL break
 2026-10-08,pdb.v1,SBIN,-1,36,12:05,944.72,15:10,939.53,squareoff,186.65,35.99,150.66,0.761,PDL break
 2026-10-08,pdb.v1,SUNPHARMA,-1,13,11:25,1767.17,15:10,1751.33,squareoff,205.98,24.28,181.7,0.951,PDL break
+2026-10-09,pdb.v1,RELIANCE,-1,26,10:10,1172.05,15:10,1170.95,squareoff,28.52,32.3,-3.78,-0.019,PDL break

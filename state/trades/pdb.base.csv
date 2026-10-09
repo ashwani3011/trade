@@ -38,3 +38,6 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-08,pdb.base,TCS,1,11,11:35,2107.93,14:20,2080.38,stop,-303.12,24.39,-327.52,-1.543,PDH break
 2026-10-08,pdb.base,SUNPHARMA,-1,15,11:25,1767.17,15:10,1751.33,squareoff,237.67,28.01,209.66,0.951,PDL break
 2026-10-08,pdb.base,TATASTEEL,-1,105,09:45,173.88,15:10,171.07,squareoff,294.68,19.24,275.45,1.242,PDL break
+2026-10-09,pdb.base,AXISBANK,1,20,09:40,1260.08,15:10,1259.92,squareoff,-3.12,26.72,-29.84,-0.135,PDH break
+2026-10-09,pdb.base,BAJFINANCE,1,24,09:30,963.44,15:10,958.76,squareoff,-112.24,24.45,-136.69,-0.62,PDH break
+2026-10-09,pdb.base,SBIN,1,44,10:30,954.29,15:10,956.66,squareoff,104.58,44.59,59.98,0.272,PDH break

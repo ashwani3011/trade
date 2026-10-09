@@ -4,3 +4,4 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-05,tg_fno.base,BAJFINANCE 27OCT 1010CE,1,750,09:35,18.74,15:10,12.13,squareoff,-4956.0,66.31,-5022.31,-0.357,"top F&O gainer +4.03% @09:35, above opening high 982.80"
 2026-10-07,tg_fno.base,PFC 27OCT 345CE,1,1300,09:30,3.89,15:10,2.13,squareoff,-2288.0,53.36,-2341.36,-0.463,"top F&O gainer +2.53% @09:30, above opening high 328.35"
 2026-10-08,tg_fno.base,LICHSGFIN 27OCT 550CE,1,1000,09:30,4.8,15:10,6.93,squareoff,2132.5,59.14,2073.36,0.432,"top F&O gainer +4.29% @09:30, above opening high 535.20"
+2026-10-09,tg_fno.base,COLPAL 27OCT 1880CE,1,275,09:30,27.12,15:10,24.6,squareoff,-692.17,60.09,-752.26,-0.101,"top F&O gainer +5.17% @09:30, above opening high 1828.20"

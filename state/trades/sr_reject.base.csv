@@ -38,3 +38,7 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-08,sr_reject.base,INFY,-1,32,09:55,1007.05,13:05,996.74,target,329.8,34.04,295.77,1.792,level rejection
 2026-10-08,sr_reject.base,ICICIBANK,-1,31,10:30,1357.59,13:25,1347.16,target,323.45,44.49,278.96,1.673,level rejection
 2026-10-08,sr_reject.base,TCS,-1,4,12:25,2104.27,14:20,2089.29,target,59.91,8.9,51.01,1.659,level rejection
+2026-10-09,sr_reject.base,BAJFINANCE,-1,27,09:35,961.41,11:15,968.02,stop,-178.55,27.6,-206.16,-1.208,level rejection
+2026-10-09,sr_reject.base,SBIN,-1,59,10:10,953.21,11:15,956.38,stop,-186.88,59.72,-246.6,-1.451,level rejection
+2026-10-09,sr_reject.base,RELIANCE,1,2,11:00,1174.25,13:35,1169.4,stop,-9.7,2.48,-12.18,-1.354,level rejection
+2026-10-09,sr_reject.base,HDFCBANK,-1,58,11:25,705.04,13:40,708.18,stop,-182.0,43.44,-225.44,-1.329,level rejection
