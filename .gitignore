@@ -6,3 +6,4 @@ __pycache__/
 .venv/
 KILL
 state/real/*.tmp
+research/out_*.json
