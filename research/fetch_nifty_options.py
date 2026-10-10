@@ -13,7 +13,7 @@ src = DhanDataSource(cache_dir="data_cache")
 start, end = date(2022, 1, 1), date(2026, 10, 9)
 for opt in ("CALL", "PUT"):
     key = "ce" if opt == "CALL" else "pe"
-    for off in range(-6, 7):
+    for off in range(-10, 11):
         p = out / f"{key.upper()}_{off:+d}.csv"
         if p.exists():
             continue

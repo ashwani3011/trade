@@ -60,6 +60,7 @@ class Day:
         self.spot = atm.groupby("hm").spot.first()
         self.atm = atm[atm.typ == "CE"].set_index("hm").strike
         self.hms = sorted(g.hm.unique())
+        self.strikes = {k: sorted(v) for k, v in g.groupby(["typ", "hm"]).strike.apply(list).items()}
 
     def bar(self, typ, strike, hm):
         return self.by.get((typ, strike, hm))
@@ -68,74 +69,115 @@ class Day:
         return [(hm, self.by[(typ, strike, hm)]) for hm in self.hms if start <= hm <= end and (typ, strike, hm) in self.by]
 
 
+def _prev(day: Day, hm: str) -> str | None:
+    """The candle that closes at `hm` (5-min candles are labelled by their start time)."""
+    earlier = [h for h in day.hms if h < hm]
+    return earlier[-1] if earlier else None
+
+
+def _closes(day: Day, typ, strike, start, end):
+    """(hm, close) for every candle from `start` to `end`, using closes only (at strike switches
+    Dhan's rolling candles mix ticks of two strikes in open/high/low; closes are clean). When the
+    contract has moved outside the downloaded strikes (ATM +-6), its price is taken as intrinsic
+    value from the spot, a close lower bound for a deep in-the-money weekly option; without this,
+    big-move days would silently drop out and flatter option selling."""
+    out = []
+    for hm in day.hms:
+        if not (start <= hm <= end):
+            continue
+        r = day.bar(typ, strike, hm)
+        if r is not None:
+            out.append((hm, r.close))
+        elif hm in day.spot.index:
+            out.append((hm, _estimate(day, typ, strike, hm)))
+    return out
+
+
+def _intrinsic(typ, strike, spot):
+    return max(0.0, spot - strike if typ == "CE" else strike - spot)
+
+
+def _estimate(day: Day, typ, strike, hm):
+    """Price of a contract outside the downloaded strikes: intrinsic value plus the time value of
+    the nearest downloaded strike on that side (time value shrinks away from ATM, so this is an
+    upper bound: a little pessimistic for sold options, a little generous for bought wings)."""
+    sp = day.spot[hm]
+    ks = day.strikes.get((typ, hm), [])
+    if not ks:
+        return max(0.05, _intrinsic(typ, strike, sp))
+    k0 = ks[-1] if strike > ks[-1] else ks[0]
+    tv0 = max(0.0, day.bar(typ, k0, hm).close - _intrinsic(typ, k0, sp))
+    return max(0.05, _intrinsic(typ, strike, sp) + tv0)
+
+
+def _price(day: Day, typ, strike, hm):
+    c = _closes(day, typ, strike, hm, hm)
+    return c[0][1] if c else None
+
+
 def short_legs(day: Day, legs: list[tuple[str, float]], entry="09:20", exit_="15:15", sl=0.3, fee=Fee(),
                hedges: list[tuple[str, float]] = ()):
-    """Sell `legs` (typ, strike) at the entry bar's open, stop each leg out at +sl of its premium
-    (filled at the stop, or at the bar open if it gapped beyond), buy back the rest at exit_.
+    """Sell `legs` (typ, strike) at the price at `entry` (close of the candle ending then). Each leg
+    is stopped at the first 5-min close >= premium*(1+sl); the rest are bought back at `exit_`.
     Hedges are bought at entry and sold at exit_. Returns Rs P&L for one current-size lot, or None."""
+    e_hm, x_hm = _prev(day, entry), _prev(day, exit_)
+    if e_hm is None or x_hm is None:
+        return None
     pnl, cost = 0.0, 0.0
     for typ, k in legs:
-        b = day.bar(typ, k, entry)
-        if b is None:
+        prem = _price(day, typ, k, e_hm)
+        if prem is None:
             return None
-        prem = b.open
-        stop = prem * (1 + sl) if sl else None
         out_px = None
-        for hm, r in day.path(typ, k, entry, exit_):
-            if hm == exit_:
-                out_px = r.open
+        for hm, c in _closes(day, typ, k, e_hm, x_hm):
+            if hm == e_hm:
+                continue
+            if sl and c >= prem * (1 + sl):
+                out_px = c
                 break
-            if stop and r.high >= stop:
-                out_px = max(stop, r.open) if hm != entry else stop
-                break
+            if hm == x_hm:
+                out_px = c
         if out_px is None:
-            last = day.path(typ, k, entry, "15:30")
-            if not last:
-                return None
-            out_px = last[-1][1].close
+            return None
         pnl += (prem - out_px) * LOT
         cost += fee.order(prem, LOT, "sell") + fee.order(out_px, LOT, "buy")
     for typ, k in hedges:
-        b, e = day.bar(typ, k, entry), day.bar(typ, k, exit_)
+        b, e = _price(day, typ, k, e_hm), _price(day, typ, k, x_hm)
         if b is None or e is None:
             return None
-        pnl += (e.open - b.open) * LOT
-        cost += fee.order(b.open, LOT, "buy") + fee.order(e.open, LOT, "sell")
+        pnl += (e - b) * LOT
+        cost += fee.order(b, LOT, "buy") + fee.order(e, LOT, "sell")
     return pnl - cost
 
 
 def orb_buy(day: Day, orb_end="09:30", last_entry="13:00", exit_="15:15", sl=0.3, tgt=0.6, fee=Fee()):
-    """Buy the ATM CE on a 5-min spot close above the 09:15-09:30 high (PE below the low),
-    filled at the next bar's open. Stop -sl, target +tgt of premium, flat at exit_. One trade a day."""
+    """Buy the ATM CE when a 5-min spot close breaks above the 09:15-09:30 high (ATM PE below the
+    low), at that close's option price. Stop -sl / target +tgt on 5-min closes; flat at exit_.
+    One trade a day."""
     s = day.spot
     rng = s[(s.index >= "09:15") & (s.index < orb_end)]
     if len(rng) < 2:
         return None
     hi, lo = rng.max(), rng.min()
-    hms = [h for h in day.hms if orb_end <= h <= last_entry]
-    for i, hm in enumerate(hms[:-1]):
+    x_hm = _prev(day, exit_)
+    for hm in [h for h in day.hms if orb_end <= h <= last_entry]:
         c = s.get(hm)
         if c is None:
             continue
         typ = "CE" if c > hi else "PE" if c < lo else None
         if not typ:
             continue
-        nxt = hms[i + 1]
         k = day.atm.get(hm)
-        b = day.bar(typ, k, nxt)
+        b = day.bar(typ, k, hm)
         if b is None:
             return None
-        prem = b.open
+        prem = b.close
         out = None
-        for h2, r in day.path(typ, k, nxt, exit_):
-            if h2 == exit_:
-                out = r.open
-                break
-            if r.low <= prem * (1 - sl):
-                out = min(prem * (1 - sl), r.open) if h2 != nxt else prem * (1 - sl)
-                break
-            if r.high >= prem * (1 + tgt):
-                out = max(prem * (1 + tgt), r.open) if h2 != nxt else prem * (1 + tgt)
+        for h2, px in _closes(day, typ, k, hm, x_hm):
+            if h2 == hm:
+                continue
+            if px <= prem * (1 - sl) or px >= prem * (1 + tgt) or h2 == x_hm:
+                out = px
                 break
         if out is None:
             return None
@@ -147,14 +189,14 @@ def run(df: pd.DataFrame, strat, **kw) -> pd.Series:
     res = {}
     for d, g in df.groupby("day"):
         day = Day(g)
-        if "09:20" not in day.atm.index:
+        if "09:15" not in day.atm.index:
             continue
         res[d] = strat(day, **kw)
     return pd.Series(res, dtype=float).dropna()
 
 
 def straddle(day: Day, entry="09:20", width=0, wings=None, **kw):
-    k = day.atm.get(entry)
+    k = day.atm.get(_prev(day, entry))
     if k is None:
         return None
     legs = [("CE", k + 50 * width), ("PE", k - 50 * width)]
