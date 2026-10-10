@@ -60,7 +60,36 @@ Robustness of momentum A:
 - A realistic forward expectation is NIFTY plus a few % a year with smaller drawdowns, and some
   flat or negative years. It will not repeat 29%/yr.
 
-## 4. Recommendation
+## 4. NIFTY weekly options, intraday (Jan 2022 – Oct 2026, 1,179 days)
+Data: Dhan expired-option 5-min candles, strikes ATM−10..ATM+10, CE and PE
+(`research/fetch_nifty_options.py`, `research/options_lab.py`, `research/run_options.py`).
+Results are per lot at today's lot size of 65, after costs (Rs 20/order, STT, exchange, GST,
+0.5% slippage).
+
+Data caveats:
+- Dhan's rolling candles mix two strikes in open/high/low at ATM switches, so all fills and stops
+  use 5-min closes. That means candle-close stops, not tick stops.
+- Contracts that move outside ATM±10 are priced at intrinsic value plus nearby time value.
+- An earlier run that dropped such days overstated option selling a lot: the straddle showed
+  +8,197/month, against −1,964 with every day included.
+
+| strategy (per lot) | avg Rs/month | months + | worst day | max DD | capital needed |
+|---|---|---|---|---|---|
+| 9:20 short straddle, no stop | −1,964 | 48% | −32,086 | −1.98 L | ~1.1–2.5 L margin |
+| 9:20 straddle, 30% leg stop | −968 | 50% | −11,905 | −1.23 L | same |
+| 9:20 straddle, 50% leg stop | +758 | 55% | −15,984 | −0.85 L | same |
+| strangle ±2 strikes, 50% stop | +605 | 55% | −12,756 | −0.79 L | same |
+| iron fly, wings ±6, no stop | −7,033 | 19% | −14,169 | −4.1 L | ~0.4–1 L |
+| expiry days only, straddle 50% stop | +1,900 | – | −10,131 | – | ~1.5–2.5 L |
+| ORB option BUYING (ATM, 30% stop / 60% target) | −1,926 | 47% | −7,522 | −1.52 L | ~Rs 10k premium |
+
+Takeaways:
+- Option buying, the only F&O trade a Rs 20k account can place, loses money.
+- Option selling needs 1–2.5 lakh of margin. Its best variants earned about 0.3–1%/month on that
+  margin, with single days of −10k to −32k per lot.
+- Intraday hedging (iron fly) costs more in wing decay and fees than it saves.
+
+## 5. Recommendation
 - Stop pursuing intraday stock strategies for real money. Keep them on paper only for
   research.
 - Candidate for real money: momentum A as a monthly CNC (delivery) rotation. It needs about
