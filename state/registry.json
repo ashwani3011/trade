@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T06:25:43",
+  "updated": "2026-10-10T10:51:57",
   "variants": {
     "orb.base": {
       "created": "2026-09-29",
@@ -49,6 +49,26 @@
         "or_bars": 4,
         "stop_mode": "range",
         "target_r": 1.5681,
+        "vol_mult": 1.5,
+        "vwap_filter": true
+      },
+      "parent": "orb.v1",
+      "retired_reason": "",
+      "role": "challenger",
+      "status": "active"
+    },
+    "orb.v3": {
+      "created": "2026-10-10",
+      "family": "orb",
+      "id": "orb.v3",
+      "note": "random mutation | train -17.43% / test 0.54%",
+      "params": {
+        "atr_stop": 0.2449,
+        "buffer_pct": 0.05,
+        "max_range_atr": 0.6,
+        "or_bars": 2,
+        "stop_mode": "atr",
+        "target_r": 2.0,
         "vol_mult": 1.5,
         "vwap_filter": true
       },

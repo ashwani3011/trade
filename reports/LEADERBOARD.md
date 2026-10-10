@@ -8,6 +8,7 @@ Paper trading only. `ready_for_real_money` requires 40+ paper days, 30+ trades, 
 | orb.base | baseline | active | 10 | 31 | 602.4 | 3.01 | 64.5 | 1.29 | 0.108 | 2.55 | 3.33 | 601.91 | 20602.4 | False |
 | pdb.v1 | champion | active | 10 | 21 | 573.0 | 2.86 | 42.9 | 1.38 | 0.145 | 2.64 | 3.08 | 569.58 | 20573.0 | False |
 | orb.v2 | challenger | active | 0 | 0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 20000.0 | False |
+| orb.v3 | challenger | active | 0 | 0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 20000.0 | False |
 | tg_opt.v1 | champion | active | 10 | 0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 20000.0 | False |
 | tg_opt.v2 | challenger | active | 0 | 0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 20000.0 | False |
 | vwap_pb.v2 | challenger | active | 0 | 0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 20000.0 | False |

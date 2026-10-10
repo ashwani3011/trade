@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-10T11:55:44+05:30",
+ "generated_at": "2026-10-10T16:21:58+05:30",
  "today": "2026-10-10",
  "market_phase": "closed",
  "trader_running": false,
@@ -58,6 +58,23 @@
   },
   {
    "variant": "orb.v2",
+   "role": "challenger",
+   "status": "active",
+   "days": 0,
+   "trades": 0,
+   "net_pnl": 0.0,
+   "return_pct": 0.0,
+   "win_rate": 0.0,
+   "profit_factor": 0.0,
+   "avg_r": 0.0,
+   "max_dd_pct": 0.0,
+   "sharpe": 0.0,
+   "costs": 0.0,
+   "equity": 20000.0,
+   "ready_for_real_money": false
+  },
+  {
+   "variant": "orb.v3",
    "role": "challenger",
    "status": "active",
    "days": 0,
@@ -294,6 +311,26 @@
     "or_bars": 4,
     "stop_mode": "range",
     "target_r": 1.5681,
+    "vol_mult": 1.5,
+    "vwap_filter": true
+   },
+   "created": "2026-10-10",
+   "parent": "orb.v1",
+   "retired_reason": ""
+  },
+  {
+   "id": "orb.v3",
+   "family": "orb",
+   "role": "challenger",
+   "status": "active",
+   "note": "random mutation | train -17.43% / test 0.54%",
+   "params": {
+    "atr_stop": 0.2449,
+    "buffer_pct": 0.05,
+    "max_range_atr": 0.6,
+    "or_bars": 2,
+    "stop_mode": "atr",
+    "target_r": 2.0,
     "vol_mult": 1.5,
     "vwap_filter": true
    },
@@ -670,6 +707,7 @@
    }
   ],
   "orb.v2": [],
+  "orb.v3": [],
   "pdb.base": [
    {
     "date": "2026-09-30",
