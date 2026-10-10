@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T03:36:53",
+  "updated": "2026-10-10T06:25:43",
   "variants": {
     "orb.base": {
       "created": "2026-09-29",
@@ -35,6 +35,26 @@
       "parent": null,
       "retired_reason": "",
       "role": "champion",
+      "status": "active"
+    },
+    "orb.v2": {
+      "created": "2026-10-10",
+      "family": "orb",
+      "id": "orb.v2",
+      "note": "random mutation | train -21.8% / test 3.96%",
+      "params": {
+        "atr_stop": 0.25,
+        "buffer_pct": 0.05,
+        "max_range_atr": 0.6,
+        "or_bars": 4,
+        "stop_mode": "range",
+        "target_r": 1.5681,
+        "vol_mult": 1.5,
+        "vwap_filter": true
+      },
+      "parent": "orb.v1",
+      "retired_reason": "",
+      "role": "challenger",
       "status": "active"
     },
     "pdb.base": {
@@ -118,9 +138,9 @@
         "stop_frac": 0.6
       },
       "parent": null,
-      "retired_reason": "",
+      "retired_reason": "drawdown 32.55% > 30.0%",
       "role": "baseline",
-      "status": "active"
+      "status": "retired"
     },
     "tg_opt.base": {
       "created": "2026-09-29",
@@ -141,9 +161,9 @@
         "target_r": 3.0
       },
       "parent": null,
-      "retired_reason": "",
+      "retired_reason": "drawdown 55.62% > 30.0%",
       "role": "baseline",
-      "status": "active"
+      "status": "retired"
     },
     "tg_opt.v1": {
       "created": "2026-09-29",
@@ -173,6 +193,36 @@
       "parent": null,
       "retired_reason": "",
       "role": "champion",
+      "status": "active"
+    },
+    "tg_opt.v2": {
+      "created": "2026-10-10",
+      "family": "tg_opt",
+      "id": "tg_opt.v2",
+      "note": "random mutation | train -3.6% / test 16.68%",
+      "params": {
+        "big_candle_pct": 30.0,
+        "entry_mode": "open",
+        "exit_time": "12:00",
+        "last_entry": "10:30",
+        "market_filter": true,
+        "max_candle_pct": 2.0,
+        "max_gap_pct": 3.0,
+        "min_body_ratio": 0.6,
+        "min_expiry_days": 5,
+        "n_stocks": 3,
+        "otm_pct": 1.5,
+        "put_leg": "independent",
+        "risk_pct": 5.0,
+        "sizing": "risk",
+        "stop_frac": 0.6,
+        "target_r": 3.2036,
+        "trail_be_r": 1.0,
+        "vol_mult": 1.18
+      },
+      "parent": "tg_opt.v1",
+      "retired_reason": "",
+      "role": "challenger",
       "status": "active"
     },
     "vwap_pb.base": {
@@ -208,6 +258,25 @@
       "parent": null,
       "retired_reason": "",
       "role": "champion",
+      "status": "active"
+    },
+    "vwap_pb.v2": {
+      "created": "2026-10-10",
+      "family": "vwap_pb",
+      "id": "vwap_pb.v2",
+      "note": "random mutation | train -24.02% / test 3.45%",
+      "params": {
+        "atr_stop": 0.2,
+        "confirm_bar": true,
+        "ema_filter": true,
+        "min_trend_pct": 0.6453,
+        "target_r": 2.5451,
+        "touch_pct": 0.1,
+        "vol_mult": 1.0262
+      },
+      "parent": "vwap_pb.v1",
+      "retired_reason": "",
+      "role": "challenger",
       "status": "active"
     }
   }
