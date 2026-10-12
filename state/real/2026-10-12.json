@@ -7,7 +7,7 @@
   "target": 995.16,
   "decided_bar": "09:25",
   "mode": "shadow",
-  "status": "open",
+  "status": "closed",
   "expect_entry": "09:30",
   "qty": 16,
   "est_price": 971.5,
@@ -16,7 +16,13 @@
   "entry_time": "09:30:20",
   "sl_id": "S1791777637411903760",
   "sl_kind": "SL-M",
-  "sl_trigger": 959.65
+  "sl_trigger": 959.65,
+  "exit_time": "10:45:20",
+  "exit_reason": "stop (at Dhan)",
+  "exit_price": 959.65,
+  "gross": -189.6,
+  "costs": 16.36,
+  "net": -205.96
  },
  {
   "key": "HDFCBANK|09:25",
