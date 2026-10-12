@@ -1,1 +1,5 @@
 {"at": "09:14:00", "type": "NOTE", "msg": "mode shadow; broker check: funds OK, positions OK, orders OK"}
+{"at": "09:30:20", "type": "ENTRY", "msg": "BUY BAJFINANCE 16 @ 971.5 (est 971.50), stop 959.67, target 995.16 [shadow]", "symbol": "BAJFINANCE"}
+{"at": "09:30:20", "type": "STOP", "msg": "BAJFINANCE SL-M at 959.65 (tick 0.05)", "symbol": "BAJFINANCE"}
+{"at": "09:30:20", "type": "ENTRY", "msg": "BUY HDFCBANK 42 @ 710.2 (est 710.20), stop 705.52, target 719.56 [shadow]", "symbol": "HDFCBANK"}
+{"at": "09:30:20", "type": "STOP", "msg": "HDFCBANK SL-M at 705.5 (tick 0.05)", "symbol": "HDFCBANK"}
