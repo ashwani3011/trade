@@ -139,3 +139,4 @@
 {"key": "vwap_pb.base|entry|HDFCBANK|12:25", "type": "ENTRY", "variant": "vwap_pb.base", "symbol": "HDFCBANK", "bar_time": "12:25", "price": 706.39, "qty": 23, "side": -1, "stop": 710.6, "target": 700.1, "decided_at": "12:30:20"}
 {"key": "vwap_pb.v1|order|SBIN|12:30", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "SBIN", "bar_time": "12:30", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "12:35:20"}
 {"key": "vwap_pb.v2|order|SBIN|12:30", "type": "ORDER", "variant": "vwap_pb.v2", "symbol": "SBIN", "bar_time": "12:30", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "12:35:20"}
+{"key": "sr_reject.base|exit|TATASTEEL|12:50", "type": "EXIT", "variant": "sr_reject.base", "symbol": "TATASTEEL", "bar_time": "12:50", "price": 172.75, "qty": 209, "reason": "target", "net": 287.36, "decided_at": "12:55:20"}

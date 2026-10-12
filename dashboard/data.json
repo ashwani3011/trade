@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-12T12:45:04+05:30",
+ "generated_at": "2026-10-12T13:00:04+05:30",
  "today": "2026-10-12",
  "market_phase": "open",
  "trader_running": true,
@@ -7866,6 +7866,18 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback short",
    "decided_at": "12:35:20"
+  },
+  {
+   "key": "sr_reject.base|exit|TATASTEEL|12:50",
+   "type": "EXIT",
+   "variant": "sr_reject.base",
+   "symbol": "TATASTEEL",
+   "bar_time": "12:50",
+   "price": 172.75,
+   "qty": 209,
+   "reason": "target",
+   "net": 287.36,
+   "decided_at": "12:55:20"
   }
  ],
  "families": [
