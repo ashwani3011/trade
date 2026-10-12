@@ -36,5 +36,24 @@
   "sl_id": "S1791777637463093391",
   "sl_kind": "SL-M",
   "sl_trigger": 705.5
+ },
+ {
+  "key": "NTPC|10:15",
+  "symbol": "NTPC",
+  "side": -1,
+  "stop": 311.27,
+  "target": 304.76,
+  "decided_bar": "10:15",
+  "mode": "shadow",
+  "status": "open",
+  "expect_entry": "10:20",
+  "qty": 92,
+  "est_price": 309.1,
+  "entry_id": "S1791780637367337513",
+  "entry_price": 309.1,
+  "entry_time": "10:20:20",
+  "sl_id": "S1791780637415476900",
+  "sl_kind": "SL-M",
+  "sl_trigger": 311.25
  }
 ]

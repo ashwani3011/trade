@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-12T10:15:04+05:30",
+ "generated_at": "2026-10-12T10:30:04+05:30",
  "today": "2026-10-12",
  "market_phase": "open",
  "trader_running": true,
@@ -7109,6 +7109,85 @@
    "stop": 2178.59,
    "target": 2110.92,
    "decided_at": "10:10:20"
+  },
+  {
+   "key": "orb.base|order|HDFCBANK|10:10",
+   "type": "ORDER",
+   "variant": "orb.base",
+   "symbol": "HDFCBANK",
+   "bar_time": "10:10",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "10:15:20"
+  },
+  {
+   "key": "orb.v1|order|ICICIBANK|10:10",
+   "type": "ORDER",
+   "variant": "orb.v1",
+   "symbol": "ICICIBANK",
+   "bar_time": "10:10",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "10:15:20"
+  },
+  {
+   "key": "orb.v2|order|ICICIBANK|10:10",
+   "type": "ORDER",
+   "variant": "orb.v2",
+   "symbol": "ICICIBANK",
+   "bar_time": "10:10",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "10:15:20"
+  },
+  {
+   "key": "orb.v3|order|ICICIBANK|10:10",
+   "type": "ORDER",
+   "variant": "orb.v3",
+   "symbol": "ICICIBANK",
+   "bar_time": "10:10",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "10:15:20"
+  },
+  {
+   "key": "pdb.base|order|NTPC|10:15",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "NTPC",
+   "bar_time": "10:15",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "PDL break",
+   "decided_at": "10:20:20"
+  },
+  {
+   "key": "vwap_pb.base|order|INFY|10:15",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "INFY",
+   "bar_time": "10:15",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "10:20:20"
+  },
+  {
+   "key": "pdb.base|entry|NTPC|10:20",
+   "type": "ENTRY",
+   "variant": "pdb.base",
+   "symbol": "NTPC",
+   "bar_time": "10:20",
+   "price": 309.11,
+   "qty": 103,
+   "side": -1,
+   "stop": 311.27,
+   "target": 304.76,
+   "decided_at": "10:25:20"
   }
  ],
  "families": [

@@ -3,3 +3,5 @@
 {"at": "09:30:20", "type": "STOP", "msg": "BAJFINANCE SL-M at 959.65 (tick 0.05)", "symbol": "BAJFINANCE"}
 {"at": "09:30:20", "type": "ENTRY", "msg": "BUY HDFCBANK 42 @ 710.2 (est 710.20), stop 705.52, target 719.56 [shadow]", "symbol": "HDFCBANK"}
 {"at": "09:30:20", "type": "STOP", "msg": "HDFCBANK SL-M at 705.5 (tick 0.05)", "symbol": "HDFCBANK"}
+{"at": "10:20:20", "type": "ENTRY", "msg": "SELL NTPC 92 @ 309.1 (est 309.10), stop 311.27, target 304.76 [shadow]", "symbol": "NTPC"}
+{"at": "10:20:20", "type": "STOP", "msg": "NTPC SL-M at 311.25 (tick 0.05)", "symbol": "NTPC"}
