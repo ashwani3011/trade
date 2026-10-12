@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-12T12:15:04+05:30",
+ "generated_at": "2026-10-12T12:30:04+05:30",
  "today": "2026-10-12",
  "market_phase": "open",
  "trader_running": true,
@@ -7796,6 +7796,41 @@
    "stop": 1027.82,
    "target": 997.79,
    "decided_at": "12:00:20"
+  },
+  {
+   "key": "vwap_pb.base|order|SBIN|12:15",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "SBIN",
+   "bar_time": "12:15",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "12:20:20"
+  },
+  {
+   "key": "vwap_pb.base|entry|SBIN|12:20",
+   "type": "ENTRY",
+   "variant": "vwap_pb.base",
+   "symbol": "SBIN",
+   "bar_time": "12:20",
+   "price": 942.92,
+   "qty": 40,
+   "side": -1,
+   "stop": 947.5,
+   "target": 936.75,
+   "decided_at": "12:25:20"
+  },
+  {
+   "key": "vwap_pb.base|order|HDFCBANK|12:20",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "HDFCBANK",
+   "bar_time": "12:20",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "12:25:20"
   }
  ],
  "families": [
