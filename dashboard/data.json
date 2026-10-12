@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-12T09:15:04+05:30",
+ "generated_at": "2026-10-12T09:30:04+05:30",
  "today": "2026-10-12",
  "market_phase": "open",
  "trader_running": true,
@@ -6280,7 +6280,150 @@
    "reason": "VWAP pullback short"
   }
  ],
- "live_today": [],
+ "live_today": [
+  {
+   "key": "tg_opt.v1|note|no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "decided_at": "09:20:20"
+  },
+  {
+   "key": "tg_opt.v2|note|no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "type": "NOTE",
+   "variant": "tg_opt.v2",
+   "reason": "no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "decided_at": "09:20:20"
+  },
+  {
+   "key": "tg_opt.v1|order|ITC 27OCT 257.5PE|09:20",
+   "type": "ORDER",
+   "variant": "tg_opt.v1",
+   "symbol": "ITC 27OCT 257.5PE",
+   "bar_time": "09:20",
+   "side": 1,
+   "price": "buy above 1.80",
+   "reason": "top loser -1.03%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|order|BHARTIARTL 27OCT 1760PE|09:20",
+   "type": "ORDER",
+   "variant": "tg_opt.v1",
+   "symbol": "BHARTIARTL 27OCT 1760PE",
+   "bar_time": "09:20",
+   "side": 1,
+   "price": "buy above 11.20",
+   "reason": "top loser -0.91%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|top gainers @9:25: BAJAJ-AUTO +2.91%, BEL +1.32%, M&M +1.15%",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "top gainers @9:25: BAJAJ-AUTO +2.91%, BEL +1.32%, M&M +1.15%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|top losers  @9:25: TECHM -4.35%, ITC -1.03%, BHARTIARTL -0.91%",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "top losers  @9:25: TECHM -4.35%, ITC -1.03%, BHARTIARTL -0.91%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|BAJAJ-AUTO: first candle too big (2.2%) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "BAJAJ-AUTO: first candle too big (2.2%) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|BEL: first-candle volume 1.5x normal - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "BEL: first-candle volume 1.5x normal - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|M&M: weak candle (body 47% of range) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "M&M: weak candle (body 47% of range) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|TECHM: first candle too big (3.6%) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "TECHM: first candle too big (3.6%) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v2|order|ITC 27OCT 257.5PE|09:20",
+   "type": "ORDER",
+   "variant": "tg_opt.v2",
+   "symbol": "ITC 27OCT 257.5PE",
+   "bar_time": "09:20",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "top loser -1.03%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v2|order|BHARTIARTL 27OCT 1760PE|09:20",
+   "type": "ORDER",
+   "variant": "tg_opt.v2",
+   "symbol": "BHARTIARTL 27OCT 1760PE",
+   "bar_time": "09:20",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "top loser -0.91%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v2|note|top gainers @9:25: BAJAJ-AUTO +2.91%, BEL +1.32%, M&M +1.15%",
+   "type": "NOTE",
+   "variant": "tg_opt.v2",
+   "reason": "top gainers @9:25: BAJAJ-AUTO +2.91%, BEL +1.32%, M&M +1.15%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v2|note|top losers  @9:25: TECHM -4.35%, ITC -1.03%, BHARTIARTL -0.91%",
+   "type": "NOTE",
+   "variant": "tg_opt.v2",
+   "reason": "top losers  @9:25: TECHM -4.35%, ITC -1.03%, BHARTIARTL -0.91%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v2|note|BAJAJ-AUTO: first candle too big (2.2%) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v2",
+   "reason": "BAJAJ-AUTO: first candle too big (2.2%) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v2|note|BEL: NIFTY first candle against the trade - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v2",
+   "reason": "BEL: NIFTY first candle against the trade - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v2|note|M&M: weak candle (body 47% of range) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v2",
+   "reason": "M&M: weak candle (body 47% of range) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v2|note|TECHM: first candle too big (3.6%) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v2",
+   "reason": "TECHM: first candle too big (3.6%) - skipped",
+   "decided_at": "09:25:20"
+  }
+ ],
  "families": [
   "orb",
   "pdb",
