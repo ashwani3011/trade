@@ -142,3 +142,4 @@
 {"key": "sr_reject.base|exit|TATASTEEL|12:50", "type": "EXIT", "variant": "sr_reject.base", "symbol": "TATASTEEL", "bar_time": "12:50", "price": 172.75, "qty": 209, "reason": "target", "net": 287.36, "decided_at": "12:55:20"}
 {"key": "sr_reject.base|exit|SUNPHARMA|13:05", "type": "EXIT", "variant": "sr_reject.base", "symbol": "SUNPHARMA", "bar_time": "13:05", "price": 1762.15, "qty": 25, "reason": "target", "net": 179.09, "decided_at": "13:10:20"}
 {"key": "vwap_pb.v1|exit|KOTAKBANK|14:50", "type": "EXIT", "variant": "vwap_pb.v1", "symbol": "KOTAKBANK", "bar_time": "14:50", "price": 443.07, "qty": 51, "reason": "stop", "net": -209.87, "decided_at": "14:55:20"}
+{"key": "vwap_pb.v1|exit|TCS|15:05", "type": "EXIT", "variant": "vwap_pb.v1", "symbol": "TCS", "bar_time": "15:05", "price": 2121.32, "qty": 9, "reason": "target", "net": 324.49, "decided_at": "15:10:20"}
