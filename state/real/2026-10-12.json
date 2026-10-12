@@ -67,5 +67,17 @@
   "sl_id": "S1791780637415476900",
   "sl_kind": "SL-M",
   "sl_trigger": 311.25
+ },
+ {
+  "key": "ICICIBANK|10:55",
+  "symbol": "ICICIBANK",
+  "side": -1,
+  "stop": 1348.85,
+  "target": 1327.71,
+  "decided_bar": "10:55",
+  "mode": "shadow",
+  "status": "skipped",
+  "expect_entry": "11:00",
+  "skip_reason": "daily loss limit Rs 600: realised -435 and this trade risks 197"
  }
 ]
