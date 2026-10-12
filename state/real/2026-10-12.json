@@ -79,5 +79,17 @@
   "status": "skipped",
   "expect_entry": "11:00",
   "skip_reason": "daily loss limit Rs 600: realised -435 and this trade risks 197"
+ },
+ {
+  "key": "RELIANCE|11:45",
+  "symbol": "RELIANCE",
+  "side": -1,
+  "stop": 1166.89,
+  "target": 1144.71,
+  "decided_bar": "11:45",
+  "mode": "shadow",
+  "status": "skipped",
+  "expect_entry": "11:50",
+  "skip_reason": "daily loss limit Rs 600: realised -435 and this trade risks 200"
  }
 ]

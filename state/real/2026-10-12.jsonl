@@ -8,3 +8,4 @@
 {"at": "10:30:20", "type": "EXIT", "msg": "HDFCBANK stop (at Dhan) @ 705.5 net -228.91", "symbol": "HDFCBANK", "mode": "shadow"}
 {"at": "10:45:20", "type": "EXIT", "msg": "BAJFINANCE stop (at Dhan) @ 959.65 net -205.96", "symbol": "BAJFINANCE", "mode": "shadow"}
 {"at": "11:00:20", "type": "SKIP", "msg": "ICICIBANK 10:55: daily loss limit Rs 600: realised -435 and this trade risks 197", "symbol": "ICICIBANK"}
+{"at": "11:50:20", "type": "SKIP", "msg": "RELIANCE 11:45: daily loss limit Rs 600: realised -435 and this trade risks 200", "symbol": "RELIANCE"}
