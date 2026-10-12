@@ -82,3 +82,11 @@
 {"key": "pdb.base|order|NTPC|10:15", "type": "ORDER", "variant": "pdb.base", "symbol": "NTPC", "bar_time": "10:15", "side": -1, "price": "at market (next candle open)", "reason": "PDL break", "decided_at": "10:20:20"}
 {"key": "vwap_pb.base|order|INFY|10:15", "type": "ORDER", "variant": "vwap_pb.base", "symbol": "INFY", "bar_time": "10:15", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "10:20:20"}
 {"key": "pdb.base|entry|NTPC|10:20", "type": "ENTRY", "variant": "pdb.base", "symbol": "NTPC", "bar_time": "10:20", "price": 309.11, "qty": 103, "side": -1, "stop": 311.27, "target": 304.76, "decided_at": "10:25:20"}
+{"key": "orb.v1|exit|NTPC|10:25", "type": "EXIT", "variant": "orb.v1", "symbol": "NTPC", "bar_time": "10:25", "price": 308.58, "qty": 92, "reason": "target", "net": 220.22, "decided_at": "10:30:20"}
+{"key": "orb.v1|exit|TATASTEEL|10:25", "type": "EXIT", "variant": "orb.v1", "symbol": "TATASTEEL", "bar_time": "10:25", "price": 175.16, "qty": 137, "reason": "stop", "net": -201.19, "decided_at": "10:30:20"}
+{"key": "orb.v3|exit|NTPC|10:25", "type": "EXIT", "variant": "orb.v3", "symbol": "NTPC", "bar_time": "10:25", "price": 308.64, "qty": 103, "reason": "target", "net": 240.52, "decided_at": "10:30:20"}
+{"key": "orb.v3|exit|TATASTEEL|10:25", "type": "EXIT", "variant": "orb.v3", "symbol": "TATASTEEL", "bar_time": "10:25", "price": 175.18, "qty": 165, "reason": "stop", "net": -238.35, "decided_at": "10:30:20"}
+{"key": "pdb.base|exit|HDFCBANK|10:25", "type": "EXIT", "variant": "pdb.base", "symbol": "HDFCBANK", "bar_time": "10:25", "price": 705.31, "qty": 45, "reason": "stop", "net": -263.45, "decided_at": "10:30:20"}
+{"key": "pdb.v1|order|NTPC|10:25", "type": "ORDER", "variant": "pdb.v1", "symbol": "NTPC", "bar_time": "10:25", "side": -1, "price": "at market (next candle open)", "reason": "PDL break", "decided_at": "10:30:20"}
+{"key": "pdb.v1|entry|NTPC|10:30", "type": "ENTRY", "variant": "pdb.v1", "symbol": "NTPC", "bar_time": "10:30", "price": 308.61, "qty": 77, "side": -1, "stop": 311.27, "target": 303.71, "decided_at": "10:35:20"}
+{"key": "sr_reject.base|order|ICICIBANK|10:35", "type": "ORDER", "variant": "sr_reject.base", "symbol": "ICICIBANK", "bar_time": "10:35", "side": 1, "price": "at market (next candle open)", "reason": "level rejection", "decided_at": "10:40:20"}

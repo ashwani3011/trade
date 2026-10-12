@@ -5,3 +5,4 @@
 {"at": "09:30:20", "type": "STOP", "msg": "HDFCBANK SL-M at 705.5 (tick 0.05)", "symbol": "HDFCBANK"}
 {"at": "10:20:20", "type": "ENTRY", "msg": "SELL NTPC 92 @ 309.1 (est 309.10), stop 311.27, target 304.76 [shadow]", "symbol": "NTPC"}
 {"at": "10:20:20", "type": "STOP", "msg": "NTPC SL-M at 311.25 (tick 0.05)", "symbol": "NTPC"}
+{"at": "10:30:20", "type": "EXIT", "msg": "HDFCBANK stop (at Dhan) @ 705.5 net -228.91", "symbol": "HDFCBANK", "mode": "shadow"}
