@@ -41,3 +41,8 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-09,pdb.base,AXISBANK,1,20,09:40,1260.08,15:10,1259.92,squareoff,-3.12,26.72,-29.84,-0.135,PDH break
 2026-10-09,pdb.base,BAJFINANCE,1,24,09:30,963.44,15:10,958.76,squareoff,-112.24,24.45,-136.69,-0.62,PDH break
 2026-10-09,pdb.base,SBIN,1,44,10:30,954.29,15:10,956.66,squareoff,104.58,44.59,59.98,0.272,PDH break
+2026-10-12,pdb.base,HDFCBANK,1,45,09:30,710.41,10:25,705.31,stop,-229.7,33.75,-263.45,-1.197,PDH break
+2026-10-12,pdb.base,BAJFINANCE,1,18,09:30,971.79,10:40,959.38,stop,-223.39,18.41,-241.8,-1.108,PDH break
+2026-10-12,pdb.base,ICICIBANK,-1,30,11:00,1341.6,15:10,1340.5,squareoff,32.86,42.67,-9.81,-0.045,PDL break
+2026-10-12,pdb.base,NTPC,-1,103,10:20,309.11,15:10,309.29,squareoff,-19.11,33.77,-52.88,-0.237,PDL break
+2026-10-12,pdb.base,RELIANCE,-1,28,11:50,1159.15,15:10,1154.65,squareoff,126.16,34.37,91.8,0.423,PDL break

@@ -1,0 +1,4 @@
+date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,costs,net,r_multiple,reason
+2026-10-12,vwap_pb.v2,AXISBANK,-1,26,10:50,1249.82,15:10,1252.48,squareoff,-68.92,34.49,-103.41,-0.536,VWAP pullback short
+2026-10-12,vwap_pb.v2,INFY,-1,22,11:55,1018.94,15:10,1014.2,squareoff,104.28,23.73,80.55,0.412,VWAP pullback short
+2026-10-12,vwap_pb.v2,TCS,-1,10,10:05,2159.65,15:10,2122.64,squareoff,370.15,22.75,347.41,1.835,VWAP pullback short
