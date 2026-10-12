@@ -132,3 +132,4 @@
 {"key": "pdb.base|entry|RELIANCE|11:50", "type": "ENTRY", "variant": "pdb.base", "symbol": "RELIANCE", "bar_time": "11:50", "price": 1159.15, "qty": 28, "side": -1, "stop": 1166.89, "target": 1144.71, "decided_at": "11:55:20"}
 {"key": "vwap_pb.v1|order|INFY|11:50", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "INFY", "bar_time": "11:50", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "11:55:20"}
 {"key": "vwap_pb.v2|order|INFY|11:50", "type": "ORDER", "variant": "vwap_pb.v2", "symbol": "INFY", "bar_time": "11:50", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "11:55:20"}
+{"key": "vwap_pb.v2|entry|INFY|11:55", "type": "ENTRY", "variant": "vwap_pb.v2", "symbol": "INFY", "bar_time": "11:55", "price": 1018.94, "qty": 22, "side": -1, "stop": 1027.82, "target": 997.79, "decided_at": "12:00:20"}
