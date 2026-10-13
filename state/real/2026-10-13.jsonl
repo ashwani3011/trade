@@ -7,3 +7,4 @@
 {"at": "10:35:20", "type": "STOP", "msg": "HDFCBANK SL-M at 707.25 (tick 0.05)", "symbol": "HDFCBANK"}
 {"at": "11:45:20", "type": "SKIP", "msg": "RELIANCE 11:40: max 3 open positions", "symbol": "RELIANCE"}
 {"at": "12:00:20", "type": "SKIP", "msg": "BAJFINANCE 11:55: max 3 open positions", "symbol": "BAJFINANCE"}
+{"at": "12:35:20", "type": "SKIP", "msg": "KOTAKBANK 12:30: max 3 open positions", "symbol": "KOTAKBANK"}

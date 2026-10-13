@@ -79,5 +79,17 @@
   "status": "skipped",
   "expect_entry": "12:00",
   "skip_reason": "max 3 open positions"
+ },
+ {
+  "key": "KOTAKBANK|12:30",
+  "symbol": "KOTAKBANK",
+  "side": -1,
+  "stop": 442.09,
+  "target": 432.37,
+  "decided_bar": "12:30",
+  "mode": "shadow",
+  "status": "skipped",
+  "expect_entry": "12:35",
+  "skip_reason": "max 3 open positions"
  }
 ]
