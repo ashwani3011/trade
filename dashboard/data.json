@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-13T15:00:03+05:30",
+ "generated_at": "2026-10-13T15:15:04+05:30",
  "today": "2026-10-13",
  "market_phase": "open",
  "trader_running": true,
@@ -8417,6 +8417,18 @@
    "reason": "target",
    "net": 243.74,
    "decided_at": "14:55:20"
+  },
+  {
+   "key": "pdb.base|exit|INFY|14:55",
+   "type": "EXIT",
+   "variant": "pdb.base",
+   "symbol": "INFY",
+   "bar_time": "14:55",
+   "price": 1064.58,
+   "qty": 16,
+   "reason": "target",
+   "net": 392.87,
+   "decided_at": "15:00:20"
   }
  ],
  "families": [

@@ -8,3 +8,6 @@
 {"at": "11:45:20", "type": "SKIP", "msg": "RELIANCE 11:40: max 3 open positions", "symbol": "RELIANCE"}
 {"at": "12:00:20", "type": "SKIP", "msg": "BAJFINANCE 11:55: max 3 open positions", "symbol": "BAJFINANCE"}
 {"at": "12:35:20", "type": "SKIP", "msg": "KOTAKBANK 12:30: max 3 open positions", "symbol": "KOTAKBANK"}
+{"at": "15:00:20", "type": "EXIT", "msg": "INFY paper target @ 1062.3 net 335.75", "symbol": "INFY", "mode": "shadow"}
+{"at": "15:10:20", "type": "EXIT", "msg": "TCS squareoff @ 2258.9 net 150.09", "symbol": "TCS", "mode": "shadow"}
+{"at": "15:10:20", "type": "EXIT", "msg": "HDFCBANK squareoff @ 714.3 net 64.83", "symbol": "HDFCBANK", "mode": "shadow"}
