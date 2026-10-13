@@ -116,3 +116,4 @@
 {"key": "vwap_pb.v2|order|AXISBANK|13:10", "type": "ORDER", "variant": "vwap_pb.v2", "symbol": "AXISBANK", "bar_time": "13:10", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "13:15:20"}
 {"key": "sr_reject.base|entry|KOTAKBANK|13:15", "type": "ENTRY", "variant": "sr_reject.base", "symbol": "KOTAKBANK", "bar_time": "13:15", "price": 439.13, "qty": 76, "side": 1, "stop": 437.49, "target": 441.88, "decided_at": "13:20:20"}
 {"key": "vwap_pb.base|exit|KOTAKBANK|13:30", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "KOTAKBANK", "bar_time": "13:30", "price": 437.64, "qty": 75, "reason": "target", "net": 222.45, "decided_at": "13:35:20"}
+{"key": "sr_reject.base|exit|RELIANCE|14:15", "type": "EXIT", "variant": "sr_reject.base", "symbol": "RELIANCE", "bar_time": "14:15", "price": 1160.7, "qty": 43, "reason": "target", "net": 207.49, "decided_at": "14:20:20"}

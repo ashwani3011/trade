@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-13T14:15:01+05:30",
+ "generated_at": "2026-10-13T14:30:03+05:30",
  "today": "2026-10-13",
  "market_phase": "open",
  "trader_running": true,
@@ -8381,6 +8381,18 @@
    "reason": "target",
    "net": 222.45,
    "decided_at": "13:35:20"
+  },
+  {
+   "key": "sr_reject.base|exit|RELIANCE|14:15",
+   "type": "EXIT",
+   "variant": "sr_reject.base",
+   "symbol": "RELIANCE",
+   "bar_time": "14:15",
+   "price": 1160.7,
+   "qty": 43,
+   "reason": "target",
+   "net": 207.49,
+   "decided_at": "14:20:20"
   }
  ],
  "families": [
