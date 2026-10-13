@@ -67,5 +67,17 @@
   "status": "skipped",
   "expect_entry": "11:45",
   "skip_reason": "max 3 open positions"
+ },
+ {
+  "key": "BAJFINANCE|11:55",
+  "symbol": "BAJFINANCE",
+  "side": 1,
+  "stop": 964.52,
+  "target": 990.86,
+  "decided_bar": "11:55",
+  "mode": "shadow",
+  "status": "skipped",
+  "expect_entry": "12:00",
+  "skip_reason": "max 3 open positions"
  }
 ]

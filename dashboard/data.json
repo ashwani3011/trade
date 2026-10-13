@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-13T12:00:04+05:30",
+ "generated_at": "2026-10-13T12:15:04+05:30",
  "today": "2026-10-13",
  "market_phase": "open",
  "trader_running": true,
@@ -8232,6 +8232,52 @@
    "reason": "stop",
    "net": -243.23,
    "decided_at": "11:50:20"
+  },
+  {
+   "key": "pdb.base|order|BAJFINANCE|11:55",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "BAJFINANCE",
+   "bar_time": "11:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "PDH break",
+   "decided_at": "12:00:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|BHARTIARTL|11:55",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "BHARTIARTL",
+   "bar_time": "11:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "12:00:20"
+  },
+  {
+   "key": "vwap_pb.v2|order|BHARTIARTL|11:55",
+   "type": "ORDER",
+   "variant": "vwap_pb.v2",
+   "symbol": "BHARTIARTL",
+   "bar_time": "11:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "12:00:20"
+  },
+  {
+   "key": "vwap_pb.v2|entry|BHARTIARTL|12:00",
+   "type": "ENTRY",
+   "variant": "vwap_pb.v2",
+   "symbol": "BHARTIARTL",
+   "bar_time": "12:00",
+   "price": 1783.63,
+   "qty": 17,
+   "side": 1,
+   "stop": 1771.84,
+   "target": 1813.53,
+   "decided_at": "12:05:20"
   }
  ],
  "families": [
