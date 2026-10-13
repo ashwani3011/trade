@@ -33,3 +33,6 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-12,orb.base,BHARTIARTL,-1,6,09:35,1776.77,15:10,1770.13,squareoff,39.82,11.29,28.53,0.148,ORB down
 2026-10-12,orb.base,ITC,-1,40,09:35,262.37,15:10,257.18,squareoff,207.77,11.04,196.72,0.978,ORB down
 2026-10-12,orb.base,SBIN,-1,20,09:35,950.76,15:10,939.98,squareoff,215.66,20.07,195.58,0.955,ORB down
+2026-10-13,orb.base,ICICIBANK,1,12,09:35,1346.7,15:10,1361.59,squareoff,178.65,17.25,161.4,0.777,ORB up
+2026-10-13,orb.base,RELIANCE,1,15,09:35,1165.65,15:10,1166.55,squareoff,13.51,18.55,-5.05,-0.025,ORB up
+2026-10-13,orb.base,SUNPHARMA,1,17,09:35,1762.63,15:10,1766.27,squareoff,61.9,31.82,30.09,0.147,ORB up

@@ -45,3 +45,5 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-12,sr_reject.base,ICICIBANK,1,36,10:40,1344.3,11:00,1339.42,stop,-175.94,51.21,-227.15,-1.407,level rejection
 2026-10-12,sr_reject.base,TATASTEEL,-1,209,11:00,174.31,12:50,172.75,target,325.86,38.5,287.36,1.756,level rejection
 2026-10-12,sr_reject.base,SUNPHARMA,1,25,11:20,1753.13,13:05,1762.15,target,225.71,46.62,179.09,1.102,level rejection
+2026-10-13,sr_reject.base,RELIANCE,1,43,11:25,1154.65,14:15,1160.7,target,260.31,52.82,207.49,1.255,level rejection
+2026-10-13,sr_reject.base,KOTAKBANK,1,76,13:15,439.13,15:10,439.02,squareoff,-8.62,35.39,-44.01,-0.352,level rejection

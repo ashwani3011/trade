@@ -46,3 +46,6 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-12,pdb.base,ICICIBANK,-1,30,11:00,1341.6,15:10,1340.5,squareoff,32.86,42.67,-9.81,-0.045,PDL break
 2026-10-12,pdb.base,NTPC,-1,103,10:20,309.11,15:10,309.29,squareoff,-19.11,33.77,-52.88,-0.237,PDL break
 2026-10-12,pdb.base,RELIANCE,-1,28,11:50,1159.15,15:10,1154.65,squareoff,126.16,34.37,91.8,0.423,PDL break
+2026-10-13,pdb.base,INFY,1,16,09:30,1038.91,14:55,1064.58,target,410.76,17.89,392.87,1.888,PDH break
+2026-10-13,pdb.base,HDFCBANK,1,44,10:35,712.21,15:10,714.14,squareoff,84.57,33.29,51.29,0.236,PDH break
+2026-10-13,pdb.base,TCS,1,5,09:30,2219.67,15:10,2258.12,squareoff,192.28,11.89,180.39,0.871,PDH break

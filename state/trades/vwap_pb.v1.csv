@@ -43,3 +43,7 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-12,vwap_pb.v1,KOTAKBANK,-1,51,11:05,439.42,14:50,443.07,stop,-186.02,23.84,-209.87,-1.171,VWAP pullback short
 2026-10-12,vwap_pb.v1,TCS,-1,9,10:05,2159.65,15:05,2121.32,target,344.96,20.47,324.49,1.904,VWAP pullback short
 2026-10-12,vwap_pb.v1,NTPC,-1,63,10:05,310.31,15:10,309.29,squareoff,63.89,20.7,43.19,0.24,VWAP pullback short
+2026-10-13,vwap_pb.v1,RELIANCE,1,21,09:45,1164.95,10:35,1156.31,stop,-181.39,25.83,-207.22,-1.19,VWAP pullback long
+2026-10-13,vwap_pb.v1,INFY,1,12,09:45,1041.41,15:10,1059.98,squareoff,222.83,13.4,209.44,1.166,VWAP pullback long
+2026-10-13,vwap_pb.v1,TATASTEEL,1,129,11:40,173.6,15:10,174.49,squareoff,114.24,23.82,90.42,0.5,VWAP pullback long
+2026-10-13,vwap_pb.v1,TCS,1,5,09:45,2227.27,15:10,2258.12,squareoff,154.27,11.91,142.36,0.802,VWAP pullback long
