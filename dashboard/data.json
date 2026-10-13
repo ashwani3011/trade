@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-13T10:00:01+05:30",
+ "generated_at": "2026-10-13T10:15:04+05:30",
  "today": "2026-10-13",
  "market_phase": "open",
  "trader_running": true,
@@ -7776,6 +7776,124 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback long",
    "decided_at": "09:55:20"
+  },
+  {
+   "key": "orb.v1|entry|LT|09:55",
+   "type": "ENTRY",
+   "variant": "orb.v1",
+   "symbol": "LT",
+   "bar_time": "09:55",
+   "price": 3635.69,
+   "qty": 8,
+   "side": 1,
+   "stop": 3615.25,
+   "target": 3673.3,
+   "decided_at": "10:00:20"
+  },
+  {
+   "key": "orb.v2|entry|LT|09:55",
+   "type": "ENTRY",
+   "variant": "orb.v2",
+   "symbol": "LT",
+   "bar_time": "09:55",
+   "price": 3635.69,
+   "qty": 4,
+   "side": 1,
+   "stop": 3592.9,
+   "target": 3699.99,
+   "decided_at": "10:00:20"
+  },
+  {
+   "key": "orb.v3|entry|LT|09:55",
+   "type": "ENTRY",
+   "variant": "orb.v3",
+   "symbol": "LT",
+   "bar_time": "09:55",
+   "price": 3635.69,
+   "qty": 10,
+   "side": 1,
+   "stop": 3615.64,
+   "target": 3672.51,
+   "decided_at": "10:00:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|SBIN|09:55",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "SBIN",
+   "bar_time": "09:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:00:20"
+  },
+  {
+   "key": "vwap_pb.v2|order|SBIN|09:55",
+   "type": "ORDER",
+   "variant": "vwap_pb.v2",
+   "symbol": "SBIN",
+   "bar_time": "09:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:00:20"
+  },
+  {
+   "key": "vwap_pb.v2|entry|SBIN|10:00",
+   "type": "ENTRY",
+   "variant": "vwap_pb.v2",
+   "symbol": "SBIN",
+   "bar_time": "10:00",
+   "price": 947.73,
+   "qty": 35,
+   "side": 1,
+   "stop": 942.07,
+   "target": 961.15,
+   "decided_at": "10:05:20"
+  },
+  {
+   "key": "orb.v1|order|SBIN|10:05",
+   "type": "ORDER",
+   "variant": "orb.v1",
+   "symbol": "SBIN",
+   "bar_time": "10:05",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "10:10:20"
+  },
+  {
+   "key": "orb.v2|order|SBIN|10:05",
+   "type": "ORDER",
+   "variant": "orb.v2",
+   "symbol": "SBIN",
+   "bar_time": "10:05",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "10:10:20"
+  },
+  {
+   "key": "orb.v3|order|SBIN|10:05",
+   "type": "ORDER",
+   "variant": "orb.v3",
+   "symbol": "SBIN",
+   "bar_time": "10:05",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "10:10:20"
+  },
+  {
+   "key": "vwap_pb.base|order|AXISBANK|10:05",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "AXISBANK",
+   "bar_time": "10:05",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:10:20"
   }
  ],
  "families": [
