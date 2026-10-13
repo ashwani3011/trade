@@ -1,1 +1,5 @@
 {"at": "09:14:00", "type": "NOTE", "msg": "mode shadow; broker check: funds OK, positions OK, orders OK"}
+{"at": "09:30:20", "type": "ENTRY", "msg": "BUY INFY 15 @ 1038.8 (est 1038.80), stop 1025.91, target 1064.58 [shadow]", "symbol": "INFY"}
+{"at": "09:30:20", "type": "STOP", "msg": "INFY SL-M at 1025.9 (tick 0.05)", "symbol": "INFY"}
+{"at": "09:30:20", "type": "ENTRY", "msg": "BUY TCS 4 @ 2219.0 (est 2219.00), stop 2178.22, target 2300.56 [shadow]", "symbol": "TCS"}
+{"at": "09:30:20", "type": "STOP", "msg": "TCS SL-M at 2178.2 (tick 0.1)", "symbol": "TCS"}

@@ -1,1 +1,40 @@
-[]
+[
+ {
+  "key": "INFY|09:25",
+  "symbol": "INFY",
+  "side": 1,
+  "stop": 1025.91,
+  "target": 1064.58,
+  "decided_bar": "09:25",
+  "mode": "shadow",
+  "status": "open",
+  "expect_entry": "09:30",
+  "qty": 15,
+  "est_price": 1038.8,
+  "entry_id": "S1791864036603546834",
+  "entry_price": 1038.8,
+  "entry_time": "09:30:20",
+  "sl_id": "S1791864036651351575",
+  "sl_kind": "SL-M",
+  "sl_trigger": 1025.9
+ },
+ {
+  "key": "TCS|09:25",
+  "symbol": "TCS",
+  "side": 1,
+  "stop": 2178.22,
+  "target": 2300.56,
+  "decided_bar": "09:25",
+  "mode": "shadow",
+  "status": "open",
+  "expect_entry": "09:30",
+  "qty": 4,
+  "est_price": 2219.0,
+  "entry_id": "S1791864036653914552",
+  "entry_price": 2219.0,
+  "entry_time": "09:30:20",
+  "sl_id": "S1791864036701787653",
+  "sl_kind": "SL-M",
+  "sl_trigger": 2178.2
+ }
+]
