@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-13T10:15:04+05:30",
+ "generated_at": "2026-10-13T10:30:05+05:30",
  "today": "2026-10-13",
  "market_phase": "open",
  "trader_running": true,
@@ -7894,6 +7894,56 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback long",
    "decided_at": "10:10:20"
+  },
+  {
+   "key": "orb.v1|entry|SBIN|10:10",
+   "type": "ENTRY",
+   "variant": "orb.v1",
+   "symbol": "SBIN",
+   "bar_time": "10:10",
+   "price": 948.48,
+   "qty": 33,
+   "side": 1,
+   "stop": 943.98,
+   "target": 956.93,
+   "decided_at": "10:15:20"
+  },
+  {
+   "key": "orb.v2|entry|SBIN|10:10",
+   "type": "ENTRY",
+   "variant": "orb.v2",
+   "symbol": "SBIN",
+   "bar_time": "10:10",
+   "price": 948.48,
+   "qty": 20,
+   "side": 1,
+   "stop": 938.6,
+   "target": 963.51,
+   "decided_at": "10:15:20"
+  },
+  {
+   "key": "orb.v3|entry|SBIN|10:10",
+   "type": "ENTRY",
+   "variant": "orb.v3",
+   "symbol": "SBIN",
+   "bar_time": "10:10",
+   "price": 948.48,
+   "qty": 45,
+   "side": 1,
+   "stop": 944.07,
+   "target": 956.75,
+   "decided_at": "10:15:20"
+  },
+  {
+   "key": "vwap_pb.base|order|BHARTIARTL|10:10",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "BHARTIARTL",
+   "bar_time": "10:10",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:15:20"
   }
  ],
  "families": [

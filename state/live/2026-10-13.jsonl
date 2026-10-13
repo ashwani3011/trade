@@ -74,3 +74,7 @@
 {"key": "orb.v2|order|SBIN|10:05", "type": "ORDER", "variant": "orb.v2", "symbol": "SBIN", "bar_time": "10:05", "side": 1, "price": "at market (next candle open)", "reason": "ORB up", "decided_at": "10:10:20"}
 {"key": "orb.v3|order|SBIN|10:05", "type": "ORDER", "variant": "orb.v3", "symbol": "SBIN", "bar_time": "10:05", "side": 1, "price": "at market (next candle open)", "reason": "ORB up", "decided_at": "10:10:20"}
 {"key": "vwap_pb.base|order|AXISBANK|10:05", "type": "ORDER", "variant": "vwap_pb.base", "symbol": "AXISBANK", "bar_time": "10:05", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "10:10:20"}
+{"key": "orb.v1|entry|SBIN|10:10", "type": "ENTRY", "variant": "orb.v1", "symbol": "SBIN", "bar_time": "10:10", "price": 948.48, "qty": 33, "side": 1, "stop": 943.98, "target": 956.93, "decided_at": "10:15:20"}
+{"key": "orb.v2|entry|SBIN|10:10", "type": "ENTRY", "variant": "orb.v2", "symbol": "SBIN", "bar_time": "10:10", "price": 948.48, "qty": 20, "side": 1, "stop": 938.6, "target": 963.51, "decided_at": "10:15:20"}
+{"key": "orb.v3|entry|SBIN|10:10", "type": "ENTRY", "variant": "orb.v3", "symbol": "SBIN", "bar_time": "10:10", "price": 948.48, "qty": 45, "side": 1, "stop": 944.07, "target": 956.75, "decided_at": "10:15:20"}
+{"key": "vwap_pb.base|order|BHARTIARTL|10:10", "type": "ORDER", "variant": "vwap_pb.base", "symbol": "BHARTIARTL", "bar_time": "10:10", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "10:15:20"}
