@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-13T13:15:04+05:30",
+ "generated_at": "2026-10-13T13:30:04+05:30",
  "today": "2026-10-13",
  "market_phase": "open",
  "trader_running": true,
@@ -8323,6 +8323,52 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback long",
    "decided_at": "12:35:20"
+  },
+  {
+   "key": "sr_reject.base|order|KOTAKBANK|13:10",
+   "type": "ORDER",
+   "variant": "sr_reject.base",
+   "symbol": "KOTAKBANK",
+   "bar_time": "13:10",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "level rejection",
+   "decided_at": "13:15:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|AXISBANK|13:10",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "AXISBANK",
+   "bar_time": "13:10",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "13:15:20"
+  },
+  {
+   "key": "vwap_pb.v2|order|AXISBANK|13:10",
+   "type": "ORDER",
+   "variant": "vwap_pb.v2",
+   "symbol": "AXISBANK",
+   "bar_time": "13:10",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "13:15:20"
+  },
+  {
+   "key": "sr_reject.base|entry|KOTAKBANK|13:15",
+   "type": "ENTRY",
+   "variant": "sr_reject.base",
+   "symbol": "KOTAKBANK",
+   "bar_time": "13:15",
+   "price": 439.13,
+   "qty": 76,
+   "side": 1,
+   "stop": 437.49,
+   "target": 441.88,
+   "decided_at": "13:20:20"
   }
  ],
  "families": [
