@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-13T11:30:04+05:30",
+ "generated_at": "2026-10-13T11:45:04+05:30",
  "today": "2026-10-13",
  "market_phase": "open",
  "trader_running": true,
@@ -8126,6 +8126,65 @@
    "price": "at market (next candle open)",
    "reason": "level rejection",
    "decided_at": "11:25:20"
+  },
+  {
+   "key": "orb.v1|exit|SBIN|11:25",
+   "type": "EXIT",
+   "variant": "orb.v1",
+   "symbol": "SBIN",
+   "bar_time": "11:25",
+   "price": 943.7,
+   "qty": 33,
+   "reason": "stop",
+   "net": -190.92,
+   "decided_at": "11:30:20"
+  },
+  {
+   "key": "orb.v3|exit|SBIN|11:25",
+   "type": "EXIT",
+   "variant": "orb.v3",
+   "symbol": "SBIN",
+   "bar_time": "11:25",
+   "price": 943.79,
+   "qty": 45,
+   "reason": "stop",
+   "net": -256.39,
+   "decided_at": "11:30:20"
+  },
+  {
+   "key": "sr_reject.base|entry|RELIANCE|11:25",
+   "type": "ENTRY",
+   "variant": "sr_reject.base",
+   "symbol": "RELIANCE",
+   "bar_time": "11:25",
+   "price": 1154.65,
+   "qty": 43,
+   "side": 1,
+   "stop": 1150.8,
+   "target": 1160.7,
+   "decided_at": "11:30:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|TATASTEEL|11:35",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "TATASTEEL",
+   "bar_time": "11:35",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "11:40:20"
+  },
+  {
+   "key": "vwap_pb.v2|order|TATASTEEL|11:35",
+   "type": "ORDER",
+   "variant": "vwap_pb.v2",
+   "symbol": "TATASTEEL",
+   "bar_time": "11:35",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "11:40:20"
   }
  ],
  "families": [
