@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-13T14:45:04+05:30",
+ "generated_at": "2026-10-13T15:00:03+05:30",
  "today": "2026-10-13",
  "market_phase": "open",
  "trader_running": true,
@@ -8393,6 +8393,30 @@
    "reason": "target",
    "net": 207.49,
    "decided_at": "14:20:20"
+  },
+  {
+   "key": "orb.v2|exit|INFY|14:50",
+   "type": "EXIT",
+   "variant": "orb.v2",
+   "symbol": "INFY",
+   "bar_time": "14:50",
+   "price": 1062.95,
+   "qty": 13,
+   "reason": "target",
+   "net": 265.5,
+   "decided_at": "14:55:20"
+  },
+  {
+   "key": "vwap_pb.base|exit|INFY|14:50",
+   "type": "EXIT",
+   "variant": "vwap_pb.base",
+   "symbol": "INFY",
+   "bar_time": "14:50",
+   "price": 1062.84,
+   "qty": 12,
+   "reason": "target",
+   "net": 243.74,
+   "decided_at": "14:55:20"
   }
  ],
  "families": [
