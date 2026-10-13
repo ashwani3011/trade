@@ -3,3 +3,5 @@
 {"at": "09:30:20", "type": "STOP", "msg": "INFY SL-M at 1025.9 (tick 0.05)", "symbol": "INFY"}
 {"at": "09:30:20", "type": "ENTRY", "msg": "BUY TCS 4 @ 2219.0 (est 2219.00), stop 2178.22, target 2300.56 [shadow]", "symbol": "TCS"}
 {"at": "09:30:20", "type": "STOP", "msg": "TCS SL-M at 2178.2 (tick 0.1)", "symbol": "TCS"}
+{"at": "10:35:20", "type": "ENTRY", "msg": "BUY HDFCBANK 42 @ 712.0 (est 712.00), stop 707.27, target 721.47 [shadow]", "symbol": "HDFCBANK"}
+{"at": "10:35:20", "type": "STOP", "msg": "HDFCBANK SL-M at 707.25 (tick 0.05)", "symbol": "HDFCBANK"}

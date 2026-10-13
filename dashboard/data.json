@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-13T10:30:05+05:30",
+ "generated_at": "2026-10-13T10:45:04+05:30",
  "today": "2026-10-13",
  "market_phase": "open",
  "trader_running": true,
@@ -7944,6 +7944,165 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback long",
    "decided_at": "10:15:20"
+  },
+  {
+   "key": "vwap_pb.base|order|BAJFINANCE|10:25",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "BAJFINANCE",
+   "bar_time": "10:25",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:30:20"
+  },
+  {
+   "key": "vwap_pb.base|order|SUNPHARMA|10:25",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "SUNPHARMA",
+   "bar_time": "10:25",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:30:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|BAJFINANCE|10:25",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "BAJFINANCE",
+   "bar_time": "10:25",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:30:20"
+  },
+  {
+   "key": "vwap_pb.v2|order|BAJFINANCE|10:25",
+   "type": "ORDER",
+   "variant": "vwap_pb.v2",
+   "symbol": "BAJFINANCE",
+   "bar_time": "10:25",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:30:20"
+  },
+  {
+   "key": "orb.v1|order|ITC|10:30",
+   "type": "ORDER",
+   "variant": "orb.v1",
+   "symbol": "ITC",
+   "bar_time": "10:30",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "10:35:20"
+  },
+  {
+   "key": "orb.v2|order|ITC|10:30",
+   "type": "ORDER",
+   "variant": "orb.v2",
+   "symbol": "ITC",
+   "bar_time": "10:30",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "10:35:20"
+  },
+  {
+   "key": "orb.v3|order|ITC|10:30",
+   "type": "ORDER",
+   "variant": "orb.v3",
+   "symbol": "ITC",
+   "bar_time": "10:30",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "10:35:20"
+  },
+  {
+   "key": "pdb.base|order|HDFCBANK|10:30",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "HDFCBANK",
+   "bar_time": "10:30",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "PDH break",
+   "decided_at": "10:35:20"
+  },
+  {
+   "key": "orb.v3|entry|ITC|10:35",
+   "type": "ENTRY",
+   "variant": "orb.v3",
+   "symbol": "ITC",
+   "bar_time": "10:35",
+   "price": 260.13,
+   "qty": 85,
+   "side": 1,
+   "stop": 258.3,
+   "target": 263.4,
+   "decided_at": "10:40:20"
+  },
+  {
+   "key": "pdb.base|entry|HDFCBANK|10:35",
+   "type": "ENTRY",
+   "variant": "pdb.base",
+   "symbol": "HDFCBANK",
+   "bar_time": "10:35",
+   "price": 712.21,
+   "qty": 44,
+   "side": 1,
+   "stop": 707.27,
+   "target": 721.47,
+   "decided_at": "10:40:20"
+  },
+  {
+   "key": "vwap_pb.base|order|ICICIBANK|10:35",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "ICICIBANK",
+   "bar_time": "10:35",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:40:20"
+  },
+  {
+   "key": "vwap_pb.base|order|ITC|10:35",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "ITC",
+   "bar_time": "10:35",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:40:20"
+  },
+  {
+   "key": "vwap_pb.base|order|LT|10:35",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "LT",
+   "bar_time": "10:35",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:40:20"
+  },
+  {
+   "key": "vwap_pb.v1|exit|RELIANCE|10:35",
+   "type": "EXIT",
+   "variant": "vwap_pb.v1",
+   "symbol": "RELIANCE",
+   "bar_time": "10:35",
+   "price": 1156.31,
+   "qty": 21,
+   "reason": "stop",
+   "net": -207.22,
+   "decided_at": "10:40:20"
   }
  ],
  "families": [

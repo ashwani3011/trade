@@ -36,5 +36,24 @@
   "sl_id": "S1791864036701787653",
   "sl_kind": "SL-M",
   "sl_trigger": 2178.2
+ },
+ {
+  "key": "HDFCBANK|10:30",
+  "symbol": "HDFCBANK",
+  "side": 1,
+  "stop": 707.27,
+  "target": 721.47,
+  "decided_bar": "10:30",
+  "mode": "shadow",
+  "status": "open",
+  "expect_entry": "10:35",
+  "qty": 42,
+  "est_price": 712.0,
+  "entry_id": "S1791867936633186910",
+  "entry_price": 712.0,
+  "entry_time": "10:35:20",
+  "sl_id": "S1791867936681803136",
+  "sl_kind": "SL-M",
+  "sl_trigger": 707.25
  }
 ]
