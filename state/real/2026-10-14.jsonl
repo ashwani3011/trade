@@ -10,3 +10,4 @@
 {"at": "09:45:20", "type": "SKIP", "msg": "TATASTEEL 09:40: max 3 open positions", "symbol": "TATASTEEL"}
 {"at": "09:50:20", "type": "SKIP", "msg": "KOTAKBANK 09:45: max 3 open positions", "symbol": "KOTAKBANK"}
 {"at": "11:15:20", "type": "SKIP", "msg": "ITC 11:10: max 3 open positions", "symbol": "ITC"}
+{"at": "11:35:20", "type": "EXIT", "msg": "HDFCBANK stop (at Dhan) @ 711.9 net -221.35", "symbol": "HDFCBANK", "mode": "shadow"}

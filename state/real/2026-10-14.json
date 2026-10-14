@@ -45,7 +45,7 @@
   "target": 729.76,
   "decided_bar": "09:40",
   "mode": "shadow",
-  "status": "open",
+  "status": "closed",
   "expect_entry": "09:45",
   "qty": 33,
   "est_price": 717.85,
@@ -54,7 +54,13 @@
   "entry_time": "09:45:20",
   "sl_id": "S1791951337214523464",
   "sl_kind": "SL-M",
-  "sl_trigger": 711.9
+  "sl_trigger": 711.9,
+  "exit_time": "11:35:20",
+  "exit_reason": "stop (at Dhan)",
+  "exit_price": 711.9,
+  "gross": -196.35,
+  "costs": 25.0,
+  "net": -221.35
  },
  {
   "key": "NTPC|09:40",
