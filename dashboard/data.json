@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-14T15:00:04+05:30",
+ "generated_at": "2026-10-14T15:15:04+05:30",
  "today": "2026-10-14",
  "market_phase": "open",
  "trader_running": true,
@@ -9553,6 +9553,18 @@
    "reason": "stop",
    "net": -73.56,
    "decided_at": "14:55:20"
+  },
+  {
+   "key": "pdb.base|exit|BHARTIARTL|15:00",
+   "type": "EXIT",
+   "variant": "pdb.base",
+   "symbol": "BHARTIARTL",
+   "bar_time": "15:00",
+   "price": 1795.56,
+   "qty": 19,
+   "reason": "stop",
+   "net": -271.63,
+   "decided_at": "15:05:20"
   }
  ],
  "families": [

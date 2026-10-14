@@ -12,3 +12,4 @@
 {"at": "11:15:20", "type": "SKIP", "msg": "ITC 11:10: max 3 open positions", "symbol": "ITC"}
 {"at": "11:35:20", "type": "EXIT", "msg": "HDFCBANK stop (at Dhan) @ 711.9 net -221.35", "symbol": "HDFCBANK", "mode": "shadow"}
 {"at": "13:15:20", "type": "EXIT", "msg": "SUNPHARMA paper target @ 1725.9 net 351.14", "symbol": "SUNPHARMA", "mode": "shadow"}
+{"at": "15:05:20", "type": "EXIT", "msg": "BHARTIARTL stop (at Dhan) @ 1796.1 net -224.56", "symbol": "BHARTIARTL", "mode": "shadow"}
