@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-14T10:00:04+05:30",
+ "generated_at": "2026-10-14T10:15:04+05:30",
  "today": "2026-10-14",
  "market_phase": "open",
  "trader_running": true,
@@ -8497,6 +8497,133 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback short",
    "decided_at": "09:55:20"
+  },
+  {
+   "key": "orb.base|order|NTPC|09:55",
+   "type": "ORDER",
+   "variant": "orb.base",
+   "symbol": "NTPC",
+   "bar_time": "09:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "10:00:20"
+  },
+  {
+   "key": "sr_reject.base|order|SUNPHARMA|09:55",
+   "type": "ORDER",
+   "variant": "sr_reject.base",
+   "symbol": "SUNPHARMA",
+   "bar_time": "09:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "level rejection",
+   "decided_at": "10:00:20"
+  },
+  {
+   "key": "vwap_pb.base|order|KOTAKBANK|09:55",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "KOTAKBANK",
+   "bar_time": "09:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:00:20"
+  },
+  {
+   "key": "vwap_pb.v1|entry|LT|09:55",
+   "type": "ENTRY",
+   "variant": "vwap_pb.v1",
+   "symbol": "LT",
+   "bar_time": "09:55",
+   "price": 3638.91,
+   "qty": 7,
+   "side": -1,
+   "stop": 3661.88,
+   "target": 3596.23,
+   "decided_at": "10:00:20"
+  },
+  {
+   "key": "vwap_pb.v2|entry|LT|09:55",
+   "type": "ENTRY",
+   "variant": "vwap_pb.v2",
+   "symbol": "LT",
+   "bar_time": "09:55",
+   "price": 3638.91,
+   "qty": 8,
+   "side": -1,
+   "stop": 3661.88,
+   "target": 3584.3,
+   "decided_at": "10:00:20"
+  },
+  {
+   "key": "sr_reject.base|entry|SUNPHARMA|10:00",
+   "type": "ENTRY",
+   "variant": "sr_reject.base",
+   "symbol": "SUNPHARMA",
+   "bar_time": "10:00",
+   "price": 1752.23,
+   "qty": 7,
+   "side": 1,
+   "stop": 1744.46,
+   "target": 1765.89,
+   "decided_at": "10:05:20"
+  },
+  {
+   "key": "sr_reject.base|order|BHARTIARTL|10:00",
+   "type": "ORDER",
+   "variant": "sr_reject.base",
+   "symbol": "BHARTIARTL",
+   "bar_time": "10:00",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "level rejection",
+   "decided_at": "10:05:20"
+  },
+  {
+   "key": "orb.base|order|SBIN|10:05",
+   "type": "ORDER",
+   "variant": "orb.base",
+   "symbol": "SBIN",
+   "bar_time": "10:05",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "10:10:20"
+  },
+  {
+   "key": "vwap_pb.base|order|SBIN|10:05",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "SBIN",
+   "bar_time": "10:05",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "10:10:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|SUNPHARMA|10:05",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "SUNPHARMA",
+   "bar_time": "10:05",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "10:10:20"
+  },
+  {
+   "key": "vwap_pb.v2|order|SUNPHARMA|10:05",
+   "type": "ORDER",
+   "variant": "vwap_pb.v2",
+   "symbol": "SUNPHARMA",
+   "bar_time": "10:05",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "10:10:20"
   }
  ],
  "families": [
