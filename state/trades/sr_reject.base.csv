@@ -47,3 +47,9 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-12,sr_reject.base,SUNPHARMA,1,25,11:20,1753.13,13:05,1762.15,target,225.71,46.62,179.09,1.102,level rejection
 2026-10-13,sr_reject.base,RELIANCE,1,43,11:25,1154.65,14:15,1160.7,target,260.31,52.82,207.49,1.255,level rejection
 2026-10-13,sr_reject.base,KOTAKBANK,1,76,13:15,439.13,15:10,439.02,squareoff,-8.62,35.39,-44.01,-0.352,level rejection
+2026-10-14,sr_reject.base,RELIANCE,-1,11,09:40,1167.15,09:45,1172.56,stop,-59.55,13.64,-73.19,-1.314,level rejection
+2026-10-14,sr_reject.base,KOTAKBANK,-1,82,09:30,442.77,10:20,444.95,stop,-179.1,38.58,-217.68,-1.294,level rejection
+2026-10-14,sr_reject.base,SUNPHARMA,1,7,10:00,1752.23,12:10,1743.93,stop,-58.05,12.97,-71.02,-1.306,level rejection
+2026-10-14,sr_reject.base,HDFCBANK,-1,48,09:40,716.09,13:10,709.83,target,300.21,36.32,263.89,1.594,level rejection
+2026-10-14,sr_reject.base,ITC,-1,55,12:45,261.72,14:50,262.78,stop,-58.27,15.29,-73.56,-1.364,level rejection
+2026-10-14,sr_reject.base,TATASTEEL,-1,202,11:15,174.95,15:10,174.19,squareoff,152.56,37.41,115.15,0.685,level rejection

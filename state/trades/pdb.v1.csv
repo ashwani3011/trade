@@ -21,3 +21,4 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-08,pdb.v1,SUNPHARMA,-1,13,11:25,1767.17,15:10,1751.33,squareoff,205.98,24.28,181.7,0.951,PDL break
 2026-10-09,pdb.v1,RELIANCE,-1,26,10:10,1172.05,15:10,1170.95,squareoff,28.52,32.3,-3.78,-0.019,PDL break
 2026-10-12,pdb.v1,NTPC,-1,77,10:30,308.61,15:10,309.29,squareoff,-52.77,25.22,-77.99,-0.38,PDL break
+2026-10-14,pdb.v1,SUNPHARMA,-1,16,11:40,1747.38,15:10,1737.72,squareoff,154.47,29.58,124.89,0.632,PDL break

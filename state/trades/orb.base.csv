@@ -36,3 +36,6 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-13,orb.base,ICICIBANK,1,12,09:35,1346.7,15:10,1361.59,squareoff,178.65,17.25,161.4,0.777,ORB up
 2026-10-13,orb.base,RELIANCE,1,15,09:35,1165.65,15:10,1166.55,squareoff,13.51,18.55,-5.05,-0.025,ORB up
 2026-10-13,orb.base,SUNPHARMA,1,17,09:35,1762.63,15:10,1766.27,squareoff,61.9,31.82,30.09,0.147,ORB up
+2026-10-14,orb.base,HDFCBANK,1,41,09:40,716.51,11:30,711.14,stop,-220.51,31.01,-251.52,-1.188,ORB up
+2026-10-14,orb.base,RELIANCE,1,24,09:45,1171.25,14:00,1187.9,target,399.57,30.07,369.5,1.8,ORB up
+2026-10-14,orb.base,SUNPHARMA,-1,9,09:35,1747.48,15:10,1737.72,squareoff,87.79,16.64,71.15,0.349,ORB down
