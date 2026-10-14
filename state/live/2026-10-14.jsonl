@@ -153,3 +153,6 @@
 {"key": "vwap_pb.v2|order|NTPC|12:40", "type": "ORDER", "variant": "vwap_pb.v2", "symbol": "NTPC", "bar_time": "12:40", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "12:45:20"}
 {"key": "sr_reject.base|entry|ITC|12:45", "type": "ENTRY", "variant": "sr_reject.base", "symbol": "ITC", "bar_time": "12:45", "price": 261.72, "qty": 55, "side": -1, "stop": 262.7, "target": 260.0, "decided_at": "12:50:20"}
 {"key": "vwap_pb.base|exit|INFY|12:50", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "INFY", "bar_time": "12:50", "price": 1076.26, "qty": 25, "reason": "stop", "net": -227.81, "decided_at": "12:55:20"}
+{"key": "vwap_pb.v1|exit|SUNPHARMA|13:00", "type": "EXIT", "variant": "vwap_pb.v1", "symbol": "SUNPHARMA", "bar_time": "13:00", "price": 1730.94, "qty": 19, "reason": "target", "net": 299.96, "decided_at": "13:05:20"}
+{"key": "vwap_pb.v1|order|SBIN|13:05", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "SBIN", "bar_time": "13:05", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "13:10:20"}
+{"key": "vwap_pb.v2|order|SBIN|13:05", "type": "ORDER", "variant": "vwap_pb.v2", "symbol": "SBIN", "bar_time": "13:05", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "13:10:20"}

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-14T13:00:04+05:30",
+ "generated_at": "2026-10-14T13:15:03+05:30",
  "today": "2026-10-14",
  "market_phase": "open",
  "trader_running": true,
@@ -9410,6 +9410,40 @@
    "reason": "stop",
    "net": -227.81,
    "decided_at": "12:55:20"
+  },
+  {
+   "key": "vwap_pb.v1|exit|SUNPHARMA|13:00",
+   "type": "EXIT",
+   "variant": "vwap_pb.v1",
+   "symbol": "SUNPHARMA",
+   "bar_time": "13:00",
+   "price": 1730.94,
+   "qty": 19,
+   "reason": "target",
+   "net": 299.96,
+   "decided_at": "13:05:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|SBIN|13:05",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "SBIN",
+   "bar_time": "13:05",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "13:10:20"
+  },
+  {
+   "key": "vwap_pb.v2|order|SBIN|13:05",
+   "type": "ORDER",
+   "variant": "vwap_pb.v2",
+   "symbol": "SBIN",
+   "bar_time": "13:05",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "13:10:20"
   }
  ],
  "families": [
