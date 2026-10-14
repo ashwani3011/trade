@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-14T11:00:04+05:30",
+ "generated_at": "2026-10-14T11:15:04+05:30",
  "today": "2026-10-14",
  "market_phase": "open",
  "trader_running": true,
@@ -8950,6 +8950,39 @@
    "price": "at market (next candle open)",
    "reason": "ORB down",
    "decided_at": "10:50:20"
+  },
+  {
+   "key": "orb.v1|order|ICICIBANK|11:00",
+   "type": "ORDER",
+   "variant": "orb.v1",
+   "symbol": "ICICIBANK",
+   "bar_time": "11:00",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "11:05:20"
+  },
+  {
+   "key": "orb.v2|order|ICICIBANK|11:00",
+   "type": "ORDER",
+   "variant": "orb.v2",
+   "symbol": "ICICIBANK",
+   "bar_time": "11:00",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "11:05:20"
+  },
+  {
+   "key": "orb.v3|order|ICICIBANK|11:00",
+   "type": "ORDER",
+   "variant": "orb.v3",
+   "symbol": "ICICIBANK",
+   "bar_time": "11:00",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "ORB down",
+   "decided_at": "11:05:20"
   }
  ],
  "families": [
