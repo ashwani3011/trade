@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-14T12:15:04+05:30",
+ "generated_at": "2026-10-14T12:30:04+05:30",
  "today": "2026-10-14",
  "market_phase": "open",
  "trader_running": true,
@@ -9315,6 +9315,18 @@
    "reason": "stop",
    "net": -220.29,
    "decided_at": "12:10:20"
+  },
+  {
+   "key": "sr_reject.base|exit|SUNPHARMA|12:10",
+   "type": "EXIT",
+   "variant": "sr_reject.base",
+   "symbol": "SUNPHARMA",
+   "bar_time": "12:10",
+   "price": 1743.93,
+   "qty": 7,
+   "reason": "stop",
+   "net": -71.02,
+   "decided_at": "12:15:20"
   }
  ],
  "families": [
