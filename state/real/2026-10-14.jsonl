@@ -1,3 +1,11 @@
 {"at": "09:14:00", "type": "NOTE", "msg": "mode shadow; broker check: funds OK, positions OK, orders OK"}
 {"at": "09:35:20", "type": "ENTRY", "msg": "SELL SUNPHARMA 17 @ 1748.4 (est 1748.40), stop 1759.73, target 1725.74 [shadow]", "symbol": "SUNPHARMA"}
 {"at": "09:35:20", "type": "STOP", "msg": "SUNPHARMA SL-M at 1759.7 (tick 0.1)", "symbol": "SUNPHARMA"}
+{"at": "09:45:20", "type": "ENTRY", "msg": "BUY BHARTIARTL 17 @ 1807.4 (est 1807.40), stop 1796.09, target 1830.01 [shadow]", "symbol": "BHARTIARTL"}
+{"at": "09:45:20", "type": "STOP", "msg": "BHARTIARTL SL-M at 1796.1 (tick 0.1)", "symbol": "BHARTIARTL"}
+{"at": "09:45:20", "type": "ENTRY", "msg": "BUY HDFCBANK 33 @ 717.85 (est 717.85), stop 711.9, target 729.76 [shadow]", "symbol": "HDFCBANK"}
+{"at": "09:45:20", "type": "STOP", "msg": "HDFCBANK SL-M at 711.9 (tick 0.05)", "symbol": "HDFCBANK"}
+{"at": "09:45:20", "type": "SKIP", "msg": "NTPC 09:40: max 3 open positions", "symbol": "NTPC"}
+{"at": "09:45:20", "type": "SKIP", "msg": "RELIANCE 09:40: max 3 open positions", "symbol": "RELIANCE"}
+{"at": "09:45:20", "type": "SKIP", "msg": "TATASTEEL 09:40: max 3 open positions", "symbol": "TATASTEEL"}
+{"at": "09:50:20", "type": "SKIP", "msg": "KOTAKBANK 09:45: max 3 open positions", "symbol": "KOTAKBANK"}
