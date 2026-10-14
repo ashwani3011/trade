@@ -149,3 +149,7 @@
 {"key": "orb.v3|exit|RELIANCE|12:25", "type": "EXIT", "variant": "orb.v3", "symbol": "RELIANCE", "bar_time": "12:25", "price": 1184.42, "qty": 31, "reason": "target", "net": 288.85, "decided_at": "12:30:20"}
 {"key": "orb.v1|exit|RELIANCE|12:30", "type": "EXIT", "variant": "orb.v1", "symbol": "RELIANCE", "bar_time": "12:30", "price": 1184.66, "qty": 26, "reason": "target", "net": 248.39, "decided_at": "12:35:20"}
 {"key": "vwap_pb.base|exit|BHARTIARTL|12:30", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "BHARTIARTL", "bar_time": "12:30", "price": 1823.18, "qty": 17, "reason": "target", "net": 226.34, "decided_at": "12:35:20"}
+{"key": "sr_reject.base|order|ITC|12:40", "type": "ORDER", "variant": "sr_reject.base", "symbol": "ITC", "bar_time": "12:40", "side": -1, "price": "at market (next candle open)", "reason": "level rejection", "decided_at": "12:45:20"}
+{"key": "vwap_pb.v2|order|NTPC|12:40", "type": "ORDER", "variant": "vwap_pb.v2", "symbol": "NTPC", "bar_time": "12:40", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "12:45:20"}
+{"key": "sr_reject.base|entry|ITC|12:45", "type": "ENTRY", "variant": "sr_reject.base", "symbol": "ITC", "bar_time": "12:45", "price": 261.72, "qty": 55, "side": -1, "stop": 262.7, "target": 260.0, "decided_at": "12:50:20"}
+{"key": "vwap_pb.base|exit|INFY|12:50", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "INFY", "bar_time": "12:50", "price": 1076.26, "qty": 25, "reason": "stop", "net": -227.81, "decided_at": "12:55:20"}
