@@ -164,3 +164,4 @@
 {"key": "vwap_pb.v2|exit|SUNPHARMA|13:10", "type": "EXIT", "variant": "vwap_pb.v2", "symbol": "SUNPHARMA", "bar_time": "13:10", "price": 1725.99, "qty": 21, "reason": "target", "net": 435.52, "decided_at": "13:15:20"}
 {"key": "orb.base|exit|RELIANCE|14:00", "type": "EXIT", "variant": "orb.base", "symbol": "RELIANCE", "bar_time": "14:00", "price": 1187.9, "qty": 24, "reason": "target", "net": 369.5, "decided_at": "14:05:20"}
 {"key": "vwap_pb.v1|exit|SBIN|14:35", "type": "EXIT", "variant": "vwap_pb.v1", "symbol": "SBIN", "bar_time": "14:35", "price": 953.73, "qty": 28, "reason": "stop", "net": -219.09, "decided_at": "14:40:20"}
+{"key": "sr_reject.base|exit|ITC|14:50", "type": "EXIT", "variant": "sr_reject.base", "symbol": "ITC", "bar_time": "14:50", "price": 262.78, "qty": 55, "reason": "stop", "net": -73.56, "decided_at": "14:55:20"}

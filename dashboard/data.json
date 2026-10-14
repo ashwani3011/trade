@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-14T14:45:04+05:30",
+ "generated_at": "2026-10-14T15:00:04+05:30",
  "today": "2026-10-14",
  "market_phase": "open",
  "trader_running": true,
@@ -9541,6 +9541,18 @@
    "reason": "stop",
    "net": -219.09,
    "decided_at": "14:40:20"
+  },
+  {
+   "key": "sr_reject.base|exit|ITC|14:50",
+   "type": "EXIT",
+   "variant": "sr_reject.base",
+   "symbol": "ITC",
+   "bar_time": "14:50",
+   "price": 262.78,
+   "qty": 55,
+   "reason": "stop",
+   "net": -73.56,
+   "decided_at": "14:55:20"
   }
  ],
  "families": [
