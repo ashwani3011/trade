@@ -156,3 +156,9 @@
 {"key": "vwap_pb.v1|exit|SUNPHARMA|13:00", "type": "EXIT", "variant": "vwap_pb.v1", "symbol": "SUNPHARMA", "bar_time": "13:00", "price": 1730.94, "qty": 19, "reason": "target", "net": 299.96, "decided_at": "13:05:20"}
 {"key": "vwap_pb.v1|order|SBIN|13:05", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "SBIN", "bar_time": "13:05", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "13:10:20"}
 {"key": "vwap_pb.v2|order|SBIN|13:05", "type": "ORDER", "variant": "vwap_pb.v2", "symbol": "SBIN", "bar_time": "13:05", "side": -1, "price": "at market (next candle open)", "reason": "VWAP pullback short", "decided_at": "13:10:20"}
+{"key": "orb.v1|exit|NTPC|13:10", "type": "EXIT", "variant": "orb.v1", "symbol": "NTPC", "bar_time": "13:10", "price": 311.67, "qty": 107, "reason": "stop", "net": -219.92, "decided_at": "13:15:20"}
+{"key": "orb.v3|exit|NTPC|13:10", "type": "EXIT", "variant": "orb.v3", "symbol": "NTPC", "bar_time": "13:10", "price": 311.7, "qty": 89, "reason": "stop", "net": -180.14, "decided_at": "13:15:20"}
+{"key": "pdb.base|exit|SUNPHARMA|13:10", "type": "EXIT", "variant": "pdb.base", "symbol": "SUNPHARMA", "bar_time": "13:10", "price": 1725.74, "qty": 18, "reason": "target", "net": 358.07, "decided_at": "13:15:20"}
+{"key": "sr_reject.base|exit|HDFCBANK|13:10", "type": "EXIT", "variant": "sr_reject.base", "symbol": "HDFCBANK", "bar_time": "13:10", "price": 709.83, "qty": 48, "reason": "target", "net": 263.89, "decided_at": "13:15:20"}
+{"key": "vwap_pb.v1|entry|SBIN|13:10", "type": "ENTRY", "variant": "vwap_pb.v1", "symbol": "SBIN", "bar_time": "13:10", "price": 946.92, "qty": 28, "side": -1, "stop": 953.45, "target": 935.61, "decided_at": "13:15:20"}
+{"key": "vwap_pb.v2|exit|SUNPHARMA|13:10", "type": "EXIT", "variant": "vwap_pb.v2", "symbol": "SUNPHARMA", "bar_time": "13:10", "price": 1725.99, "qty": 21, "reason": "target", "net": 435.52, "decided_at": "13:15:20"}

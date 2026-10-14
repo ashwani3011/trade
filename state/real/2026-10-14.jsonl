@@ -11,3 +11,4 @@
 {"at": "09:50:20", "type": "SKIP", "msg": "KOTAKBANK 09:45: max 3 open positions", "symbol": "KOTAKBANK"}
 {"at": "11:15:20", "type": "SKIP", "msg": "ITC 11:10: max 3 open positions", "symbol": "ITC"}
 {"at": "11:35:20", "type": "EXIT", "msg": "HDFCBANK stop (at Dhan) @ 711.9 net -221.35", "symbol": "HDFCBANK", "mode": "shadow"}
+{"at": "13:15:20", "type": "EXIT", "msg": "SUNPHARMA paper target @ 1725.9 net 351.14", "symbol": "SUNPHARMA", "mode": "shadow"}
