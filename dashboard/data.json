@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-14T11:15:04+05:30",
+ "generated_at": "2026-10-14T11:30:04+05:30",
  "today": "2026-10-14",
  "market_phase": "open",
  "trader_running": true,
@@ -8983,6 +8983,52 @@
    "price": "at market (next candle open)",
    "reason": "ORB down",
    "decided_at": "11:05:20"
+  },
+  {
+   "key": "pdb.base|order|ITC|11:10",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "ITC",
+   "bar_time": "11:10",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "PDH break",
+   "decided_at": "11:15:20"
+  },
+  {
+   "key": "sr_reject.base|order|TATASTEEL|11:10",
+   "type": "ORDER",
+   "variant": "sr_reject.base",
+   "symbol": "TATASTEEL",
+   "bar_time": "11:10",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "level rejection",
+   "decided_at": "11:15:20"
+  },
+  {
+   "key": "sr_reject.base|entry|TATASTEEL|11:15",
+   "type": "ENTRY",
+   "variant": "sr_reject.base",
+   "symbol": "TATASTEEL",
+   "bar_time": "11:15",
+   "price": 174.95,
+   "qty": 202,
+   "side": -1,
+   "stop": 175.78,
+   "target": 173.35,
+   "decided_at": "11:20:20"
+  },
+  {
+   "key": "vwap_pb.base|order|TATASTEEL|11:20",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "TATASTEEL",
+   "bar_time": "11:20",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "11:25:20"
   }
  ],
  "families": [

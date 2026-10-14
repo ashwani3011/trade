@@ -103,5 +103,17 @@
   "status": "skipped",
   "expect_entry": "09:50",
   "skip_reason": "max 3 open positions"
+ },
+ {
+  "key": "ITC|11:10",
+  "symbol": "ITC",
+  "side": 1,
+  "stop": 259.74,
+  "target": 266.51,
+  "decided_bar": "11:10",
+  "mode": "shadow",
+  "status": "skipped",
+  "expect_entry": "11:15",
+  "skip_reason": "max 3 open positions"
  }
 ]
