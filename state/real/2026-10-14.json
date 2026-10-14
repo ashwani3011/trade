@@ -1,1 +1,21 @@
-[]
+[
+ {
+  "key": "SUNPHARMA|09:30",
+  "symbol": "SUNPHARMA",
+  "side": -1,
+  "stop": 1759.73,
+  "target": 1725.74,
+  "decided_bar": "09:30",
+  "mode": "shadow",
+  "status": "open",
+  "expect_entry": "09:35",
+  "qty": 17,
+  "est_price": 1748.4,
+  "entry_id": "S1791950737113550122",
+  "entry_price": 1748.4,
+  "entry_time": "09:35:20",
+  "sl_id": "S1791950737161679904",
+  "sl_kind": "SL-M",
+  "sl_trigger": 1759.7
+ }
+]
