@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-14T11:45:04+05:30",
+ "generated_at": "2026-10-14T12:00:04+05:30",
  "today": "2026-10-14",
  "market_phase": "open",
  "trader_running": true,
@@ -9220,6 +9220,89 @@
    "price": "at market (next candle open)",
    "reason": "PDL break",
    "decided_at": "11:40:20"
+  },
+  {
+   "key": "pdb.v1|entry|SUNPHARMA|11:40",
+   "type": "ENTRY",
+   "variant": "pdb.v1",
+   "symbol": "SUNPHARMA",
+   "bar_time": "11:40",
+   "price": 1747.38,
+   "qty": 16,
+   "side": -1,
+   "stop": 1759.73,
+   "target": 1724.24,
+   "decided_at": "11:45:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|BAJFINANCE|11:40",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "BAJFINANCE",
+   "bar_time": "11:40",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "11:45:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|KOTAKBANK|11:40",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "KOTAKBANK",
+   "bar_time": "11:40",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "11:45:20"
+  },
+  {
+   "key": "vwap_pb.v2|order|BAJFINANCE|11:40",
+   "type": "ORDER",
+   "variant": "vwap_pb.v2",
+   "symbol": "BAJFINANCE",
+   "bar_time": "11:40",
+   "side": -1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback short",
+   "decided_at": "11:45:20"
+  },
+  {
+   "key": "vwap_pb.v2|order|KOTAKBANK|11:40",
+   "type": "ORDER",
+   "variant": "vwap_pb.v2",
+   "symbol": "KOTAKBANK",
+   "bar_time": "11:40",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "11:45:20"
+  },
+  {
+   "key": "vwap_pb.v1|entry|BAJFINANCE|11:45",
+   "type": "ENTRY",
+   "variant": "vwap_pb.v1",
+   "symbol": "BAJFINANCE",
+   "bar_time": "11:45",
+   "price": 967.26,
+   "qty": 19,
+   "side": -1,
+   "stop": 976.82,
+   "target": 948.86,
+   "decided_at": "11:50:20"
+  },
+  {
+   "key": "vwap_pb.v2|entry|BAJFINANCE|11:45",
+   "type": "ENTRY",
+   "variant": "vwap_pb.v2",
+   "symbol": "BAJFINANCE",
+   "bar_time": "11:45",
+   "price": 967.26,
+   "qty": 21,
+   "side": -1,
+   "stop": 976.82,
+   "target": 943.78,
+   "decided_at": "11:50:20"
   }
  ],
  "families": [
