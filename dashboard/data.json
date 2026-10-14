@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-14T12:30:04+05:30",
+ "generated_at": "2026-10-14T12:45:04+05:30",
  "today": "2026-10-14",
  "market_phase": "open",
  "trader_running": true,
@@ -9327,6 +9327,42 @@
    "reason": "stop",
    "net": -71.02,
    "decided_at": "12:15:20"
+  },
+  {
+   "key": "orb.v3|exit|RELIANCE|12:25",
+   "type": "EXIT",
+   "variant": "orb.v3",
+   "symbol": "RELIANCE",
+   "bar_time": "12:25",
+   "price": 1184.42,
+   "qty": 31,
+   "reason": "target",
+   "net": 288.85,
+   "decided_at": "12:30:20"
+  },
+  {
+   "key": "orb.v1|exit|RELIANCE|12:30",
+   "type": "EXIT",
+   "variant": "orb.v1",
+   "symbol": "RELIANCE",
+   "bar_time": "12:30",
+   "price": 1184.66,
+   "qty": 26,
+   "reason": "target",
+   "net": 248.39,
+   "decided_at": "12:35:20"
+  },
+  {
+   "key": "vwap_pb.base|exit|BHARTIARTL|12:30",
+   "type": "EXIT",
+   "variant": "vwap_pb.base",
+   "symbol": "BHARTIARTL",
+   "bar_time": "12:30",
+   "price": 1823.18,
+   "qty": 17,
+   "reason": "target",
+   "net": 226.34,
+   "decided_at": "12:35:20"
   }
  ],
  "families": [
