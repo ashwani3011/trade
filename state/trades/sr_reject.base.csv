@@ -53,3 +53,7 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-14,sr_reject.base,HDFCBANK,-1,48,09:40,716.09,13:10,709.83,target,300.21,36.32,263.89,1.594,level rejection
 2026-10-14,sr_reject.base,ITC,-1,55,12:45,261.72,14:50,262.78,stop,-58.27,15.29,-73.56,-1.364,level rejection
 2026-10-14,sr_reject.base,TATASTEEL,-1,202,11:15,174.95,15:10,174.19,squareoff,152.56,37.41,115.15,0.685,level rejection
+2026-10-15,sr_reject.base,HDFCBANK,-1,57,09:40,718.13,10:45,721.26,stop,-178.37,43.48,-221.85,-1.336,level rejection
+2026-10-15,sr_reject.base,ICICIBANK,-1,9,09:50,1360.09,10:50,1365.8,stop,-51.41,13.0,-64.41,-1.35,level rejection
+2026-10-15,sr_reject.base,BAJFINANCE,1,32,09:45,958.64,13:20,968.24,target,307.23,32.73,274.51,1.64,level rejection
+2026-10-15,sr_reject.base,KOTAKBANK,-1,97,13:05,444.32,13:25,446.16,stop,-179.24,45.78,-225.02,-1.353,level rejection

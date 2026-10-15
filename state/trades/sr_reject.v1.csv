@@ -10,3 +10,5 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-08,sr_reject.v1,ICICIBANK,-1,32,11:05,1357.09,13:25,1346.76,target,330.69,45.91,284.78,1.54,level rejection (confirmed)
 2026-10-12,sr_reject.v1,TATASTEEL,-1,174,11:05,173.99,15:10,172.75,squareoff,215.06,32.01,183.05,0.954,level rejection (confirmed)
 2026-10-14,sr_reject.v1,KOTAKBANK,-1,82,09:35,442.47,10:20,444.95,stop,-203.69,38.56,-242.26,-1.257,level rejection (confirmed)
+2026-10-15,sr_reject.v1,HDFCBANK,-1,46,09:45,716.93,10:45,721.26,stop,-199.13,35.06,-234.19,-1.238,level rejection (confirmed)
+2026-10-15,sr_reject.v1,BAJFINANCE,1,31,09:50,959.49,13:25,969.59,target,313.13,31.74,281.38,1.492,level rejection (confirmed)

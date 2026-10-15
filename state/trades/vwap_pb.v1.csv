@@ -52,3 +52,6 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-14,vwap_pb.v1,SBIN,-1,28,13:10,946.92,14:35,953.73,stop,-190.9,28.2,-219.09,-1.198,VWAP pullback short
 2026-10-14,vwap_pb.v1,BAJFINANCE,-1,19,11:45,967.26,15:10,958.09,squareoff,174.28,19.42,154.86,0.853,VWAP pullback short
 2026-10-14,vwap_pb.v1,LT,-1,7,09:55,3638.91,15:10,3623.49,squareoff,107.95,26.97,80.98,0.504,VWAP pullback short
+2026-10-15,vwap_pb.v1,BAJFINANCE,1,20,10:05,962.99,15:10,968.21,squareoff,104.41,20.49,83.92,0.466,VWAP pullback long
+2026-10-15,vwap_pb.v1,HDFCBANK,1,33,10:00,719.07,15:10,724.78,squareoff,188.66,25.28,163.37,0.888,VWAP pullback long
+2026-10-15,vwap_pb.v1,KOTAKBANK,1,52,10:10,441.98,15:10,445.67,squareoff,191.55,24.5,167.06,0.918,VWAP pullback long

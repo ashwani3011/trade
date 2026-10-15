@@ -58,3 +58,7 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-14,vwap_pb.base,HDFCBANK,1,30,09:45,718.07,11:30,711.54,stop,-195.88,22.72,-218.6,-1.154,VWAP pullback long
 2026-10-14,vwap_pb.base,BHARTIARTL,1,17,09:45,1807.94,12:30,1823.18,target,259.1,32.76,226.34,1.203,VWAP pullback long
 2026-10-14,vwap_pb.base,INFY,1,25,10:25,1084.23,12:50,1076.26,stop,-199.2,28.62,-227.81,-1.192,VWAP pullback long
+2026-10-15,vwap_pb.base,NTPC,-1,81,09:45,311.76,10:05,314.16,stop,-195.01,26.86,-221.87,-1.184,VWAP pullback short
+2026-10-15,vwap_pb.base,KOTAKBANK,1,59,09:45,441.28,10:55,445.43,target,244.89,27.77,217.12,1.167,VWAP pullback long
+2026-10-15,vwap_pb.base,SUNPHARMA,1,16,09:45,1748.52,11:00,1763.85,target,245.22,29.82,215.4,1.214,VWAP pullback long
+2026-10-15,vwap_pb.base,INFY,1,26,10:25,1114.78,15:05,1107.32,stop,-194.12,30.61,-224.74,-1.212,VWAP pullback long

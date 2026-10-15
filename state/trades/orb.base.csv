@@ -39,3 +39,6 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-14,orb.base,HDFCBANK,1,41,09:40,716.51,11:30,711.14,stop,-220.51,31.01,-251.52,-1.188,ORB up
 2026-10-14,orb.base,RELIANCE,1,24,09:45,1171.25,14:00,1187.9,target,399.57,30.07,369.5,1.8,ORB up
 2026-10-14,orb.base,SUNPHARMA,-1,9,09:35,1747.48,15:10,1737.72,squareoff,87.79,16.64,71.15,0.349,ORB down
+2026-10-15,orb.base,SBIN,-1,24,09:35,948.62,10:35,957.59,stop,-215.32,24.23,-239.56,-1.149,ORB down
+2026-10-15,orb.base,HDFCBANK,1,28,09:35,718.17,15:10,724.78,squareoff,185.28,21.44,163.84,0.784,ORB up
+2026-10-15,orb.base,INFY,1,11,09:45,1114.23,15:10,1106.97,squareoff,-79.93,12.95,-92.88,-0.458,ORB up

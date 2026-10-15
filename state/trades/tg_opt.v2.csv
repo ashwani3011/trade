@@ -1,3 +1,4 @@
 date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,costs,net,r_multiple,reason
 2026-10-12,tg_opt.v2,ITC 27OCT 257.5PE,1,1725,09:25,1.82,11:15,3.03,target,2088.91,55.98,2032.92,3.118,top loser -1.03%
 2026-10-14,tg_opt.v2,HDFCLIFE 27OCT 545PE,1,2200,09:25,7.83,09:25,7.42,stop,-885.5,77.96,-963.46,-1.337,top loser -1.08%
+2026-10-15,tg_opt.v2,INFY 27OCT 1140CE,1,400,09:25,17.78,09:30,15.77,stop,-802.12,59.28,-861.4,-1.167,top gainer +1.96%

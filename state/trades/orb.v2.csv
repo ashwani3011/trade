@@ -10,3 +10,6 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-14,orb.v2,INFY,1,10,10:20,1088.33,15:10,1090.12,squareoff,17.96,11.55,6.41,0.034,ORB up
 2026-10-14,orb.v2,NTPC,1,58,11:30,313.39,15:10,313.91,squareoff,29.68,19.29,10.39,0.051,ORB up
 2026-10-14,orb.v2,RELIANCE,1,18,09:50,1173.85,15:10,1177.55,squareoff,66.5,22.45,44.05,0.219,ORB up
+2026-10-15,orb.v2,AXISBANK,1,9,09:55,1288.09,15:10,1286.61,squareoff,-13.25,12.29,-25.54,-0.127,ORB up
+2026-10-15,orb.v2,INFY,1,11,09:45,1114.23,15:10,1106.97,squareoff,-79.93,12.95,-92.88,-0.458,ORB up
+2026-10-15,orb.v2,ITC,1,62,09:50,264.88,15:10,263.17,squareoff,-105.92,17.35,-123.27,-0.606,ORB up
