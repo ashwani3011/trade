@@ -1,1 +1,3 @@
 {"at": "09:14:00", "type": "NOTE", "msg": "mode shadow; broker check: funds OK, positions OK, orders OK"}
+{"at": "09:30:20", "type": "ENTRY", "msg": "BUY BHARTIARTL 11 @ 1830.1 (est 1830.10), stop 1813.37, target 1863.56 [shadow]", "symbol": "BHARTIARTL"}
+{"at": "09:30:20", "type": "STOP", "msg": "BHARTIARTL SL-M at 1813.4 (tick 0.1)", "symbol": "BHARTIARTL"}
