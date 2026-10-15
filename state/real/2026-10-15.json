@@ -17,5 +17,24 @@
   "sl_id": "S1792036836902141203",
   "sl_kind": "SL-M",
   "sl_trigger": 1813.4
+ },
+ {
+  "key": "ICICIBANK|09:50",
+  "symbol": "ICICIBANK",
+  "side": 1,
+  "stop": 1353.72,
+  "target": 1380.07,
+  "decided_bar": "09:50",
+  "mode": "shadow",
+  "status": "open",
+  "expect_entry": "09:55",
+  "qty": 22,
+  "est_price": 1362.5,
+  "entry_id": "S1792038336878107683",
+  "entry_price": 1362.5,
+  "entry_time": "09:55:20",
+  "sl_id": "S1792038336927337909",
+  "sl_kind": "SL-M",
+  "sl_trigger": 1353.7
  }
 ]
