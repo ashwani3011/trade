@@ -18,3 +18,5 @@
 {"at": "11:40:20", "type": "SKIP", "msg": "NTPC 11:35: max 5 entries a day reached", "symbol": "NTPC"}
 {"at": "12:50:20", "type": "EXIT", "msg": "ICICIBANK paper target @ 1380.0 net 352.97", "symbol": "ICICIBANK", "mode": "shadow"}
 {"at": "13:05:20", "type": "SKIP", "msg": "SUNPHARMA 13:00: max 5 entries a day reached", "symbol": "SUNPHARMA"}
+{"at": "15:10:20", "type": "EXIT", "msg": "HDFCBANK squareoff @ 725.05 net 217.35", "symbol": "HDFCBANK", "mode": "shadow"}
+{"at": "15:10:20", "type": "EXIT", "msg": "TATASTEEL squareoff @ 175.61 net -72.89", "symbol": "TATASTEEL", "mode": "shadow"}

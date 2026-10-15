@@ -169,3 +169,5 @@
 {"key": "sr_reject.base|exit|KOTAKBANK|13:25", "type": "EXIT", "variant": "sr_reject.base", "symbol": "KOTAKBANK", "bar_time": "13:25", "price": 446.16, "qty": 97, "reason": "stop", "net": -225.02, "decided_at": "13:30:20"}
 {"key": "sr_reject.v1|exit|BAJFINANCE|13:25", "type": "EXIT", "variant": "sr_reject.v1", "symbol": "BAJFINANCE", "bar_time": "13:25", "price": 969.59, "qty": 31, "reason": "target", "net": 281.38, "decided_at": "13:30:20"}
 {"key": "pdb.v1|entry|KOTAKBANK|13:30", "type": "ENTRY", "variant": "pdb.v1", "symbol": "KOTAKBANK", "bar_time": "13:30", "price": 445.63, "qty": 51, "side": 1, "stop": 441.66, "target": 452.73, "decided_at": "13:35:20"}
+{"key": "pdb.base|exit|SUNPHARMA|15:00", "type": "EXIT", "variant": "pdb.base", "symbol": "SUNPHARMA", "bar_time": "15:00", "price": 1760.02, "qty": 21, "reason": "stop", "net": -268.4, "decided_at": "15:05:20"}
+{"key": "vwap_pb.base|exit|INFY|15:05", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "INFY", "bar_time": "15:05", "price": 1107.32, "qty": 26, "reason": "stop", "net": -224.74, "decided_at": "15:10:20"}
