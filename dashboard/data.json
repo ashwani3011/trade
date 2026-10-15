@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-15T11:45:02+05:30",
+ "generated_at": "2026-10-15T12:00:04+05:30",
  "today": "2026-10-15",
  "market_phase": "open",
  "trader_running": true,
@@ -10179,6 +10179,18 @@
    "price": "at market (next candle open)",
    "reason": "PDH break",
    "decided_at": "11:40:20"
+  },
+  {
+   "key": "orb.v3|exit|HDFCBANK|11:45",
+   "type": "EXIT",
+   "variant": "orb.v3",
+   "symbol": "HDFCBANK",
+   "bar_time": "11:45",
+   "price": 724.43,
+   "qty": 48,
+   "reason": "target",
+   "net": 314.37,
+   "decided_at": "11:50:20"
   }
  ],
  "families": [
