@@ -143,5 +143,29 @@
   "status": "skipped",
   "expect_entry": "11:15",
   "skip_reason": "max 5 entries a day reached"
+ },
+ {
+  "key": "ITC|11:25",
+  "symbol": "ITC",
+  "side": 1,
+  "stop": 260.95,
+  "target": 268.89,
+  "decided_bar": "11:25",
+  "mode": "shadow",
+  "status": "skipped",
+  "expect_entry": "11:30",
+  "skip_reason": "max 5 entries a day reached"
+ },
+ {
+  "key": "NTPC|11:35",
+  "symbol": "NTPC",
+  "side": 1,
+  "stop": 314.17,
+  "target": 320.86,
+  "decided_bar": "11:35",
+  "mode": "shadow",
+  "status": "skipped",
+  "expect_entry": "11:40",
+  "skip_reason": "max 5 entries a day reached"
  }
 ]

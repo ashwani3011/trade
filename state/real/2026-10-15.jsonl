@@ -14,3 +14,5 @@
 {"at": "10:50:20", "type": "SKIP", "msg": "SBIN 10:45: max 5 entries a day reached", "symbol": "SBIN"}
 {"at": "11:00:20", "type": "SKIP", "msg": "KOTAKBANK 10:55: max 5 entries a day reached", "symbol": "KOTAKBANK"}
 {"at": "11:15:20", "type": "SKIP", "msg": "LT 11:10: max 5 entries a day reached", "symbol": "LT"}
+{"at": "11:30:20", "type": "SKIP", "msg": "ITC 11:25: max 5 entries a day reached", "symbol": "ITC"}
+{"at": "11:40:20", "type": "SKIP", "msg": "NTPC 11:35: max 5 entries a day reached", "symbol": "NTPC"}
