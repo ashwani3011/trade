@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-15T10:15:04+05:30",
+ "generated_at": "2026-10-15T10:30:04+05:30",
  "today": "2026-10-15",
  "market_phase": "open",
  "trader_running": true,
@@ -9687,6 +9687,85 @@
    "stop": 953.98,
    "target": 985.06,
    "decided_at": "10:10:20"
+  },
+  {
+   "key": "vwap_pb.v1|entry|KOTAKBANK|10:10",
+   "type": "ENTRY",
+   "variant": "vwap_pb.v1",
+   "symbol": "KOTAKBANK",
+   "bar_time": "10:10",
+   "price": 441.98,
+   "qty": 52,
+   "side": 1,
+   "stop": 438.48,
+   "target": 447.99,
+   "decided_at": "10:15:20"
+  },
+  {
+   "key": "orb.v1|order|TATASTEEL|10:15",
+   "type": "ORDER",
+   "variant": "orb.v1",
+   "symbol": "TATASTEEL",
+   "bar_time": "10:15",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "10:20:20"
+  },
+  {
+   "key": "orb.v2|order|HDFCBANK|10:15",
+   "type": "ORDER",
+   "variant": "orb.v2",
+   "symbol": "HDFCBANK",
+   "bar_time": "10:15",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "10:20:20"
+  },
+  {
+   "key": "orb.v2|order|TATASTEEL|10:15",
+   "type": "ORDER",
+   "variant": "orb.v2",
+   "symbol": "TATASTEEL",
+   "bar_time": "10:15",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "10:20:20"
+  },
+  {
+   "key": "orb.v3|order|TATASTEEL|10:15",
+   "type": "ORDER",
+   "variant": "orb.v3",
+   "symbol": "TATASTEEL",
+   "bar_time": "10:15",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "ORB up",
+   "decided_at": "10:20:20"
+  },
+  {
+   "key": "vwap_pb.base|order|INFY|10:20",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "INFY",
+   "bar_time": "10:20",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:25:20"
+  },
+  {
+   "key": "vwap_pb.base|order|TCS|10:20",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "TCS",
+   "bar_time": "10:20",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "10:25:20"
   }
  ],
  "families": [
