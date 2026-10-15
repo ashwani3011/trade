@@ -13,3 +13,4 @@
 {"at": "10:40:20", "type": "STOP", "msg": "TATASTEEL SL-M at 174.46 (tick 0.01)", "symbol": "TATASTEEL"}
 {"at": "10:50:20", "type": "SKIP", "msg": "SBIN 10:45: max 5 entries a day reached", "symbol": "SBIN"}
 {"at": "11:00:20", "type": "SKIP", "msg": "KOTAKBANK 10:55: max 5 entries a day reached", "symbol": "KOTAKBANK"}
+{"at": "11:15:20", "type": "SKIP", "msg": "LT 11:10: max 5 entries a day reached", "symbol": "LT"}

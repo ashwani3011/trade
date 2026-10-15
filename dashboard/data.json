@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-15T11:15:04+05:30",
+ "generated_at": "2026-10-15T11:30:04+05:30",
  "today": "2026-10-15",
  "market_phase": "open",
  "trader_running": true,
@@ -10100,6 +10100,41 @@
    "reason": "target",
    "net": 215.4,
    "decided_at": "11:05:20"
+  },
+  {
+   "key": "pdb.base|order|LT|11:10",
+   "type": "ORDER",
+   "variant": "pdb.base",
+   "symbol": "LT",
+   "bar_time": "11:10",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "PDH break",
+   "decided_at": "11:15:20"
+  },
+  {
+   "key": "orb.v1|exit|ITC|11:15",
+   "type": "EXIT",
+   "variant": "orb.v1",
+   "symbol": "ITC",
+   "bar_time": "11:15",
+   "price": 262.97,
+   "qty": 93,
+   "reason": "stop",
+   "net": -203.9,
+   "decided_at": "11:20:20"
+  },
+  {
+   "key": "orb.v3|exit|ITC|11:15",
+   "type": "EXIT",
+   "variant": "orb.v3",
+   "symbol": "ITC",
+   "bar_time": "11:15",
+   "price": 263.0,
+   "qty": 108,
+   "reason": "stop",
+   "net": -233.04,
+   "decided_at": "11:20:20"
   }
  ],
  "families": [

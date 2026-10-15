@@ -146,3 +146,6 @@
 {"key": "pdb.base|order|KOTAKBANK|10:55", "type": "ORDER", "variant": "pdb.base", "symbol": "KOTAKBANK", "bar_time": "10:55", "side": 1, "price": "at market (next candle open)", "reason": "PDH break", "decided_at": "11:00:20"}
 {"key": "vwap_pb.base|exit|KOTAKBANK|10:55", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "KOTAKBANK", "bar_time": "10:55", "price": 445.43, "qty": 59, "reason": "target", "net": 217.12, "decided_at": "11:00:20"}
 {"key": "vwap_pb.base|exit|SUNPHARMA|11:00", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "SUNPHARMA", "bar_time": "11:00", "price": 1763.85, "qty": 16, "reason": "target", "net": 215.4, "decided_at": "11:05:20"}
+{"key": "pdb.base|order|LT|11:10", "type": "ORDER", "variant": "pdb.base", "symbol": "LT", "bar_time": "11:10", "side": 1, "price": "at market (next candle open)", "reason": "PDH break", "decided_at": "11:15:20"}
+{"key": "orb.v1|exit|ITC|11:15", "type": "EXIT", "variant": "orb.v1", "symbol": "ITC", "bar_time": "11:15", "price": 262.97, "qty": 93, "reason": "stop", "net": -203.9, "decided_at": "11:20:20"}
+{"key": "orb.v3|exit|ITC|11:15", "type": "EXIT", "variant": "orb.v3", "symbol": "ITC", "bar_time": "11:15", "price": 263.0, "qty": 108, "reason": "stop", "net": -233.04, "decided_at": "11:20:20"}
