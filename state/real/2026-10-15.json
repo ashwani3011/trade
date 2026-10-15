@@ -107,5 +107,17 @@
   "sl_id": "S1792041036919269832",
   "sl_kind": "SL-M",
   "sl_trigger": 174.46
+ },
+ {
+  "key": "SBIN|10:45",
+  "symbol": "SBIN",
+  "side": 1,
+  "stop": 951.6,
+  "target": 967.8,
+  "decided_bar": "10:45",
+  "mode": "shadow",
+  "status": "skipped",
+  "expect_entry": "10:50",
+  "skip_reason": "max 5 entries a day reached"
  }
 ]
