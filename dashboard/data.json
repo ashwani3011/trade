@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-15T12:00:04+05:30",
+ "generated_at": "2026-10-15T12:15:04+05:30",
  "today": "2026-10-15",
  "market_phase": "open",
  "trader_running": true,
@@ -10191,6 +10191,40 @@
    "reason": "target",
    "net": 314.37,
    "decided_at": "11:50:20"
+  },
+  {
+   "key": "orb.v1|exit|HDFCBANK|11:55",
+   "type": "EXIT",
+   "variant": "orb.v1",
+   "symbol": "HDFCBANK",
+   "bar_time": "11:55",
+   "price": 725.64,
+   "qty": 41,
+   "reason": "target",
+   "net": 274.94,
+   "decided_at": "12:00:20"
+  },
+  {
+   "key": "vwap_pb.v1|order|ITC|11:55",
+   "type": "ORDER",
+   "variant": "vwap_pb.v1",
+   "symbol": "ITC",
+   "bar_time": "11:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "12:00:20"
+  },
+  {
+   "key": "vwap_pb.v2|order|ITC|11:55",
+   "type": "ORDER",
+   "variant": "vwap_pb.v2",
+   "symbol": "ITC",
+   "bar_time": "11:55",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "12:00:20"
   }
  ],
  "families": [

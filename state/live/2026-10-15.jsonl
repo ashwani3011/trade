@@ -154,3 +154,6 @@
 {"key": "vwap_pb.v2|order|NTPC|11:25", "type": "ORDER", "variant": "vwap_pb.v2", "symbol": "NTPC", "bar_time": "11:25", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "11:30:20"}
 {"key": "pdb.base|order|NTPC|11:35", "type": "ORDER", "variant": "pdb.base", "symbol": "NTPC", "bar_time": "11:35", "side": 1, "price": "at market (next candle open)", "reason": "PDH break", "decided_at": "11:40:20"}
 {"key": "orb.v3|exit|HDFCBANK|11:45", "type": "EXIT", "variant": "orb.v3", "symbol": "HDFCBANK", "bar_time": "11:45", "price": 724.43, "qty": 48, "reason": "target", "net": 314.37, "decided_at": "11:50:20"}
+{"key": "orb.v1|exit|HDFCBANK|11:55", "type": "EXIT", "variant": "orb.v1", "symbol": "HDFCBANK", "bar_time": "11:55", "price": 725.64, "qty": 41, "reason": "target", "net": 274.94, "decided_at": "12:00:20"}
+{"key": "vwap_pb.v1|order|ITC|11:55", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "ITC", "bar_time": "11:55", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "12:00:20"}
+{"key": "vwap_pb.v2|order|ITC|11:55", "type": "ORDER", "variant": "vwap_pb.v2", "symbol": "ITC", "bar_time": "11:55", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "12:00:20"}
