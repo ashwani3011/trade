@@ -3,3 +3,8 @@
 {"at": "09:30:20", "type": "STOP", "msg": "BHARTIARTL SL-M at 1813.4 (tick 0.1)", "symbol": "BHARTIARTL"}
 {"at": "09:55:20", "type": "ENTRY", "msg": "BUY ICICIBANK 22 @ 1362.5 (est 1362.50), stop 1353.72, target 1380.07 [shadow]", "symbol": "ICICIBANK"}
 {"at": "09:55:20", "type": "STOP", "msg": "ICICIBANK SL-M at 1353.7 (tick 0.1)", "symbol": "ICICIBANK"}
+{"at": "10:00:20", "type": "ENTRY", "msg": "BUY HDFCBANK 40 @ 718.85 (est 718.85), stop 713.91, target 728.74 [shadow]", "symbol": "HDFCBANK"}
+{"at": "10:00:20", "type": "STOP", "msg": "HDFCBANK SL-M at 713.9 (tick 0.05)", "symbol": "HDFCBANK"}
+{"at": "10:05:20", "type": "EXIT", "msg": "BHARTIARTL paper target @ 1856.8 net 272.16", "symbol": "BHARTIARTL", "mode": "shadow"}
+{"at": "10:05:20", "type": "ENTRY", "msg": "BUY RELIANCE 27 @ 1188.1 (est 1188.10), stop 1180.82, target 1202.66 [shadow]", "symbol": "RELIANCE"}
+{"at": "10:05:20", "type": "STOP", "msg": "RELIANCE SL-M at 1180.8 (tick 0.1)", "symbol": "RELIANCE"}
