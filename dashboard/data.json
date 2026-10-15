@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-15T09:15:04+05:30",
+ "generated_at": "2026-10-15T09:30:04+05:30",
  "today": "2026-10-15",
  "market_phase": "open",
  "trader_running": true,
@@ -8461,7 +8461,142 @@
    "reason": "VWAP pullback short"
   }
  ],
- "live_today": [],
+ "live_today": [
+  {
+   "key": "tg_opt.v1|note|no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "decided_at": "09:20:20"
+  },
+  {
+   "key": "tg_opt.v2|note|no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "type": "NOTE",
+   "variant": "tg_opt.v2",
+   "reason": "no ranking possible (missing 9:15/9:20 bars or previous close)",
+   "decided_at": "09:20:20"
+  },
+  {
+   "key": "tg_opt.v1|order|INFY 27OCT 1140CE|09:20",
+   "type": "ORDER",
+   "variant": "tg_opt.v1",
+   "symbol": "INFY 27OCT 1140CE",
+   "bar_time": "09:20",
+   "side": 1,
+   "price": "buy above 19.80",
+   "reason": "top gainer +1.96%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|top gainers @9:25: TCS +2.16%, TECHM +2.09%, INFY +1.96%",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "top gainers @9:25: TCS +2.16%, TECHM +2.09%, INFY +1.96%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|top losers  @9:25: HINDALCO -1.09%, ADANIPORTS -1.08%, ADANIENT -1.03%",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "top losers  @9:25: HINDALCO -1.09%, ADANIPORTS -1.08%, ADANIENT -1.03%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|TCS: weak candle (body 23% of range) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "TCS: weak candle (body 23% of range) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|TECHM: weak candle (body 28% of range) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "TECHM: weak candle (body 28% of range) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|HINDALCO: first candle not red - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "HINDALCO: first candle not red - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|ADANIPORTS: weak candle (body 40% of range) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "ADANIPORTS: weak candle (body 40% of range) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v1|note|ADANIENT: NIFTY first candle against the trade - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v1",
+   "reason": "ADANIENT: NIFTY first candle against the trade - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v2|order|INFY 27OCT 1140CE|09:20",
+   "type": "ORDER",
+   "variant": "tg_opt.v2",
+   "symbol": "INFY 27OCT 1140CE",
+   "bar_time": "09:20",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "top gainer +1.96%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v2|note|top gainers @9:25: TCS +2.16%, TECHM +2.09%, INFY +1.96%",
+   "type": "NOTE",
+   "variant": "tg_opt.v2",
+   "reason": "top gainers @9:25: TCS +2.16%, TECHM +2.09%, INFY +1.96%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v2|note|top losers  @9:25: HINDALCO -1.09%, ADANIPORTS -1.08%, ADANIENT -1.03%",
+   "type": "NOTE",
+   "variant": "tg_opt.v2",
+   "reason": "top losers  @9:25: HINDALCO -1.09%, ADANIPORTS -1.08%, ADANIENT -1.03%",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v2|note|TCS: weak candle (body 23% of range) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v2",
+   "reason": "TCS: weak candle (body 23% of range) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v2|note|TECHM: weak candle (body 28% of range) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v2",
+   "reason": "TECHM: weak candle (body 28% of range) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v2|note|HINDALCO: first candle not red - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v2",
+   "reason": "HINDALCO: first candle not red - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v2|note|ADANIPORTS: weak candle (body 40% of range) - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v2",
+   "reason": "ADANIPORTS: weak candle (body 40% of range) - skipped",
+   "decided_at": "09:25:20"
+  },
+  {
+   "key": "tg_opt.v2|note|ADANIENT: NIFTY first candle against the trade - skipped",
+   "type": "NOTE",
+   "variant": "tg_opt.v2",
+   "reason": "ADANIENT: NIFTY first candle against the trade - skipped",
+   "decided_at": "09:25:20"
+  }
+ ],
  "families": [
   "orb",
   "pdb",
