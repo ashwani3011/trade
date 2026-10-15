@@ -164,3 +164,4 @@
 {"key": "vwap_pb.v2|order|LT|13:00", "type": "ORDER", "variant": "vwap_pb.v2", "symbol": "LT", "bar_time": "13:00", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "13:05:20"}
 {"key": "pdb.base|entry|SUNPHARMA|13:05", "type": "ENTRY", "variant": "pdb.base", "symbol": "SUNPHARMA", "bar_time": "13:05", "price": 1770.93, "qty": 21, "side": 1, "stop": 1760.55, "target": 1790.4, "decided_at": "13:10:20"}
 {"key": "sr_reject.base|entry|KOTAKBANK|13:05", "type": "ENTRY", "variant": "sr_reject.base", "symbol": "KOTAKBANK", "bar_time": "13:05", "price": 444.32, "qty": 97, "side": -1, "stop": 446.03, "target": 440.99, "decided_at": "13:10:20"}
+{"key": "sr_reject.base|exit|BAJFINANCE|13:20", "type": "EXIT", "variant": "sr_reject.base", "symbol": "BAJFINANCE", "bar_time": "13:20", "price": 968.24, "qty": 32, "reason": "target", "net": 274.51, "decided_at": "13:25:20"}
