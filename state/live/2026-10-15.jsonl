@@ -157,3 +157,4 @@
 {"key": "orb.v1|exit|HDFCBANK|11:55", "type": "EXIT", "variant": "orb.v1", "symbol": "HDFCBANK", "bar_time": "11:55", "price": 725.64, "qty": 41, "reason": "target", "net": 274.94, "decided_at": "12:00:20"}
 {"key": "vwap_pb.v1|order|ITC|11:55", "type": "ORDER", "variant": "vwap_pb.v1", "symbol": "ITC", "bar_time": "11:55", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "12:00:20"}
 {"key": "vwap_pb.v2|order|ITC|11:55", "type": "ORDER", "variant": "vwap_pb.v2", "symbol": "ITC", "bar_time": "11:55", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "12:00:20"}
+{"key": "pdb.base|exit|ICICIBANK|12:45", "type": "EXIT", "variant": "pdb.base", "symbol": "ICICIBANK", "bar_time": "12:45", "price": 1380.07, "qty": 24, "reason": "target", "net": 374.41, "decided_at": "12:50:20"}

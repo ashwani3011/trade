@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-15T12:45:04+05:30",
+ "generated_at": "2026-10-15T13:00:04+05:30",
  "today": "2026-10-15",
  "market_phase": "open",
  "trader_running": true,
@@ -10225,6 +10225,18 @@
    "price": "at market (next candle open)",
    "reason": "VWAP pullback long",
    "decided_at": "12:00:20"
+  },
+  {
+   "key": "pdb.base|exit|ICICIBANK|12:45",
+   "type": "EXIT",
+   "variant": "pdb.base",
+   "symbol": "ICICIBANK",
+   "bar_time": "12:45",
+   "price": 1380.07,
+   "qty": 24,
+   "reason": "target",
+   "net": 374.41,
+   "decided_at": "12:50:20"
   }
  ],
  "families": [
