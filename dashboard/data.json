@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-15T13:30:03+05:30",
+ "generated_at": "2026-10-15T13:45:04+05:30",
  "today": "2026-10-15",
  "market_phase": "open",
  "trader_running": true,
@@ -10319,6 +10319,54 @@
    "reason": "target",
    "net": 274.51,
    "decided_at": "13:25:20"
+  },
+  {
+   "key": "pdb.v1|order|KOTAKBANK|13:25",
+   "type": "ORDER",
+   "variant": "pdb.v1",
+   "symbol": "KOTAKBANK",
+   "bar_time": "13:25",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "PDH break",
+   "decided_at": "13:30:20"
+  },
+  {
+   "key": "sr_reject.base|exit|KOTAKBANK|13:25",
+   "type": "EXIT",
+   "variant": "sr_reject.base",
+   "symbol": "KOTAKBANK",
+   "bar_time": "13:25",
+   "price": 446.16,
+   "qty": 97,
+   "reason": "stop",
+   "net": -225.02,
+   "decided_at": "13:30:20"
+  },
+  {
+   "key": "sr_reject.v1|exit|BAJFINANCE|13:25",
+   "type": "EXIT",
+   "variant": "sr_reject.v1",
+   "symbol": "BAJFINANCE",
+   "bar_time": "13:25",
+   "price": 969.59,
+   "qty": 31,
+   "reason": "target",
+   "net": 281.38,
+   "decided_at": "13:30:20"
+  },
+  {
+   "key": "pdb.v1|entry|KOTAKBANK|13:30",
+   "type": "ENTRY",
+   "variant": "pdb.v1",
+   "symbol": "KOTAKBANK",
+   "bar_time": "13:30",
+   "price": 445.63,
+   "qty": 51,
+   "side": 1,
+   "stop": 441.66,
+   "target": 452.73,
+   "decided_at": "13:35:20"
   }
  ],
  "families": [
