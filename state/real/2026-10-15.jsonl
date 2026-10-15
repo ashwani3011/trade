@@ -17,3 +17,4 @@
 {"at": "11:30:20", "type": "SKIP", "msg": "ITC 11:25: max 5 entries a day reached", "symbol": "ITC"}
 {"at": "11:40:20", "type": "SKIP", "msg": "NTPC 11:35: max 5 entries a day reached", "symbol": "NTPC"}
 {"at": "12:50:20", "type": "EXIT", "msg": "ICICIBANK paper target @ 1380.0 net 352.97", "symbol": "ICICIBANK", "mode": "shadow"}
+{"at": "13:05:20", "type": "SKIP", "msg": "SUNPHARMA 13:00: max 5 entries a day reached", "symbol": "SUNPHARMA"}

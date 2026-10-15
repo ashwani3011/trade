@@ -174,5 +174,17 @@
   "status": "skipped",
   "expect_entry": "11:40",
   "skip_reason": "max 5 entries a day reached"
+ },
+ {
+  "key": "SUNPHARMA|13:00",
+  "symbol": "SUNPHARMA",
+  "side": 1,
+  "stop": 1760.55,
+  "target": 1790.4,
+  "decided_bar": "13:00",
+  "mode": "shadow",
+  "status": "skipped",
+  "expect_entry": "13:05",
+  "skip_reason": "max 5 entries a day reached"
  }
 ]
