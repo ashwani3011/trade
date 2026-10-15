@@ -12,3 +12,4 @@
 {"at": "10:40:20", "type": "ENTRY", "msg": "BUY TATASTEEL 131 @ 175.98 (est 175.98), stop 174.46, target 179.01 [shadow]", "symbol": "TATASTEEL"}
 {"at": "10:40:20", "type": "STOP", "msg": "TATASTEEL SL-M at 174.46 (tick 0.01)", "symbol": "TATASTEEL"}
 {"at": "10:50:20", "type": "SKIP", "msg": "SBIN 10:45: max 5 entries a day reached", "symbol": "SBIN"}
+{"at": "11:00:20", "type": "SKIP", "msg": "KOTAKBANK 10:55: max 5 entries a day reached", "symbol": "KOTAKBANK"}

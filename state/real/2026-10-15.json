@@ -119,5 +119,17 @@
   "status": "skipped",
   "expect_entry": "10:50",
   "skip_reason": "max 5 entries a day reached"
+ },
+ {
+  "key": "KOTAKBANK|10:55",
+  "symbol": "KOTAKBANK",
+  "side": 1,
+  "stop": 441.66,
+  "target": 451.68,
+  "decided_bar": "10:55",
+  "mode": "shadow",
+  "status": "skipped",
+  "expect_entry": "11:00",
+  "skip_reason": "max 5 entries a day reached"
  }
 ]
