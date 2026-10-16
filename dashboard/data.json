@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-16T14:15:04+05:30",
+ "generated_at": "2026-10-16T14:30:04+05:30",
  "today": "2026-10-16",
  "market_phase": "open",
  "trader_running": true,
@@ -10996,6 +10996,18 @@
    "reason": "stop",
    "net": -222.6,
    "decided_at": "13:00:20"
+  },
+  {
+   "key": "vwap_pb.v1|exit|HDFCBANK|14:10",
+   "type": "EXIT",
+   "variant": "vwap_pb.v1",
+   "symbol": "HDFCBANK",
+   "bar_time": "14:10",
+   "price": 725.55,
+   "qty": 35,
+   "reason": "stop",
+   "net": -218.5,
+   "decided_at": "14:15:20"
   }
  ],
  "families": [
