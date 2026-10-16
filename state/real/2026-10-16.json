@@ -17,5 +17,43 @@
   "sl_id": "S1792123536907914453",
   "sl_kind": "SL-M",
   "sl_trigger": 1859.6
+ },
+ {
+  "key": "HDFCBANK|09:40",
+  "symbol": "HDFCBANK",
+  "side": 1,
+  "stop": 723.3,
+  "target": 743.25,
+  "decided_bar": "09:40",
+  "mode": "shadow",
+  "status": "open",
+  "expect_entry": "09:45",
+  "qty": 30,
+  "est_price": 729.95,
+  "entry_id": "S1792124136883465928",
+  "entry_price": 729.95,
+  "entry_time": "09:45:20",
+  "sl_id": "S1792124136931730417",
+  "sl_kind": "SL-M",
+  "sl_trigger": 723.3
+ },
+ {
+  "key": "ITC|09:45",
+  "symbol": "ITC",
+  "side": -1,
+  "stop": 263.65,
+  "target": 256.74,
+  "decided_bar": "09:45",
+  "mode": "shadow",
+  "status": "open",
+  "expect_entry": "09:50",
+  "qty": 86,
+  "est_price": 261.35,
+  "entry_id": "S1792124436865614917",
+  "entry_price": 261.35,
+  "entry_time": "09:50:20",
+  "sl_id": "S1792124436932021758",
+  "sl_kind": "SL-M",
+  "sl_trigger": 263.65
  }
 ]
