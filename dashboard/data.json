@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-16T15:00:04+05:30",
+ "generated_at": "2026-10-16T15:15:01+05:30",
  "today": "2026-10-16",
  "market_phase": "open",
  "trader_running": true,
@@ -11008,6 +11008,18 @@
    "reason": "stop",
    "net": -218.5,
    "decided_at": "14:15:20"
+  },
+  {
+   "key": "orb.v1|exit|NTPC|14:55",
+   "type": "EXIT",
+   "variant": "orb.v1",
+   "symbol": "NTPC",
+   "bar_time": "14:55",
+   "price": 314.24,
+   "qty": 99,
+   "reason": "stop",
+   "net": -212.04,
+   "decided_at": "15:00:20"
   }
  ],
  "families": [

@@ -11,3 +11,6 @@
 {"at": "11:15:20", "type": "ENTRY", "msg": "BUY BAJFINANCE 22 @ 976.2 (est 976.20), stop 967.36, target 993.87 [shadow]", "symbol": "BAJFINANCE"}
 {"at": "11:15:20", "type": "STOP", "msg": "BAJFINANCE SL-M at 967.35 (tick 0.05)", "symbol": "BAJFINANCE"}
 {"at": "11:30:20", "type": "SKIP", "msg": "ICICIBANK 11:25: max 3 open positions", "symbol": "ICICIBANK"}
+{"at": "15:10:20", "type": "EXIT", "msg": "HDFCBANK squareoff @ 725.65 net -152.14", "symbol": "HDFCBANK", "mode": "shadow"}
+{"at": "15:10:20", "type": "EXIT", "msg": "ITC squareoff @ 262.4 net -114.17", "symbol": "ITC", "mode": "shadow"}
+{"at": "15:10:20", "type": "EXIT", "msg": "BAJFINANCE squareoff @ 979.4 net 47.58", "symbol": "BAJFINANCE", "mode": "shadow"}
