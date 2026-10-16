@@ -156,3 +156,4 @@
 {"key": "vwap_pb.v2|exit|TATASTEEL|11:45", "type": "EXIT", "variant": "vwap_pb.v2", "symbol": "TATASTEEL", "bar_time": "11:45", "price": 175.25, "qty": 76, "reason": "stop", "net": -229.76, "decided_at": "11:50:20"}
 {"key": "vwap_pb.base|exit|ICICIBANK|11:55", "type": "EXIT", "variant": "vwap_pb.base", "symbol": "ICICIBANK", "bar_time": "11:55", "price": 1392.62, "qty": 22, "reason": "stop", "net": -222.42, "decided_at": "12:00:20"}
 {"key": "sr_reject.base|exit|ICICIBANK|12:05", "type": "EXIT", "variant": "sr_reject.base", "symbol": "ICICIBANK", "bar_time": "12:05", "price": 1394.25, "qty": 32, "reason": "stop", "net": -222.1, "decided_at": "12:10:20"}
+{"key": "orb.v2|exit|KOTAKBANK|12:20", "type": "EXIT", "variant": "orb.v2", "symbol": "KOTAKBANK", "bar_time": "12:20", "price": 443.97, "qty": 23, "reason": "stop", "net": -211.45, "decided_at": "12:25:20"}
