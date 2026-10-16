@@ -151,3 +151,6 @@
 {"key": "vwap_pb.base|order|INFY|11:30", "type": "ORDER", "variant": "vwap_pb.base", "symbol": "INFY", "bar_time": "11:30", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "11:35:20"}
 {"key": "vwap_pb.v1|exit|ICICIBANK|11:30", "type": "EXIT", "variant": "vwap_pb.v1", "symbol": "ICICIBANK", "bar_time": "11:30", "price": 1392.37, "qty": 21, "reason": "stop", "net": -223.71, "decided_at": "11:35:20"}
 {"key": "vwap_pb.v2|exit|ICICIBANK|11:30", "type": "EXIT", "variant": "vwap_pb.v2", "symbol": "ICICIBANK", "bar_time": "11:30", "price": 1392.37, "qty": 24, "reason": "stop", "net": -255.67, "decided_at": "11:35:20"}
+{"key": "orb.v2|exit|TATASTEEL|11:45", "type": "EXIT", "variant": "orb.v2", "symbol": "TATASTEEL", "bar_time": "11:45", "price": 175.25, "qty": 72, "reason": "stop", "net": -217.66, "decided_at": "11:50:20"}
+{"key": "vwap_pb.v1|exit|TATASTEEL|11:45", "type": "EXIT", "variant": "vwap_pb.v1", "symbol": "TATASTEEL", "bar_time": "11:45", "price": 175.25, "qty": 67, "reason": "stop", "net": -202.55, "decided_at": "11:50:20"}
+{"key": "vwap_pb.v2|exit|TATASTEEL|11:45", "type": "EXIT", "variant": "vwap_pb.v2", "symbol": "TATASTEEL", "bar_time": "11:45", "price": 175.25, "qty": 76, "reason": "stop", "net": -229.76, "decided_at": "11:50:20"}

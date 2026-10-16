@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-16T11:45:04+05:30",
+ "generated_at": "2026-10-16T12:00:01+05:30",
  "today": "2026-10-16",
  "market_phase": "open",
  "trader_running": true,
@@ -10900,6 +10900,42 @@
    "reason": "stop",
    "net": -255.67,
    "decided_at": "11:35:20"
+  },
+  {
+   "key": "orb.v2|exit|TATASTEEL|11:45",
+   "type": "EXIT",
+   "variant": "orb.v2",
+   "symbol": "TATASTEEL",
+   "bar_time": "11:45",
+   "price": 175.25,
+   "qty": 72,
+   "reason": "stop",
+   "net": -217.66,
+   "decided_at": "11:50:20"
+  },
+  {
+   "key": "vwap_pb.v1|exit|TATASTEEL|11:45",
+   "type": "EXIT",
+   "variant": "vwap_pb.v1",
+   "symbol": "TATASTEEL",
+   "bar_time": "11:45",
+   "price": 175.25,
+   "qty": 67,
+   "reason": "stop",
+   "net": -202.55,
+   "decided_at": "11:50:20"
+  },
+  {
+   "key": "vwap_pb.v2|exit|TATASTEEL|11:45",
+   "type": "EXIT",
+   "variant": "vwap_pb.v2",
+   "symbol": "TATASTEEL",
+   "bar_time": "11:45",
+   "price": 175.25,
+   "qty": 76,
+   "reason": "stop",
+   "net": -229.76,
+   "decided_at": "11:50:20"
   }
  ],
  "families": [
