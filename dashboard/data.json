@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-16T12:30:04+05:30",
+ "generated_at": "2026-10-16T12:45:04+05:30",
  "today": "2026-10-16",
  "market_phase": "open",
  "trader_running": true,
@@ -10972,6 +10972,18 @@
    "reason": "stop",
    "net": -211.45,
    "decided_at": "12:25:20"
+  },
+  {
+   "key": "orb.base|exit|ICICIBANK|12:35",
+   "type": "EXIT",
+   "variant": "orb.base",
+   "symbol": "ICICIBANK",
+   "bar_time": "12:35",
+   "price": 1398.92,
+   "qty": 12,
+   "reason": "stop",
+   "net": -226.88,
+   "decided_at": "12:40:20"
   }
  ],
  "families": [
