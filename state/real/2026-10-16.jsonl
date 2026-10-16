@@ -10,3 +10,4 @@
 {"at": "10:20:20", "type": "EXIT", "msg": "BHARTIARTL paper target @ 1897.8 net 390.38", "symbol": "BHARTIARTL", "mode": "shadow"}
 {"at": "11:15:20", "type": "ENTRY", "msg": "BUY BAJFINANCE 22 @ 976.2 (est 976.20), stop 967.36, target 993.87 [shadow]", "symbol": "BAJFINANCE"}
 {"at": "11:15:20", "type": "STOP", "msg": "BAJFINANCE SL-M at 967.35 (tick 0.05)", "symbol": "BAJFINANCE"}
+{"at": "11:30:20", "type": "SKIP", "msg": "ICICIBANK 11:25: max 3 open positions", "symbol": "ICICIBANK"}

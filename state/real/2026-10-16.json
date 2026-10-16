@@ -105,5 +105,17 @@
   "sl_id": "S1792129536934272982",
   "sl_kind": "SL-M",
   "sl_trigger": 967.35
+ },
+ {
+  "key": "ICICIBANK|11:25",
+  "symbol": "ICICIBANK",
+  "side": 1,
+  "stop": 1381.21,
+  "target": 1407.58,
+  "decided_bar": "11:25",
+  "mode": "shadow",
+  "status": "skipped",
+  "expect_entry": "11:30",
+  "skip_reason": "max 3 open positions"
  }
 ]
