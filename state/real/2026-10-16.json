@@ -55,5 +55,29 @@
   "sl_id": "S1792124436932021758",
   "sl_kind": "SL-M",
   "sl_trigger": 263.65
+ },
+ {
+  "key": "KOTAKBANK|10:00",
+  "symbol": "KOTAKBANK",
+  "side": 1,
+  "stop": 444.68,
+  "target": 459.29,
+  "decided_bar": "10:00",
+  "mode": "shadow",
+  "status": "skipped",
+  "expect_entry": "10:05",
+  "skip_reason": "max 3 open positions"
+ },
+ {
+  "key": "TATASTEEL|10:05",
+  "symbol": "TATASTEEL",
+  "side": 1,
+  "stop": 175.47,
+  "target": 183.3,
+  "decided_bar": "10:05",
+  "mode": "shadow",
+  "status": "skipped",
+  "expect_entry": "10:10",
+  "skip_reason": "max 3 open positions"
  }
 ]

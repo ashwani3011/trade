@@ -5,3 +5,5 @@
 {"at": "09:45:20", "type": "STOP", "msg": "HDFCBANK SL-M at 723.3 (tick 0.05)", "symbol": "HDFCBANK"}
 {"at": "09:50:20", "type": "ENTRY", "msg": "SELL ITC 86 @ 261.35 (est 261.35), stop 263.65, target 256.74 [shadow]", "symbol": "ITC"}
 {"at": "09:50:20", "type": "STOP", "msg": "ITC SL-M at 263.65 (tick 0.05)", "symbol": "ITC"}
+{"at": "10:05:20", "type": "SKIP", "msg": "KOTAKBANK 10:00: max 3 open positions", "symbol": "KOTAKBANK"}
+{"at": "10:10:20", "type": "SKIP", "msg": "TATASTEEL 10:05: max 3 open positions", "symbol": "TATASTEEL"}
