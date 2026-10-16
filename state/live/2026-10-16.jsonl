@@ -138,3 +138,4 @@
 {"key": "orb.v1|exit|TATASTEEL|10:40", "type": "EXIT", "variant": "orb.v1", "symbol": "TATASTEEL", "bar_time": "10:40", "price": 176.88, "qty": 130, "reason": "stop", "net": -181.32, "decided_at": "10:45:20"}
 {"key": "sr_reject.v1|entry|SBIN|10:40", "type": "ENTRY", "variant": "sr_reject.v1", "symbol": "SBIN", "bar_time": "10:40", "price": 960.26, "qty": 26, "side": -1, "stop": 967.62, "target": 946.71, "decided_at": "10:45:20"}
 {"key": "orb.v3|exit|HDFCBANK|10:45", "type": "EXIT", "variant": "orb.v3", "symbol": "HDFCBANK", "bar_time": "10:45", "price": 729.69, "qty": 45, "reason": "stop", "net": -234.12, "decided_at": "10:50:20"}
+{"key": "vwap_pb.base|order|TCS|11:05", "type": "ORDER", "variant": "vwap_pb.base", "symbol": "TCS", "bar_time": "11:05", "side": 1, "price": "at market (next candle open)", "reason": "VWAP pullback long", "decided_at": "11:10:20"}

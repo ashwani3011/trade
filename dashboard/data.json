@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-16T11:00:04+05:30",
+ "generated_at": "2026-10-16T11:15:04+05:30",
  "today": "2026-10-16",
  "market_phase": "open",
  "trader_running": true,
@@ -10751,6 +10751,17 @@
    "reason": "stop",
    "net": -234.12,
    "decided_at": "10:50:20"
+  },
+  {
+   "key": "vwap_pb.base|order|TCS|11:05",
+   "type": "ORDER",
+   "variant": "vwap_pb.base",
+   "symbol": "TCS",
+   "bar_time": "11:05",
+   "side": 1,
+   "price": "at market (next candle open)",
+   "reason": "VWAP pullback long",
+   "decided_at": "11:10:20"
   }
  ],
  "families": [
