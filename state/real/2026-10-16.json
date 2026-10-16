@@ -86,5 +86,24 @@
   "status": "skipped",
   "expect_entry": "10:10",
   "skip_reason": "max 3 open positions"
+ },
+ {
+  "key": "BAJFINANCE|11:10",
+  "symbol": "BAJFINANCE",
+  "side": 1,
+  "stop": 967.36,
+  "target": 993.87,
+  "decided_bar": "11:10",
+  "mode": "shadow",
+  "status": "open",
+  "expect_entry": "11:15",
+  "qty": 22,
+  "est_price": 976.2,
+  "entry_id": "S1792129536885713123",
+  "entry_price": 976.2,
+  "entry_time": "11:15:20",
+  "sl_id": "S1792129536934272982",
+  "sl_kind": "SL-M",
+  "sl_trigger": 967.35
  }
 ]
