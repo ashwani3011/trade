@@ -55,3 +55,7 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-15,vwap_pb.v1,BAJFINANCE,1,20,10:05,962.99,15:10,968.21,squareoff,104.41,20.49,83.92,0.466,VWAP pullback long
 2026-10-15,vwap_pb.v1,HDFCBANK,1,33,10:00,719.07,15:10,724.78,squareoff,188.66,25.28,163.37,0.888,VWAP pullback long
 2026-10-15,vwap_pb.v1,KOTAKBANK,1,52,10:10,441.98,15:10,445.67,squareoff,191.55,24.5,167.06,0.918,VWAP pullback long
+2026-10-16,vwap_pb.v1,KOTAKBANK,-1,68,09:50,444.82,09:55,447.71,stop,-197.05,32.16,-229.21,-1.22,VWAP pullback short
+2026-10-16,vwap_pb.v1,ICICIBANK,-1,21,09:50,1383.18,11:30,1392.37,stop,-192.83,30.88,-223.71,-1.215,VWAP pullback short
+2026-10-16,vwap_pb.v1,TATASTEEL,1,67,10:10,178.08,11:45,175.25,stop,-190.02,12.53,-202.55,-1.086,VWAP pullback long
+2026-10-16,vwap_pb.v1,HDFCBANK,1,35,09:55,731.02,14:10,725.55,stop,-191.49,27.01,-218.5,-1.188,VWAP pullback long

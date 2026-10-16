@@ -62,3 +62,8 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-15,vwap_pb.base,KOTAKBANK,1,59,09:45,441.28,10:55,445.43,target,244.89,27.77,217.12,1.167,VWAP pullback long
 2026-10-15,vwap_pb.base,SUNPHARMA,1,16,09:45,1748.52,11:00,1763.85,target,245.22,29.82,215.4,1.214,VWAP pullback long
 2026-10-15,vwap_pb.base,INFY,1,26,10:25,1114.78,15:05,1107.32,stop,-194.12,30.61,-224.74,-1.212,VWAP pullback long
+2026-10-16,vwap_pb.base,KOTAKBANK,-1,64,09:45,444.87,10:00,447.91,stop,-194.87,30.27,-225.15,-1.209,VWAP pullback short
+2026-10-16,vwap_pb.base,AXISBANK,-1,30,10:05,1279.92,10:15,1286.48,stop,-197.01,40.8,-237.81,-1.282,VWAP pullback short
+2026-10-16,vwap_pb.base,ICICIBANK,-1,22,09:45,1383.98,11:55,1392.62,stop,-190.05,32.37,-222.42,-1.23,VWAP pullback short
+2026-10-16,vwap_pb.base,HDFCBANK,1,30,09:45,729.97,15:10,725.43,squareoff,-136.1,23.14,-159.23,-0.863,VWAP pullback long
+2026-10-16,vwap_pb.base,ITC,-1,113,10:20,262.32,15:10,262.48,squareoff,-17.79,31.44,-49.23,-0.264,VWAP pullback short

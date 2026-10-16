@@ -12,3 +12,4 @@ date,variant,symbol,side,qty,entry_time,entry,exit_time,exit,exit_reason,gross,c
 2026-10-14,sr_reject.v1,KOTAKBANK,-1,82,09:35,442.47,10:20,444.95,stop,-203.69,38.56,-242.26,-1.257,level rejection (confirmed)
 2026-10-15,sr_reject.v1,HDFCBANK,-1,46,09:45,716.93,10:45,721.26,stop,-199.13,35.06,-234.19,-1.238,level rejection (confirmed)
 2026-10-15,sr_reject.v1,BAJFINANCE,1,31,09:50,959.49,13:25,969.59,target,313.13,31.74,281.38,1.492,level rejection (confirmed)
+2026-10-16,sr_reject.v1,SBIN,-1,26,10:40,960.26,15:10,959.54,squareoff,18.83,26.47,-7.64,-0.04,level rejection (confirmed)
