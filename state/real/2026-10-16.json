@@ -1,1 +1,21 @@
-[]
+[
+ {
+  "key": "BHARTIARTL|09:30",
+  "symbol": "BHARTIARTL",
+  "side": 1,
+  "stop": 1859.63,
+  "target": 1894.94,
+  "decided_bar": "09:30",
+  "mode": "shadow",
+  "status": "open",
+  "expect_entry": "09:35",
+  "qty": 16,
+  "est_price": 1871.4,
+  "entry_id": "S1792123536859002313",
+  "entry_price": 1871.4,
+  "entry_time": "09:35:20",
+  "sl_id": "S1792123536907914453",
+  "sl_kind": "SL-M",
+  "sl_trigger": 1859.6
+ }
+]
