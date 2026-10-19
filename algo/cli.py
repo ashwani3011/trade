@@ -148,7 +148,11 @@ def main(argv: list[str] | None = None) -> None:
 
         try:
             with contextlib.redirect_stdout(_Tee()):
-                check(s)
+                try:
+                    check(s)
+                except Exception as e:   # record why the check failed (Dhan errors carry no secrets)
+                    print(f"FAILED: {type(e).__name__}: {str(e)[:500]}")
+                    raise
         finally:   # the morning check result, for the desk reports (no secrets are printed by check)
             out = s.reports_dir / "dhan_check.md"
             out.parent.mkdir(parents=True, exist_ok=True)
