@@ -152,7 +152,12 @@ def main(argv: list[str] | None = None) -> None:
                     check(s)
                 except Exception as e:   # record why the check failed (Dhan errors carry no secrets)
                     print(f"FAILED: {type(e).__name__}: {str(e)[:500]}")
-                    raise
+                    if "DH-902" not in str(e):
+                        raise
+                    # Data plan missing: let trade-live start anyway. It retries every candle, so
+                    # trading resumes within one candle of the plan being renewed, instead of the
+                    # service restarting (and pushing a commit) every minute.
+                    print("continuing: the trader will retry candle data every 5 minutes")
         finally:   # the morning check result, for the desk reports (no secrets are printed by check)
             out = s.reports_dir / "dhan_check.md"
             out.parent.mkdir(parents=True, exist_ok=True)

@@ -160,7 +160,10 @@ class LiveTrader:
 
         today = clock.today_ist()
         if clock.is_final(today) and today.weekday() < 5:
-            run_day(self.s, today)
+            try:
+                run_day(self.s, today)
+            except Exception:   # e.g. no candle data: log it, and don't make systemd restart the trader all night
+                log.exception("recording %s failed", today)
 
 
 # ------------------------------------------------------------- supervision
