@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-27T15:30:00+05:30",
+ "generated_at": "2026-10-27T15:40:28+05:30",
  "today": "2026-10-27",
- "market_phase": "open",
- "trader_running": true,
+ "market_phase": "post",
+ "trader_running": false,
  "capital": 20000.0,
  "leaderboard": [
   {
