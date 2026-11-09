@@ -1,6 +1,6 @@
-# Dhan check 2026-11-06 08:46 IST
+# Dhan check 2026-11-09 08:45 IST
 ```
-token OK, expires 2026-11-07 08:46 IST
+token OK, expires 2026-11-10 08:45 IST
 FAILED: DhanError: /charts/intraday 401: {"errorType":"Invalid_Access","errorCode":"DH-902","errorMessage":"This API requires a Data APIs Plan. Current plan: Free Plan"}
 continuing: the trader will retry candle data every 5 minutes
 ```
